@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -17,6 +19,17 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
+
+    protected function authenticated(Request $request, $user)
+    {
+        //return Redirect()->route('family');
+        //premier if return false, donc redirect vers Pro qui passe par le middleware qui filtre
+        if (Auth::User()->profile=='1') {
+            return Redirect()->route('family');
+        } else {
+            return Redirect()->route('pro');
+        }
+    }
 
     use AuthenticatesUsers;
 
