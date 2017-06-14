@@ -13,7 +13,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 
 Auth::routes();
@@ -32,16 +32,18 @@ Route::get('/confirm', 'HomeController@confirmpage');
 Route::get('/formCivil', 'FormCivilController@index');
 
 Route::group(['middleware'=>'admin'], function () {
-    Route::get('/admin', 'AdminController@index')->name('admin');
+	Route::get('/admin', 'AdminController@index')->name('admin');
 }
 );
 
 Route::group(['middleware'=>'candidat'], function () {
-    Route::get('/candidat', 'CandidateController@index')->name('candidat');
+	Route::get('/candidat', 'CandidateController@index')->name('candidat');
+	Route::post('/post/formEc', 'FormCivilController@index')->name('formEc');
 }
 );
 
 Route::group(['middleware'=>'formateur'], function () {
-    Route::get('/formateur', 'TeacherController@index')->name('formateur');
+	Route::get('/formateur', 'TeacherController@index')->name('formateur');
 }
 );
+

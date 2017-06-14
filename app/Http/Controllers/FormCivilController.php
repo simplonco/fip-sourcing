@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Form;
 
 class FormCivilController extends Controller
 {
@@ -21,9 +22,22 @@ class FormCivilController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createformCivil(Request $request)
     {
-        //
+        $form = new Form;
+        $form->prenom=$request->input('prenom');
+        $form->nom=$request->input('nom');
+        $form->email=$request->input('email'); 
+        $form->date=$request->input('date');     
+        $form->pays=$request->input('pays'); 
+        $form->national=$request->input('national'); 
+        $form->adresse=$request->input('adresse'); 
+        $form->tel=$request->input('tel'); 
+        $form->statut=$request->input('statut'); 
+        $form->numpole=$request->input('numpole'); 
+        $form->secu=$request->input('secu'); 
+        $form->save();
+        return redirect()->route('formCandidatureCandidat');
     }
 
     /**
