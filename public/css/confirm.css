@@ -1,6 +1,22 @@
+body{
+	background-color: #e6e4e4;
+}
 .bord{
 	border: 1px solid black;
-	margin: 20px;
+	margin: 20vh 20px;
 	padding: 20px;
-
+	text-align: center;
+}
+.html{
+	width: 50px;
+	position:relative; 
+}
+.css{
+	width: 50px;
+}
+.js{
+	width: 50px;
+}
+.php{
+	width: 50px;
 }
