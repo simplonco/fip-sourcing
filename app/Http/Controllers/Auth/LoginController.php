@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Autch;
 
 class LoginController extends Controller
 {
-	
-	/*
+
+    /*
 	|--------------------------------------------------------------------------
 	    | Login Controller
 	    |--------------------------------------------------------------------------
@@ -20,38 +20,37 @@ class LoginController extends Controller
 	    | to conveniently provide its functionality to your applications.
 	    |
 	    */
-	
-	protected function authenticades (Request $request, $user) {
-		if (Auth::user()->roles == 'admin') {
-			return Redirect()->route('admin');
-		}
-		elseif (Auth::user()->roles == 'Can') {
-			return Redirect()->route('candidat');
-		}
-		elseif (Auth::user()->roles == 'forma') {
-			return Redirect()->route('formateur');
-		}
-	}
-	
-	use AuthenticatesUsers;
-	
-	
-	
-	/**
-	*Where to redirect users after login.
-	    *
-	    * @var string
-	    */
-	protected $redirectTo = '/home';
-	
-	
-	/**
-	*Create a new controller instance.
-	    *
-	    * @return void
-	    */
-	public function __construct()
-	{
-		$this->middleware('guest')->except('logout');
-	}
+
+    protected function authenticades(Request $request, $user)
+    {
+        if (Auth::user()->roles == 'admin') {
+            return Redirect()->route('admin');
+        } elseif (Auth::user()->roles == 'Can') {
+            return Redirect()->route('candidat');
+        } elseif (Auth::user()->roles == 'forma') {
+            return Redirect()->route('formateur');
+        }
+    }
+
+    use AuthenticatesUsers;
+
+
+
+    /**
+    *Where to redirect users after login.
+        *
+        * @var string
+        */
+    protected $redirectTo = '/home';
+
+
+    /**
+    *Create a new controller instance.
+        *
+        * @return void
+        */
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
 }
