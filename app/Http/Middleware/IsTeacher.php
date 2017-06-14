@@ -5,8 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class IsAdmin
-{
+class IsTeacher{
 	
 	
 	/**
@@ -18,9 +17,9 @@ class IsAdmin
 		*/
 		public function handle($request, Closure $next)
 		{
-		if ( Auth::user()->roles->implode('slug') !== 'admin') {
-			if ( Auth::user()->roles->implode('slug') == 'formateur'){
-				return redirect('formateur');
+		if ( Auth::user()->roles->implode('slug') !== 'forma') {
+			if ( Auth::user()->roles->implode('slug') == 'admin'){
+				return redirect('admin');
 			}
 			else {
 				return redirect('candidat');

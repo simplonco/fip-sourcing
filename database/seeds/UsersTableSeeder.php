@@ -4,11 +4,12 @@ use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
 {
+
     /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+    *Run the database seeds.
+        *
+        * @return void
+        */
     public function run()
     {
         DB::table('users')->insert([
@@ -47,8 +48,8 @@ class UsersTableSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-        'lastName' => 'Formateur',
-        'firstName' => 'Test',
+        'lastName' => 'Formateur_lastName',
+        'firstName' => 'Formateur_firstName',
         'email' => 'formateur@example.com',
         'password' => bcrypt('azerty'),
         ]);
