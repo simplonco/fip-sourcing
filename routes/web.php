@@ -15,7 +15,6 @@
 
 Route::get('/', function () {
     return view('welcome');
-}
 );
 
 Auth::routes();
@@ -25,3 +24,4 @@ Route::get('/adminpanel', function () {
     return view('adminpanel');
 });
 Route::post('/ajouterFormateur', 'AdminController@ajoutFormateur')->name('ajouterFormateur');
+
