@@ -3,7 +3,7 @@ body{
 }
 .bord{
 	border: 1px solid black;
-	margin: 20vh 20px;
+	margin: 10vh 20px;
 	padding: 20px;
 	text-align: center;
 }
@@ -18,5 +18,12 @@ body{
 	width: 50px;
 }
 .php{
-	width: 50px;
+	width: 35px;
+}
+.logo{
+	width: 200px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+
 }
