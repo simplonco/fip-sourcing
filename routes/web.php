@@ -19,14 +19,18 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/adminpanel', function () {
-    return view('adminpanel');
-});
+
+// Route::get('/adminpanel', function () {
+//     return view('adminpanel');
+// });
+
+
 Route::post('/ajouterFormateur', 'AdminController@ajoutFormateur')->name('ajouterFormateur');
 
 Route::get('/confirm', 'HomeController@confirmpage');
 
-Route::get('/formCivil', 'FormCivilController@index')->name('home');
+Route::get('/formCivil', 'FormCivilController@index');
+
 Route::group(['middleware'=>'admin'], function () {
     Route::get('/admin', 'AdminController@index')->name('admin');
 }
