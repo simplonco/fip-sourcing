@@ -10,8 +10,9 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
 	
+	
 	/*
-	-------------------------------------------------------------------------
+	------------------------------------------------------------------------
 		| Login Controller
 		|--------------------------------------------------------------------------
 		|
@@ -22,13 +23,13 @@ class LoginController extends Controller
 		*/
 	
 	protected function authenticated (Request $request, $user) {
-		if (Auth::User()->roles == 'admin') {
+		if (Auth::User()->roles->implode('slug') == 'admin') {
 			return Redirect()->route('admin');
 		}
-		elseif (Auth::User()->roles == 'Can') {
+		elseif (Auth::User()->roles->implode('slug') == 'Can') {
 			return Redirect()->route('candidat');
 		}
-		elseif (Auth::User()->roles == 'forma') {
+		elseif (Auth::User()->roles->implode('slug') == 'forma') {
 			return Redirect()->route('formateur');
 		}
 	}
