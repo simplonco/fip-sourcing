@@ -26,3 +26,5 @@ Route::get('/adminpanel', function () {
 Route::post('/ajouterFormateur', 'AdminController@ajoutFormateur')->name('ajouterFormateur');
 
 Route::get('/confirm', 'HomeController@confirmpage');
+
+Route::get('/formCivil', 'FormCivilController@index')->name('home');
