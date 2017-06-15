@@ -28,7 +28,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/ajouterFormateur', 'AdminController@ajoutFormateur')->name('ajouterFormateur');
 
 Route::get('/confirm', 'HomeController@confirmpage');
-
 Route::get('/formCivil', 'FormCivilController@index');
 
 Route::group(['middleware'=>'admin'], function () {
@@ -47,4 +46,9 @@ Route::group(['middleware'=>'formateur'], function () {
 	Route::get('/formateur', 'TeacherController@index')->name('formateur');
 }
 );
+
+
+Route::get('/formcandidature', function () {
+	return view('formCandidatureCandidat');
+});
 

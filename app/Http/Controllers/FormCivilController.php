@@ -37,7 +37,7 @@ class FormCivilController extends Controller
         $form->numpole=$request->input('numpole'); 
         $form->secu=$request->input('secu'); 
         $form->save();
-        return redirect()->route('home');
+        return redirect()->route('formCandidatureCandidat');
     }
 
     /**
