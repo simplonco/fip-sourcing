@@ -39,6 +39,7 @@ Route::group(['middleware'=>'admin'], function () {
 Route::group(['middleware'=>'candidat'], function () {
 	Route::get('/candidat', 'CandidateController@index')->name('candidat');
 	Route::post('/post/formEc', 'FormCivilController@index')->name('formEc');
+	Route::get('/post/formEc', 'FormCivilController@index')->name('formEc');
 }
 );
 

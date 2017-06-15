@@ -4,7 +4,7 @@
 <div class="container">
  <div class="row">
     <form method="POST" action="post/formEc">
-       {{ csrf_field(); }}
+       {{ csrf_field() }}
        <fieldset class="form-group">
           <legend>Coordonnées</legend>
 
