@@ -178,11 +178,11 @@
         <div class="form-group">
             <div class="form-check">
                 <label class="form-check-label">
-                   <input type="radio" name="dispo8mois" class="form-check-input" id="yesno" value="1">
-                   Oui
-               </label>
-           </div>
-           <div class="form-check">
+                 <input type="radio" name="dispo8mois" class="form-check-input" id="yesno" value="1">
+                 Oui
+             </label>
+         </div>
+         <div class="form-check">
             <label class="form-check-label">
                 <input type="radio" name="dispo8mois" class="form-check-input" id="yesno" value="0">
                 Non
@@ -239,12 +239,12 @@
     <p>juste après avoir cliqué sur "Envoyer", vous pourrez vous reconnecter à votre espace perso pour mettre à jour vos informations. </p>
 
     <div class="form-group number">
-        <input class="btn btn-primary" type="submit" value="Submit">
+        <input class="btn btn-primary" type="submit" value="Envoyer">
     </div>
 
-    <div class="form-group number">
+   <!--  <div class="form-group number">
         <input class="btn btn-primary" href="#" value="Modifier">
-    </div>
+    </div> -->
 
 
 </div>
