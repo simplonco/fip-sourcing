@@ -23,7 +23,11 @@
 
 <p>Nationalité:</p><br>
 
-<p>Adresse:</p><br>
+<span>Adresse:</span><br>
+
+<textarea name="Adresse" rows="10" cols="50">
+  
+</textarea><br><br>
 
 <p>E-mail:</p><br>
 
@@ -47,9 +51,14 @@
 
 <textarea name="informatique" rows="10" cols="50">
   
-</textarea><br>
+</textarea><br><br>
+
 
 <span>Un "hacks" technique/informatique ou pas</span><br>
+
+<textarea name="hacks" rows="10" cols="50">
+  
+</textarea><br><br>
 
 <p>Dernier diplôme obtenu:</p><br>
 
@@ -57,7 +66,7 @@
 
 <textarea name="parcours" rows="10" cols="50">
   
-</textarea><br>
+</textarea><br><br>
 
 <p>Niveau d'anglais:</p><br>
 
@@ -67,31 +76,31 @@
 
 <textarea name="raisons" rows="10" cols="50">
   
-</textarea><br>
+</textarea><br><br>
 
 <span>Les souhaits avec les nouveaux super-pouvoirs</span><br>
 
 <textarea name="pouvoirs" rows="10" cols="50">
   
-</textarea><br>
+</textarea><br><br>
 
-<p>URL bagdes Codecademy</p><br>
+<p>URL bagdes Codecademy:</p><br>
 
-<p>Profil Openclassrooms ou autre</p><br>
+<p>Profil Openclassrooms ou autre:</p><br>
 
-<p>Disponibilité pour suivre la formation suivie du stage</p><br>
+<p>Disponibilité pour suivre la formation suivie du stage:</p><br>
 
 <span>Si non, les contraintes</span><br>
 
 <textarea name="contraintes" rows="10" cols="50">
   
-</textarea><br>
+</textarea><br><br>
 
 <span>Financement de la vie quotidienne durant la formation</span><br>
 
 <textarea name="financement" rows="10" cols="50">
   
-</textarea><br>
+</textarea><br><br>
 
 <p>Comment avez-vous entendu parler de la formation Simplon Occitanie?</p><br>
 
