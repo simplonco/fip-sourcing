@@ -18,6 +18,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Route::get('/adminpanel', function () {
@@ -49,3 +51,4 @@ Route::group(['middleware'=>'formateur'], function () {
     Route::get('/formateur', 'TeacherController@index')->name('formateur');
 }
 );
+Route::get('/listeCandidats', 'listeCandidatsController@getCandidats');

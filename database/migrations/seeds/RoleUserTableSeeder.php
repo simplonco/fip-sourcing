@@ -4,13 +4,11 @@ use Illuminate\Database\Seeder;
 
 class RoleUserTableSeeder extends Seeder
 {
-
     /**
-    * Run the database seeds.
-         *
-         * @return void
-         */
-
+     * Run the database seeds.
+     *
+     * @return void
+     */
     public function run()
     {
         DB::table('role_user')->insert([
@@ -32,10 +30,6 @@ class RoleUserTableSeeder extends Seeder
         DB::table('role_user')->insert([
         'user_id' => '5',
         'role_id' => '2',
-        ]);
-        DB::table('role_user')->insert([
-        'user_id' => '6',
-        'role_id' => '3',
         ]);
     }
 }

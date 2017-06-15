@@ -4,7 +4,6 @@ use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
 {
-
     /**
      * Run the database seeds.
      *
@@ -44,13 +43,6 @@ class UsersTableSeeder extends Seeder
         'lastName' => 'bidon',
         'firstName' => 'hubert',
         'email' => 'bidonhubert@example.com',
-        'password' => bcrypt('azerty'),
-        ]);
-
-        DB::table('users')->insert([
-        'lastName' => 'Formateur_lastName',
-        'firstName' => 'Formateur_firstName',
-        'email' => 'formateur@example.com',
         'password' => bcrypt('azerty'),
         ]);
     }
