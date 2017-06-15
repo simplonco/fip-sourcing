@@ -42,9 +42,10 @@ Route::group(['middleware'=>'candidat'], function () {
 
 Route::group(['middleware'=>'formateur'], function () {
     Route::get('/formateur', 'TeacherController@index')->name('formateur');
-}
-);
+});
 
 Route::get('/formcandidature', function () {
     return view('formCandidatureCandidat');
 });
+
+Route::get('/listeCandidats', 'listeCandidatsController@getCandidats');
