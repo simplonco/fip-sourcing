@@ -7,17 +7,13 @@ use Illuminate\Database\Migrations\Migration;
 class CreateFormsTable extends Migration
 {
 	
-	
-	
-	
-	
 	/**
-	* Run the migrations.
-					     *
-					     * @return void
-					     */
-					    public function up()
-					    {
+	*Run the migrations.
+		*
+		* @return void
+		*/
+		public function up()
+		{
 		Schema::create('forms', function (Blueprint $table) {
 			$table->increments('id');
 			$table->integer('user_id');
@@ -43,7 +39,7 @@ class CreateFormsTable extends Migration
 			$table->string('codecademy')->nullable();
 			$table->string('OCR')->nullable();
 			$table->string('dispo')->nullable();
-			$table->string('contraintes')->default('vide');
+			$table->string('contraintes')->nullable();
 			$table->string('financement')->nullable();
 			$table->string('notoriete')->nullable();
 			$table->rememberToken();
@@ -52,18 +48,13 @@ class CreateFormsTable extends Migration
 		);
 	}
 	
-	
-	
-	
-	
-	
 	/**
-	* Reverse the migrations.
-					     *
-					     * @return void
-					     */
-					    public function down()
-					    {
+	*Reverse the migrations.
+		*
+		* @return void
+		*/
+		public function down()
+		{
 		//
 	}
 }

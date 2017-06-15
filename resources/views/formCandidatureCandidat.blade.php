@@ -151,7 +151,7 @@
         <span>Votre présence et activité sur un des sites d'apprentissage en ligne atteste de votre motivation ;)</span></br>
         <input class="form-control" type="text" id="exampleTextarea" name="OCR" />
         <br>
-        <label>Êtes vous disponibles pour suivre une formation de 8 mois a temps plein (35h/semaine) suivie d'un stage de 2.5 mois ?</label>
+        <label>Êtes vous disponible pour suivre une formation de 8 mois à temps plein (35h/semaine) suivie d'un stage de 2,5 mois ?</label>
         <div class="form-group">
             <div class="form-check">
                 <label class="form-check-label">
