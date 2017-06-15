@@ -20,6 +20,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/', function () {
+Route::get('/formcandidature', function () {
     return view('formCandidatureCandidat');
 });
+
+Route::get('/candidatDetaille', function () {
+	return view('candidatDetaille');
+});
+
+
