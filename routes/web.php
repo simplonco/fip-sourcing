@@ -1,7 +1,8 @@
 <?php
 
+
 /*
-|--------------------------------------------------------------------------
+------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
@@ -19,6 +20,31 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Route::get('/adminpanel', function () {
+//     return view('adminpanel');
+// });
+
+
+
+Route::post('/ajouterFormateur', 'AdminController@ajoutFormateur')->name('ajouterFormateur');
+
+Route::get('/confirm', 'HomeController@confirmpage');
+Route::get('/formCivil', 'FormCivilController@index');
+
+Route::group(['middleware'=>'admin'], function () {
+    Route::get('/admin', 'AdminController@index')->name('admin');
+}
+);
+
+Route::group(['middleware'=>'candidat'], function () {
+    Route::get('/candidat', 'CandidateController@index')->name('candidat');
+}
+);
+
+Route::group(['middleware'=>'formateur'], function () {
+    Route::get('/formateur', 'TeacherController@index')->name('formateur');
+}
+);
 
 Route::get('/formcandidature', function () {
     return view('formCandidatureCandidat');
