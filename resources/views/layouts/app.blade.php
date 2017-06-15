@@ -43,7 +43,6 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-<<<<<<< HEAD
                         @if (Auth::guest())
                         <li><a href="{{ route('login') }}">Login</a></li>
                         <li><a href="{{ route('register') }}">Register</a></li>
@@ -69,10 +68,6 @@
                     </li>
                     @endif
                 </ul>
-=======
-                    </ul>
-                </div>
->>>>>>> origin/_listecandidats
             </div>
         </div>
     </nav>

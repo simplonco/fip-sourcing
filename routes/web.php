@@ -18,8 +18,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Route::get('/adminpanel', function () {
@@ -46,9 +44,11 @@ Route::group(['middleware'=>'candidat'], function () {
     Route::get('/confirm', 'HomeController@confirmpage')->name('GG');
 }
 );
+    Route::get('/candidatDetaille/{id}', 'TeacherController@candidatDetaille')->name('detailcand');
 
 Route::group(['middleware'=>'formateur'], function () {
     Route::get('/formateur', 'TeacherController@index')->name('formateur');
-}
-);
-Route::get('/listeCandidats', 'listeCandidatsController@getCandidats');
+    Route::get('/listeCandidats', 'listeCandidatsController@getCandidats');
+});
+
+;
