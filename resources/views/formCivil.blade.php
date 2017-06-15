@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
   <div class="row">
@@ -7,7 +6,6 @@
         {{ csrf_field() }}
         <fieldset class="form-group">
            <legend>Coordonnées</legend>
-
            <div class="col-xs-8 col-xs-offset-2">
             <div class="form-group row">
               <label for="example-text-input" class="col-2 col-form-label">Prénom</label>
@@ -16,7 +14,6 @@
              </div> 
           </div>
        </div>
-
        <div class="col-xs-8 col-xs-offset-2">
           <div class="form-group row">
             <label for="example-text-input" class="col-2 col-form-label">Nom</label>
@@ -25,7 +22,6 @@
             </div> 
          </div>
       </div>
-
       <div class="col-xs-8 col-xs-offset-2">
         <div class="form-group row">
           <label for="example-text-input" class="col-2 col-form-label">Date de naissance</label>
@@ -36,13 +32,12 @@
   </div>
   <div class="col-xs-8 col-xs-offset-2"> 
    <div class="form-group row">
-     <label for="example-text-input" class="col-2 col-form-label">Pays de naissasnce</label>
+     <label for="example-text-input" class="col-2 col-form-label">Pays de naissance</label>
      <div class="col-10">
        <input class="form-control" type="text" value="coucou" id="text-input" name='pays' >
     </div>
  </div>
 </div>
-
 <div class="col-xs-8 col-xs-offset-2">
   <div class="form-group row">
     <label for="example-text-input" class="col-2 col-form-label">Nationalité</label>
@@ -51,14 +46,12 @@
     </div> 
  </div>
 </div>
-
 <div class="col-xs-8 col-xs-offset-2">
  <div class="form-group">
    <label for="exampleTextarea">Adresse</label>
    <textarea class="form-control" id="Textarea" rows="3" name='adresse' value='coucou rue coucou coucou 31coucou'></textarea>
 </div>
 </div>
-
 <div class="col-xs-8 col-xs-offset-2">
  <div class="form-group row">
    <label for="example-text-input" class="col-2 col-form-label">email</label>
@@ -67,7 +60,6 @@
    </div>
 </div>
 </div>
-
 <div class="col-xs-8 col-xs-offset-2">
    <div class="form-group row">
       <label for="example-text-input" class="col-2 col-form-label">Numéro tel où on peut joindre</label>
@@ -77,7 +69,6 @@
    </div>
 </div>
 </fieldset>
-
 <fieldset class="form-group">
   <legend>Statut au moment de votre candidature (plusieurs réponses possibles)</legend>
   <div class="form-check">
@@ -135,7 +126,6 @@
  </label>
 </div>
 </fieldset>
-
 <div class="col-xs-8 col-xs-offset-2">
  <div class="form-group row">
    <label for="example-text-input" class="col-2 col-form-label">N° Pôle Emploi (le cas échéant)</label>
@@ -144,7 +134,6 @@
    </div> 
 </div>
 </div>
-
 <div class="col-xs-8 col-xs-offset-2">
  <div class="form-group row">
    <label for="example-text-input" class="col-2 col-form-label">N° de Sécurité Sociale</label>
@@ -153,15 +142,12 @@
    </div> 
 </div>
 </div>
-
 <div class="col-xs-8 col-xs-offset-2">
  <div class="form-group row">
     <button type="submit" class="btn btn-primary">Suivant</button>
  </div>
 </div>
-
 </form>
 </div>
 </div>
-
 @endsection
