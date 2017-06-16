@@ -168,7 +168,7 @@
     </div>
     <div class="form-group">
         <label for="exampleTextarea">Si non, quelles sont vos contraintes ?</label>
-        <textarea class="form-control" id="exampleTextarea" rows="3" name="contraintes"></textarea>
+        <textarea class="form-control" id="exampleTextarea" rows="3" name="contraintes">&nbsp;</textarea>
     </div>
     <div class="form-group">
         <label for="exampleTextarea">Cette formation peut ouvrir droit à une rémunération forfaitaire (ARE Pôle Emploi ou ASP Région, RSA) en fonction de votre situation familiale et de celle en regard de l'emploi. Comment allez vous financer votre vie quotidienne durant les 10,5 mois de formation?</label>
