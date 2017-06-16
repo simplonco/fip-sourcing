@@ -27,7 +27,7 @@ class TeacherController extends Controller
             */
     public function index()
     {
-        return view('formateur');
+        return redirect('/listeCandidats');
     }
 
 
@@ -104,6 +104,7 @@ class TeacherController extends Controller
             */
     public function candidatDetaille(Request $request, $id)
     {
+
         return view('candidatDetaille');
     }
 
