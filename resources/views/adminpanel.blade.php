@@ -44,7 +44,7 @@
                             <label for="email" class="col-md-4 control-label">Adresse e-mail</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="formateurBidont@example.com" required>
+                                <input id="email" type="email" class="form-control" name="email" value="formateuradoré@example.com" required>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">

@@ -5,8 +5,8 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Connexion</div>
                 <div class="panel-body">
+                <div class="panel-heading">Connexion</div>
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
@@ -57,6 +57,14 @@
                             </div>
                         </div>
                     </form>
+<hr>
+                    <div style="text-align:center; color:black">
+                    <h4>Pour phase de test</h4>
+    <span>Connexion en tant que formateur : login -> formateur@example.com | mdp -> azerty</span><br>
+    <span>Connexion en tant que candidat : S'enregistrer et remplir une candidature</span><br>
+    <span>Connexion en tant qu'admin : login -> admin@example.com | mdp -> azerty</span>
+
+                    </div>
                 </div>
             </div>
         </div>

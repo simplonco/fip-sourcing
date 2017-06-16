@@ -3,7 +3,10 @@
 @section('content')
 
 <div class="container">
-
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-body">
   <table class="table table-striped">
     <thead>
     <h4>Liste de tous les candidats dont la candidature est complète :</h4>
@@ -24,6 +27,10 @@
    @endforeach
     </tbody>
   </table>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 
