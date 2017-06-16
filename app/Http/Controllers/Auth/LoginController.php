@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Form;
 
 class LoginController extends Controller
 {
@@ -25,13 +26,31 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-        if (Auth::User()->roles->implode('slug') == 'admin') {
+        $slugUser = Auth::User()->roles->implode('slug');
+        $idUser = Auth::User()->id;
+        if ($slugUser == 'admin') {
             return Redirect()->route('admin');
-        } elseif (Auth::User()->roles->implode('slug') == 'Can') {
-            return Redirect()->route('candidat');
-        } elseif (Auth::User()->roles->implode('slug') == 'forma') {
+        } elseif ($slugUser == 'Can') {
+            if (Form::all()->where('user_id', '=', $idUser)->first()) {
+                if (Form::all()->where('user_id', '=', $idUser)->first()->statut_form == '0') {
+                    return Redirect('formcandidature');
+                } else {
+                    return Redirect('/confirm');
+                }
+            } else {
+                return Redirect('/formCivil');
+            }
+        } elseif ($slugUser == 'forma') {
             return Redirect()->route('formateur');
         }
+
+        // if (Auth::User()->roles->implode('slug') == 'admin') {
+        //     return Redirect()->route('admin');
+        // } elseif (Auth::User()->roles->implode('slug') == 'Can') {
+        //     return Redirect()->route('candidat');
+        // } elseif (Auth::User()->roles->implode('slug') == 'forma') {
+        //     return Redirect()->route('formateur');
+        // }
     }
 
     use AuthenticatesUsers;
