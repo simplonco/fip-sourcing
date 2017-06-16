@@ -1,8 +1,15 @@
 <?php
 
 
+
+
+
+
+
+
+
 /*
-------------------------------------------------------------------
+-----------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
@@ -16,13 +23,12 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::get('/adminpanel', function () {
-//     return view('adminpanel');
-// });
+
 
 
 
@@ -44,11 +50,10 @@ Route::group(['middleware'=>'candidat'], function () {
     Route::get('/confirm', 'HomeController@confirmpage')->name('GG');
 }
 );
-    Route::get('/candidatDetaille/{id}', 'TeacherController@candidatDetaille')->name('detailcand');
 
 Route::group(['middleware'=>'formateur'], function () {
+    Route::get('/candidatDetaille/{id}', 'TeacherController@candidatDetaille')->name('detailcand');
     Route::get('/formateur', 'TeacherController@index')->name('formateur');
     Route::get('/listeCandidats', 'listeCandidatsController@getCandidats');
-});
-
-;
+}
+);

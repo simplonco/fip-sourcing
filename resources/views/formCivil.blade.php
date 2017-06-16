@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 
 <div class="container">
@@ -37,6 +36,7 @@
         </div>
      </div>
   </div>
+
   <div class="col-xs-12">
    <div class="form-group">
      <label for="example-text-input" class="col-2 col-form-label">Pays de naissasnce</label>
@@ -80,7 +80,6 @@
    </div>
 </div>
 </fieldset>
-
 <fieldset class="form-group">
                 <div class="panel-heading">Statut au moment de votre candidature</div><span class="col-xs-12">(plusieurs réponses possibles)</span>
                 <br>
@@ -165,7 +164,6 @@
     <button type="submit" class="btn btn-primary">Suivant</button>
  </div>
 </div>
-
 </form>
 
                 <div class="panel-body">
@@ -182,5 +180,4 @@
 
 </div>
 </div>
-
 @endsection
