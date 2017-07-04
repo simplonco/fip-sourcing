@@ -38,6 +38,7 @@ Route::get('/formCivil', 'FormCivilController@index');
 
 Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin', 'AdminController@index')->name('admin');
+    Route::get('/admin/listFormateurs', 'AdminController@listFormateurs')->name('listFormateurs');
   Route::get('/admin/addFormateur', 'AdminController@addFormateur')->name('addFormateur');
 }
 );

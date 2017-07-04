@@ -8,7 +8,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">Tableau d'administration</div>
         <div class="panel-body">
-          <a href="{{ route('addFormateur') }}" class="btn">Ajouter un formateur</a>
+          <a href="{{ route('listFormateurs') }}" class="btn">Ajouter un formateur</a>
         </div>
       </div>
     </div>
