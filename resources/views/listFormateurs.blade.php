@@ -7,6 +7,7 @@
     <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
         <div class="panel-body">
+
           <table class="table table-striped">
             <thead>
               <h4>Liste de tous les formateurs</h4>
@@ -26,7 +27,6 @@
                   <td>{{$formateur->firstName}} {{$formateur->lastName}}</td>
                   <td>{{$formateur->email}}</td>
                 </tr>
-
                 @endforeach
               </tbody>
             </table>
