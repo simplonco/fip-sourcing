@@ -11,7 +11,7 @@
             <thead>
               <h4>Liste de tous les formateurs</h4>
               <tr>
-                <th style="text-align:center;">Infos</th>
+                <th style="text-align:center;">Actions</th>
                 <th>Prénom Nom</th>
                 <th>Email</th>
               </tr>
