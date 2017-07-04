@@ -38,11 +38,11 @@ Route::get('/formCivil', 'FormCivilController@index');
 
 Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin', 'AdminController@index')->name('admin');
-  Route::get('/admin/listFormateurs', 'AdminController@listFormateurs')->name('listFormateurs');
-  Route::get('/admin/addFormateur', 'AdminController@addFormateur')->name('addFormateur');
-  Route::get('/admin/formateurDetails', 'AdminController@formateurDetails')->name('formateurDetails');
-  Route::get('/admin/formateurUpdate', 'AdminController@formateurUpdate')->name('formateurUpdate');
-  Route::get('/admin/formateurDelete', 'AdminController@formateurDelete')->name('formateurDelete');
+  Route::get('/admin/listFormateurs', 'FormateurController@listFormateurs')->name('listFormateurs');
+  Route::get('/admin/addFormateur', 'FormateurController@addFormateur')->name('addFormateur');
+  Route::get('/admin/formateurDetails', 'FormateurController@formateurDetails')->name('formateurDetails');
+  Route::get('/admin/formateurUpdate', 'FormateurController@formateurUpdate')->name('formateurUpdate');
+  Route::get('/admin/formateurDelete', 'FormateurController@formateurDelete')->name('formateurDelete');
 }
 );
 
@@ -57,8 +57,6 @@ Route::group(['middleware'=>'candidat'], function () {
 );
 
 Route::group(['middleware'=>'formateur'], function () {
-  Route::get('/candidatDetaille/{id}', 'TeacherController@candidatDetaille')->name('detailcand');
-  Route::get('/formateur', 'TeacherController@index')->name('formateur');
   Route::get('/listeCandidats', 'listeCandidatsController@getCandidats');
 }
 );

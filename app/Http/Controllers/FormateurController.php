@@ -10,7 +10,7 @@ use App\Role;
 use App\Role_user;
 use App\Form;
 
-class AdminController extends Controller
+class FormateurController extends Controller
 {
 
   public function __construct()
@@ -18,19 +18,30 @@ class AdminController extends Controller
     $this->middleware('auth');
   }
 
-  function ajoutFormation(Request $request)
+  public function listFormateurs(Request $request)
   {
 
-    $user = new Formation;
-    $user->name = $request->input('name');
-    $user->city = $request->input('city');
-    $user->year = $request->input('year');
-    $user->begin_session = $request->input('begin_session');
-    $user->end_session = $request->input('end_session');
+    $roleId = 3;
+    $formateurs = User::whereHas('roles', function ($q) use ($roleId) {
+      $q->where('role_id', $roleId);
+    })->get();
+
+    return view('listFormateurs', ['formateurs'=>$formateurs]);
+  }
+
+  function ajoutFormateur(Request $request)
+  {
+
+    $user = new User;
+    $user->lastName = $request->input('lastName');
+    $user->firstName = $request->input('firstName');
+    $user->email = $request->input('email');
+    $user->password = bcrypt($request->input('password'));
 
     $role = $user->roles();
     dd($role);
   }
+
   /**
   * Display a listing of the resource.
   *
@@ -38,7 +49,17 @@ class AdminController extends Controller
   */
   public function index()
   {
-    return view('adminpanel');
+    return view('listFormateurs');
+  }
+
+  /**
+  * Display a listing of the resource.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function addFormateur()
+  {
+    return view('formFormateur');
   }
 
   /**
@@ -61,7 +82,12 @@ class AdminController extends Controller
   */
   public function store(Request $request)
   {
-    //
+    $this->validate($request, [
+       'lastName' => 'required|max:255',
+       'firstName' => 'required',
+       'email' => 'required|string|email|max:255|unique:users',
+       'password' => 'required|string|min:6|confirmed',
+   ]);
   }
 
 
