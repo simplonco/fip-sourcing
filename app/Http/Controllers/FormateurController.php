@@ -88,6 +88,14 @@ class FormateurController extends Controller
        'email' => 'required|string|email|max:255|unique:users',
        'password' => 'required|string|min:6|confirmed',
    ]);
+
+   $input = $request->all();
+
+   User::create($input);
+
+   Session::flash('flash_message', 'Le formateur a été ajouté avec succès!');
+
+   return redirect()->back();
   }
 
 

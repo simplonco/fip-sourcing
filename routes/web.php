@@ -32,7 +32,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-Route::post('/ajouterFormateur', 'AdminController@ajoutFormateur')->name('ajouterFormateur');
+Route::post('/ajouterFormateur', 'FormateurController@ajoutFormateur')->name('ajouterFormateur');
 
 Route::get('/formCivil', 'FormCivilController@index');
 
