@@ -10,7 +10,7 @@
     <div class="container">
      <img src="{{ asset('images/logo.png') }}" alt="" class="logo">
      <section class="bord row">
-         <h2>Félicitation, vous voilà aspirant Simplonien et nous vous en remerçions !</h2><br>
+         <h2>Félicitation, vous voilà aspirant Simplonien et nous vous en remercions !</h2><br>
          <img src="{{ asset('images/css.png') }}" alt="" class="css">
          <img src="{{ asset('images/html.png') }}" alt="" class="html">
          <img src="{{ asset('images/js.png') }}" alt="" class="js">
