@@ -22,11 +22,11 @@ class AdminController extends Controller
   {
 
     $roleId = 3;
-    $candidats = User::whereHas('roles', function ($q) use ($roleId) {
+    $formateurs = User::whereHas('roles', function ($q) use ($roleId) {
       $q->where('role_id', $roleId);
     })->get();
 
-    return view('listFormateurs', ['candidats'=>$candidats]);
+    return view('listFormateurs', ['formateurs'=>$formateurs]);
   }
 
   function ajoutFormateur(Request $request)
