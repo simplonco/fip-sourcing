@@ -28,6 +28,20 @@ class AdminController extends Controller
         $role = $user->roles();
         dd($role);
     }
+
+    function ajoutFormation(Request $request)
+    {
+
+        $user = new Formation;
+        $user->name = $request->input('name');
+        $user->city = $request->input('city');
+        $user->year = $request->input('year');
+        $user->begin_session = $request->input('begin_session');
+        $user->end_session = $request->input('end_session');
+
+        $role = $user->roles();
+        dd($role);
+    }
 /**
     * Display a listing of the resource.
              *
@@ -38,7 +52,15 @@ class AdminController extends Controller
         return view('adminpanel');
     }
 
-
+    /**
+        * Display a listing of the resource.
+                 *
+                 * @return \Illuminate\Http\Response
+                 */
+        public function addFormateur()
+        {
+            return view('formFormateur');
+        }
 
     /**
     * Show the form for creating a new resource.
