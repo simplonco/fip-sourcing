@@ -19,14 +19,6 @@ class AdminController extends Controller
     function ajoutFormateur(Request $request)
     {
 
-        // $user = User::create($request->only([
-        //     'lastName' => $data['lastName'],
-        //     'firstName' => $data['firstName'],
-        //     'email' => $data['email'],
-        //     'password' => bcrypt($data['password']),
-        // ]));
-        // dd($user);
-
         $user = new User;
         $user->lastName = $request->input('lastName');
         $user->firstName = $request->input('firstName');
@@ -35,16 +27,6 @@ class AdminController extends Controller
 
         $role = $user->roles();
         dd($role);
-        //  $user->roles()->attach(Role::where('slug', 'forma')->first());
-        // $user->save();
-        // dd($role);
-        // $role->users()->save($user);
-        // 'lastName' => 'test',
-        // 'firstName' => $data['firstName'],
-        // 'email' => $data['email'],
-        // 'password' => bcrypt($data['password']),
-        //  dd($user);
-        //  return $user;
     }
 /**
     * Display a listing of the resource.
