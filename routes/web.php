@@ -41,7 +41,6 @@ Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin/former/show', 'FormerController@show')->name('formerShow');
   Route::get('/admin/former/update', 'FormerController@update')->name('formerUpdate');
   Route::get('/admin/former/delete', 'FormerController@delete')->name('formerDelete');
-  Route::post('/ajouterFormateur', 'FormerController@add')->name('formerAdd');
 }
 );
 
