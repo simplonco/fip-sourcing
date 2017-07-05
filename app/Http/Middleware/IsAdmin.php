@@ -19,11 +19,11 @@ class IsAdmin
 		public function handle($request, Closure $next)
 		{
 		if ( Auth::user()->roles->implode('slug') !== 'admin') {
-			if ( Auth::user()->roles->implode('slug') == 'formateur'){
-				return redirect('formateur');
+			if ( Auth::user()->roles->implode('slug') == 'former'){
+				return redirect('former');
 			}
 			else {
-				return redirect('candidat');
+				return redirect('learner');
 			}
 		}
 		return $next($request);

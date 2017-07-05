@@ -16,12 +16,12 @@ class IsCandidate{
 		*/
 		public function handle($request, Closure $next)
 		{
-		if ( Auth::user()->roles->implode('slug') !== 'Can') {
+		if ( Auth::user()->roles->implode('slug') !== 'learner') {
 			if ( Auth::user()->roles->implode('slug') == 'admin'){
 				return redirect('admin');
 			}
 			else {
-				return redirect('formateur');
+				return redirect('former');
 			}
 		}
 		return $next($request);
