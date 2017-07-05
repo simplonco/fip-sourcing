@@ -36,8 +36,8 @@ class FormerController extends Controller
     $user->firstName = $request->input('firstName');
     $user->email = $request->input('email');
     $user->password = bcrypt($request->input('password'));
-    $user->roles()->sync(Role::where('slug', 'former'))->first();
-
+    $user->roles()->sync(Role::where('id', 3))->first();
+    return redirect()->route('formerList');
   }
 
   /**
@@ -55,7 +55,7 @@ class FormerController extends Controller
   *
   * @return \Illuminate\Http\Response
   */
-  public function addFormateur()
+  public function formerCreate()
   {
     return view('former.create');
   }
@@ -81,19 +81,19 @@ class FormerController extends Controller
   public function store(Request $request)
   {
     $this->validate($request, [
-       'lastName' => 'required|max:255',
-       'firstName' => 'required',
-       'email' => 'required|string|email|max:255|unique:users',
-       'password' => 'required|string|min:6|confirmed',
-   ]);
+      'lastName' => 'required|max:255',
+      'firstName' => 'required',
+      'email' => 'required|string|email|max:255|unique:users',
+      'password' => 'required|string|min:6|confirmed',
+    ]);
 
-   $input = $request->all();
+    $input = $request->all();
 
-   User::create($input);
+    User::create($input);
 
-   Session::flash('flash_message', 'Le formateur a été ajouté avec succès!');
+    Session::flash('flash_message', 'Le formateur a été ajouté avec succès!');
 
-   return redirect()->back();
+    return redirect()->back();
   }
 
 
