@@ -13,45 +13,31 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-        'lastName' => 'Admin_lastName',
-        'firstName' => 'Admin_firstName',
-        'email' => 'admin@example.com',
-        'password' => bcrypt('azerty'),
+            'lastName' => 'Admin',
+            'firstName' => 'Admin',
+            'email' => 'admin@admin.com',
+            'password' => bcrypt('admin'),
         ]);
 
         DB::table('users')->insert([
-        'lastName' => 'bidon',
-        'firstName' => 'jean',
-        'email' => 'bidonjean@example.com',
-        'password' => bcrypt('azerty'),
+            'lastName' => 'Jean',
+            'firstName' => 'Michel',
+            'email' => 'jean@michel.com',
+            'password' => bcrypt('michel'),
         ]);
 
         DB::table('users')->insert([
-        'lastName' => 'bidon',
-        'firstName' => 'paul',
-        'email' => 'bidonpaul@example.com',
-        'password' => bcrypt('azerty'),
+            'lastName' => 'Jaqueline',
+            'firstName' => 'Micheline',
+            'email' => 'jean@charle.com',
+            'password' => bcrypt('micheline'),
         ]);
 
         DB::table('users')->insert([
-        'lastName' => 'bidon',
-        'firstName' => 'jeanette',
-        'email' => 'bidonjeanette@example.com',
-        'password' => bcrypt('azerty'),
-        ]);
-
-        DB::table('users')->insert([
-        'lastName' => 'bidon',
-        'firstName' => 'hubert',
-        'email' => 'bidonhubert@example.com',
-        'password' => bcrypt('azerty'),
-        ]);
-
-        DB::table('users')->insert([
-        'lastName' => 'Formateur_lastName',
-        'firstName' => 'Formateur_firstName',
-        'email' => 'formateur@example.com',
-        'password' => bcrypt('azerty'),
+            'lastName' => 'Formateur',
+            'firstName' => 'Formateur',
+            'email' => 'formateur@formateur.com',
+            'password' => bcrypt('formateur'),
         ]);
     }
 }
