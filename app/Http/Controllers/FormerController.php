@@ -7,10 +7,9 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\User;
 use App\Role;
-use App\Role_user;
 use App\Form;
 
-class FormateurController extends Controller
+class FormerController extends Controller
 {
 
   public function __construct()
@@ -26,7 +25,7 @@ class FormateurController extends Controller
       $q->where('role_id', $roleId);
     })->get();
 
-    return view('listFormateurs', ['formateurs'=>$formateurs]);
+    return view('former.list', ['formateurs'=>$formateurs]);
   }
 
   function ajoutFormateur(Request $request)
@@ -49,7 +48,7 @@ class FormateurController extends Controller
   */
   public function index()
   {
-    return view('listFormateurs');
+    return view('former.list');
   }
 
   /**
@@ -59,7 +58,7 @@ class FormateurController extends Controller
   */
   public function addFormateur()
   {
-    return view('formFormateur');
+    return view('former.create');
   }
 
   /**
