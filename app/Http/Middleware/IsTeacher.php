@@ -17,12 +17,12 @@ class IsTeacher{
 		*/
 		public function handle($request, Closure $next)
 		{
-		if ( Auth::user()->roles->implode('slug') !== 'forma') {
+		if ( Auth::user()->roles->implode('slug') !== 'former') {
 			if ( Auth::user()->roles->implode('slug') == 'admin'){
 				return redirect('admin');
 			}
 			else {
-				return redirect('candidat');
+				return redirect('learner');
 			}
 		}
 		return $next($request);
