@@ -21,16 +21,16 @@
               @foreach ($formateurs as $formateur)
               <tr>
                 <td style="text-align:center;">
-                  <a href="/formateurDetails/{{ $formateur->id }}" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-                  <a href="/formateurUpdate/{{ $formateur->id }}" target="_blank"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                  <a href="/formateurDelete/{{ $formateur->id }}" target="_blank"><i class="fa fa fa-ban" aria-hidden="true"></i></a></td>
+                  <a href="/formerShow/{{ $formateur->id }}" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                  <a href="/formerUpdate/{{ $formateur->id }}" target="_blank"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                  <a href="/formerDelete/{{ $formateur->id }}" target="_blank"><i class="fa fa fa-ban" aria-hidden="true"></i></a></td>
                   <td>{{$formateur->firstName}} {{$formateur->lastName}}</td>
                   <td>{{$formateur->email}}</td>
                 </tr>
                 @endforeach
               </tbody>
             </table>
-            <a href="{{ route('addFormateur') }}" class="btn">Ajouter un formateur</a>
+            <a href="{{ route('formerCreate') }}" class="btn">Ajouter un formateur</a>
           </div>
         </div>
       </div>

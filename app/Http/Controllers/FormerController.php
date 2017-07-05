@@ -17,7 +17,7 @@ class FormerController extends Controller
     $this->middleware('auth');
   }
 
-  public function listFormateurs(Request $request)
+  public function list(Request $request)
   {
 
     $roleId = 3;
@@ -28,7 +28,7 @@ class FormerController extends Controller
     return view('former.list', ['formateurs'=>$formateurs]);
   }
 
-  function ajoutFormateur(Request $request)
+  function add(Request $request)
   {
 
     $user = new User;
@@ -36,9 +36,8 @@ class FormerController extends Controller
     $user->firstName = $request->input('firstName');
     $user->email = $request->input('email');
     $user->password = bcrypt($request->input('password'));
+    $user->roles()->sync(Role::where('slug', 'former'))->first();
 
-    $role = $user->roles();
-    dd($role);
   }
 
   /**
@@ -107,7 +106,9 @@ class FormerController extends Controller
   */
   public function show($id)
   {
-    //
+    $former = User::findOrFail($id);
+
+    return view('former.show', compact('former'));
   }
 
 

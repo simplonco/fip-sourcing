@@ -32,17 +32,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-Route::post('/ajouterFormateur', 'FormerController@ajoutFormateur')->name('ajouterFormateur');
-
 Route::get('/formCivil', 'FormCivilController@index');
 
 Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin', 'AdminController@index')->name('admin');
-  Route::get('/admin/listFormateurs', 'FormerController@listFormateurs')->name('listFormateurs');
-  Route::get('/admin/addFormateur', 'FormerController@addFormateur')->name('addFormateur');
-  Route::get('/admin/formateurDetails', 'FormerController@formateurDetails')->name('formateurDetails');
-  Route::get('/admin/formateurUpdate', 'FormerController@formateurUpdate')->name('formateurUpdate');
-  Route::get('/admin/formateurDelete', 'FormerController@formateurDelete')->name('formateurDelete');
+  Route::get('/admin/former/list', 'FormerController@list')->name('formerList');
+  Route::get('/admin/former/add', 'FormerController@addFormateur')->name('formerCreate');
+  Route::get('/admin/former/show', 'FormerController@show')->name('formerShow');
+  Route::get('/admin/former/update', 'FormerController@update')->name('formerUpdate');
+  Route::get('/admin/former/delete', 'FormerController@delete')->name('formerDelete');
+  Route::post('/ajouterFormateur', 'FormerController@add')->name('formerAdd');
 }
 );
 
