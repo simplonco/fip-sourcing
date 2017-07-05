@@ -9,7 +9,6 @@ use App\User;
 use App\Role;
 use App\Form;
 use Illuminate\Support\Facades\Session;
-
 class FormerController extends Controller
 {
 
@@ -88,9 +87,13 @@ class FormerController extends Controller
       'password' => 'required|string|min:6|confirmed',
     ]);
 
-    $input = $request->all();
-    // $input->password = bcrypt($request->input('password'));
-    User::create($input)->roles()->attach(Role::where('slug', 'former'))->first();
+    $user = [
+      'lastName' => $request->input('lastName'),
+      'firstName' => $request->input('firstName'),
+      'email' => $request->input('email'),
+      'password' => bcrypt($request->input('password'))
+    ];
+    User::create($user)->roles()->attach(Role::where('slug', 'former')->first());
 
     Session::flash('flash_message', 'Le formateur a été ajouté avec succès!');
 
