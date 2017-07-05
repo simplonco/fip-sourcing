@@ -13,7 +13,8 @@
               <h4>Liste de tous les formateurs</h4>
               <tr>
                 <th style="text-align:center;">Actions</th>
-                <th>Prénom Nom</th>
+                <th>Nom</th>
+                <th>Prénom</th>
                 <th>Email</th>
               </tr>
             </thead>
@@ -21,10 +22,11 @@
               @foreach ($formateurs as $formateur)
               <tr>
                 <td style="text-align:center;">
-                  <a href="/formerShow/{{ $formateur->id }}" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                  <a href="{{ route('formerShow', $formateur->id) }}" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
                   <a href="/formerUpdate/{{ $formateur->id }}" target="_blank"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                   <a href="/formerDelete/{{ $formateur->id }}" target="_blank"><i class="fa fa fa-ban" aria-hidden="true"></i></a></td>
-                  <td>{{$formateur->firstName}} {{$formateur->lastName}}</td>
+                  <td>{{$formateur->lastName}}</td>
+                  <td>{{$formateur->firstName}}</td>
                   <td>{{$formateur->email}}</td>
                 </tr>
                 @endforeach

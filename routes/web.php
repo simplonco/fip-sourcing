@@ -39,7 +39,7 @@ Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin/former/list', 'FormerController@list')->name('formerList');
   Route::get('/admin/former/create', 'FormerController@formerCreate')->name('formerCreate');
   Route::post('/admin/former/add', 'FormerController@add')->name('formerAdd');
-  Route::get('/admin/former/show', 'FormerController@show')->name('formerShow');
+  Route::get('/admin/former/show/{id}', 'FormerController@show')->name('formerShow');
   Route::get('/admin/former/update', 'FormerController@update')->name('formerUpdate');
   Route::get('/admin/former/delete', 'FormerController@delete')->name('formerDelete');
   Route::post('/admin/former/store', 'FormerController@store')->name('formerStore');
