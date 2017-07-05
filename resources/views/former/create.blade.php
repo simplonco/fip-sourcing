@@ -13,7 +13,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">Ajouter un formateur</div>
         <div class="panel-body">
-          <form class="form-horizontal" role="form" method="POST" action="{{ route('formerAdd') }}">
+          <form class="form-horizontal" role="form" method="POST" action="{{ route('formerStore') }}">
             {{ csrf_field() }}
 
             <div class="form-group{{ $errors->has('lastName') ? ' has-error' : '' }}">
