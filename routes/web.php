@@ -46,11 +46,8 @@ Route::group(['middleware'=>'admin'], function () {
 
 Route::group(['middleware'=>'candidat'], function () {
   Route::get('/candidat', 'CandidateController@index')->name('candidat');
-  Route::get('/formEc', 'FormCivilController@index');
-  Route::post('/post/formEc', 'FormCivilController@createformCivil')->name('formEc');
-  Route::get('/formcandidature', 'FormCivilController@formcandidat')->name('formCandidatureCandidat');
-  Route::post('/post/formCandid', 'FormCivilController@createformCandid')->name('formCandid');
-  Route::get('/confirm', 'HomeController@confirmpage')->name('GG');
+  Route::get('/candidat/create', 'CandidateController@create')->name('candidatCreate');
+  Route::post('/candidat/create/post', 'CandidateControlle@store')->name('candidatAdd');
 }
 );
 
