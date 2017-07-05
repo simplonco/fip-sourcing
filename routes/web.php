@@ -37,7 +37,7 @@ Route::get('/formCivil', 'FormCivilController@index');
 Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin', 'AdminController@index')->name('admin');
   Route::get('/admin/former/list', 'FormerController@list')->name('formerList');
-  Route::get('/admin/former/add', 'FormerController@addFormateur')->name('formerCreate');
+  Route::get('/admin/former/add', 'FormerController@formerCreate')->name('formerCreate');
   Route::get('/admin/former/show', 'FormerController@show')->name('formerShow');
   Route::get('/admin/former/update', 'FormerController@update')->name('formerUpdate');
   Route::get('/admin/former/delete', 'FormerController@delete')->name('formerDelete');
