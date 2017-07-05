@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use App\User;
 use App\Role;
 use App\Form;
+use Illuminate\Support\Facades\Session;
 
 class FormerController extends Controller
 {
@@ -88,12 +89,12 @@ class FormerController extends Controller
     ]);
 
     $input = $request->all();
-
-    User::create($input);
+    // $input->password = bcrypt($request->input('password'));
+    User::create($input)->roles()->attach(Role::where('slug', 'former'))->first();
 
     Session::flash('flash_message', 'Le formateur a été ajouté avec succès!');
 
-    return redirect()->back();
+    return redirect()->route('formerList');
   }
 
 
