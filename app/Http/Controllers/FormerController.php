@@ -152,6 +152,12 @@ class FormerController extends Controller
   */
   public function destroy($id)
   {
-    //
+    $former = User::findOrFail($id);
+
+    $former->delete();
+
+    Session::flash('flash_message', 'Le formateur a été supprimé avec succès!');
+
+    return redirect()->route('formerList');
   }
 }

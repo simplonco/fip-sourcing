@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@if(Session::has('flash_message'))
+    <div class="alert alert-success">
+        {{ Session::get('flash_message') }}
+    </div>
+@endif
 
 <div class="container">
   <div class="row">
@@ -24,7 +29,7 @@
                 <td style="text-align:center;">
                   <a href="{{ route('formerShow', $formateur->id) }}" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
                   <a href="/formerUpdate/{{ $formateur->id }}" target="_blank"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                  <a href="/formerDelete/{{ $formateur->id }}" target="_blank"><i class="fa fa fa-ban" aria-hidden="true"></i></a></td>
+                  <a href="{{ route('formerDelete', $formateur->id) }}" target="_blank"><i class="fa fa fa-ban" aria-hidden="true"></i></a></td>
                   <td>{{$formateur->lastName}}</td>
                   <td>{{$formateur->firstName}}</td>
                   <td>{{$formateur->email}}</td>
