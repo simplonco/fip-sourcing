@@ -15,6 +15,7 @@ class FormationsTableSeeder extends Seeder
 
     DB::table('formations')->insert([
       'name' => 'WebDev1',
+      'description' => 'Cette formation commence le 1er décembre et apprendra à une quinzaine d\'apprenants HTML/CSS/JS/Souffrance.',
       'city' => $faker->city,
       'year' => '2017',
       'begin_session' => $faker->date,
@@ -23,6 +24,7 @@ class FormationsTableSeeder extends Seeder
 
     DB::table('formations')->insert([
       'name' => 'WebDev2',
+      'description' => 'Cette formation commence le 1er décembre et apprendra à une quinzaine d\'apprenants HTML/CSS/JS/Souffrance.',
       'city' => $faker->city,
       'year' => '2017',
       'begin_session' => $faker->date,
@@ -31,6 +33,7 @@ class FormationsTableSeeder extends Seeder
 
     DB::table('formations')->insert([
       'name' => 'WebDev3',
+      'description' => 'Cette formation commence le 1er décembre et apprendra à une quinzaine d\'apprenants HTML/CSS/JS/Souffrance.',
       'city' => $faker->city,
       'year' => '2017',
       'begin_session' => $faker->date,

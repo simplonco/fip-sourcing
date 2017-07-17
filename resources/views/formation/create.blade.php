@@ -2,88 +2,109 @@
 
 @section('content')
 @if(Session::has('flash_message'))
-    <div class="alert alert-success">
-        {{ Session::get('flash_message') }}
-    </div>
+<div class="alert alert-success">
+  {{ Session::get('flash_message') }}
+</div>
 @endif
 
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
-        <div class="panel-heading">Ajouter un formateur</div>
+        <div class="panel-heading">Ajouter une formation</div>
         <div class="panel-body">
-          <form class="form-horizontal" role="form" method="POST" action="{{ route('formerStore') }}">
+          <form class="form-horizontal" role="form" method="POST" action="{{ route('formationStore') }}">
             {{ csrf_field() }}
 
-            <div class="form-group{{ $errors->has('lastName') ? ' has-error' : '' }}">
-              <label for="lastName" class="col-md-4 control-label">Nom</label>
+            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+              <label for="name" class="col-md-4 control-label">Nom</label>
 
               <div class="col-md-6">
-                <input id="lastName" type="text" class="form-control" name="lastName" required autofocus>
+                <input id="name" type="text" class="form-control" name="name" required autofocus>
 
-                @if ($errors->has('lastName'))
+                @if ($errors->has('name'))
                 <span class="help-block">
-                  <strong>{{ $errors->first('lastName') }}</strong>
+                  <strong>{{ $errors->first('name') }}</strong>
                 </span>
                 @endif
               </div>
             </div>
 
-            <div class="form-group{{ $errors->has('firstName') ? ' has-error' : '' }}">
-              <label for="firstName" class="col-md-4 control-label">Prénom</label>
+            <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+              <label for="description" class="col-md-4 control-label">Description de la formation</label>
 
               <div class="col-md-6">
-                <input id="firstName" type="text" class="form-control" name="firstName" required autofocus>
+                <input id="description" type="text" class="form-control" name="description" required>
 
-                @if ($errors->has('firstName'))
+                @if ($errors->has('description'))
                 <span class="help-block">
-                  <strong>{{ $errors->first('firstName') }}</strong>
+                  <strong>{{ $errors->first('description') }}</strong>
                 </span>
                 @endif
               </div>
             </div>
 
-            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-              <label for="email" class="col-md-4 control-label">Adresse e-mail</label>
+            <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
+              <label for="city" class="col-md-4 control-label">Ville</label>
 
               <div class="col-md-6">
-                <input id="email" type="email" class="form-control" name="email" required>
+                <input id="city" type="text" class="form-control" name="city" required autofocus>
 
-                @if ($errors->has('email'))
+                @if ($errors->has('city'))
                 <span class="help-block">
-                  <strong>{{ $errors->first('email') }}</strong>
+                  <strong>{{ $errors->first('city') }}</strong>
                 </span>
                 @endif
               </div>
             </div>
 
-            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-              <label for="password" class="col-md-4 control-label">Mot de passe</label>
+            <div class="form-group{{ $errors->has('year') ? ' has-error' : '' }}">
+              <label for="year" class="col-md-4 control-label">Année</label>
 
               <div class="col-md-6">
-                <input id="password" type="password" class="form-control" name="password" required>
+                <input id="year" type="text" class="form-control" name="year" required>
 
-                @if ($errors->has('password'))
+                @if ($errors->has('year'))
                 <span class="help-block">
-                  <strong>{{ $errors->first('password') }}</strong>
+                  <strong>{{ $errors->first('year') }}</strong>
                 </span>
                 @endif
               </div>
             </div>
 
-            <div class="form-group">
-              <label for="password-confirm" class="col-md-4 control-label">Confirmez le mot de passe</label>
+
+            <div class="form-group{{ $errors->has('begin_session') ? ' has-error' : '' }}">
+              <label for="begin_session" class="col-md-4 control-label">Début de la session d'inscription</label>
 
               <div class="col-md-6">
-                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                <input id="begin_session" type="date" class="form-control" name="begin_session" required>
+
+                @if ($errors->has('begin_session'))
+                <span class="help-block">
+                  <strong>{{ $errors->first('begin_session') }}</strong>
+                </span>
+                @endif
+              </div>
+            </div>
+
+            <div class="form-group{{ $errors->has('end_session') ? ' has-error' : '' }}">
+              <label for="end_session" class="col-md-4 control-label">Fin de la session d'inscription</label>
+
+              <div class="col-md-6">
+                <input id="end_session" type="date" class="form-control" name="end_session" required>
+
+                @if ($errors->has('end_session'))
+                <span class="help-block">
+                  <strong>{{ $errors->first('end_session') }}</strong>
+                </span>
+                @endif
               </div>
             </div>
 
             <div class="form-group">
               <div class="col-md-6 col-md-offset-4">
                 <button type="submit" class="btn btn-primary">
-                  Ajouter un nouveau formateur
+                  Ajouter une nouvelle formation
                 </button>
               </div>
             </div>

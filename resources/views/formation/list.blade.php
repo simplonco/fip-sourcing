@@ -15,29 +15,31 @@
 
           <table class="table table-striped">
             <thead>
-              <h4>Liste de tous les formateurs</h4>
+              <h4>Liste de tous les formations</h4>
               <tr>
                 <th style="text-align:center;">Actions</th>
                 <th>Nom</th>
-                <th>Prénom</th>
-                <th>Email</th>
+                <th>Description</th>
+                <th>Ville</th>
+                <th>Année</th>
               </tr>
             </thead>
             <tbody>
-              @foreach ($formateurs as $formateur)
+              @foreach ($formations as $formation)
               <tr>
                 <td style="text-align:center;">
-                  <a href="{{ route('formerShow', $formateur->id) }}" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-                  <a href="/formerUpdate/{{ $formateur->id }}" target="_blank"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                  <a href="{{ route('formerDelete', $formateur->id) }}" target="_blank"><i class="fa fa fa-ban" aria-hidden="true"></i></a></td>
-                  <td>{{$formateur->lastName}}</td>
-                  <td>{{$formateur->firstName}}</td>
-                  <td>{{$formateur->email}}</td>
+                  <a href="{{ route('formationShow', $formation->id) }}" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                  <a href="/formationUpdate/{{ $formation->id }}" target="_blank"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                  <a href="{{ route('formationDelete', $formation->id) }}" target="_blank"><i class="fa fa fa-ban" aria-hidden="true"></i></a></td>
+                  <td>{{$formation->name}}</td>
+                  <td>{{$formation->description}}</td>
+                  <td>{{$formation->city}}</td>
+                  <td>{{$formation->year}}</td>
                 </tr>
                 @endforeach
               </tbody>
             </table>
-            <a href="{{ route('formerCreate') }}" class="btn">Ajouter un formateur</a>
+            <a href="{{ route('formationCreate') }}" class="btn">Ajouter une formation</a>
           </div>
         </div>
       </div>

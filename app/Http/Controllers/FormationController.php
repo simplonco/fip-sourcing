@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\User;
-use App\Role;
+use App\Formation;
 use App\Form;
 use Illuminate\Support\Facades\Session;
 class FormationController extends Controller
@@ -20,24 +20,23 @@ class FormationController extends Controller
   public function list(Request $request)
   {
 
-    $roleId = 3;
-    $formateurs = User::whereHas('roles', function ($q) use ($roleId) {
-      $q->where('role_id', $roleId);
-    })->get();
+    $formations = Formation::All();
 
-    return view('former.list', ['formateurs'=>$formateurs]);
+    return view('formation.list', ['formations'=>$formations]);
   }
 
   function add(Request $request)
   {
 
-    $user = new User;
-    $user->lastName = $request->input('lastName');
-    $user->firstName = $request->input('firstName');
-    $user->email = $request->input('email');
-    $user->password = bcrypt($request->input('password'));
-    $user->roles()->sync(Role::where('id', 3))->first();
-    return redirect()->route('formerList');
+    $user = new Formation;
+    $user->name = $request->input('name');
+    $user->description = $request->input('description');
+    $user->city = $request->input('city');
+    $user->year = $request->input('year');
+    $user->begin_session = $request->input('begin_session');
+    $user->end_session = $request->input('end_session');
+    // $user->roles()->sync(Role::where('id', 3))->first();
+    return redirect()->route('formationList');
   }
 
   /**
@@ -47,7 +46,7 @@ class FormationController extends Controller
   */
   public function index()
   {
-    return view('former.list');
+    return view('formation.list');
   }
 
   /**
@@ -57,7 +56,7 @@ class FormationController extends Controller
   */
   public function formerCreate()
   {
-    return view('former.create');
+    return view('formation.create');
   }
 
   /**
@@ -81,23 +80,27 @@ class FormationController extends Controller
   public function store(Request $request)
   {
     $this->validate($request, [
-      'lastName' => 'required|max:255',
-      'firstName' => 'required',
-      'email' => 'required|string|email|max:255|unique:users',
-      'password' => 'required|string|min:6|confirmed',
+      'name' => 'required|max:255',
+      'description' => 'required|max:255',
+      'city' => 'required',
+      'year' => 'required',
+      'begin_session' => 'required',
+      'end_session' => 'required',
     ]);
 
-    $user = [
-      'lastName' => $request->input('lastName'),
-      'firstName' => $request->input('firstName'),
-      'email' => $request->input('email'),
-      'password' => bcrypt($request->input('password'))
+    $formation = [
+      'name' => $request->input('name'),
+      'description' => $request->input('description'),
+      'city' => $request->input('city'),
+      'year' => $request->input('year'),
+      'begin_session' => $request->input('begin_session'),
+      'end_session' => $request->input('end_session'),
     ];
-    User::create($user)->roles()->attach(Role::where('slug', 'former')->first());
+    Formation::create($formation);
 
-    Session::flash('flash_message', 'Le formateur a été ajouté avec succès!');
+    Session::flash('flash_message', 'La formation a été ajoutée avec succès!');
 
-    return redirect()->route('formerList');
+    return redirect()->route('formationList');
   }
 
 
@@ -110,9 +113,9 @@ class FormationController extends Controller
   */
   public function show($id)
   {
-    $former = User::findOrFail($id);
+    $formation = Formation::findOrFail($id);
 
-    return view('former.show', compact('former'));
+    return view('formation.show', compact('formation'));
   }
 
 
@@ -152,12 +155,12 @@ class FormationController extends Controller
   */
   public function destroy($id)
   {
-    $former = User::findOrFail($id);
+    $formation = Formation::findOrFail($id);
 
-    $former->delete();
+    $formation->delete();
 
-    Session::flash('flash_message', 'Le formateur a été supprimé avec succès!');
+    Session::flash('flash_message', 'La formation a été supprimée avec succès!');
 
-    return redirect()->route('formerList');
+    return redirect()->route('formationList');
   }
 }
