@@ -28,13 +28,13 @@ class FormationController extends Controller
   function add(Request $request)
   {
 
-    $user = new Formation;
-    $user->name = $request->input('name');
-    $user->description = $request->input('description');
-    $user->city = $request->input('city');
-    $user->year = $request->input('year');
-    $user->begin_session = $request->input('begin_session');
-    $user->end_session = $request->input('end_session');
+    $formation = new Formation;
+    $formation->name = $request->input('name');
+    $formation->description = $request->input('description');
+    $formation->city = $request->input('city');
+    $formation->year = $request->input('year');
+    $formation->begin_session = $request->input('begin_session');
+    $formation->end_session = $request->input('end_session');
     // $user->roles()->sync(Role::where('id', 3))->first();
     return redirect()->route('formationList');
   }
