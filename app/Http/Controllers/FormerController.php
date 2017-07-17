@@ -127,7 +127,7 @@ class FormerController extends Controller
   {
     $former = User::findOrFail($id);
 
-    return view('former.edit')->withUser($former);
+    return view('former.edit')->withFormer($former);
   }
 
 

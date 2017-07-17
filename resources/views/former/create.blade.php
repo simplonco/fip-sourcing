@@ -34,7 +34,7 @@
           {{ Form::password('password_confirmation') }}
         </div>
 
-        {!! Form::submit('Ajouter un formateur', ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit('Ajouter', ['class' => 'btn btn-primary']) !!}
 
         {!! Form::close() !!}
       </div>
