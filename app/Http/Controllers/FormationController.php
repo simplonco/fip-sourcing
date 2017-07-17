@@ -128,7 +128,9 @@ class FormationController extends Controller
   */
   public function edit($id)
   {
-    //
+    $formation = Formation::findOrFail($id);
+
+    return view('formation.edit')->withFormation($formation);
   }
 
 
@@ -140,9 +142,26 @@ class FormationController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function update(Request $request, $id)
+  public function update($id, Request $request)
   {
-    //
+    $formation = Formation::findOrFail($id);
+
+    $this->validate($request, [
+      'name' => 'required|max:255',
+      'description' => 'required|max:255',
+      'city' => 'required',
+      'year' => 'required',
+      'begin_session' => 'required',
+      'end_session' => 'required',
+    ]);
+
+    $input = $request->all();
+
+    $formation->fill($input)->save();
+
+    Session::flash('flash_message', 'La formation a été modifiée avec succès!');
+
+    return redirect()->route('formationList');
   }
 
 

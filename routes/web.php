@@ -51,9 +51,10 @@ Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin/formation/create', 'FormationController@formerCreate')->name('formationCreate');
   Route::post('/admin/formation/add', 'FormationController@add')->name('formationAdd');
   Route::get('/admin/formation/show/{id}', 'FormationController@show')->name('formationShow');
-  Route::get('/admin/formation/update/{id}', 'FormationController@edit')->name('formationUpdate');
+  Route::get('/admin/formation/edit/{id}', 'FormationController@edit')->name('formationEdit');
   Route::get('/admin/formation/delete/{id}', 'FormationController@destroy')->name('formationDelete');
   Route::post('/admin/formation/store', 'FormationController@store')->name('formationStore');
+  Route::post('/admin/formation/update/{id}', 'FormationController@update')->name('formationUpdate');
 }
 );
 

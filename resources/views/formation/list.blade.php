@@ -29,7 +29,7 @@
               <tr>
                 <td style="text-align:center;">
                   <a href="{{ route('formationShow', $formation->id) }}" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-                  <a href="/formationUpdate/{{ $formation->id }}" target="_blank"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                  <a href="{{ route('formationEdit', $formation->id) }}" target="_blank"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                   <a href="{{ route('formationDelete', $formation->id) }}" target="_blank"><i class="fa fa fa-ban" aria-hidden="true"></i></a></td>
                   <td>{{$formation->name}}</td>
                   <td>{{$formation->description}}</td>
