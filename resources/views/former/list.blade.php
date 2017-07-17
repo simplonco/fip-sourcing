@@ -28,7 +28,7 @@
               <tr>
                 <td style="text-align:center;">
                   <a href="{{ route('formerShow', $formateur->id) }}" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-                  <a href="/formerUpdate/{{ $formateur->id }}" target="_blank"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                  <a href="{{ route('formerEdit', $formateur->id) }}" target="_blank"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                   <a href="{{ route('formerDelete', $formateur->id) }}" target="_blank"><i class="fa fa fa-ban" aria-hidden="true"></i></a></td>
                   <td>{{$formateur->lastName}}</td>
                   <td>{{$formateur->firstName}}</td>

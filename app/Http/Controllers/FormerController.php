@@ -125,7 +125,9 @@ class FormerController extends Controller
   */
   public function edit($id)
   {
-    //
+    $former = User::findOrFail($id);
+
+    return view('former.edit')->withUser($former);
   }
 
 
@@ -137,9 +139,24 @@ class FormerController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function update(Request $request, $id)
+  public function update($id, Request $request)
   {
-    //
+    $former = User::findOrFail($id);
+
+    $this->validate($request, [
+      'lastName' => 'required|max:255',
+      'firstName' => 'required',
+      'email' => 'required|string|email|max:255|unique:users',
+      'password' => 'required|string|min:6|confirmed',
+    ]);
+
+    $input = $request->all();
+
+    $former->fill($input)->save();
+
+    Session::flash('flash_message', 'Le formateur a été modifié avec succès!');
+
+    return redirect()->route('formerList');
   }
 
 

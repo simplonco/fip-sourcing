@@ -42,15 +42,16 @@ Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin/former/create', 'FormerController@formerCreate')->name('formerCreate');
   Route::post('/admin/former/add', 'FormerController@add')->name('formerAdd');
   Route::get('/admin/former/show/{id}', 'FormerController@show')->name('formerShow');
-  Route::get('/admin/former/update', 'FormerController@update')->name('formerUpdate');
+  Route::get('/admin/former/edit/{id}', 'FormerController@edit')->name('formerEdit');
   Route::get('/admin/former/delete/{id}', 'FormerController@destroy')->name('formerDelete');
   Route::post('/admin/former/store', 'FormerController@store')->name('formerStore');
+  Route::post('/admin/former/update/{id}', 'FormerController@update')->name('formerUpdate');
 // Formation
   Route::get('/admin/formation/list', 'FormationController@list')->name('formationList');
   Route::get('/admin/formation/create', 'FormationController@formerCreate')->name('formationCreate');
   Route::post('/admin/formation/add', 'FormationController@add')->name('formationAdd');
   Route::get('/admin/formation/show/{id}', 'FormationController@show')->name('formationShow');
-  Route::get('/admin/formation/update', 'FormationController@update')->name('formationUpdate');
+  Route::get('/admin/formation/update/{id}', 'FormationController@edit')->name('formationUpdate');
   Route::get('/admin/formation/delete/{id}', 'FormationController@destroy')->name('formationDelete');
   Route::post('/admin/formation/store', 'FormationController@store')->name('formationStore');
 }
