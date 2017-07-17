@@ -8,9 +8,24 @@
       <div class="panel panel-default">
         <div class="panel-heading">Informations du formateur</div>
         <div class="panel-body">
-          <div>
-            {{$former->firstName}}
+
+          <div class="row">
+            <div class="col-md-3">
+              <b>Prénom :</b>
+            </div>
+            <div class="col-md-3">
+              {{$former->firstName}}
+            </div>
           </div>
+          <div class="row">
+            <div class="col-md-3">
+              <b>Nom :</b>
+            </div>
+            <div class="col-md-3">
+              {{$former->lastName}}
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
