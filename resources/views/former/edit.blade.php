@@ -1,11 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+
+@if($errors->any())
+<div class="alert alert-danger">
+  @foreach($errors->all() as $error)
+  <p>{{ $error }}</p>
+  @endforeach
+</div>
+@endif
+
 <div class="col-sm-offset-3 col-sm-6">
   <div class="panel panel-info">
     <div class="panel-heading">Modification du formateur {!! $former->lastName !!}</div>
     <div class="panel-body">
-      {!! Form::open([
+      {!! Form::model($former, [
+        'method' => 'POST',
         'route' => ['formerUpdate', $former->id]
         ]) !!}
 

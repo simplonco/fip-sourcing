@@ -1,12 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+
+@if($errors->any())
+<div class="alert alert-danger">
+  @foreach($errors->all() as $error)
+  <p>{{ $error }}</p>
+  @endforeach
+</div>
+@endif
+
 <div class="col-sm-offset-3 col-sm-6">
   <div class="panel panel-info">
     <div class="panel-heading">Ajout d'un formateur</div>
     <div class="panel-body">
       {!! Form::open([
-        'route' => 'formerStore'
+        'route' => ['formerStore']
         ]) !!}
 
         <div class="form-group">
