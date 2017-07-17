@@ -35,7 +35,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/formCivil', 'FormCivilController@index');
 
 Route::group(['middleware'=>'admin'], function () {
+  // Admin panel
   Route::get('/admin', 'AdminController@index')->name('admin');
+  // Formateur
   Route::get('/admin/former/list', 'FormerController@list')->name('formerList');
   Route::get('/admin/former/create', 'FormerController@formerCreate')->name('formerCreate');
   Route::post('/admin/former/add', 'FormerController@add')->name('formerAdd');
@@ -43,6 +45,14 @@ Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin/former/update', 'FormerController@update')->name('formerUpdate');
   Route::get('/admin/former/delete/{id}', 'FormerController@destroy')->name('formerDelete');
   Route::post('/admin/former/store', 'FormerController@store')->name('formerStore');
+// Formation
+  Route::get('/admin/formation/list', 'FormationController@list')->name('formerList');
+  Route::get('/admin/formation/create', 'FormationController@formerCreate')->name('formerCreate');
+  Route::post('/admin/formation/add', 'FormationController@add')->name('formerAdd');
+  Route::get('/admin/formation/show/{id}', 'FormationController@show')->name('formerShow');
+  Route::get('/admin/formation/update', 'FormationController@update')->name('formerUpdate');
+  Route::get('/admin/formation/delete/{id}', 'FormationController@destroy')->name('formerDelete');
+  Route::post('/admin/formation/store', 'FormationController@store')->name('formerStore');
 }
 );
 
