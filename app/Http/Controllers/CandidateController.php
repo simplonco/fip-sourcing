@@ -171,6 +171,38 @@ class CandidateController extends Controller
       return redirect()->route('home');
     }
 
+    /**
+    * Show the form for editing the superpower.
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function chooseSuperpower()
+    {
+      $candidate = Auth::user();
+
+      return view('candidate.superpower', ['candidate'=>$candidate]);
+    }
+
+    /**
+    * Update the specified resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @return \Illuminate\Http\Response
+    */
+    public function storeSuperpower(Request $request)
+    {
+      $candidate = Auth::user();
+
+      $this->validate($request, [
+        'super_power' => 'required|string|max:255',
+      ]);
+
+      $candidate->super_power = $request->super_power;
+      $candidate->save();
+
+      return redirect()->route('home');
+    }
+
   /**
   *Store a newly created resource in storage.
   *

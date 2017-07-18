@@ -27,7 +27,7 @@
             </div>
             <div class="row">
               <div class="col-md-4">
-                <a href="{{ route('chooseFormation') }}" class="btn">Super-pouvoirs</a>
+                <a href="{{ route('chooseSuperpower') }}" class="btn">Super-pouvoirs</a>
               </div>
               <div class="col-md-4">
                 <a href="{{ route('chooseFormation') }}" class="btn">Simplon et vous</a>
