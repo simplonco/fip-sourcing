@@ -19,7 +19,7 @@
             <tbody>
               @foreach ($candidats as $candidat)
               <tr>
-                <td style="text-align:center;"><a href="/candidatDetaille/{{ $candidat->id }}" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+                <td style="text-align:center;"><a href="/candidatDetaille/{{ $candidat->id }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
                 <td>{{$candidat->firstName}} {{$candidat->lastName}}</td>
                 <td>{{$candidat->email}}</td>
               </tr>
