@@ -107,101 +107,133 @@ class CandidateController extends Controller
     return redirect()->route('home');
   }
 
-    /**
-    * Show the form for editing the hack.
-    *
-    * @return \Illuminate\Http\Response
-    */
-    public function chooseHack()
-    {
-      $candidate = Auth::user();
+  /**
+  * Show the form for editing the hack.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function chooseHack()
+  {
+    $candidate = Auth::user();
 
-      return view('candidate.hack', ['candidate'=>$candidate]);
-    }
+    return view('candidate.hack', ['candidate'=>$candidate]);
+  }
 
-    /**
-    * Update the specified resource in storage.
-    *
-    * @param  \Illuminate\Http\Request  $request
-    * @return \Illuminate\Http\Response
-    */
-    public function storeHack(Request $request)
-    {
-      $candidate = Auth::user();
+  /**
+  * Update the specified resource in storage.
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function storeHack(Request $request)
+  {
+    $candidate = Auth::user();
 
-      $this->validate($request, [
-        'hack_story' => 'required|string|max:255',
-      ]);
+    $this->validate($request, [
+      'hack_story' => 'required|string|max:255',
+    ]);
 
-      $candidate->hack_story = $request->hack_story;
-      $candidate->save();
+    $candidate->hack_story = $request->hack_story;
+    $candidate->save();
 
-      return redirect()->route('home');
-    }
+    return redirect()->route('home');
+  }
 
-    /**
-    * Show the form for editing the course.
-    *
-    * @return \Illuminate\Http\Response
-    */
-    public function chooseCourse()
-    {
-      $candidate = Auth::user();
+  /**
+  * Show the form for editing the course.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function chooseCourse()
+  {
+    $candidate = Auth::user();
 
-      return view('candidate.course', ['candidate'=>$candidate]);
-    }
+    return view('candidate.course', ['candidate'=>$candidate]);
+  }
 
-    /**
-    * Update the specified resource in storage.
-    *
-    * @param  \Illuminate\Http\Request  $request
-    * @return \Illuminate\Http\Response
-    */
-    public function storeCourse(Request $request)
-    {
-      $candidate = Auth::user();
+  /**
+  * Update the specified resource in storage.
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function storeCourse(Request $request)
+  {
+    $candidate = Auth::user();
 
-      $this->validate($request, [
-        'course' => 'required|string|max:255',
-      ]);
+    $this->validate($request, [
+      'course' => 'required|string|max:255',
+    ]);
 
-      $candidate->course = $request->course;
-      $candidate->save();
+    $candidate->course = $request->course;
+    $candidate->save();
 
-      return redirect()->route('home');
-    }
+    return redirect()->route('home');
+  }
 
-    /**
-    * Show the form for editing the superpower.
-    *
-    * @return \Illuminate\Http\Response
-    */
-    public function chooseSuperpower()
-    {
-      $candidate = Auth::user();
+  /**
+  * Show the form for editing the superpower.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function chooseSuperpower()
+  {
+    $candidate = Auth::user();
 
-      return view('candidate.superpower', ['candidate'=>$candidate]);
-    }
+    return view('candidate.superpower', ['candidate'=>$candidate]);
+  }
 
-    /**
-    * Update the specified resource in storage.
-    *
-    * @param  \Illuminate\Http\Request  $request
-    * @return \Illuminate\Http\Response
-    */
-    public function storeSuperpower(Request $request)
-    {
-      $candidate = Auth::user();
+  /**
+  * Update the specified resource in storage.
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function storeSuperpower(Request $request)
+  {
+    $candidate = Auth::user();
 
-      $this->validate($request, [
-        'super_power' => 'required|string|max:255',
-      ]);
+    $this->validate($request, [
+      'super_power' => 'required|string|max:255',
+    ]);
 
-      $candidate->super_power = $request->super_power;
-      $candidate->save();
+    $candidate->super_power = $request->super_power;
+    $candidate->save();
 
-      return redirect()->route('home');
-    }
+    return redirect()->route('home');
+  }
+
+  /**
+  * Show the form for editing the motivation.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function chooseMotivation()
+  {
+    $candidate = Auth::user();
+
+    return view('candidate.motivation', ['candidate'=>$candidate]);
+  }
+
+  /**
+  * Update the specified resource in storage.
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function storeMotivation(Request $request)
+  {
+    $candidate = Auth::user();
+
+    $this->validate($request, [
+      'motivation' => 'required|string|max:255',
+    ]);
+
+    $candidate->motivation = $request->motivation;
+    $candidate->save();
+    
+    return redirect()->route('home');
+  }
 
   /**
   *Store a newly created resource in storage.

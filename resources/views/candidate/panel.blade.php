@@ -30,7 +30,7 @@
                 <a href="{{ route('chooseSuperpower') }}" class="btn">Super-pouvoirs</a>
               </div>
               <div class="col-md-4">
-                <a href="{{ route('chooseFormation') }}" class="btn">Simplon et vous</a>
+                <a href="{{ route('chooseMotivation') }}" class="btn">Simplon et vous</a>
               </div>
               <div class="col-md-4">
                 <a href="{{ route('chooseFormation') }}" class="btn">Profils</a>
