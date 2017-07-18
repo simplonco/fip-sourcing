@@ -13,7 +13,7 @@ class CreateFormationUsersTable extends Migration
    */
   public function up()
   {
-      Schema::create('formation_users', function (Blueprint $table) {
+      Schema::create('formation_user', function (Blueprint $table) {
           $table->increments('id');
           $table->integer('user_id');
           $table->integer('formation_id');
@@ -27,6 +27,6 @@ class CreateFormationUsersTable extends Migration
    */
   public function down()
   {
-      Schema::dropIfExists('formation_users');
+      Schema::dropIfExists('formation_user');
   }
 }

@@ -11,11 +11,11 @@ class FormationUserTableSeeder extends Seeder
      */
     public function run()
     {
-      DB::table('formation_users')->insert([
+      DB::table('formation_user')->insert([
           'user_id' => '2',
           'formation_id' => '2',
       ]);
-      DB::table('formation_users')->insert([
+      DB::table('formation_user')->insert([
           'user_id' => '3',
           'formation_id' => '3',
       ]);

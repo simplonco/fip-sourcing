@@ -43,6 +43,11 @@
           {{ Form::password('password_confirmation') }}
         </div>
 
+        <div class="form-group {!! $errors->has('formation_id') ? 'has-error' : '' !!}">
+          {{ Form::label('formation', 'Formation') }}
+          {{ Form::select('formation', $formations, null) }}
+        </div>
+
         {!! Form::submit('Ajouter', ['class' => 'btn btn-primary']) !!}
 
         {!! Form::close() !!}

@@ -39,7 +39,7 @@ Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin', 'AdminController@index')->name('admin');
   // Formateur
   Route::get('/admin/former/list', 'FormerController@list')->name('formerList');
-  Route::get('/admin/former/create', 'FormerController@formerCreate')->name('formerCreate');
+  Route::get('/admin/former/create', 'FormerController@create')->name('formerCreate');
   Route::post('/admin/former/add', 'FormerController@add')->name('formerAdd');
   Route::get('/admin/former/show/{id}', 'FormerController@show')->name('formerShow');
   Route::get('/admin/former/edit/{id}', 'FormerController@edit')->name('formerEdit');

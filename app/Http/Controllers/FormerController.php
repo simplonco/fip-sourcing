@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\User;
 use App\Role;
+use App\Formation;
 use App\Form;
 use Illuminate\Support\Facades\Session;
 class FormerController extends Controller
@@ -50,15 +51,6 @@ class FormerController extends Controller
     return view('former.list');
   }
 
-  /**
-  * Display a listing of the resource.
-  *
-  * @return \Illuminate\Http\Response
-  */
-  public function formerCreate()
-  {
-    return view('former.create');
-  }
 
   /**
   * Show the form for creating a new resource.
@@ -67,7 +59,8 @@ class FormerController extends Controller
   */
   public function create()
   {
-    //
+    $formations = Formation::pluck('name', 'id');
+    return view('former.create', ['formations'=> $formations]);
   }
 
 
@@ -93,7 +86,14 @@ class FormerController extends Controller
       'email' => $request->input('email'),
       'password' => bcrypt($request->input('password'))
     ];
+
     User::create($user)->roles()->attach(Role::where('slug', 'former')->first());
+
+    // $created_user = User::create($user);
+    // $created_user->roles()->attach(Role::where('slug', 'former')->first());
+    //
+    // $created_user->formations()->sync(Formation::where('id', $request->input('formation')))->first();
+    // $created_user->save();
 
     Session::flash('flash_message', 'Le formateur a été ajouté avec succès!');
 
