@@ -87,8 +87,6 @@ class CandidateController extends Controller
     return view('candidate.hero', ['candidate'=>$candidate]);
   }
 
-
-
   /**
   * Update the specified resource in storage.
   *
@@ -106,10 +104,40 @@ class CandidateController extends Controller
     $candidate->hero = $request->hero;
     $candidate->save();
 
-    Session::flash('flash_message', 'Le formateur a été modifié avec succès!');
-
     return redirect()->route('home');
   }
+
+    /**
+    * Show the form for editing the hack.
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function chooseHack()
+    {
+      $candidate = Auth::user();
+
+      return view('candidate.hack', ['candidate'=>$candidate]);
+    }
+
+    /**
+    * Update the specified resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @return \Illuminate\Http\Response
+    */
+    public function storeHack(Request $request)
+    {
+      $candidate = Auth::user();
+
+      $this->validate($request, [
+        'hack_story' => 'required|string|max:255',
+      ]);
+
+      $candidate->hack_story = $request->hack_story;
+      $candidate->save();
+
+      return redirect()->route('home');
+    }
 
   /**
   *Store a newly created resource in storage.

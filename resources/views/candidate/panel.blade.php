@@ -19,7 +19,7 @@
                 <a href="{{ route('chooseHero') }}" class="btn">Super-héros</a>
               </div>
               <div class="col-md-4">
-                <a href="{{ route('chooseFormation') }}" class="btn">Hack</a>
+                <a href="{{ route('chooseHack') }}" class="btn">Hack</a>
               </div>
               <div class="col-md-4">
                 <a href="{{ route('chooseFormation') }}" class="btn">Votre parcours</a>
