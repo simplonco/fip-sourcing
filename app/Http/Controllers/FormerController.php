@@ -157,7 +157,6 @@ class FormerController extends Controller
 
     $input = $request->all();
 
-    // $former->fill($input)->save();
     $former->fill($input);
     $former->formations()->sync($formation);
     $former->save();
