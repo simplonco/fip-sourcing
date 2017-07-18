@@ -87,13 +87,14 @@ class FormerController extends Controller
       'password' => bcrypt($request->input('password'))
     ];
 
-    User::create($user)->roles()->attach(Role::where('slug', 'former')->first());
+    // User::create($user)->roles()->attach(Role::where('slug', 'former')->first());
+    $formation = Formation::where('id', $request->input('formation'))->first();
 
-    // $created_user = User::create($user);
-    // $created_user->roles()->attach(Role::where('slug', 'former')->first());
-    //
-    // $created_user->formations()->sync(Formation::where('id', $request->input('formation')))->first();
-    // $created_user->save();
+    $created_user = User::create($user);
+    $created_user->roles()->attach(Role::where('slug', 'former')->first());
+
+    $created_user->formations()->sync($formation);
+    $created_user->save();
 
     Session::flash('flash_message', 'Le formateur a été ajouté avec succès!');
 
