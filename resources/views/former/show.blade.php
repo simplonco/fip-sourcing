@@ -17,12 +17,22 @@
               {{$former->firstName}}
             </div>
           </div>
+
           <div class="row">
             <div class="col-md-3">
               <b>Nom :</b>
             </div>
             <div class="col-md-3">
               {{$former->lastName}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3">
+              <b>Formation :</b>
+            </div>
+            <div class="col-md-3">
+            {{$former->formations()->first()->name}}
             </div>
           </div>
 
