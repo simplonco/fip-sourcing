@@ -21,8 +21,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Candidate routes
 Route::get('/candidate/formation', 'CandidateController@chooseFormation')->name('chooseFormation');
-Route::post('/candidate/formation/choose', 'CandidateController@chooseFormation')->name('candidateFormationChoose');
-Route::get('/candidate/formation/store/{id}', 'CandidateController@storeFormation')->name('candidateFormationStore');
+Route::get('/candidate/formation/store/{id}', 'CandidateController@storeFormation')->name('storeFormation');
+Route::get('/candidate/hero/choose', 'CandidateController@chooseHero')->name('chooseHero');
+Route::post('/candidate/hero/store', 'CandidateController@storeHero')->name('storeHero');
 
 Route::group(['middleware'=>'admin'], function () {
   // Admin panel

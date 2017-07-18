@@ -31,7 +31,7 @@
             <td>{{$formation->city}}</td>
             <td>{{$formation->year}}</td>
             <td style="text-align:center;">
-              <a href="{{ route('candidateFormationStore', $formation->id) }}" class="btn">Sélectionner</a>
+              <a href="{{ route('storeFormation', $formation->id) }}" class="btn">Sélectionner</a>
             </td>
           </tr>
           @endforeach

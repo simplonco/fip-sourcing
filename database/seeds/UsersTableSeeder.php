@@ -35,7 +35,7 @@ class UsersTableSeeder extends Seeder
         'number_social_security' => $faker->randomDigit,
         'study' => $faker->city,
         'experience_programming' => $faker->text($maxNbChars = 100),
-        'what_hero' => $faker->name,
+        'hero' => $faker->name,
         'hack_story' => $faker->text($maxNbChars = 100),
         'course' => $faker->word,
         'english' => $faker->boolean,

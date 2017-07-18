@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
             $table->string('number_social_security')->nullable();
             $table->string('study')->nullable();
             $table->string('experience_programming')->nullable();
-            $table->string('what_hero')->nullable();
+            $table->string('hero')->nullable();
             $table->longText('hack_story')->nullable();
             $table->text('course')->nullable();
             $table->string('english')->nullable();
