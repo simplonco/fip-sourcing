@@ -87,7 +87,6 @@ class FormerController extends Controller
       'password' => bcrypt($request->input('password'))
     ];
 
-    // User::create($user)->roles()->attach(Role::where('slug', 'former')->first());
     $formation = Formation::where('id', $request->input('formation'))->first();
 
     $created_user = User::create($user);
@@ -128,7 +127,10 @@ class FormerController extends Controller
   {
     $former = User::findOrFail($id);
 
-    return view('former.edit')->withFormer($former);
+    // return view('former.edit')->withFormer($former);
+
+    $formations = Formation::pluck('name', 'id');
+    return view('former.edit', ['formations'=> $formations, 'former'=>$former]);
   }
 
 
@@ -151,9 +153,14 @@ class FormerController extends Controller
       'password' => 'required|string|min:6|confirmed',
     ]);
 
+    $formation = Formation::where('id', $request->input('formation'))->first();
+
     $input = $request->all();
 
-    $former->fill($input)->save();
+    // $former->fill($input)->save();
+    $former->fill($input);
+    $former->formations()->sync($formation);
+    $former->save();
 
     Session::flash('flash_message', 'Le formateur a été modifié avec succès!');
 
