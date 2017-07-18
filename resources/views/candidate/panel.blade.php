@@ -22,7 +22,7 @@
                 <a href="{{ route('chooseHack') }}" class="btn">Hack</a>
               </div>
               <div class="col-md-4">
-                <a href="{{ route('chooseFormation') }}" class="btn">Votre parcours</a>
+                <a href="{{ route('chooseCourse') }}" class="btn">Votre parcours</a>
               </div>
             </div>
             <div class="row">

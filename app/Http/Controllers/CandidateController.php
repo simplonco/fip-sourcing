@@ -139,6 +139,38 @@ class CandidateController extends Controller
       return redirect()->route('home');
     }
 
+    /**
+    * Show the form for editing the course.
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function chooseCourse()
+    {
+      $candidate = Auth::user();
+
+      return view('candidate.course', ['candidate'=>$candidate]);
+    }
+
+    /**
+    * Update the specified resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @return \Illuminate\Http\Response
+    */
+    public function storeCourse(Request $request)
+    {
+      $candidate = Auth::user();
+
+      $this->validate($request, [
+        'course' => 'required|string|max:255',
+      ]);
+
+      $candidate->course = $request->course;
+      $candidate->save();
+
+      return redirect()->route('home');
+    }
+
   /**
   *Store a newly created resource in storage.
   *
