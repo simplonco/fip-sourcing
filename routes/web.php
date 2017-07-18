@@ -1,13 +1,4 @@
 <?php
-
-
-
-
-
-
-
-
-
 /*
 -----------------------------------------------------------
 | Web Routes
@@ -28,11 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
-
-
-
-// Route::get('/formCivil', 'FormCivilController@index');
+// Candidate routes
+Route::get('/candidate/formation', 'CandidateController@chooseFormation')->name('chooseFormation');
+Route::post('/candidate/formation/choose', 'CandidateController@chooseFormation')->name('candidateFormationChoose');
+Route::get('/candidate/formation/store/{id}', 'CandidateController@storeFormation')->name('candidateFormationStore');
 
 Route::group(['middleware'=>'admin'], function () {
   // Admin panel
@@ -57,15 +47,3 @@ Route::group(['middleware'=>'admin'], function () {
   Route::post('/admin/formation/update/{id}', 'FormationController@update')->name('formationUpdate');
 }
 );
-
-// Route::group(['middleware'=>'candidat'], function () {
-//   Route::get('/candidat', 'CandidateController@index')->name('candidat');
-//   Route::get('/candidat/create', 'CandidateController@create')->name('candidatCreate');
-//   Route::post('/candidat/create/post', 'CandidateControlle@store')->name('candidatAdd');
-// }
-// );
-
-// Route::group(['middleware'=>'formateur'], function () {
-//   Route::get('/listeCandidats', 'listeCandidatsController@getCandidats');
-// }
-// );

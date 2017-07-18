@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Form;
+use App\Formation;
+use Illuminate\Support\Facades\Session;
 
 class CandidateController extends Controller
 {
@@ -39,6 +42,37 @@ class CandidateController extends Controller
     public function create()
     {
         //
+    }
+
+    /**
+    *Choose a formation
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function chooseFormation()
+    {
+      $formations = Formation::All();
+
+      return view('candidate.formation', ['formations'=>$formations]);
+    }
+
+    /**
+    * Add a formation for given candidate
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
+    public function storeFormation($id, Request $request)
+    {
+      $candidate = Auth::user();
+
+      $formation = Formation::where('id', $id)->first();
+
+      $candidate->formations()->sync($formation);
+      $candidate->save();
+
+      return redirect()->route('home');
     }
 
     /**

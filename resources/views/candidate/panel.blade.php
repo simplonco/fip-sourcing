@@ -8,7 +8,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">Processus d'inscription</div>
         <div class="panel-body">
-          <a href="{{ route('formerList') }}" class="btn">Choisir une formation</a>
+          <a href="{{ route('chooseFormation') }}" class="btn">Choisir une formation</a>
         </div>
       </div>
     </div>
