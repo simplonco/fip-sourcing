@@ -18,7 +18,6 @@ class listeCandidatsController extends Controller
     public function getCandidats(Request $request)
     {
 
-        //  $candidats = \App\candidats::All();  // a ce moment nous n'avons pas les roles liés aux utilisateurs donc on ne peux pas faire de difference pour l'instant;
         $users = User::All();
         $rolesuser = Role_user::All();
         $roles = [];
@@ -28,16 +27,6 @@ class listeCandidatsController extends Controller
                 $candidats[]=$user;
             }
         }
-        // ->where(user()->roles->implode("slug"), 'Can');
-        // ->roles->implode("slug");
-
-        // foreach ($candidats as $candidat){
-        //     // $candidat=$request=>input('candidat');
-        //     if ($user->roles->implode("slug")=="Can"){
-        //         $candidats[]=$user;
-        //         return view ('listeCandidats',['candidat', => $user]);
-        //     }
-        // }
 
         return view('listeCandidats', ['candidats'=>$candidats]);
     }

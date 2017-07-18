@@ -6,8 +6,8 @@ use Closure;
 use Illuminate\Support\Facades\Auth;
 
 class IsTeacher{
-	
-	
+
+
 	/**
 	*Handle an incoming request.
 		*
@@ -17,8 +17,8 @@ class IsTeacher{
 		*/
 		public function handle($request, Closure $next)
 		{
-		if ( Auth::user()->roles->implode('slug') !== 'former') {
-			if ( Auth::user()->roles->implode('slug') == 'admin'){
+		if ( Auth::user()->roles->implode('name') !== 'former') {
+			if ( Auth::user()->roles->implode('name') == 'admin'){
 				return redirect('admin');
 			}
 			else {

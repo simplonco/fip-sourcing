@@ -32,7 +32,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-Route::get('/formCivil', 'FormCivilController@index');
+// Route::get('/formCivil', 'FormCivilController@index');
 
 Route::group(['middleware'=>'admin'], function () {
   // Admin panel
@@ -58,14 +58,14 @@ Route::group(['middleware'=>'admin'], function () {
 }
 );
 
-Route::group(['middleware'=>'candidat'], function () {
-  Route::get('/candidat', 'CandidateController@index')->name('candidat');
-  Route::get('/candidat/create', 'CandidateController@create')->name('candidatCreate');
-  Route::post('/candidat/create/post', 'CandidateControlle@store')->name('candidatAdd');
-}
-);
+// Route::group(['middleware'=>'candidat'], function () {
+//   Route::get('/candidat', 'CandidateController@index')->name('candidat');
+//   Route::get('/candidat/create', 'CandidateController@create')->name('candidatCreate');
+//   Route::post('/candidat/create/post', 'CandidateControlle@store')->name('candidatAdd');
+// }
+// );
 
-Route::group(['middleware'=>'formateur'], function () {
-  Route::get('/listeCandidats', 'listeCandidatsController@getCandidats');
-}
-);
+// Route::group(['middleware'=>'formateur'], function () {
+//   Route::get('/listeCandidats', 'listeCandidatsController@getCandidats');
+// }
+// );

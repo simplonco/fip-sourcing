@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Auth;
 
 class IsAdmin
 {
-	
-	
+
+
 	/**
 	*Handle an incoming request.
 		*
@@ -18,8 +18,8 @@ class IsAdmin
 		*/
 		public function handle($request, Closure $next)
 		{
-		if ( Auth::user()->roles->implode('slug') !== 'admin') {
-			if ( Auth::user()->roles->implode('slug') == 'former'){
+		if ( Auth::user()->roles->implode('name') !== 'admin') {
+			if ( Auth::user()->roles->implode('name') == 'former'){
 				return redirect('former');
 			}
 			else {

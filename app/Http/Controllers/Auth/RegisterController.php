@@ -69,30 +69,8 @@ class RegisterController extends Controller
             'firstName' => $data['firstName'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'birth_date' => $data['birth_date'],
-            'native_country' => $data['native_country'],
-            'nationality' => $data['nationality'],
-            'address' => $data['address'],
-            'phone' => $data['phone'],
-            'social_status' => $data['social_status'],
-            'number_pole_emploie' => $data['number_pole_emploie'],
-            'number_social_security' => $data['number_social_security'],
-            'study' => $data['study'],
-            'experience_programming' => $data['experience_programming'],
-            'what_heros' => $data['what_heros'],
-            'hack_storie' => $data['hack_storie'],
-            'course' => $data['course'],
-            'english' => $data['english'],
-            'motivation' => $data['motivation'],
-            'super_power' => $data['super_power'],
-            'codecademy_profile' => $data['codecademy_profile'],
-            'openclassroom_profile' => $data['openclassroom_profile'],
-            'other_profile' => $data['other_profile'],
-            'availability' => $data['availability'],
-            'constraints' => $data['constraints'],
-            'notoriety' => $data['notoriety'],
         ]);
-        $user->roles()->sync(Role::where('slug', 'learner')->first());
+        $user->roles()->sync(Role::where('name', 'learner')->first());
         return $user;
     }
 }

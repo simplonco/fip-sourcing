@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Support\Facades\Auth;
 
 class IsCandidate{
-	
+
 	/**
 	*Handle an incoming request.
 		*
@@ -16,8 +16,8 @@ class IsCandidate{
 		*/
 		public function handle($request, Closure $next)
 		{
-		if ( Auth::user()->roles->implode('slug') !== 'learner') {
-			if ( Auth::user()->roles->implode('slug') == 'admin'){
+		if ( Auth::user()->roles->implode('name') !== 'learner') {
+			if ( Auth::user()->roles->implode('name') == 'admin'){
 				return redirect('admin');
 			}
 			else {
