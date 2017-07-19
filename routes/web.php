@@ -34,6 +34,8 @@ Route::get('/candidate/motivation/choose', 'CandidateController@chooseMotivation
 Route::post('/candidate/motivation/store', 'CandidateController@storeMotivation')->name('storeMotivation');
 Route::get('/candidate/profile/choose', 'CandidateController@chooseProfile')->name('chooseProfile');
 Route::post('/candidate/profile/store', 'CandidateController@storeProfile')->name('storeProfile');
+Route::get('/candidate/civil/choose', 'CandidateController@chooseCivil')->name('chooseCivil');
+Route::post('/candidate/civil/store', 'CandidateController@storeCivil')->name('storeCivil');
 
 Route::group(['middleware'=>'admin'], function () {
   // Admin panel

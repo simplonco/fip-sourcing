@@ -14,7 +14,7 @@
               <b>Prénom :</b>
             </div>
             <div class="col-md-3">
-              {{$former->firstName}}
+              {{$former->first_name}}
             </div>
           </div>
 
@@ -23,7 +23,7 @@
               <b>Nom :</b>
             </div>
             <div class="col-md-3">
-              {{$former->lastName}}
+              {{$former->last_name}}
             </div>
           </div>
 

@@ -12,7 +12,7 @@
 
 <div class="col-sm-offset-3 col-sm-6">
   <div class="panel panel-info">
-    <div class="panel-heading">Modification du formateur {!! $former->lastName !!}</div>
+    <div class="panel-heading">Modification du formateur {!! $former->last_name !!}</div>
     <div class="panel-body">
       {!! Form::model($former, [
         'method' => 'POST',
@@ -20,13 +20,13 @@
         ]) !!}
 
         <div class="form-group">
-          {!! Form::label('firstName', 'Prénom', ['class' => 'control-label']) !!}
-          {!! Form::text('firstName', null, ['class' => 'form-control']) !!}
+          {!! Form::label('first_name', 'Prénom', ['class' => 'control-label']) !!}
+          {!! Form::text('first_name', null, ['class' => 'form-control']) !!}
         </div>
 
         <div class="form-group">
-          {!! Form::label('lastName', 'Nom', ['class' => 'control-label']) !!}
-          {!! Form::text('lastName', null, ['class' => 'form-control']) !!}
+          {!! Form::label('last_name', 'Nom', ['class' => 'control-label']) !!}
+          {!! Form::text('last_name', null, ['class' => 'form-control']) !!}
         </div>
 
         <div class="form-group">

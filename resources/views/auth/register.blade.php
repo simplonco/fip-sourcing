@@ -12,13 +12,13 @@
                     ]) !!}
 
                     <div class="form-group">
-                      {!! Form::label('firstName', 'Prénom', ['class' => 'control-label']) !!}
-                      {!! Form::text('firstName', null, ['class' => 'form-control']) !!}
+                      {!! Form::label('first_name', 'Prénom', ['class' => 'control-label']) !!}
+                      {!! Form::text('first_name', null, ['class' => 'form-control']) !!}
                     </div>
 
                     <div class="form-group">
-                      {!! Form::label('lastName', 'Nom', ['class' => 'control-label']) !!}
-                      {!! Form::text('lastName', null, ['class' => 'form-control']) !!}
+                      {!! Form::label('last_name', 'Nom', ['class' => 'control-label']) !!}
+                      {!! Form::text('last_name', null, ['class' => 'form-control']) !!}
                     </div>
 
                     <div class="form-group">

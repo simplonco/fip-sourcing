@@ -33,8 +33,8 @@ class FormerController extends Controller
   {
 
     $user = new User;
-    $user->lastName = $request->input('lastName');
-    $user->firstName = $request->input('firstName');
+    $user->last_name = $request->input('last_name');
+    $user->first_name = $request->input('first_name');
     $user->email = $request->input('email');
     $user->password = bcrypt($request->input('password'));
     $user->roles()->sync(Role::where('id', 3))->first();
@@ -74,15 +74,15 @@ class FormerController extends Controller
   public function store(Request $request)
   {
     $this->validate($request, [
-      'lastName' => 'required|max:255',
-      'firstName' => 'required',
+      'last_name' => 'required|max:255',
+      'first_name' => 'required',
       'email' => 'required|string|email|max:255|unique:users',
       'password' => 'required|string|min:6|confirmed',
     ]);
 
     $user = [
-      'lastName' => $request->input('lastName'),
-      'firstName' => $request->input('firstName'),
+      'last_name' => $request->input('last_name'),
+      'first_name' => $request->input('first_name'),
       'email' => $request->input('email'),
       'password' => bcrypt($request->input('password'))
     ];
@@ -147,8 +147,8 @@ class FormerController extends Controller
     $former = User::findOrFail($id);
 
     $this->validate($request, [
-      'lastName' => 'required|max:255',
-      'firstName' => 'required',
+      'last_name' => 'required|max:255',
+      'first_name' => 'required',
       'email' => 'required|string|email|max:255|unique:users',
       'password' => 'required|string|min:6|confirmed',
     ]);

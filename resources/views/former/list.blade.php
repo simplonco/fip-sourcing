@@ -31,8 +31,8 @@
                   <a href="{{ route('formerShow', $formateur->id) }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
                   <a href="{{ route('formerEdit', $formateur->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                   <a href="{{ route('formerDelete', $formateur->id) }}"><i class="fa fa fa-ban" aria-hidden="true"></i></a></td>
-                  <td>{{$formateur->lastName}}</td>
-                  <td>{{$formateur->firstName}}</td>
+                  <td>{{$formateur->last_name}}</td>
+                  <td>{{$formateur->first_name}}</td>
                   <td>{{$formateur->email}}</td>
                   <td>{{$formateur->formations()->first()->name}}</td>
                 </tr>

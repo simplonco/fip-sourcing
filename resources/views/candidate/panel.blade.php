@@ -13,6 +13,7 @@
           <div class="panel-body">
             <div class="row">
               <a href="{{ route('chooseFormation') }}" class="btn">Choisir une formation</a>
+                <a href="{{ route('chooseCivil') }}" class="btn">Etat civil</a>
             </div>
             <div class="row">
               <div class="col-md-4">
