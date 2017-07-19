@@ -231,7 +231,43 @@ class CandidateController extends Controller
 
     $candidate->motivation = $request->motivation;
     $candidate->save();
-    
+
+    return redirect()->route('home');
+  }
+
+  /**
+  * Show the form for editing the profile.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function chooseProfile()
+  {
+    $candidate = Auth::user();
+
+    return view('candidate.profile', ['candidate'=>$candidate]);
+  }
+
+  /**
+  * Update the specified resource in storage.
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function storeProfile(Request $request)
+  {
+    $candidate = Auth::user();
+
+    $this->validate($request, [
+      'codecademy_profile' => 'required|string|max:255',
+      'openclassroom_profile' => 'string|max:255',
+      'other_profile' => 'string|max:255',
+    ]);
+
+    $candidate->codecademy_profile = $request->codecademy_profile;
+    $candidate->openclassroom_profile = $request->openclassroom_profile;
+    $candidate->other_profile = $request->other_profile;
+    $candidate->save();
+
     return redirect()->route('home');
   }
 
