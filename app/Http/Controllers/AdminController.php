@@ -8,7 +8,6 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use App\User;
 use App\Role;
 use App\Role_user;
-use App\Form;
 
 class AdminController extends Controller
 {

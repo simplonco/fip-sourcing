@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\User;
 use App\Formation;
-use App\Form;
 use Illuminate\Support\Facades\Session;
 class FormationController extends Controller
 {

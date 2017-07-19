@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Role_user;
-use App\Form;
 
 class listeCandidatsController extends Controller
 {

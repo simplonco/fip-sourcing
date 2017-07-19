@@ -8,7 +8,6 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use App\User;
 use App\Role;
 use App\Formation;
-use App\Form;
 use Illuminate\Support\Facades\Session;
 class FormerController extends Controller
 {
