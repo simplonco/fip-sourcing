@@ -8,35 +8,32 @@
       <div class="panel panel-default">
         <div class="panel-heading">Processus d'inscription
           @if (Auth::user()->formations()->first())
-           pour la formation {{Auth::user()->formations()->first()->name}}
+          pour la formation {{Auth::user()->formations()->first()->name}}
           @endif</div>
           <div class="panel-body">
             <div class="row">
               <a href="{{ route('chooseFormation') }}" class="btn">Choisir une formation</a>
-                <a href="{{ route('chooseCivil') }}" class="btn">Etat civil</a>
+              <a href="{{ route('chooseCivil') }}" class="btn">Etat civil</a>
             </div>
             <div class="row">
-              <div class="col-md-4">
-                <a href="{{ route('chooseHero') }}" class="btn">Super-héros</a>
-              </div>
-              <div class="col-md-4">
-                <a href="{{ route('chooseHack') }}" class="btn">Hack</a>
-              </div>
-              <div class="col-md-4">
-                <a href="{{ route('chooseCourse') }}" class="btn">Votre parcours</a>
-              </div>
+              <a href="{{ route('chooseHero') }}" class="btn">Super-héros</a>
+              <a href="{{ route('chooseHack') }}" class="btn">Hack</a>
+              <a href="{{ route('chooseCourse') }}" class="btn">Votre parcours</a>
             </div>
             <div class="row">
-              <div class="col-md-4">
-                <a href="{{ route('chooseSuperpower') }}" class="btn">Super-pouvoirs</a>
-              </div>
-              <div class="col-md-4">
-                <a href="{{ route('chooseMotivation') }}" class="btn">Simplon et vous</a>
-              </div>
-              <div class="col-md-4">
-                <a href="{{ route('chooseProfile') }}" class="btn">Profils</a>
-              </div>
+              <a href="{{ route('chooseSuperpower') }}" class="btn">Super-pouvoirs</a>
+              <a href="{{ route('chooseMotivation') }}" class="btn">Simplon et vous</a>
+              <a href="{{ route('chooseProfile') }}" class="btn">Profils</a>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 panel">
+        <div class="card">
+          <div class="card-block">
+            <h3 class="panel-heading">Badges Codecademy</h3>
+            <p class="panel-body h3">{{Auth::user()->codecademy_badges}}</p>
+            <a href="{{ route('chooseSuperpower') }}" class="btn btn-primary">Actualiser</a>
           </div>
         </div>
       </div>
