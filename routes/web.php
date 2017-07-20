@@ -36,6 +36,7 @@ Route::get('/candidate/profile/choose', 'CandidateController@chooseProfile')->na
 Route::post('/candidate/profile/store', 'CandidateController@storeProfile')->name('storeProfile');
 Route::get('/candidate/civil/choose', 'CandidateController@chooseCivil')->name('chooseCivil');
 Route::post('/candidate/civil/store', 'CandidateController@storeCivil')->name('storeCivil');
+Route::get('/candidate/badges/refresh', 'CandidateController@refreshBadges')->name('refreshBadges');
 
 Route::group(['middleware'=>'admin'], function () {
   // Admin panel

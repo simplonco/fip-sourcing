@@ -274,6 +274,25 @@ class CandidateController extends Controller
   }
 
   /**
+  * Update codecademy_badges
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function refreshBadges()
+  {
+    $candidate = Auth::user();
+
+    // Update related codecademy badges
+    $candidate->codecademy_badges = fetchBadges($candidate->codecademy_profile);
+
+    // Finally : save
+    $candidate->save();
+
+    return redirect()->route('home');
+  }
+
+  /**
   * Show the form for editing the personal infos.
   *
   * @return \Illuminate\Http\Response

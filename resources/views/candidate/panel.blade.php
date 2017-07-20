@@ -28,15 +28,17 @@
           </div>
         </div>
       </div>
+      @if (Auth::user()->codecademy_badges)
       <div class="col-md-2 panel">
         <div class="card">
           <div class="card-block">
             <h3 class="panel-heading">Badges Codecademy</h3>
             <p class="panel-body h3">{{Auth::user()->codecademy_badges}}</p>
-            <a href="{{ route('chooseSuperpower') }}" class="btn btn-primary">Actualiser</a>
+            <a href="{{ route('refreshBadges') }}" class="btn btn-primary">Actualiser</a>
           </div>
         </div>
       </div>
+      @endif
     </div>
   </div>
 
