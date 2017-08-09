@@ -49,3 +49,6 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+## Valeurs par défaut
+Dans un formulaire de modification, il est possible de sélectionner par défaut la valeur renseignée en base : https://stackoverflow.com/a/38430259
