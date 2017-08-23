@@ -177,6 +177,36 @@ class CandidateController extends Controller
   }
 
   /**
+  * Show the form for editing the followup.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function chooseFollowup()
+  {
+    $candidate = Auth::user();
+
+    return view('candidate.followup', ['candidate'=>$candidate]);
+  }
+
+  /**
+  * Update the specified resource in storage.
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function storeFollowup(Request $request)
+  {
+    $candidate = Auth::user();
+
+    $candidate->followup_device = $request->followup_device;
+    $candidate->sent_by = $request->sent_by;
+    $candidate->local_mission = $request->local_mission;
+    $candidate->save();
+
+    return redirect()->route('home');
+  }
+
+  /**
   * Show the form for editing the hack.
   *
   * @return \Illuminate\Http\Response

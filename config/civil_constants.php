@@ -12,7 +12,7 @@ return [
   'civility' => array(
     'M' => 'M',
     'Mme' => 'Mme',
-    'Autre' => 'other'
+    'other' => 'Autre'
   ),
   'marital_status' => array(
     'single' => 'Célibataire',

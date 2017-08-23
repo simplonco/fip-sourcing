@@ -42,12 +42,12 @@ class CreateUsersTable extends Migration
             $table->string('emergency_phone')->nullable();
 
 
-            $table->string('experience_programming')->nullable();
-            $table->string('hero')->nullable();
+            $table->longText('experience_programming')->nullable();
+            $table->longText('hero')->nullable();
             $table->longText('hack_story')->nullable();
-            $table->text('course')->nullable();
+            $table->longText('course')->nullable();
             $table->longText('motivation')->nullable();
-            $table->string('super_power')->nullable();
+            $table->longText('super_power')->nullable();
 
             $table->string('codecademy_profile')->nullable();
             $table->integer('codecademy_badges')->nullable();
@@ -55,9 +55,13 @@ class CreateUsersTable extends Migration
             $table->string('other_profile')->nullable();
 
 
-            $table->string('availability')->nullable();
+            $table->longText('availability')->nullable();
             $table->longText('constraints')->nullable();
             $table->longText('income')->nullable();
+
+            $table->string('followup_device')->nullable();
+            $table->string('sent_by')->nullable();
+            $table->string('local_mission')->nullable();
 
 
             $table->string('number_pole_emploi')->nullable();

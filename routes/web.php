@@ -47,6 +47,10 @@ Route::get('/candidate/badges/refresh', 'CandidateController@refreshBadges')->na
 Route::get('/candidate/availability/choose', 'CandidateController@chooseAvailability')->name('chooseAvailability');
 Route::post('/candidate/availability/store', 'CandidateController@storeAvailability')->name('storeAvailability');
 
+
+Route::get('/candidate/followup/choose', 'CandidateController@chooseFollowup')->name('chooseFollowup');
+Route::post('/candidate/followup/store', 'CandidateController@storeFollowup')->name('storeFollowup');
+
 Route::group(['middleware'=>'admin'], function () {
   // Admin panel
   Route::get('/admin', 'AdminController@index')->name('admin');

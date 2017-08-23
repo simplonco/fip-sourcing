@@ -29,6 +29,9 @@
               <a href="{{ route('chooseAvailability') }}" class="btn">Disponibilité</a>
             </div>
             <div class="row">
+              <a href="{{ route('chooseFollowup') }}" class="btn">Suivi</a>
+            </div>
+            <div class="row">
               <a href="{{ route('chooseProfile') }}" class="btn">Profils</a>
             </div>
           </div>
