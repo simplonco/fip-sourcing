@@ -22,7 +22,7 @@
 
         <div class="form-group">
           {!! Form::label('civility', 'Civilité', ['class' => 'control-label']) !!}
-          {!! Form::select('civility', array('Mme' => 'Mme', 'M' => 'M', 'Autre'=>'other')); !!}
+          {!! Form::select('civility', Config::get('civil_constants.civility')); !!}
         </div>
 
         <div class="form-group">
@@ -57,7 +57,7 @@
 
         <div class="form-group">
           {!! Form::label('marital_status', 'Statut marital', ['class' => 'control-label']) !!}
-          {!! Form::select('marital_status', array('single' => 'Célibataire', 'married' => 'Marié', 'divorced'=>'Divorcé', 'other'=>'Autre')); !!}
+          {!! Form::select('marital_status', Config::get('civil_constants.marital_status')); !!}
         </div>
 
         <div class="form-group">
@@ -72,7 +72,7 @@
 
         <div class="form-group">
           {!! Form::label('accomodation', 'Lieu d\'hébergement', ['class' => 'control-label']) !!}
-          {!! Form::select('accomodation', array('family' => 'Famille', 'friends' => 'Amis', 'hostel'=>'Foyer', 'self-catering'=>'Logement indépendant', 'other'=>'Autre')); !!}
+          {!! Form::select('accomodation', Config::get('civil_constants.accomodation')); !!}
         </div>
 
         <div class="form-group">
