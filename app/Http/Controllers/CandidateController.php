@@ -140,6 +140,45 @@ class CandidateController extends Controller
 
     return redirect()->route('home');
   }
+  /**
+  * Show the form for editing the activity before.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function chooseActivityBefore()
+  {
+    $candidate = Auth::user();
+
+    return view('candidate.activity_before', ['candidate'=>$candidate]);
+  }
+
+  /**
+  * Update the specified resource in storage.
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function storeActivityBefore(Request $request)
+  {
+    $candidate = Auth::user();
+
+    //TODO: validation
+    // $this->validate($request, [
+    //   'prescriber_contact' => 'string|max:100',
+    //   'prescriber_phone' => 'string|max:100'
+    // ]);
+// dd($request);
+    $candidate->scholarity = $request->scholarity;
+    $candidate->native_language = $request->native_language;
+    $candidate->last_class = $request->last_class;
+    $candidate->last_school = $request->last_school;
+    $candidate->end_scholarity_date = $request->end_scholarity_date;
+    $candidate->reason = $request->reason;
+    $candidate->diploma = $request->diploma;
+    $candidate->save();
+
+    return redirect()->route('home');
+  }
 
   /**
   * Show the form for editing the programming experience.

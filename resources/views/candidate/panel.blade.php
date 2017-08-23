@@ -33,6 +33,9 @@
               <a href="{{ route('choosePrescriber') }}" class="btn">Prescripteur</a>
             </div>
             <div class="row">
+              <a href="{{ route('chooseActivityBefore') }}" class="btn">Activité avant la formation</a>
+            </div>
+            <div class="row">
               <a href="{{ route('chooseProfile') }}" class="btn">Profils</a>
             </div>
           </div>

@@ -53,6 +53,9 @@ Route::post('/candidate/followup/store', 'CandidateController@storeFollowup')->n
 Route::get('/candidate/prescriber/choose', 'CandidateController@choosePrescriber')->name('choosePrescriber');
 Route::post('/candidate/prescriber/store', 'CandidateController@storePrescriber')->name('storePrescriber');
 
+Route::get('/candidate/activity_before/choose', 'CandidateController@chooseActivityBefore')->name('chooseActivityBefore');
+Route::post('/candidate/activity_before/store', 'CandidateController@storeActivityBefore')->name('storeActivityBefore');
+
 Route::group(['middleware'=>'admin'], function () {
   // Admin panel
   Route::get('/admin', 'AdminController@index')->name('admin');
