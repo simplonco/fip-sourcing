@@ -19,13 +19,16 @@
             </div>
             <div class="row">
               <a href="{{ route('chooseHero') }}" class="btn">Super-héros</a>
-                <a href="{{ route('chooseExperience') }}" class="btn">Expérience</a>
+              <a href="{{ route('chooseExperience') }}" class="btn">Expérience</a>
               <a href="{{ route('chooseHack') }}" class="btn">Hack</a>
               <a href="{{ route('chooseCourse') }}" class="btn">Votre parcours</a>
-            </div>
-            <div class="row">
               <a href="{{ route('chooseSuperpower') }}" class="btn">Super-pouvoirs</a>
               <a href="{{ route('chooseMotivation') }}" class="btn">Simplon et vous</a>
+            </div>
+            <div class="row">
+              <a href="{{ route('chooseAvailability') }}" class="btn">Disponibilité</a>
+            </div>
+            <div class="row">
               <a href="{{ route('chooseProfile') }}" class="btn">Profils</a>
             </div>
           </div>

@@ -46,21 +46,27 @@ class UsersTableSeeder extends Seeder
         'cellphone' => $faker->phoneNumber,
         'emergency_contact' => $faker->name,
         'emergency_phone' => $faker->phoneNumber,
-        'number_pole_emploi' => $faker->randomDigit,
-        'study' => $faker->city,
-        'experience_programming' => $faker->text($maxNbChars = 100),
+
         'hero' => $faker->name,
+        'experience_programming' => $faker->text($maxNbChars = 100),
         'hack_story' => $faker->text($maxNbChars = 100),
         'course' => $faker->word,
-        'english' => $faker->boolean,
-        'motivation' => $faker->text($maxNbChars = 100),
         'super_power' => $faker->text($maxNbChars = 100),
+        'motivation' => $faker->text($maxNbChars = 100),
+
+        'availability' => $faker->word,
+        'constraints' => $faker->text($maxNbChars = 100),
+        'income' => $faker->word,
+
         'codecademy_profile' => $faker->url,
-        'codecademy_badges' => $faker->randomNumber($nbDigits = 2, $strict = false),
         'openclassroom_profile' => $faker->url,
         'other_profile' => $faker->url,
-        'availability' => $faker->boolean,
-        'constraints' => $faker->text($maxNbChars = 100),
+        'codecademy_badges' => $faker->randomNumber($nbDigits = 2, $strict = false),
+
+
+        'number_pole_emploi' => $faker->randomDigit,
+        'study' => $faker->city,
+        'english' => $faker->boolean,
         'score' => $faker->randomNumber($nbDigits = 2, $strict = false),
         'password' => bcrypt('azerty'),
       ]);

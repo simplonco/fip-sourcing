@@ -30,8 +30,6 @@ Route::get('/candidate/hero/choose', 'CandidateController@chooseHero')->name('ch
 Route::post('/candidate/hero/store', 'CandidateController@storeHero')->name('storeHero');
 Route::get('/candidate/experience/choose', 'CandidateController@chooseExperience')->name('chooseExperience');
 Route::post('/candidate/experience/store', 'CandidateController@storeExperience')->name('storeExperience');
-
-
 Route::get('/candidate/hack/choose', 'CandidateController@chooseHack')->name('chooseHack');
 Route::post('/candidate/hack/store', 'CandidateController@storeHack')->name('storeHack');
 Route::get('/candidate/course/choose', 'CandidateController@chooseCourse')->name('chooseCourse');
@@ -40,11 +38,14 @@ Route::get('/candidate/superpower/choose', 'CandidateController@chooseSuperpower
 Route::post('/candidate/superpower/store', 'CandidateController@storeSuperpower')->name('storeSuperpower');
 Route::get('/candidate/motivation/choose', 'CandidateController@chooseMotivation')->name('chooseMotivation');
 Route::post('/candidate/motivation/store', 'CandidateController@storeMotivation')->name('storeMotivation');
+
+
 Route::get('/candidate/profile/choose', 'CandidateController@chooseProfile')->name('chooseProfile');
 Route::post('/candidate/profile/store', 'CandidateController@storeProfile')->name('storeProfile');
-Route::get('/candidate/civil/choose', 'CandidateController@chooseCivil')->name('chooseCivil');
-Route::post('/candidate/civil/store', 'CandidateController@storeCivil')->name('storeCivil');
 Route::get('/candidate/badges/refresh', 'CandidateController@refreshBadges')->name('refreshBadges');
+
+Route::get('/candidate/availability/choose', 'CandidateController@chooseAvailability')->name('chooseAvailability');
+Route::post('/candidate/availability/store', 'CandidateController@storeAvailability')->name('storeAvailability');
 
 Route::group(['middleware'=>'admin'], function () {
   // Admin panel

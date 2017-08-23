@@ -107,37 +107,74 @@ class CandidateController extends Controller
   }
 
 
-    /**
-    * Show the form for editing the programming experience.
-    *
-    * @return \Illuminate\Http\Response
-    */
-    public function chooseExperience()
-    {
-      $candidate = Auth::user();
+  /**
+  * Show the form for editing the programming experience.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function chooseExperience()
+  {
+    $candidate = Auth::user();
 
-      return view('candidate.experience', ['candidate'=>$candidate]);
-    }
+    return view('candidate.experience', ['candidate'=>$candidate]);
+  }
 
-    /**
-    * Update the specified resource in storage.
-    *
-    * @param  \Illuminate\Http\Request  $request
-    * @return \Illuminate\Http\Response
-    */
-    public function storeExperience(Request $request)
-    {
-      $candidate = Auth::user();
+  /**
+  * Update the specified resource in storage.
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function storeExperience(Request $request)
+  {
+    $candidate = Auth::user();
 
-      $this->validate($request, [
-        'experience_programming' => 'required|string|max:255',
-      ]);
+    $this->validate($request, [
+      'experience_programming' => 'required|string|max:255',
+    ]);
 
-      $candidate->experience_programming = $request->experience_programming;
-      $candidate->save();
+    $candidate->experience_programming = $request->experience_programming;
+    $candidate->save();
 
-      return redirect()->route('home');
-    }
+    return redirect()->route('home');
+  }
+
+
+  /**
+  * Show the form for editing the availability.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function chooseAvailability()
+  {
+    $candidate = Auth::user();
+
+    return view('candidate.availability', ['candidate'=>$candidate]);
+  }
+
+  /**
+  * Update the specified resource in storage.
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function storeAvailability(Request $request)
+  {
+    $candidate = Auth::user();
+
+    $this->validate($request, [
+      'availability' => 'required|string|max:255',
+      'constraints' => 'required|string|max:255',
+      'income' => 'required|string|max:255',
+    ]);
+
+    $candidate->availability = $request->availability;
+    $candidate->constraints = $request->constraints;
+    $candidate->income = $request->income;
+    $candidate->save();
+
+    return redirect()->route('home');
+  }
 
   /**
   * Show the form for editing the hack.

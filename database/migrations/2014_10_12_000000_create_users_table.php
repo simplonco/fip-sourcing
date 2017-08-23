@@ -44,21 +44,25 @@ class CreateUsersTable extends Migration
 
             $table->string('experience_programming')->nullable();
             $table->string('hero')->nullable();
-
-
-            $table->string('number_pole_emploi')->nullable();
-            $table->string('study')->nullable();
             $table->longText('hack_story')->nullable();
             $table->text('course')->nullable();
-            $table->string('english')->nullable();
             $table->longText('motivation')->nullable();
             $table->string('super_power')->nullable();
+
             $table->string('codecademy_profile')->nullable();
             $table->integer('codecademy_badges')->nullable();
             $table->string('openclassroom_profile')->nullable();
             $table->string('other_profile')->nullable();
+
+
             $table->string('availability')->nullable();
             $table->longText('constraints')->nullable();
+            $table->longText('income')->nullable();
+
+
+            $table->string('number_pole_emploi')->nullable();
+            $table->string('study')->nullable();
+            $table->string('english')->nullable();
             $table->integer('score')->nullable();
             $table->rememberToken();
             $table->timestamps();
