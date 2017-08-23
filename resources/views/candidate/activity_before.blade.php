@@ -69,7 +69,7 @@
         </div>
 
         <div class="form-group">
-          {!! Form::label('passed_exam', 'Examen passé', ['class' => 'control-label']) !!}
+          {!! Form::label('passed_exam', 'Examen présenté', ['class' => 'control-label']) !!}
           {!! Form::text('passed_exam', null, ['class' => 'form-control']) !!}
         </div>
 
