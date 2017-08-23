@@ -63,6 +63,8 @@ class CreateUsersTable extends Migration
             $table->string('sent_by')->nullable();
             $table->string('local_mission')->nullable();
 
+            $table->string('prescriber_contact')->nullable();
+            $table->string('prescriber_phone')->nullable();
 
             $table->string('number_pole_emploi')->nullable();
             $table->string('study')->nullable();

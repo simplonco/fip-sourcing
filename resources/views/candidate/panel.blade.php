@@ -30,6 +30,7 @@
             </div>
             <div class="row">
               <a href="{{ route('chooseFollowup') }}" class="btn">Suivi</a>
+              <a href="{{ route('choosePrescriber') }}" class="btn">Prescripteur</a>
             </div>
             <div class="row">
               <a href="{{ route('chooseProfile') }}" class="btn">Profils</a>

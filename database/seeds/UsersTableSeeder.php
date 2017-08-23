@@ -63,6 +63,8 @@ class UsersTableSeeder extends Seeder
         'other_profile' => $faker->url,
         'codecademy_badges' => $faker->randomNumber($nbDigits = 2, $strict = false),
 
+        'prescriber_contact' => $faker->name,
+        'prescriber_phone' => $faker->phoneNumber,
 
         'number_pole_emploi' => $faker->randomDigit,
         'study' => $faker->city,

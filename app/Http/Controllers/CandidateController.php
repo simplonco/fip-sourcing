@@ -108,6 +108,40 @@ class CandidateController extends Controller
 
 
   /**
+  * Show the form for editing the prescriber.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function choosePrescriber()
+  {
+    $candidate = Auth::user();
+
+    return view('candidate.prescriber', ['candidate'=>$candidate]);
+  }
+
+  /**
+  * Update the specified resource in storage.
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function storePrescriber(Request $request)
+  {
+    $candidate = Auth::user();
+
+    $this->validate($request, [
+      'prescriber_contact' => 'string|max:100',
+      'prescriber_phone' => 'string|max:100'
+    ]);
+
+    $candidate->prescriber_contact = $request->prescriber_contact;
+    $candidate->prescriber_phone = $request->prescriber_phone;
+    $candidate->save();
+
+    return redirect()->route('home');
+  }
+
+  /**
   * Show the form for editing the programming experience.
   *
   * @return \Illuminate\Http\Response
