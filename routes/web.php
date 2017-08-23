@@ -22,8 +22,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Candidate routes
 Route::get('/candidate/formation', 'CandidateController@chooseFormation')->name('chooseFormation');
 Route::get('/candidate/formation/store/{id}', 'CandidateController@storeFormation')->name('storeFormation');
+
+Route::get('/candidate/civil/choose', 'CandidateController@chooseCivil')->name('chooseCivil');
+Route::post('/candidate/civil/store', 'CandidateController@storeCivil')->name('storeCivil');
+
 Route::get('/candidate/hero/choose', 'CandidateController@chooseHero')->name('chooseHero');
 Route::post('/candidate/hero/store', 'CandidateController@storeHero')->name('storeHero');
+Route::get('/candidate/experience/choose', 'CandidateController@chooseExperience')->name('chooseExperience');
+Route::post('/candidate/experience/store', 'CandidateController@storeExperience')->name('storeExperience');
+
+
 Route::get('/candidate/hack/choose', 'CandidateController@chooseHack')->name('chooseHack');
 Route::post('/candidate/hack/store', 'CandidateController@storeHack')->name('storeHack');
 Route::get('/candidate/course/choose', 'CandidateController@chooseCourse')->name('chooseCourse');

@@ -40,10 +40,14 @@ class CreateUsersTable extends Migration
             $table->string('cellphone')->nullable();
             $table->string('emergency_contact')->nullable();
             $table->string('emergency_phone')->nullable();
-            $table->string('number_pole_emploi')->nullable();
-            $table->string('study')->nullable();
+
+
             $table->string('experience_programming')->nullable();
             $table->string('hero')->nullable();
+
+
+            $table->string('number_pole_emploi')->nullable();
+            $table->string('study')->nullable();
             $table->longText('hack_story')->nullable();
             $table->text('course')->nullable();
             $table->string('english')->nullable();

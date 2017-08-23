@@ -106,6 +106,39 @@ class CandidateController extends Controller
     return redirect()->route('home');
   }
 
+
+    /**
+    * Show the form for editing the programming experience.
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function chooseExperience()
+    {
+      $candidate = Auth::user();
+
+      return view('candidate.experience', ['candidate'=>$candidate]);
+    }
+
+    /**
+    * Update the specified resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @return \Illuminate\Http\Response
+    */
+    public function storeExperience(Request $request)
+    {
+      $candidate = Auth::user();
+
+      $this->validate($request, [
+        'experience_programming' => 'required|string|max:255',
+      ]);
+
+      $candidate->experience_programming = $request->experience_programming;
+      $candidate->save();
+
+      return redirect()->route('home');
+    }
+
   /**
   * Show the form for editing the hack.
   *
