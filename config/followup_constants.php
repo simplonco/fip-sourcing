@@ -10,7 +10,7 @@
 //
 return [
   'followup_device' => array(
-    'mission locale' => 'Mission locale',
+    'local_mission' => 'Mission locale',
     'plie' => 'Plie',
     'civis' => 'Civis',
     'mfr' => 'MFR',
@@ -19,7 +19,7 @@ return [
   ),
   'sent_by' => array(
     'cio' => 'CIO',
-    'mission locale' => 'Mission locale',
+    'local_mission' => 'Mission locale',
     'pole emploi'=>'Pôle Emploi',
     'educateur'=>'Educateur',
     'other'=>'Autre (Presse, TV)',
