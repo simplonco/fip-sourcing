@@ -175,6 +175,9 @@ class CandidateController extends Controller
     $candidate->end_scholarity_date = $request->end_scholarity_date;
     $candidate->reason = $request->reason;
     $candidate->diploma = $request->diploma;
+    $candidate->obtained_diploma = $request->obtained_diploma;
+    $candidate->exam = $request->exam;
+    $candidate->passed_exam = $request->passed_exam;
     $candidate->save();
 
     return redirect()->route('home');

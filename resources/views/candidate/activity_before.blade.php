@@ -50,11 +50,28 @@
           {!! Form::text('reason', null, ['class' => 'form-control']) !!}
         </div>
 
+        <h4>Diplôme</h4>
         <div class="form-group">
           {!! Form::label('diploma', 'Avez-vous obtenu un diplôme?', ['class' => 'control-label']) !!}
           {!! Form::select('diploma', Config::get('activity_before_constants.diploma')); !!}
         </div>
 
+        <div class="form-group">
+          {!! Form::label('obtained_diploma', 'Diplôme obtenu', ['class' => 'control-label']) !!}
+          {!! Form::text('obtained_diploma', null, ['class' => 'form-control']) !!}
+        </div>
+
+
+        <h4>Examen</h4>
+        <div class="form-group">
+          {!! Form::label('exam', 'Avez-vous passé un examen?', ['class' => 'control-label']) !!}
+          {!! Form::select('exam', Config::get('activity_before_constants.diploma')); !!}
+        </div>
+
+        <div class="form-group">
+          {!! Form::label('passed_exam', 'Examen passé', ['class' => 'control-label']) !!}
+          {!! Form::text('passed_exam', null, ['class' => 'form-control']) !!}
+        </div>
 
         {!! Form::submit('Valider', ['class' => 'btn btn-primary']) !!}
 

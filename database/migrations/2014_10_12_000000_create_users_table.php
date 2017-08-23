@@ -73,6 +73,9 @@ class CreateUsersTable extends Migration
       $table->dateTime('end_scholarity_date')->nullable();
       $table->string('reason')->nullable();
       $table->string('diploma')->nullable();
+      $table->string('obtained_diploma')->nullable();
+      $table->string('exam')->nullable();
+      $table->string('passed_exam')->nullable();
 
 
       $table->string('number_pole_emploi')->nullable();
