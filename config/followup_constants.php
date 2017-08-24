@@ -1,13 +1,4 @@
 <?php
-// class CivilConstants
-// {
-//   public static $civiliity = array(
-//   'M' => 'M',
-//   'Mme' => 'Mme',
-//   'Autre' => 'other'
-// );
-// }
-//
 return [
   'followup_device' => array(
     'local_mission' => 'Mission locale',
