@@ -83,7 +83,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-2 col-md-offset-5">
-      <a href="javascript:history.back()" class="btn btn-primary"> Retour
+      <a href="{{ url('/home') }}" class="btn btn-primary">Retour à l'accueil</a>
       </a>
     </div>
   </div>
