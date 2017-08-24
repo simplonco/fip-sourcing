@@ -6,47 +6,39 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
-        <div class="panel-heading">Informations de l'expérience professionnelle</div>
+        <div class="panel-heading">Informations de la formation rémunérée</div>
         <div class="panel-body">
 
           <div class="row">
             <div class="col-md-3">
-              <b>Nom de l'entreprise</b>
+              <b>Intitulé de la formation</b>
             </div>
             <div class="col-md-5">
-              {{$pro_experience->society_name}}
+              {{$paid_formation->name}}
             </div>
           </div>
           <div class="row">
             <div class="col-md-3">
-              <b>Adresse de l'entreprise</b>
+              <b>Date de début</b>
             </div>
             <div class="col-md-5">
-              {{$pro_experience->society_address}}
+              {{$paid_formation->begin_date}}
             </div>
           </div>
           <div class="row">
             <div class="col-md-3">
-              <b>Type de contrat</b>
+              <b>Date de fin</b>
             </div>
             <div class="col-md-5">
-              {{$pro_experience->contract_type}}
+              {{$paid_formation->end_date}}
             </div>
           </div>
           <div class="row">
             <div class="col-md-3">
-              <b>Durée du contrat</b>
+              <b>Coordonnées du centre de formation</b>
             </div>
             <div class="col-md-5">
-              {{$pro_experience->contract_duration}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-3">
-              <b>Poste occupé</b>
-            </div>
-            <div class="col-md-5">
-              {{$pro_experience->position_held}}
+              {{$paid_formation->contact}}
             </div>
           </div>
 

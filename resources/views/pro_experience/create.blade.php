@@ -49,7 +49,7 @@
           {!! Form::text('position_held', null, ['class' => 'form-control']) !!}
         </div>
 
-        {!! Form::submit('Ajouter', ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit('Enregistrer', ['class' => 'btn btn-primary']) !!}
 
         {!! Form::close() !!}
       </div>

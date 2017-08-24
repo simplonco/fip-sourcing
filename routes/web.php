@@ -65,6 +65,15 @@ Route::get('/admin/pro_experience/delete/{id}', 'ProExperienceController@destroy
 Route::post('/admin/pro_experience/store', 'ProExperienceController@store')->name('proExperienceStore');
 Route::post('/admin/pro_experience/update/{id}', 'ProExperienceController@update')->name('proExperienceUpdate');
 
+Route::get('/admin/paid_formation/list', 'PaidFormationController@list')->name('paidFormationList');
+Route::get('/admin/paid_formation/create', 'PaidFormationController@create')->name('paidFormationCreate');
+Route::post('/admin/paid_formation/add', 'PaidFormationController@add')->name('paidFormationAdd');
+Route::get('/admin/paid_formation/show/{id}', 'PaidFormationController@show')->name('paidFormationShow');
+Route::get('/admin/paid_formation/edit/{id}', 'PaidFormationController@edit')->name('paidFormationEdit');
+Route::get('/admin/paid_formation/delete/{id}', 'PaidFormationController@destroy')->name('paidFormationDelete');
+Route::post('/admin/paid_formation/store', 'PaidFormationController@store')->name('paidFormationStore');
+Route::post('/admin/paid_formation/update/{id}', 'PaidFormationController@update')->name('paidFormationUpdate');
+
 Route::group(['middleware'=>'admin'], function () {
   // Admin panel
   Route::get('/admin', 'AdminController@index')->name('admin');

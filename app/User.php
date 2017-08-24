@@ -8,39 +8,44 @@ use App\ProExperience;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+  use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'last_name', 'first_name', 'email', 'password',
-    ];
+  /**
+  * The attributes that are mass assignable.
+  *
+  * @var array
+  */
+  protected $fillable = [
+    'last_name', 'first_name', 'email', 'password',
+  ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+  /**
+  * The attributes that should be hidden for arrays.
+  *
+  * @var array
+  */
+  protected $hidden = [
+    'password', 'remember_token',
+  ];
 
-    public function roles()
-    {
-        return $this->belongsToMany('App\Role');
-    }
+  public function roles()
+  {
+    return $this->belongsToMany('App\Role');
+  }
 
-    public function formations()
-    {
-        return $this->belongsToMany('App\Formation');
-    }
+  public function formations()
+  {
+    return $this->belongsToMany('App\Formation');
+  }
 
-    public function pro_experiences()
-    {
-        return $this->hasMany('App\ProExperience');
-    }
+  public function pro_experiences()
+  {
+    return $this->hasMany('App\ProExperience');
+  }
+
+  public function paid_formations()
+  {
+    return $this->hasMany('App\PaidFormation');
+  }
 
 }

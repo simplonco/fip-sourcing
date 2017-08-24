@@ -48,7 +48,7 @@
           {{ Form::select('formation', $formations, null) }}
         </div>
 
-        {!! Form::submit('Ajouter', ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit('Enregistrer', ['class' => 'btn btn-primary']) !!}
 
         {!! Form::close() !!}
       </div>

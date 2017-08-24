@@ -56,7 +56,7 @@
           {!! Form::date('end_session', null, ['class' => 'form-control']) !!}
         </div>
 
-        {!! Form::submit('Ajouter', ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit('Enregistrer', ['class' => 'btn btn-primary']) !!}
 
         {!! Form::close() !!}
       </div>
