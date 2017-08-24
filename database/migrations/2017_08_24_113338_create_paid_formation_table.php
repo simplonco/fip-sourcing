@@ -17,8 +17,8 @@ class CreatePaidFormationTable extends Migration
          $table->increments('id');
          $table->integer('user_id');
          $table->string('name');
-         $table->dateTime('begin_date');
-         $table->dateTime('end_date');
+         $table->string('begin_date');
+         $table->string('end_date');
          $table->string('contact');
          $table->timestamps();
        });

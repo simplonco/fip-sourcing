@@ -77,6 +77,14 @@ class UsersTableSeeder extends Seeder
         'pole_emploi_registration_duration' => $faker->randomDigit. ' mois',
         'paid_by_pole_emploi' => 'yes',
         'pole_emploi_allocation' => $faker->date,
+        'rsa' => 'yes',
+        'caf_number' => $faker->randomDigit,
+        'rqth' => 'no',
+        'handicapped_allocations' => 'no',
+        'transportation' => 'car',
+        'driving_license' => 'yes',
+        'free_transports_card' => 'yes',
+        'free_transports_card_validity' => $faker->date,
 
         'password' => bcrypt('azerty'),
       ]);

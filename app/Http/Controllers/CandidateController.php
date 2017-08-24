@@ -594,6 +594,14 @@ class CandidateController extends Controller
     $candidate->pole_emploi_registration_duration = $request->pole_emploi_registration_duration;
     $candidate->paid_by_pole_emploi = $request->paid_by_pole_emploi;
     $candidate->pole_emploi_allocation = $request->pole_emploi_allocation;
+    $candidate->rsa = $request->rsa;
+    $candidate->caf_number = $request->caf_number;
+    $candidate->rqth = $request->rqth;
+    $candidate->handicapped_allocations = $request->handicapped_allocations;
+    $candidate->transportation = $request->transportation;
+    $candidate->driving_license = $request->driving_license;
+    $candidate->free_transports_card = $request->free_transports_card;
+    $candidate->free_transports_card_validity = $request->free_transports_card_validity;
     $candidate->save();
 
     return redirect()->route('home');

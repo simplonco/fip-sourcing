@@ -21,18 +21,18 @@ class CreateUsersTable extends Migration
       $table->string('password');
       $table->string('civility')->nullable();
       $table->string('maiden_name')->nullable();
-      $table->dateTime('birth_date')->nullable();
+      $table->string('birth_date')->nullable();
       $table->string('native_city')->nullable();
       $table->string('native_country')->nullable();
       $table->string('nationality')->nullable();
-      $table->dateTime('entry_date')->nullable();
+      $table->string('entry_date')->nullable();
       $table->string('marital_status')->nullable();
       $table->integer('number_children')->nullable();
       $table->string('age_children')->nullable();
       $table->string('accomodation')->nullable();
       $table->string('number_social_security')->nullable();
       $table->string('number_cmu')->nullable();
-      $table->dateTime('end_visit_date')->nullable();
+      $table->string('end_visit_date')->nullable();
       $table->string('address')->nullable();
       $table->string('postal_code')->nullable();
       $table->string('city')->nullable();
@@ -70,7 +70,7 @@ class CreateUsersTable extends Migration
       $table->string('native_language')->nullable();
       $table->string('last_class')->nullable();
       $table->string('last_school')->nullable();
-      $table->dateTime('end_scholarity_date')->nullable();
+      $table->string('end_scholarity_date')->nullable();
       $table->string('reason')->nullable();
       $table->string('diploma')->nullable();
       $table->string('obtained_diploma')->nullable();
@@ -82,13 +82,21 @@ class CreateUsersTable extends Migration
 
       $table->string('pole_emploi_registration')->nullable();
       $table->integer('number_pole_emploi')->nullable();
-      $table->dateTime('first_pole_emploi_registration')->nullable();
+      $table->string('first_pole_emploi_registration')->nullable();
       $table->string('pole_emploi_password')->nullable();
-      $table->dateTime('last_pole_emploi_registration')->nullable();
+      $table->string('last_pole_emploi_registration')->nullable();
       $table->string('pole_emploi_registration_reason')->nullable();
       $table->string('pole_emploi_registration_duration')->nullable();
       $table->string('paid_by_pole_emploi')->nullable();
-      $table->dateTime('pole_emploi_allocation')->nullable();
+      $table->string('pole_emploi_allocation')->nullable();
+      $table->string('rsa')->nullable();
+      $table->integer('caf_number')->nullable();
+      $table->string('rqth')->nullable();
+      $table->string('handicapped_allocations')->nullable();
+      $table->string('transportation')->nullable();
+      $table->string('driving_license')->nullable();
+      $table->string('free_transports_card')->nullable();
+      $table->string('free_transports_card_validity')->nullable();
 
       $table->rememberToken();
       $table->timestamps();

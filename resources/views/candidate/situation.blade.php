@@ -65,6 +65,46 @@
           {!! Form::date('pole_emploi_allocation', null, ['class' => 'form-control']) !!}
         </div>
 
+        <div class="form-group">
+          {!! Form::label('rsa', 'Bénéficiaire du RSA ou ayant-droit', ['class' => 'control-label']) !!}
+          {!! Form::select('rsa', Config::get('constants.choice')); !!}
+        </div>
+
+        <div class="form-group">
+          {!! Form::label('caf_number', 'N° allocataire CAF', ['class' => 'control-label']) !!}
+          {!! Form::text('caf_number', null, ['class' => 'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+          {!! Form::label('rqth', 'Avez-vous une reconnaissance RQTH?', ['class' => 'control-label']) !!}
+          {!! Form::select('rqth', Config::get('constants.choice')); !!}
+        </div>
+
+        <div class="form-group">
+          {!! Form::label('handicapped_allocations', 'Percevez-vous des allocations adultes handicapés?', ['class' => 'control-label']) !!}
+          {!! Form::select('handicapped_allocations', Config::get('constants.choice')); !!}
+        </div>
+
+        <div class="form-group">
+          {!! Form::label('transportation', 'Moyen de locomotion', ['class' => 'control-label']) !!}
+          {!! Form::select('transportation', Config::get('situation_constants.transportation')); !!}
+        </div>
+
+        <div class="form-group">
+          {!! Form::label('driving_license', 'Permis de conduire', ['class' => 'control-label']) !!}
+          {!! Form::select('driving_license', Config::get('situation_constants.driving_license')); !!}
+        </div>
+
+        <div class="form-group">
+          {!! Form::label('free_transports_card', 'Carte de gratuité des transports', ['class' => 'control-label']) !!}
+          {!! Form::select('free_transports_card', Config::get('constants.choice')); !!}
+        </div>
+
+        <div class="form-group">
+          {!! Form::label('free_transports_card_validity', 'Date de fin de validité', ['class' => 'control-label']) !!}
+          {!! Form::date('free_transports_card_validity', null, ['class' => 'form-control']) !!}
+        </div>
+
         {!! Form::submit('Valider', ['class' => 'btn btn-primary']) !!}
 
         {!! Form::close() !!}
