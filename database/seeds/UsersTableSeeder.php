@@ -54,6 +54,8 @@ class UsersTableSeeder extends Seeder
         'super_power' => $faker->text($maxNbChars = 100),
         'motivation' => $faker->text($maxNbChars = 100),
 
+        'leisure' => $faker->bs,
+
         'availability' => $faker->word,
         'constraints' => $faker->text($maxNbChars = 100),
         'income' => $faker->word,

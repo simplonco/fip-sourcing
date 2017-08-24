@@ -26,6 +26,9 @@
               <a href="{{ route('chooseMotivation') }}" class="btn">Simplon et vous</a>
             </div>
             <div class="row">
+              <a href="{{ route('chooseLeisure') }}" class="btn">Loisirs</a>
+            </div>
+            <div class="row">
               <a href="{{ route('chooseAvailability') }}" class="btn">Disponibilité</a>
             </div>
             <div class="row">

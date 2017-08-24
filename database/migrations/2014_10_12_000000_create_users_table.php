@@ -49,6 +49,8 @@ class CreateUsersTable extends Migration
       $table->longText('motivation')->nullable();
       $table->longText('super_power')->nullable();
 
+      $table->longText('leisure')->nullable();
+
       $table->string('codecademy_profile')->nullable();
       $table->integer('codecademy_badges')->nullable();
       $table->string('openclassroom_profile')->nullable();

@@ -413,6 +413,38 @@ class CandidateController extends Controller
     return redirect()->route('home');
   }
 
+    /**
+    * Show the form for editing the leisure.
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function chooseLeisure()
+    {
+      $candidate = Auth::user();
+
+      return view('candidate.leisure', ['candidate'=>$candidate]);
+    }
+
+    /**
+    * Update the specified resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @return \Illuminate\Http\Response
+    */
+    public function storeLeisure(Request $request)
+    {
+      $candidate = Auth::user();
+
+      $this->validate($request, [
+        'leisure' => 'required|string|max:255',
+      ]);
+
+      $candidate->leisure = $request->leisure;
+      $candidate->save();
+
+      return redirect()->route('home');
+    }
+
   /**
   * Show the form for editing the professional project.
   *
