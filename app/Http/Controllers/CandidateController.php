@@ -179,6 +179,7 @@ class CandidateController extends Controller
     $candidate->obtained_diploma = $request->obtained_diploma;
     $candidate->exam = $request->exam;
     $candidate->passed_exam = $request->passed_exam;
+    $candidate->english = $request->english;
     $candidate->save();
 
     return redirect()->route('home');

@@ -73,6 +73,11 @@
           {!! Form::text('passed_exam', null, ['class' => 'form-control']) !!}
         </div>
 
+        <div class="form-group">
+          {!! Form::label('english', 'Niveau en anglais (parlé/écrit)', ['class' => 'control-label']) !!}
+          {!! Form::text('english', null, ['class' => 'form-control']) !!}
+        </div>
+
         {!! Form::submit('Valider', ['class' => 'btn btn-primary']) !!}
 
         {!! Form::close() !!}

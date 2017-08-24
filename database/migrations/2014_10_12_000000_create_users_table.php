@@ -76,13 +76,13 @@ class CreateUsersTable extends Migration
       $table->string('obtained_diploma')->nullable();
       $table->string('exam')->nullable();
       $table->string('passed_exam')->nullable();
+      $table->string('english')->nullable();
 
       $table->longText('pro_project')->nullable();
 
 
       $table->string('number_pole_emploi')->nullable();
       $table->string('study')->nullable();
-      $table->string('english')->nullable();
       $table->integer('score')->nullable();
       $table->rememberToken();
       $table->timestamps();

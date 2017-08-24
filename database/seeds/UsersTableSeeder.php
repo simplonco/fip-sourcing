@@ -70,7 +70,6 @@ class UsersTableSeeder extends Seeder
 
         'number_pole_emploi' => $faker->randomDigit,
         'study' => $faker->city,
-        'english' => $faker->boolean,
         'score' => $faker->randomNumber($nbDigits = 2, $strict = false),
 
         'password' => bcrypt('azerty'),
