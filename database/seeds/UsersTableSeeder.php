@@ -66,11 +66,16 @@ class UsersTableSeeder extends Seeder
         'prescriber_contact' => $faker->name,
         'prescriber_phone' => $faker->phoneNumber,
 
-        'pro_project' => $faker->word,
+        'pro_project' => $faker->bs,
 
+        'pole_emploi_registration' => 'yes',
         'number_pole_emploi' => $faker->randomDigit,
-        'study' => $faker->city,
-        'score' => $faker->randomNumber($nbDigits = 2, $strict = false),
+        'first_pole_emploi_registration' => $faker->date,
+        'pole_emploi_password' => $faker->password,
+        'last_pole_emploi_registration' => $faker->date,
+        'pole_emploi_registration_reason' => 'end of studies',
+        'pole_emploi_registration_duration' => $faker->randomDigit. ' mois',
+        'paid_by_pole_emploi' => 'yes',
 
         'password' => bcrypt('azerty'),
       ]);

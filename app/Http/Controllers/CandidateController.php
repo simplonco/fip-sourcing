@@ -141,6 +141,7 @@ class CandidateController extends Controller
 
     return redirect()->route('home');
   }
+
   /**
   * Show the form for editing the activity before.
   *
@@ -412,37 +413,37 @@ class CandidateController extends Controller
     return redirect()->route('home');
   }
 
-    /**
-    * Show the form for editing the professional project.
-    *
-    * @return \Illuminate\Http\Response
-    */
-    public function chooseProProject()
-    {
-      $candidate = Auth::user();
+  /**
+  * Show the form for editing the professional project.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function chooseProProject()
+  {
+    $candidate = Auth::user();
 
-      return view('candidate.pro_project', ['candidate'=>$candidate]);
-    }
+    return view('candidate.pro_project', ['candidate'=>$candidate]);
+  }
 
-    /**
-    * Update the specified resource in storage.
-    *
-    * @param  \Illuminate\Http\Request  $request
-    * @return \Illuminate\Http\Response
-    */
-    public function storeProProject(Request $request)
-    {
-      $candidate = Auth::user();
+  /**
+  * Update the specified resource in storage.
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function storeProProject(Request $request)
+  {
+    $candidate = Auth::user();
 
-      $this->validate($request, [
-        'pro_project' => 'required|string|max:255',
-      ]);
+    $this->validate($request, [
+      'pro_project' => 'required|string|max:255',
+    ]);
 
-      $candidate->pro_project = $request->pro_project;
-      $candidate->save();
+    $candidate->pro_project = $request->pro_project;
+    $candidate->save();
 
-      return redirect()->route('home');
-    }
+    return redirect()->route('home');
+  }
 
   /**
   * Show the form for editing the profile.
@@ -552,6 +553,46 @@ class CandidateController extends Controller
     $candidate->cellphone = $request->cellphone;
     $candidate->emergency_contact = $request->emergency_contact;
     $candidate->emergency_phone = $request->emergency_phone;
+    $candidate->save();
+
+    return redirect()->route('home');
+  }
+  /**
+  * Show the form for editing the current situation.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function chooseSituation()
+  {
+    $candidate = Auth::user();
+
+    return view('candidate.situation', ['candidate'=>$candidate]);
+  }
+
+  /**
+  * Update the specified resource in storage.
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function storeSituation(Request $request)
+  {
+    $candidate = Auth::user();
+
+    //TODO: validation
+    // $this->validate($request, [
+    //   'prescriber_contact' => 'string|max:100',
+    //   'prescriber_phone' => 'string|max:100'
+    // ]);
+    // dd($request);
+    $candidate->pole_emploi_registration = $request->pole_emploi_registration;
+    $candidate->number_pole_emploi = $request->number_pole_emploi;
+    $candidate->first_pole_emploi_registration = $request->first_pole_emploi_registration;
+    $candidate->pole_emploi_password = $request->pole_emploi_password;
+    $candidate->last_pole_emploi_registration = $request->last_pole_emploi_registration;
+    $candidate->pole_emploi_registration_reason = $request->pole_emploi_registration_reason;
+    $candidate->pole_emploi_registration_duration = $request->pole_emploi_registration_duration;
+    $candidate->paid_by_pole_emploi = $request->paid_by_pole_emploi;
     $candidate->save();
 
     return redirect()->route('home');

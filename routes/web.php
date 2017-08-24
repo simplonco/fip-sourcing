@@ -77,6 +77,9 @@ Route::post('/admin/paid_formation/update/{id}', 'PaidFormationController@update
 Route::get('/candidate/pro_project/choose', 'CandidateController@chooseProProject')->name('chooseProProject');
 Route::post('/candidate/pro_project/store', 'CandidateController@storeProProject')->name('storeProProject');
 
+Route::get('/candidate/situation/choose', 'CandidateController@chooseSituation')->name('chooseSituation');
+Route::post('/candidate/situation/store', 'CandidateController@storeSituation')->name('storeSituation');
+
 Route::group(['middleware'=>'admin'], function () {
   // Admin panel
   Route::get('/admin', 'AdminController@index')->name('admin');

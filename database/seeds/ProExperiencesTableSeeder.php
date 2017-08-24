@@ -17,11 +17,11 @@ class ProExperiencesTableSeeder extends Seeder
     for ($i=1; $i < 25; $i++) {
       DB::table('pro_experiences')->insert([
         'user_id' => $i,
-        'society_name' => $faker->word,
+        'society_name' => $faker->company,
         'society_address' => $faker->address,
         'contract_type' => $faker->word,
         'contract_duration' => $faker->randomNumber($nbDigits = 1, $strict = false). ' mois',
-        'position_held' => $faker->word,
+        'position_held' => $faker->jobTitle,
       ]);
     }
   }

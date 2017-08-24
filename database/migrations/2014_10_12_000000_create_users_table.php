@@ -80,10 +80,15 @@ class CreateUsersTable extends Migration
 
       $table->longText('pro_project')->nullable();
 
+      $table->string('pole_emploi_registration')->nullable();
+      $table->integer('number_pole_emploi')->nullable();
+      $table->dateTime('first_pole_emploi_registration')->nullable();
+      $table->string('pole_emploi_password')->nullable();
+      $table->dateTime('last_pole_emploi_registration')->nullable();
+      $table->string('pole_emploi_registration_reason')->nullable();
+      $table->string('pole_emploi_registration_duration')->nullable();
+      $table->string('paid_by_pole_emploi')->nullable();
 
-      $table->string('number_pole_emploi')->nullable();
-      $table->string('study')->nullable();
-      $table->integer('score')->nullable();
       $table->rememberToken();
       $table->timestamps();
     });

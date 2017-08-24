@@ -34,6 +34,9 @@
             </div>
             <div class="row">
               <a href="{{ route('chooseActivityBefore') }}" class="btn">Activité avant la formation</a>
+              <a href="{{ route('chooseSituation') }}" class="btn">Situation à l'entrée de la formation</a>
+            </div>
+            <div class="row">
               <a href="{{ route('proExperienceList') }}" class="btn">Dernières expériences professionelles</a>
               <a href="{{ route('paidFormationList') }}" class="btn">Dernières formations rémunérées</a>
             </div>
