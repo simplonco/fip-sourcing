@@ -74,6 +74,9 @@ Route::get('/admin/paid_formation/delete/{id}', 'PaidFormationController@destroy
 Route::post('/admin/paid_formation/store', 'PaidFormationController@store')->name('paidFormationStore');
 Route::post('/admin/paid_formation/update/{id}', 'PaidFormationController@update')->name('paidFormationUpdate');
 
+Route::get('/candidate/pro_project/choose', 'CandidateController@chooseProProject')->name('chooseProProject');
+Route::post('/candidate/pro_project/store', 'CandidateController@storeProProject')->name('storeProProject');
+
 Route::group(['middleware'=>'admin'], function () {
   // Admin panel
   Route::get('/admin', 'AdminController@index')->name('admin');

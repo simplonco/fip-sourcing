@@ -411,6 +411,38 @@ class CandidateController extends Controller
     return redirect()->route('home');
   }
 
+    /**
+    * Show the form for editing the professional project.
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function chooseProProject()
+    {
+      $candidate = Auth::user();
+
+      return view('candidate.pro_project', ['candidate'=>$candidate]);
+    }
+
+    /**
+    * Update the specified resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @return \Illuminate\Http\Response
+    */
+    public function storeProProject(Request $request)
+    {
+      $candidate = Auth::user();
+
+      $this->validate($request, [
+        'pro_project' => 'required|string|max:255',
+      ]);
+
+      $candidate->pro_project = $request->pro_project;
+      $candidate->save();
+
+      return redirect()->route('home');
+    }
+
   /**
   * Show the form for editing the profile.
   *

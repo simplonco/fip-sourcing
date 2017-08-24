@@ -77,6 +77,8 @@ class CreateUsersTable extends Migration
       $table->string('exam')->nullable();
       $table->string('passed_exam')->nullable();
 
+      $table->longText('pro_project')->nullable();
+
 
       $table->string('number_pole_emploi')->nullable();
       $table->string('study')->nullable();

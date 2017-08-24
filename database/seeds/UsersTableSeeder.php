@@ -66,10 +66,13 @@ class UsersTableSeeder extends Seeder
         'prescriber_contact' => $faker->name,
         'prescriber_phone' => $faker->phoneNumber,
 
+        'pro_project' => $faker->word,
+
         'number_pole_emploi' => $faker->randomDigit,
         'study' => $faker->city,
         'english' => $faker->boolean,
         'score' => $faker->randomNumber($nbDigits = 2, $strict = false),
+
         'password' => bcrypt('azerty'),
       ]);
     }

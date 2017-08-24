@@ -38,6 +38,9 @@
               <a href="{{ route('paidFormationList') }}" class="btn">Dernières formations rémunérées</a>
             </div>
             <div class="row">
+              <a href="{{ route('chooseProProject') }}" class="btn">Projet(s) Professionnel(s)</a>
+            </div>
+            <div class="row">
               <a href="{{ route('chooseProfile') }}" class="btn">Profils</a>
             </div>
           </div>
