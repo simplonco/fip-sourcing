@@ -20,48 +20,23 @@ class ProExperienceController extends Controller
   public function list(Request $request)
   {
 
-    $candidate = Auth::user();
-    $proExperiences = $candidate->pro_experiences();
+    $candidate_id = Auth::user()->id;
+    $proExperiences = ProExperience::whereHas('user', function ($q) use ($candidate_id) {
+      $q->where('user_id', $candidate_id);
+    })->get();
 
     return view('pro_experience.list', ['proExperiences'=>$proExperiences]);
   }
 
-  function add(Request $request)
-  {
-
-    $candidate = Auth::user();
-    $pro_experience = new Pro_experience;
-    $pro_experience->society_name = $request->society_name;
-    $pro_experience->society_address = $request->society_address;
-    $pro_experience->contract_type = $request->contract_type;
-    $pro_experience->contract_duration = $request->contract_duration;
-    $pro_experience->position_held = $request->position_held;
-    $pro_experience->user()->associate($candidate);
-    $pro_experience->save();
-    return redirect()->route('proExperienceList');
-  }
-
   /**
-  * Display a listing of the resource.
-  *
-  * @return \Illuminate\Http\Response
-  */
-  public function formerCreate()
-  {
-    return view('pro_experience.create');
-  }
-
-  /**
-  * Show the form for creating a new resource.
+  * Display a form to create a new resource.
   *
   * @return \Illuminate\Http\Response
   */
   public function create()
   {
-    //
+    return view('pro_experience.create');
   }
-
-
 
   /**
   * Store a newly created resource in storage.
@@ -79,14 +54,16 @@ class ProExperienceController extends Controller
       'position_held' => 'required|string|max:255'
     ]);
 
-    $pro_experience = [
-      'society_name' => $request->input('society_name'),
-      'society_address' => $request->input('society_address'),
-      'contract_type' => $request->input('contract_type'),
-      'contract_duration' => $request->input('contract_duration'),
-      'position_held' => $request->input('position_held'),
-    ];
-    ProExperience::create($pro_experience);
+    $candidate = Auth::user();
+
+    $pro_experience = new ProExperience;
+    $pro_experience->society_name = $request->society_name;
+    $pro_experience->society_address = $request->society_address;
+    $pro_experience->contract_type = $request->contract_type;
+    $pro_experience->contract_duration = $request->contract_duration;
+    $pro_experience->position_held = $request->position_held;
+    $pro_experience->user()->associate($candidate);
+    $pro_experience->save();
 
     Session::flash('flash_message', 'L\'expérience professionnelle a été ajoutée avec succès!');
 

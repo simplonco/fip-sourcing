@@ -36,7 +36,7 @@
                 @endforeach
               </tbody>
             </table>
-            @if(count($proExperiences) < 3)
+            @if(count($proExperiences) < 2)
             <a href="{{ route('proExperienceCreate') }}" class="btn">Ajouter une expérience professionnelle</a>
             @endif
           </div>

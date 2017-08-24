@@ -6,55 +6,47 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
-        <div class="panel-heading">Informations de la formation</div>
+        <div class="panel-heading">Informations de l'expérience professionnelle'</div>
         <div class="panel-body">
 
           <div class="row">
             <div class="col-md-3">
-              <b>Nom :</b>
+              <b>Nom de l'entreprise</b>
             </div>
             <div class="col-md-5">
-              {{$formation->name}}
+              {{$pro_experience->society_name}}
             </div>
           </div>
           <div class="row">
             <div class="col-md-3">
-              <b>Description :</b>
+              <b>Adresse de l'entreprise</b>
             </div>
             <div class="col-md-5">
-              {{$formation->description}}
+              {{$pro_experience->society_address}}
             </div>
           </div>
           <div class="row">
             <div class="col-md-3">
-              <b>Ville :</b>
+              <b>Type de contrat</b>
             </div>
             <div class="col-md-5">
-              {{$formation->city}}
+              {{$pro_experience->contract_type}}
             </div>
           </div>
           <div class="row">
             <div class="col-md-3">
-              <b>Année :</b>
+              <b>Durée du contrat</b>
             </div>
             <div class="col-md-5">
-              {{$formation->year}}
+              {{$pro_experience->contract_duration}}
             </div>
           </div>
           <div class="row">
             <div class="col-md-3">
-              <b>Début de la session d'inscription :</b>
+              <b>Poste occupé</b>
             </div>
             <div class="col-md-5">
-              {{$formation->begin_session}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-3">
-              <b>Fin de la session d'inscription :</b>
-            </div>
-            <div class="col-md-5">
-              {{$formation->end_session}}
+              {{$pro_experience->position_held}}
             </div>
           </div>
 
