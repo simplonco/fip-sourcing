@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Formation;
+use App\Pro_experience;
 use Illuminate\Support\Facades\Session;
 
 class CandidateController extends Controller
@@ -167,7 +168,7 @@ class CandidateController extends Controller
     //   'prescriber_contact' => 'string|max:100',
     //   'prescriber_phone' => 'string|max:100'
     // ]);
-// dd($request);
+    // dd($request);
     $candidate->scholarity = $request->scholarity;
     $candidate->native_language = $request->native_language;
     $candidate->last_class = $request->last_class;

@@ -56,6 +56,15 @@ Route::post('/candidate/prescriber/store', 'CandidateController@storePrescriber'
 Route::get('/candidate/activity_before/choose', 'CandidateController@chooseActivityBefore')->name('chooseActivityBefore');
 Route::post('/candidate/activity_before/store', 'CandidateController@storeActivityBefore')->name('storeActivityBefore');
 
+Route::get('/admin/pro_experience/list', 'ProExperienceController@list')->name('proExperienceList');
+Route::get('/admin/pro_experience/create', 'ProExperienceController@create')->name('proExperienceCreate');
+Route::post('/admin/pro_experience/add', 'ProExperienceController@add')->name('proExperienceAdd');
+Route::get('/admin/pro_experience/show/{id}', 'ProExperienceController@show')->name('proExperienceShow');
+Route::get('/admin/pro_experience/edit/{id}', 'ProExperienceController@edit')->name('proExperienceEdit');
+Route::get('/admin/pro_experience/delete/{id}', 'ProExperienceController@destroy')->name('proExperienceDelete');
+Route::post('/admin/pro_experience/store', 'ProExperienceController@store')->name('proExperienceStore');
+Route::post('/admin/pro_experience/update/{id}', 'ProExperienceController@update')->name('proExperienceUpdate');
+
 Route::group(['middleware'=>'admin'], function () {
   // Admin panel
   Route::get('/admin', 'AdminController@index')->name('admin');
