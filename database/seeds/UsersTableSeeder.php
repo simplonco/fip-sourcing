@@ -76,6 +76,7 @@ class UsersTableSeeder extends Seeder
         'pole_emploi_registration_reason' => 'end of studies',
         'pole_emploi_registration_duration' => $faker->randomDigit. ' mois',
         'paid_by_pole_emploi' => 'yes',
+        'pole_emploi_allocation' => $faker->date,
 
         'password' => bcrypt('azerty'),
       ]);

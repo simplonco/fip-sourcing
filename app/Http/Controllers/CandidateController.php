@@ -593,6 +593,7 @@ class CandidateController extends Controller
     $candidate->pole_emploi_registration_reason = $request->pole_emploi_registration_reason;
     $candidate->pole_emploi_registration_duration = $request->pole_emploi_registration_duration;
     $candidate->paid_by_pole_emploi = $request->paid_by_pole_emploi;
+    $candidate->pole_emploi_allocation = $request->pole_emploi_allocation;
     $candidate->save();
 
     return redirect()->route('home');

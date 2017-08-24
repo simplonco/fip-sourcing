@@ -60,6 +60,11 @@
           {!! Form::select('paid_by_pole_emploi', Config::get('constants.choice')); !!}
         </div>
 
+        <div class="form-group">
+          {!! Form::label('pole_emploi_allocation', 'Depuis quand êtes-vous allocataire Pôle Emploi?', ['class' => 'control-label']) !!}
+          {!! Form::date('pole_emploi_allocation', null, ['class' => 'form-control']) !!}
+        </div>
+
         {!! Form::submit('Valider', ['class' => 'btn btn-primary']) !!}
 
         {!! Form::close() !!}

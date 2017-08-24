@@ -88,6 +88,7 @@ class CreateUsersTable extends Migration
       $table->string('pole_emploi_registration_reason')->nullable();
       $table->string('pole_emploi_registration_duration')->nullable();
       $table->string('paid_by_pole_emploi')->nullable();
+      $table->dateTime('pole_emploi_allocation')->nullable();
 
       $table->rememberToken();
       $table->timestamps();
