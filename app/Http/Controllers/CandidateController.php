@@ -638,6 +638,33 @@ class CandidateController extends Controller
 
     return redirect()->route('home');
   }
+  /**
+  * Show the form for sending the application.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function confirmSendApplication()
+  {
+    $candidate = Auth::user();
+
+    return view('candidate.confirm_send_application', ['candidate'=>$candidate]);
+  }
+
+  /**
+  * Sending the application
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function sendApplication(Request $request)
+  {
+    $candidate = Auth::user();
+
+    $candidate->application_sent = true;
+    $candidate->save();
+
+    return redirect()->route('home');
+  }
 
   /**
   *Store a newly created resource in storage.

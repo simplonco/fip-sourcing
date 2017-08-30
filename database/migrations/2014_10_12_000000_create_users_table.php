@@ -100,6 +100,8 @@ class CreateUsersTable extends Migration
       $table->string('free_transports_card')->nullable();
       $table->string('free_transports_card_validity')->nullable();
 
+      $table->boolean('application_sent')->default(false);
+
       $table->rememberToken();
       $table->timestamps();
     });

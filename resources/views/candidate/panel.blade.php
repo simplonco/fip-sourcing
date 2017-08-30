@@ -11,6 +11,7 @@
           pour la formation {{Auth::user()->formations()->first()->name}}
           @endif</div>
           <div class="panel-body">
+          @if (!Auth::user()->application_sent)
             <div class="row">
               <a href="{{ route('chooseFormation') }}" class="btn">Choisir une formation</a>
             </div>
@@ -49,6 +50,14 @@
             <div class="row">
               <a href="{{ route('chooseProfile') }}" class="btn">Profils</a>
             </div>
+            <div class="row">
+              <a href="{{ route('confirmSendApplication') }}" class="btn">Envoyer votre candidature</a>
+            </div>
+            @else
+            <p>
+              Candidature envoyée!
+            </p>
+            @endif
           </div>
         </div>
       </div>

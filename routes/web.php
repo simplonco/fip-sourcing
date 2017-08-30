@@ -82,6 +82,9 @@ Route::post('/candidate/pro_project/store', 'CandidateController@storeProProject
 Route::get('/candidate/situation/choose', 'CandidateController@chooseSituation')->name('chooseSituation');
 Route::post('/candidate/situation/store', 'CandidateController@storeSituation')->name('storeSituation');
 
+Route::get('/candidate/application/confirm', 'CandidateController@confirmSendApplication')->name('confirmSendApplication');
+Route::post('/candidate/application/send', 'CandidateController@sendApplication')->name('sendApplication');
+
 Route::group(['middleware'=>'admin'], function () {
   // Admin panel
   Route::get('/admin', 'AdminController@index')->name('admin');
