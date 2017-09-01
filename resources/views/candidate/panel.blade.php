@@ -11,7 +11,10 @@
           pour la formation {{Auth::user()->formations()->first()->name}}
           @endif</div>
           <div class="panel-body">
-          @if (!Auth::user()->application_sent)
+            @if (!Auth::user()->application_sent)
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">33%</div>
+            </div>
             <div class="row">
               <a href="{{ route('chooseFormation') }}" class="btn">Choisir une formation</a>
             </div>

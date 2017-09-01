@@ -33,7 +33,7 @@
           <!-- Branding Image -->
           <a class="navbar-brand" href="{{ url('/') }}">
             <img class="logosimplon" src="{{ asset('images/logosimplon2.png') }}" alt="">
-            <span>Candidature Simplon Occ</span>
+            <span>Simplon Sourcing</span>
           </a>
         </div>
 
