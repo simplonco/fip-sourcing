@@ -18,6 +18,17 @@ class ExampleTest extends TestCase
     {
         $response = $this->get('/');
 
-        $response->assertStatus(200);
+        $response->assertStatus(302);
+
+        $response->assertRedirect('/login');
     }
+
+    // public function testAuthentication()
+    // {
+    //     $user = factory(User::class)->create();
+    //
+    //     $response = $this->actingAs($user)
+    //                      ->withSession(['foo' => 'bar'])
+    //                      ->get('/');
+    // }
 }
