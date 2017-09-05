@@ -14,7 +14,7 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testBasicTest()
+    public function testUnauthentified()
     {
         $response = $this->get('/');
 
@@ -23,12 +23,4 @@ class ExampleTest extends TestCase
         $response->assertRedirect('/login');
     }
 
-    // public function testAuthentication()
-    // {
-    //     $user = factory(User::class)->create();
-    //
-    //     $response = $this->actingAs($user)
-    //                      ->withSession(['foo' => 'bar'])
-    //                      ->get('/');
-    // }
 }
