@@ -29,11 +29,13 @@
 
           <div class="row">
             <div class="col-md-3">
-              <b>Formation :</b>
+              <b>Formations :</b>
             </div>
+            @foreach ($former->formations() as $formation)
             <div class="col-md-3">
-            {{$former->formations()->first()->name}}
+            {{$formation->name}}
             </div>
+            @endforeach
           </div>
 
         </div>

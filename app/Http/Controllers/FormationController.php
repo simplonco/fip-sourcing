@@ -21,7 +21,7 @@ class FormationController extends Controller
 
     $formations = Formation::All();
 
-    return view('formation.list', ['formations'=>$formations]);
+    return view('admin.formation.list', ['formations'=>$formations]);
   }
 
   function add(Request $request)
@@ -45,7 +45,7 @@ class FormationController extends Controller
   */
   public function index()
   {
-    return view('formation.list');
+    return view('admin.formation.list');
   }
 
   /**
@@ -55,7 +55,7 @@ class FormationController extends Controller
   */
   public function formerCreate()
   {
-    return view('formation.create');
+    return view('admin.formation.create');
   }
 
   /**
@@ -114,7 +114,7 @@ class FormationController extends Controller
   {
     $formation = Formation::findOrFail($id);
 
-    return view('formation.show', compact('formation'));
+    return view('admin.formation.show', compact('formation'));
   }
 
 
@@ -129,7 +129,7 @@ class FormationController extends Controller
   {
     $formation = Formation::findOrFail($id);
 
-    return view('formation.edit')->withFormation($formation);
+    return view('admin.formation.edit')->withFormation($formation);
   }
 
 

@@ -21,7 +21,6 @@
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Email</th>
-                <th>Formation</th>
               </tr>
             </thead>
             <tbody>
@@ -34,7 +33,6 @@
                   <td>{{$formateur->last_name}}</td>
                   <td>{{$formateur->first_name}}</td>
                   <td>{{$formateur->email}}</td>
-                  <td>{{$formateur->formations()->first()->name}}</td>
                 </tr>
                 @endforeach
               </tbody>

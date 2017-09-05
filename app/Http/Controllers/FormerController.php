@@ -25,7 +25,7 @@ class FormerController extends Controller
       $q->where('role_id', $roleId);
     })->get();
 
-    return view('former.list', ['formateurs'=>$formateurs]);
+    return view('admin.former.list', ['formateurs'=>$formateurs]);
   }
 
   function add(Request $request)
@@ -47,7 +47,7 @@ class FormerController extends Controller
   */
   public function index()
   {
-    return view('former.list');
+    return view('admin.former.list');
   }
 
 
@@ -59,7 +59,7 @@ class FormerController extends Controller
   public function create()
   {
     $formations = Formation::pluck('name', 'id');
-    return view('former.create', ['formations'=> $formations]);
+    return view('admin.former.create', ['formations'=> $formations]);
   }
 
 
@@ -111,7 +111,7 @@ class FormerController extends Controller
   {
     $former = User::findOrFail($id);
 
-    return view('former.show', compact('former'));
+    return view('admin.former.show', compact('former'));
   }
 
 
@@ -129,7 +129,7 @@ class FormerController extends Controller
     // return view('former.edit')->withFormer($former);
 
     $formations = Formation::pluck('name', 'id');
-    return view('former.edit', ['formations'=> $formations, 'former'=>$former]);
+    return view('admin.former.edit', ['formations'=> $formations, 'former'=>$former]);
   }
 
 

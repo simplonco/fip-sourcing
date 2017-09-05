@@ -8,6 +8,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class RegisterTest extends DuskTestCase
 {
+  use DatabaseMigrations;
 
     public function testRegistrationPossible()
     {
@@ -28,8 +29,7 @@ class RegisterTest extends DuskTestCase
                     ->type('password', 'azerty')
                     ->type('password_confirmation', 'azerty')
                     ->press('Valider')
-                    ->assertPathIs('/home')
-                    ->assertSee('Tester');
+                    ->assertPathIs('/home');
         });
     }
 }
