@@ -36,6 +36,11 @@ class HomeController extends Controller
     }
   }
 
+  public function unauthorized()
+  {
+    return view('unauthorized');
+  }
+
   /**
   * Show the application dashboard.
   *

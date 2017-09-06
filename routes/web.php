@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/unauthorized', 'HomeController@unauthorized')->name('unauthorized');
+
 // Candidate routes
 Route::get('/candidate/formation', 'CandidateController@chooseFormation')->name('chooseFormation');
 Route::get('/candidate/formation/store/{id}', 'CandidateController@storeFormation')->name('storeFormation');

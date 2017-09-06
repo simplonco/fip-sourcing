@@ -11,20 +11,15 @@ class IsAdmin
 
 	/**
 	*Handle an incoming request.
-		*
-		* @param  \Illuminate\Http\Request  $request
-		* @param  \Closure  $next
-		* @return mixed
-		*/
-		public function handle($request, Closure $next)
-		{
+	*
+	* @param  \Illuminate\Http\Request  $request
+	* @param  \Closure  $next
+	* @return mixed
+	*/
+	public function handle($request, Closure $next)
+	{
 		if ( Auth::user()->roles->implode('name') !== 'admin') {
-			if ( Auth::user()->roles->implode('name') == 'former'){
-				return redirect('former');
-			}
-			else {
-				return redirect('learner');
-			}
+			return redirect('unauthorized');
 		}
 		return $next($request);
 	}
