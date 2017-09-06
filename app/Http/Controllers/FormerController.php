@@ -86,12 +86,17 @@ class FormerController extends Controller
       'password' => bcrypt($request->input('password'))
     ];
 
-    $formation = Formation::where('id', $request->input('formation'))->first();
-
     $created_user = User::create($user);
     $created_user->roles()->attach(Role::where('name', 'former')->first());
 
-    $created_user->formations()->sync($formation);
+    $input = $request->all();
+    if (array_key_exists('formations', $input)){
+      $formations_ids = $input['formations'];
+      foreach ($formations_ids as $formation_id) {
+        $created_user->formations()->attach($formation_id);
+      }
+    }
+
     $created_user->save();
 
     Session::flash('flash_message', 'Le formateur a été ajouté avec succès!');
@@ -110,6 +115,8 @@ class FormerController extends Controller
   public function show($id)
   {
     $former = User::findOrFail($id);
+
+    dd($former->formations());
 
     return view('admin.former.show', compact('former'));
   }
@@ -152,9 +159,12 @@ class FormerController extends Controller
     ]);
 
     $input = $request->all();
-    $formations_ids = $input['formations'];
-    foreach ($formations_ids as $formation_id) {
-      $former->formations()->attach($formation_id);
+    $former->formations()->detach();
+    if (array_key_exists('formations', $input)){
+      $formations_ids = $input['formations'];
+      foreach ($formations_ids as $formation_id) {
+        $former->formations()->attach($formation_id);
+      }
     }
 
     $former->last_name = $input['last_name'];
