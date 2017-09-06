@@ -35,18 +35,8 @@
         </div>
 
         <div class="form-group">
-          {!! Form::label('password', 'Mot de passe', ['class' => 'control-label']) !!}
-          {!! Form::password('password', null, ['class' => 'form-control']) !!}
-        </div>
-
-        <div class="form-group">
-          {{ Form::label('password_confirmation', 'Confirmation du mot de passe') }}
-          {{ Form::password('password_confirmation') }}
-        </div>
-
-        <div class="form-group {!! $errors->has('formation_id') ? 'has-error' : '' !!}">
-          {{ Form::label('formation', 'Formation') }}
-          {{ Form::select('formation', $formations, null) }}
+          {{ Form::label('formations[]', 'Formation') }}
+          {{ Form::select('formations[]', $formations, null, array('multiple' => true, 'class' => 'form-control')) }}
         </div>
 
         {!! Form::submit('Modifier', ['class' => 'btn btn-primary']) !!}

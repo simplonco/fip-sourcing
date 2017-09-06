@@ -35,7 +35,7 @@ class User extends Authenticatable
 
   public function formations()
   {
-    return $this->belongsToMany('App\Formation');
+    return $this->belongsToMany('App\Formation', 'formation_user');
   }
 
   public function pro_experiences()

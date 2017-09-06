@@ -148,16 +148,23 @@ class FormerController extends Controller
     $this->validate($request, [
       'last_name' => 'required|max:255',
       'first_name' => 'required',
-      'email' => 'required|string|email|max:255|unique:users',
-      'password' => 'required|string|min:6|confirmed',
+      'email' => 'required|string|email|max:255'
     ]);
 
-    $formation = Formation::where('id', $request->input('formation'))->first();
-
     $input = $request->all();
+    $formations_ids = $input['formations'];
+    $formations = [];
+    foreach ($formations_ids as $formation_id) {
+      // array_push($formations, Formation::where('id', $formation_id));
+      $former->formations()->attach($formation_id);
+    }
 
-    $former->fill($input);
-    $former->formations()->sync($formation);
+
+
+    $former->last_name = $input['last_name'];
+    $former->first_name = $input['first_name'];
+    $former->email = $input['email'];
+    // $former->formations()->sync($formations);
     $former->save();
 
     Session::flash('flash_message', 'Le formateur a été modifié avec succès!');
