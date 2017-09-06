@@ -58,23 +58,23 @@ Route::post('/candidate/prescriber/store', 'CandidateController@storePrescriber'
 Route::get('/candidate/activity_before/choose', 'CandidateController@chooseActivityBefore')->name('chooseActivityBefore');
 Route::post('/candidate/activity_before/store', 'CandidateController@storeActivityBefore')->name('storeActivityBefore');
 
-Route::get('/admin/pro_experience/list', 'ProExperienceController@list')->name('proExperienceList');
-Route::get('/admin/pro_experience/create', 'ProExperienceController@create')->name('proExperienceCreate');
-Route::post('/admin/pro_experience/add', 'ProExperienceController@add')->name('proExperienceAdd');
-Route::get('/admin/pro_experience/show/{id}', 'ProExperienceController@show')->name('proExperienceShow');
-Route::get('/admin/pro_experience/edit/{id}', 'ProExperienceController@edit')->name('proExperienceEdit');
-Route::get('/admin/pro_experience/delete/{id}', 'ProExperienceController@destroy')->name('proExperienceDelete');
-Route::post('/admin/pro_experience/store', 'ProExperienceController@store')->name('proExperienceStore');
-Route::post('/admin/pro_experience/update/{id}', 'ProExperienceController@update')->name('proExperienceUpdate');
+Route::get('/candidate/pro_experience/list', 'ProExperienceController@list')->name('proExperienceList');
+Route::get('/candidate/pro_experience/create', 'ProExperienceController@create')->name('proExperienceCreate');
+Route::post('/candidate/pro_experience/add', 'ProExperienceController@add')->name('proExperienceAdd');
+Route::get('/candidate/pro_experience/show/{id}', 'ProExperienceController@show')->name('proExperienceShow');
+Route::get('/candidate/pro_experience/edit/{id}', 'ProExperienceController@edit')->name('proExperienceEdit');
+Route::get('/candidate/pro_experience/delete/{id}', 'ProExperienceController@destroy')->name('proExperienceDelete');
+Route::post('/candidate/pro_experience/store', 'ProExperienceController@store')->name('proExperienceStore');
+Route::post('/candidate/pro_experience/update/{id}', 'ProExperienceController@update')->name('proExperienceUpdate');
 
-Route::get('/admin/paid_formation/list', 'PaidFormationController@list')->name('paidFormationList');
-Route::get('/admin/paid_formation/create', 'PaidFormationController@create')->name('paidFormationCreate');
-Route::post('/admin/paid_formation/add', 'PaidFormationController@add')->name('paidFormationAdd');
-Route::get('/admin/paid_formation/show/{id}', 'PaidFormationController@show')->name('paidFormationShow');
-Route::get('/admin/paid_formation/edit/{id}', 'PaidFormationController@edit')->name('paidFormationEdit');
-Route::get('/admin/paid_formation/delete/{id}', 'PaidFormationController@destroy')->name('paidFormationDelete');
-Route::post('/admin/paid_formation/store', 'PaidFormationController@store')->name('paidFormationStore');
-Route::post('/admin/paid_formation/update/{id}', 'PaidFormationController@update')->name('paidFormationUpdate');
+Route::get('/candidate/paid_formation/list', 'PaidFormationController@list')->name('paidFormationList');
+Route::get('/candidate/paid_formation/create', 'PaidFormationController@create')->name('paidFormationCreate');
+Route::post('/candidate/paid_formation/add', 'PaidFormationController@add')->name('paidFormationAdd');
+Route::get('/candidate/paid_formation/show/{id}', 'PaidFormationController@show')->name('paidFormationShow');
+Route::get('/candidate/paid_formation/edit/{id}', 'PaidFormationController@edit')->name('paidFormationEdit');
+Route::get('/candidate/paid_formation/delete/{id}', 'PaidFormationController@destroy')->name('paidFormationDelete');
+Route::post('/candidate/paid_formation/store', 'PaidFormationController@store')->name('paidFormationStore');
+Route::post('/candidate/paid_formation/update/{id}', 'PaidFormationController@update')->name('paidFormationUpdate');
 
 Route::get('/candidate/pro_project/choose', 'CandidateController@chooseProProject')->name('chooseProProject');
 Route::post('/candidate/pro_project/store', 'CandidateController@storeProProject')->name('storeProProject');
