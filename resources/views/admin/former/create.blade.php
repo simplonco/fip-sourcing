@@ -43,9 +43,9 @@
           {{ Form::password('password_confirmation') }}
         </div>
 
-        <div class="form-group {!! $errors->has('formation_id') ? 'has-error' : '' !!}">
-          {{ Form::label('formation', 'Formation') }}
-          {{ Form::select('formation', $formations, null) }}
+        <div class="form-group">
+          {{ Form::label('formations[]', 'Formation') }}
+          {{ Form::select('formations[]', $formations, null, array('multiple' => true, 'class' => 'form-control')) }}
         </div>
 
         {!! Form::submit('Enregistrer', ['class' => 'btn btn-primary']) !!}
