@@ -26,17 +26,26 @@
               {{$former->last_name}}
             </div>
           </div>
-
-          <div class="row">
-            <div class="col-md-3">
-              <b>Formations :</b>
-            </div>
-            @foreach ($former->formations() as $formation)
-            <div class="col-md-3">
-            {{$formation->name}}
-            </div>
+          
+          <table class="table table-striped">
+            <thead>
+              <h4>Formations</h4>
+              <tr>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Ville</th>
+                <th>Année</th>
+              </tr>
+            </thead>
+            @foreach ($former->formations as $formation)
+            <tr>
+              <td>{{$formation->name}}</td>
+              <td>{{$formation->description}}</td>
+              <td>{{$formation->city}}</td>
+              <td>{{$formation->year}}</td>
+            </tr>
             @endforeach
-          </div>
+          </table>
 
         </div>
       </div>

@@ -115,10 +115,7 @@ class FormerController extends Controller
   public function show($id)
   {
     $former = User::findOrFail($id);
-
-    dd($former->formations());
-
-    return view('admin.former.show', compact('former'));
+    return view('admin.former.show', ['former'=>$former]);
   }
 
 
@@ -132,8 +129,6 @@ class FormerController extends Controller
   public function edit($id)
   {
     $former = User::findOrFail($id);
-
-    // return view('former.edit')->withFormer($former);
 
     $formations = Formation::pluck('name', 'id');
     return view('admin.former.edit', ['formations'=> $formations, 'former'=>$former]);
