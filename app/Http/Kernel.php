@@ -6,10 +6,10 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
 {
-	
-	
-	
-	
+
+
+
+
 	/**
 	*The application's global HTTP middleware stack.
 *
@@ -38,16 +38,16 @@ protected $middleware = [
 			\App\Http\Middleware\VerifyCsrfToken::class,
 			\Illuminate\Routing\Middleware\SubstituteBindings::class,
 			],
-	
+
 	'api' => [
 			'throttle:60,1',
 			'bindings',
 			],
 			];
-	
-	
-	
-	
+
+
+
+
 	/**
 	*The application's route middleware.
 *
@@ -64,6 +64,6 @@ protected $routeMiddleware = [
 'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
 'admin' => \App\Http\Middleware\IsAdmin::class,
 'candidat' => \App\Http\Middleware\IsCandidate::class,
-'formateur' => \App\Http\Middleware\IsTeacher::class,
+'recruiter' => \App\Http\Middleware\IsRecruiter::class,
 ];
 }

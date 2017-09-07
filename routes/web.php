@@ -110,3 +110,7 @@ Route::group(['middleware'=>'admin'], function () {
   Route::post('/admin/formation/update/{id}', 'Admin\FormationController@update')->name('formationUpdate');
 }
 );
+
+Route::group(['middleware' => 'recruiter'], function () {
+  Route::get('/recruiter', 'Recruiter\RecruiterController@recruiterIndex')->name('recruiterIndex');
+});
