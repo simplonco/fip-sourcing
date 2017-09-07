@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Candidate;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Formation;
 use App\Pro_experience;
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\Controller;
 
 class CandidateController extends Controller
 {

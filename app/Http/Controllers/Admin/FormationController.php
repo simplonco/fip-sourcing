@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use App\User;
 use App\Formation;
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\Controller;
+
 class FormationController extends Controller
 {
 

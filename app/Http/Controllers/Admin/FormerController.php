@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -9,6 +9,9 @@ use App\User;
 use App\Role;
 use App\Formation;
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\Controller;
+
+
 class FormerController extends Controller
 {
 
