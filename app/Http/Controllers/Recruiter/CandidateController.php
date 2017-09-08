@@ -37,11 +37,11 @@ class CandidateController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function recruiterFormationShow($id)
+  public function candidateFormationShow($id)
   {
-    $formation = Formation::findOrFail($id);
+    $candidate = User::findOrFail($id);
 
-    return view('recruiter.formationShow', compact('formation'));
+    return view('recruiter.candidateShow', compact('candidate'));
   }
 
 
@@ -52,11 +52,11 @@ class CandidateController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function recruiterFormationEdit($id)
+  public function candidateFormationEdit($id)
   {
-    $formation = Formation::findOrFail($id);
+    $candidate = User::findOrFail($id);
 
-    return view('recruiter.formationEdit')->withFormation($formation);
+    return view('recruiter.candidateEdit', compact('candidate'));
   }
 
 
@@ -68,28 +68,36 @@ class CandidateController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function recruiterFormationUpdate($id, Request $request)
+  public function candidateFormationUpdate($id, Request $request)
   {
-    $formation = Formation::findOrFail($id);
-
-    $this->validate($request, [
-      'name' => 'required|max:255',
-      'description' => 'required|max:255',
-      'city' => 'required',
-      'year' => 'required',
-      'begin_session' => 'required',
-      'end_session' => 'required',
-    ]);
+    //TODO: add validation as soon as fields to display are chosen
+    $candidate = User::findOrFail($id);
 
     $input = $request->all();
 
-    $formation->fill($input)->save();
+    $candidate->fill($input)->save();
 
-    Session::flash('flash_message', 'La formation a été modifiée avec succès!');
+    Session::flash('flash_message', 'Le candidat a été modifié avec succès!');
 
     return Redirect()->route('recruiterIndex');
   }
 
 
+    /**
+    * Remove the specified resource from storage.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
+    public function candidateFormationDelete($id)
+    {
+      $candidate = User::findOrFail($id);
+
+      $candidate->delete();
+
+      Session::flash('flash_message', 'Le candidat a été supprimé avec succès!');
+
+      return redirect()->route('recruiterIndex');
+    }
 
 }
