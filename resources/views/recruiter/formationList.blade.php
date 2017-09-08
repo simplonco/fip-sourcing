@@ -17,6 +17,7 @@
                 <th>Description</th>
                 <th>Ville</th>
                 <th>Année</th>
+                <th>Candidats</th>
               </tr>
             </thead>
             @foreach ($former->formations as $formation)
@@ -28,6 +29,9 @@
                 <td>{{$formation->description}}</td>
                 <td>{{$formation->city}}</td>
                 <td>{{$formation->year}}</td>
+                <td style="text-align:center;">
+                  <a href="{{ route('recruiterFormationCandidatesShow', $formation->id) }}">Liste des candidats</a>
+                </td>
               </tr>
               @endforeach
             </table>
