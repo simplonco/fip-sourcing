@@ -12,6 +12,7 @@
           <table class="table table-striped">
             <thead>
               <tr>
+                <th style="text-align:center;">Actions</th>
                 <th>Nom</th>
                 <th>Description</th>
                 <th>Ville</th>
@@ -20,18 +21,21 @@
             </thead>
             @foreach ($former->formations as $formation)
             <tr>
-              <td>{{$formation->name}}</td>
-              <td>{{$formation->description}}</td>
-              <td>{{$formation->city}}</td>
-              <td>{{$formation->year}}</td>
-            </tr>
-            @endforeach
-          </table>
+              <td style="text-align:center;">
+                <a href="{{ route('recruiterFormationShow', $formation->id) }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                <a href="{{ route('recruiterFormationEdit', $formation->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <td>{{$formation->name}}</td>
+                <td>{{$formation->description}}</td>
+                <td>{{$formation->city}}</td>
+                <td>{{$formation->year}}</td>
+              </tr>
+              @endforeach
+            </table>
 
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-@endsection
+  @endsection
