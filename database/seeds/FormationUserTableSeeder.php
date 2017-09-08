@@ -13,15 +13,13 @@ class FormationUserTableSeeder extends Seeder
     {
       DB::table('formation_user')->insert([
           'user_id' => '2',
+          'formation_id' => '3',
+      ]);
+
+      for ($i=3; $i < 50; $i++) {
+      DB::table('formation_user')->insert([
+          'user_id' => $i,
           'formation_id' => '2',
-      ]);
-      DB::table('formation_user')->insert([
-          'user_id' => '3',
-          'formation_id' => '3',
-      ]);
-      DB::table('formation_user')->insert([
-          'user_id' => '4',
-          'formation_id' => '3',
-      ]);
+      ]);}
     }
 }
