@@ -35,6 +35,7 @@
                   <td>{{$candidate->email}}</td>
                 </tr>
                 @endforeach
+                {{ $candidates->links() }}
               </tbody>
             </table>
           </div>

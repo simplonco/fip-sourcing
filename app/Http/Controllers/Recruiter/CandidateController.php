@@ -26,7 +26,7 @@ class CandidateController extends Controller
       $q->where('role_id', $roleId);
     })->whereHas('formations', function ($q) use ($formation_id) {
       $q->where('formation_id', $formation_id);
-    })->get();
+    })->paginate(10);
 
     return view('recruiter.candidateList', ['candidates'=>$candidates, 'formation'=>$formation]);
   }
