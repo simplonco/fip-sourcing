@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Formation;
 use Illuminate\Support\Facades\Session;
 
-class RecruiterController extends Controller
+class FormationController extends Controller
 {
   public function __construct()
   {

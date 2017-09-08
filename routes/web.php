@@ -112,8 +112,8 @@ Route::group(['middleware'=>'admin'], function () {
 );
 
 Route::group(['middleware' => 'recruiter'], function () {
-  Route::get('/recruiter', 'Recruiter\RecruiterController@recruiterIndex')->name('recruiterIndex');
-  Route::get('/recruiter/formation/show/{id}', 'Recruiter\RecruiterController@recruiterFormationShow')->name('recruiterFormationShow');
-  Route::get('/recruiter/formation/edit/{id}', 'Recruiter\RecruiterController@recruiterFormationEdit')->name('recruiterFormationEdit');
-  Route::post('/recruiter/formation/update/{id}', 'Recruiter\RecruiterController@recruiterFormationUpdate')->name('recruiterFormationUpdate');
+  Route::get('/recruiter', 'Recruiter\FormationController@recruiterIndex')->name('recruiterIndex');
+  Route::get('/recruiter/formation/show/{id}', 'Recruiter\FormationController@recruiterFormationShow')->name('recruiterFormationShow');
+  Route::get('/recruiter/formation/edit/{id}', 'Recruiter\FormationController@recruiterFormationEdit')->name('recruiterFormationEdit');
+  Route::post('/recruiter/formation/update/{id}', 'Recruiter\FormationController@recruiterFormationUpdate')->name('recruiterFormationUpdate');
 });
