@@ -57,14 +57,6 @@
                             </div>
                         </div>
                     </form>
-<hr>
-                    <div style="text-align:center; color:black">
-                    <h4>Pour phase de test</h4>
-    <span>Connexion en tant que formateur : login -> formateur@example.com | mdp -> azerty</span><br>
-    <span>Connexion en tant que candidat : S'enregistrer et remplir une candidature</span><br>
-    <span>Connexion en tant qu'admin : login -> admin@example.com | mdp -> azerty</span>
-
-                    </div>
                 </div>
             </div>
         </div>
