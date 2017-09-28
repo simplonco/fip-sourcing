@@ -16,7 +16,7 @@
               <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">33%</div>
             </div>
             <div class="row">
-              <a href="{{ route('chooseFormation') }}" class="btn">Choisir une formation</a>
+              <a href="{{ route('chooseFormation') }}" class="btn">@lang('panel.formation')</a>
             </div>
             <div class="row">
               <a href="{{ route('chooseCivil') }}" class="btn">Etat civil</a>

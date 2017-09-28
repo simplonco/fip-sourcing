@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -39,6 +42,13 @@ class HomeController extends Controller
   public function unauthorized()
   {
     return view('unauthorized');
+  }
+
+  public function language()
+  {
+    $newLocale = Session::get('applocale') == 'fr' ? 'en' : 'fr';
+    Session::put('applocale', $newLocale);
+		return Redirect::back();
   }
 
   /**
