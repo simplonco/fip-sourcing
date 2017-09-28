@@ -244,13 +244,15 @@ class CandidateController extends Controller
 
     $this->validate($request, [
       'availability' => 'required|string|max:255',
-      'constraints' => 'required|string|max:255',
-      'income' => 'required|string|max:255',
+      'efforts' => 'required|string|max:255',
+      'computers' => 'required|string|max:255',
+      'heard_of' => 'required|string|max:255',
     ]);
 
     $candidate->availability = $request->availability;
-    $candidate->constraints = $request->constraints;
-    $candidate->income = $request->income;
+    $candidate->efforts = $request->efforts;
+    $candidate->computers = $request->computers;
+    $candidate->heard_of = $request->heard_of;
     $candidate->save();
 
     return redirect()->route('home');

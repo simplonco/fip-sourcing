@@ -13,7 +13,9 @@ return [
     |
     */
 
-    'formation' => 'Choisir une formation',
-    'operationnal' => 'Opérationnel',
+    'availability' => 'The training will start on :start_date and will end on :end_date. Do you confirm you will be available during this period?',
+    'efforts' => 'What have you done today in connection with your application?',
+    'computers' => 'Do you confirm that you are comfortable with computer tools and that a mouse is not an animal?',
+    'heard_of' => 'How did you hear about Simplon.co?',
 
 ];

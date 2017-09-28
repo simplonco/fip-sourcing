@@ -58,8 +58,9 @@ class CreateUsersTable extends Migration
 
 
       $table->longText('availability')->nullable();
-      $table->longText('constraints')->nullable();
-      $table->longText('income')->nullable();
+      $table->longText('efforts')->nullable();
+      $table->longText('computers')->nullable();
+      $table->longText('heard_of')->nullable();
 
       $table->string('followup_device')->nullable();
       $table->string('sent_by')->nullable();

@@ -19,6 +19,9 @@
               <a href="{{ route('chooseFormation') }}" class="btn">@lang('panel.formation')</a>
             </div>
             <div class="row">
+              <a href="{{ route('chooseAvailability') }}" class="btn">@lang('panel.operationnal')</a>
+            </div>
+            <div class="row">
               <a href="{{ route('chooseCivil') }}" class="btn">Etat civil</a>
             </div>
             <div class="row">
@@ -31,9 +34,6 @@
             </div>
             <div class="row">
               <a href="{{ route('chooseLeisure') }}" class="btn">Loisirs</a>
-            </div>
-            <div class="row">
-              <a href="{{ route('chooseAvailability') }}" class="btn">Disponibilité</a>
             </div>
             <div class="row">
               <a href="{{ route('chooseFollowup') }}" class="btn">Suivi</a>

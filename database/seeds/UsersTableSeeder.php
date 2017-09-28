@@ -57,8 +57,9 @@ class UsersTableSeeder extends Seeder
         'leisure' => $faker->bs,
 
         'availability' => $faker->word,
-        'constraints' => $faker->text($maxNbChars = 100),
-        'income' => $faker->word,
+        'efforts' => $faker->text($maxNbChars = 100),
+        'computers' => $faker->text($maxNbChars = 100),
+        'heard_of' => $faker->text($maxNbChars = 100),
 
         'codecademy_profile' => $faker->url,
         'openclassroom_profile' => $faker->url,

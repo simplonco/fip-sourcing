@@ -19,7 +19,7 @@ class Locale
     if(!Session::has('applocale'))
     {
       App::setLocale(Config::get('app.fallback_locale'));
-      // Session::put('applocale', Config::get('app.fallback_locale'));
+      Session::put('applocale', Config::get('app.fallback_locale'));
     }
     else
     {
