@@ -15,5 +15,6 @@ return [
 
     'formation' => 'Choisir une formation',
     'operationnal' => 'Opérationnel',
+    'administrative' => 'Renseignements administratifs',
 
 ];

@@ -19,24 +19,40 @@ class CreateUsersTable extends Migration
       $table->string('first_name');
       $table->string('email')->unique();
       $table->string('password');
+
+      $table->longText('availability')->nullable();
+      $table->longText('efforts')->nullable();
+      $table->longText('computers')->nullable();
+      $table->longText('heard_of')->nullable();
+
+      $table->string('nationality')->nullable();
+      $table->string('birth_date')->nullable();
+      $table->string('gender')->nullable();
+      $table->string('phone')->nullable();
+      $table->string('postal_code')->nullable();
+      $table->string('city')->nullable();
+      $table->string('address')->nullable();
+      $table->string('status')->nullable();
+      $table->integer('number_pole_emploi')->nullable();
+      $table->string('pole_emploi')->nullable();
+      $table->string('number_social_security')->nullable();
+      $table->string('obtained_diploma')->nullable();
+      $table->string('cdd')->nullable();
+
+
+      
+
       $table->string('civility')->nullable();
       $table->string('maiden_name')->nullable();
-      $table->string('birth_date')->nullable();
       $table->string('native_city')->nullable();
       $table->string('native_country')->nullable();
-      $table->string('nationality')->nullable();
       $table->string('entry_date')->nullable();
       $table->string('marital_status')->nullable();
       $table->integer('number_children')->nullable();
       $table->string('age_children')->nullable();
       $table->string('accomodation')->nullable();
-      $table->string('number_social_security')->nullable();
       $table->string('number_cmu')->nullable();
       $table->string('end_visit_date')->nullable();
-      $table->string('address')->nullable();
-      $table->string('postal_code')->nullable();
-      $table->string('city')->nullable();
-      $table->string('phone')->nullable();
       $table->string('cellphone')->nullable();
       $table->string('emergency_contact')->nullable();
       $table->string('emergency_phone')->nullable();
@@ -56,12 +72,6 @@ class CreateUsersTable extends Migration
       $table->string('openclassroom_profile')->nullable();
       $table->string('other_profile')->nullable();
 
-
-      $table->longText('availability')->nullable();
-      $table->longText('efforts')->nullable();
-      $table->longText('computers')->nullable();
-      $table->longText('heard_of')->nullable();
-
       $table->string('followup_device')->nullable();
       $table->string('sent_by')->nullable();
       $table->string('local_mission')->nullable();
@@ -76,7 +86,6 @@ class CreateUsersTable extends Migration
       $table->string('end_scholarity_date')->nullable();
       $table->string('reason')->nullable();
       $table->string('diploma')->nullable();
-      $table->string('obtained_diploma')->nullable();
       $table->string('exam')->nullable();
       $table->string('passed_exam')->nullable();
       $table->string('english')->nullable();
@@ -84,7 +93,6 @@ class CreateUsersTable extends Migration
       $table->longText('pro_project')->nullable();
 
       $table->string('pole_emploi_registration')->nullable();
-      $table->integer('number_pole_emploi')->nullable();
       $table->string('first_pole_emploi_registration')->nullable();
       $table->string('pole_emploi_password')->nullable();
       $table->string('last_pole_emploi_registration')->nullable();

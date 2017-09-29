@@ -25,24 +25,39 @@ class UsersTableSeeder extends Seeder
         'last_name' => $faker->lastName,
         'first_name' => $faker->firstName,
         'email' => $faker->unique()->email,
-        'civility' => 'M',
+        'password' => bcrypt('azerty'),
+
+        'availability' => $faker->word,
+        'efforts' => $faker->text($maxNbChars = 100),
+        'computers' => $faker->text($maxNbChars = 100),
+        'heard_of' => $faker->text($maxNbChars = 100),
+
+        'nationality' => 'français',
         'birth_date' => $faker->date,
+        'gender' => 'unicorn',
+        'phone' => $faker->phoneNumber,
+        'postal_code' => $faker->postcode,
+        'city' => $faker->city,
+        'address' => $faker->address,
+        'status' => 'unemployed',
+        'number_pole_emploi' => $faker->randomDigit,
+        'pole_emploi' => $faker->city,
+        'number_social_security' => $faker->randomDigit,
+        'obtained_diploma' => 'Bac',
+        'cdd'=>$faker->date,
+
+
+        'civility' => 'M',
         'maiden_name' => $faker->lastName,
         'native_city' => $faker->city,
         'native_country' => $faker->country,
-        'nationality' => 'français',
         'entry_date' => $faker->date,
         'marital_status' => 'single',
         'number_children' => $faker->randomNumber($nbDigits = 1, $strict = false),
         'age_children' => $faker->randomNumber($nbDigits = 2, $strict = false),
         'accomodation' => $faker->word,
-        'number_social_security' => $faker->randomDigit,
         'number_cmu' => $faker->randomDigit,
         'end_visit_date' => $faker->date,
-        'address' => $faker->address,
-        'postal_code' => $faker->postcode,
-        'city' => $faker->city,
-        'phone' => $faker->phoneNumber,
         'cellphone' => $faker->phoneNumber,
         'emergency_contact' => $faker->name,
         'emergency_phone' => $faker->phoneNumber,
@@ -56,11 +71,6 @@ class UsersTableSeeder extends Seeder
 
         'leisure' => $faker->bs,
 
-        'availability' => $faker->word,
-        'efforts' => $faker->text($maxNbChars = 100),
-        'computers' => $faker->text($maxNbChars = 100),
-        'heard_of' => $faker->text($maxNbChars = 100),
-
         'codecademy_profile' => $faker->url,
         'openclassroom_profile' => $faker->url,
         'other_profile' => $faker->url,
@@ -72,7 +82,6 @@ class UsersTableSeeder extends Seeder
         'pro_project' => $faker->bs,
 
         'pole_emploi_registration' => 'yes',
-        'number_pole_emploi' => $faker->randomDigit,
         'first_pole_emploi_registration' => $faker->date,
         'pole_emploi_password' => $faker->password,
         'last_pole_emploi_registration' => $faker->date,
@@ -89,7 +98,6 @@ class UsersTableSeeder extends Seeder
         'free_transports_card' => 'yes',
         'free_transports_card_validity' => $faker->date,
 
-        'password' => bcrypt('azerty'),
       ]);
     }
 

@@ -76,6 +76,93 @@ class CandidateController extends Controller
     return redirect()->route('home');
   }
 
+    /**
+    * Show the form for editing the availability.
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function chooseAvailability()
+    {
+      $candidate = Auth::user();
+
+      return view('candidate.availability', ['candidate'=>$candidate]);
+    }
+
+    /**
+    * Update the specified resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @return \Illuminate\Http\Response
+    */
+    public function storeAvailability(Request $request)
+    {
+      $candidate = Auth::user();
+
+      $this->validate($request, [
+        'availability' => 'required|string|max:255',
+        'efforts' => 'required|string|max:255',
+        'computers' => 'required|string|max:255',
+        'heard_of' => 'required|string|max:255',
+      ]);
+
+      $candidate->availability = $request->availability;
+      $candidate->efforts = $request->efforts;
+      $candidate->computers = $request->computers;
+      $candidate->heard_of = $request->heard_of;
+      $candidate->save();
+
+      return redirect()->route('home');
+    }
+
+
+      /**
+      * Show the form for editing the personal infos.
+      *
+      * @return \Illuminate\Http\Response
+      */
+      public function chooseAdministrative()
+      {
+        $candidate = Auth::user();
+
+        return view('candidate.administrative', ['candidate'=>$candidate]);
+      }
+
+      /**
+      * Update the specified resource in storage.
+      *
+      * @param  \Illuminate\Http\Request  $request
+      * @return \Illuminate\Http\Response
+      */
+      public function storeAdministrative(Request $request)
+      {
+        $candidate = Auth::user();
+
+        //TODO : implement validation
+        // $this->validate($request, [
+        //   'codecademy_profile' => 'required|string|max:255',
+        //   'openclassroom_profile' => 'string|max:255',
+        //   'other_profile' => 'string|max:255',
+        // ]);
+
+        $candidate->nationality = $request->nationality;
+        $candidate->birth_date = $request->birth_date;
+        $candidate->gender = $request->gender;
+        $candidate->phone = $request->phone;
+        $candidate->postal_code = $request->postal_code;
+        $candidate->city = $request->city;
+        $candidate->address = $request->address;
+        $candidate->status = $request->status;
+        $candidate->number_pole_emploi = $request->number_pole_emploi;
+        $candidate->pole_emploi = $request->pole_emploi;
+        $candidate->number_social_security = $request->number_social_security;
+        $candidate->obtained_diploma = $request->obtained_diploma;
+        $candidate->cdd = $request->cdd;
+
+        $candidate->save();
+
+        return redirect()->route('home');
+      }
+
   /**
   * Show the form for editing the hero.
   *
@@ -219,44 +306,6 @@ class CandidateController extends Controller
     return redirect()->route('home');
   }
 
-
-  /**
-  * Show the form for editing the availability.
-  *
-  * @return \Illuminate\Http\Response
-  */
-  public function chooseAvailability()
-  {
-    $candidate = Auth::user();
-
-    return view('candidate.availability', ['candidate'=>$candidate]);
-  }
-
-  /**
-  * Update the specified resource in storage.
-  *
-  * @param  \Illuminate\Http\Request  $request
-  * @return \Illuminate\Http\Response
-  */
-  public function storeAvailability(Request $request)
-  {
-    $candidate = Auth::user();
-
-    $this->validate($request, [
-      'availability' => 'required|string|max:255',
-      'efforts' => 'required|string|max:255',
-      'computers' => 'required|string|max:255',
-      'heard_of' => 'required|string|max:255',
-    ]);
-
-    $candidate->availability = $request->availability;
-    $candidate->efforts = $request->efforts;
-    $candidate->computers = $request->computers;
-    $candidate->heard_of = $request->heard_of;
-    $candidate->save();
-
-    return redirect()->route('home');
-  }
 
   /**
   * Show the form for editing the followup.
@@ -538,60 +587,6 @@ class CandidateController extends Controller
     return redirect()->route('home');
   }
 
-  /**
-  * Show the form for editing the personal infos.
-  *
-  * @return \Illuminate\Http\Response
-  */
-  public function chooseCivil()
-  {
-    $candidate = Auth::user();
-
-    return view('candidate.civil', ['candidate'=>$candidate]);
-  }
-
-  /**
-  * Update the specified resource in storage.
-  *
-  * @param  \Illuminate\Http\Request  $request
-  * @return \Illuminate\Http\Response
-  */
-  public function storeCivil(Request $request)
-  {
-    $candidate = Auth::user();
-
-    //TODO : implement validation
-    // $this->validate($request, [
-    //   'codecademy_profile' => 'required|string|max:255',
-    //   'openclassroom_profile' => 'string|max:255',
-    //   'other_profile' => 'string|max:255',
-    // ]);
-
-    $candidate->civility = $request->civility;
-    $candidate->maiden_name = $request->maiden_name;
-    $candidate->birth_date = $request->birth_date;
-    $candidate->native_city = $request->native_city;
-    $candidate->native_country = $request->native_country;
-    $candidate->nationality = $request->nationality;
-    $candidate->entry_date = $request->entry_date;
-    $candidate->marital_status = $request->marital_status;
-    $candidate->number_children = $request->number_children;
-    $candidate->age_children = $request->age_children;
-    $candidate->accomodation = $request->accomodation;
-    $candidate->number_social_security = $request->number_social_security;
-    $candidate->number_cmu = $request->number_cmu;
-    $candidate->end_visit_date = $request->end_visit_date;
-    $candidate->address = $request->address;
-    $candidate->postal_code = $request->postal_code;
-    $candidate->city = $request->city;
-    $candidate->phone = $request->phone;
-    $candidate->cellphone = $request->cellphone;
-    $candidate->emergency_contact = $request->emergency_contact;
-    $candidate->emergency_phone = $request->emergency_phone;
-    $candidate->save();
-
-    return redirect()->route('home');
-  }
   /**
   * Show the form for editing the current situation.
   *

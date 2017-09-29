@@ -14,5 +14,7 @@ return [
     */
 
     'formation' => 'Choose a formation',
+    'operationnal' => 'Operationnal',
+    'administrative' => 'Administrative information',
 
 ];

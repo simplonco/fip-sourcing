@@ -27,8 +27,8 @@ Route::get('/language', 'HomeController@language')->name('language');
 Route::get('/candidate/formation', 'Candidate\CandidateController@chooseFormation')->name('chooseFormation');
 Route::get('/candidate/formation/store/{id}', 'Candidate\CandidateController@storeFormation')->name('storeFormation');
 
-Route::get('/candidate/civil/choose', 'Candidate\CandidateController@chooseCivil')->name('chooseCivil');
-Route::post('/candidate/civil/store', 'Candidate\CandidateController@storeCivil')->name('storeCivil');
+Route::get('/candidate/administrative/choose', 'Candidate\CandidateController@chooseAdministrative')->name('chooseAdministrative');
+Route::post('/candidate/administrative/store', 'Candidate\CandidateController@storeAdministrative')->name('storeAdministrative');
 
 Route::get('/candidate/hero/choose', 'Candidate\CandidateController@chooseHero')->name('chooseHero');
 Route::post('/candidate/hero/store', 'Candidate\CandidateController@storeHero')->name('storeHero');
