@@ -13,11 +13,23 @@ return [
     |
     */
 
+    'process' => 'Application process ',
+    'selected_formation' => 'for the :name formation',
     'formation' => 'Choose a formation',
     'operationnal' => 'Operationnal',
     'administrative' => 'Administrative information',
     'experience' => 'Professional experiences and english',
     'coding' => 'Coding & you',
     'projection' => 'Projection / Human',
+    'send' => 'Send your application',
+    'sent' => 'Application sent!',
+    'choose_formation' => [
+      'name' => 'Name',
+      'description' => 'Description',
+      'city' => 'City',
+      'year' => 'Year',
+      'begin_session' => 'Begin session',
+      'end_session' => 'End session'
+    ]
 
 ];

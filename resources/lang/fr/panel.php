@@ -13,11 +13,23 @@ return [
     |
     */
 
+    'process' => 'Processus d\'inscription ',
+    'selected_formation' => 'pour la formation :name',
     'formation' => 'Choisir une formation',
     'operationnal' => 'Opérationnel',
     'administrative' => 'Renseignements administratifs',
     'experience' => 'Passé professionnel et anglais',
     'coding' => 'Le code & vous',
     'projection' => 'Projection / Humain',
+    'send' => 'Envoyer votre candidature',
+    'sent' => 'Candidature envoyée avec succès!',
+    'choose_formation' => [
+      'name' => 'Nom',
+      'description' => 'Description',
+      'city' => 'Ville',
+      'year' => 'Année',
+      'begin_session' => 'Début de session',
+      'end_session' => 'Fin de session'
+    ]
 
 ];

@@ -6,9 +6,9 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
-        <div class="panel-heading">Processus d'inscription
+        <div class="panel-heading">{{__('panel.process')}}
           @if (Auth::user()->formations()->first())
-          pour la formation {{Auth::user()->formations()->first()->name}}
+          {{__('panel.selected_formation', ['name' => Auth::user()->formations()->first()->name])}} 
           @endif</div>
           <div class="panel-body">
             @if (!Auth::user()->application_sent)
@@ -34,56 +34,17 @@
               <a href="{{ route('chooseProjection') }}" class="btn">{{__('panel.projection')}}</a>
             </div>
 
-
-
             <div class="row">
-              <a href="{{ route('chooseHero') }}" class="btn">Super-héros</a>
-              <a href="{{ route('chooseExperience') }}" class="btn">Expérience</a>
-              <a href="{{ route('chooseHack') }}" class="btn">Hack</a>
-              <a href="{{ route('chooseCourse') }}" class="btn">Votre parcours</a>
-              <a href="{{ route('chooseSuperpower') }}" class="btn">Super-pouvoirs</a>
-              <a href="{{ route('chooseMotivation') }}" class="btn">Simplon et vous</a>
-            </div>
-            <div class="row">
-              <a href="{{ route('chooseLeisure') }}" class="btn">Loisirs</a>
-            </div>
-            <div class="row">
-              <a href="{{ route('chooseFollowup') }}" class="btn">Suivi</a>
-              <a href="{{ route('choosePrescriber') }}" class="btn">Prescripteur</a>
-            </div>
-            <div class="row">
-              <a href="{{ route('chooseActivityBefore') }}" class="btn">Activité avant la formation</a>
-              <a href="{{ route('chooseSituation') }}" class="btn">Situation à l'entrée de la formation</a>
-            </div>
-            <div class="row">
-              <a href="{{ route('proExperienceList') }}" class="btn">Dernières expériences professionelles</a>
-              <a href="{{ route('paidFormationList') }}" class="btn">Dernières formations rémunérées</a>
-            </div>
-            <div class="row">
-              <a href="{{ route('chooseProProject') }}" class="btn">Projet(s) Professionnel(s)</a>
-            </div>
-            <div class="row">
-              <a href="{{ route('confirmSendApplication') }}" class="btn">Envoyer votre candidature</a>
+              <a href="{{ route('confirmSendApplication') }}" class="btn">{{__('panel.send')}}</a>
             </div>
             @else
             <p>
-              Candidature envoyée!
+              {{__('panel.sent')}}
             </p>
             @endif
           </div>
         </div>
       </div>
-      @if (Auth::user()->codecademy_badges)
-      <div class="col-md-2 panel">
-        <div class="card">
-          <div class="card-block">
-            <h3 class="panel-heading">Badges Codecademy</h3>
-            <p class="panel-body h3">{{Auth::user()->codecademy_badges}}</p>
-            <a href="{{ route('refreshBadges') }}" class="btn btn-primary">Actualiser</a>
-          </div>
-        </div>
-      </div>
-      @endif
     </div>
   </div>
 

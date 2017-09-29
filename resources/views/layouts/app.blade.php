@@ -8,7 +8,7 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>Candidature Simplon</title>
+  <title>{{__('general.title')}}</title>
 
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -33,7 +33,7 @@
           <!-- Branding Image -->
           <a class="navbar-brand" href="{{ url('/') }}">
             <img class="logosimplon" src="{{ asset('images/logosimplon2.png') }}" alt="">
-            <span>Simplon Sourcing</span>
+            <span>{{__('general.title')}}</span>
           </a>
         </div>
 
@@ -47,7 +47,7 @@
           <ul class="nav navbar-nav navbar-right">
             <!-- Authentication Links -->
             <li>
-            <a href="{{ route('language') }}">{{session('applocale')}}</a>  
+            <a href="{{ route('language') }}">{{session('applocale')}}</a>
             </li>
             @if (Auth::guest())
             <li><a href="{{ route('login') }}">Login</a></li>
@@ -63,7 +63,7 @@
                   <a href="{{ route('logout') }}"
                   onclick="event.preventDefault();
                   document.getElementById('logout-form').submit();">
-                  > Se déconnecter
+                  > {{__('general.logout')}}
                 </a>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -86,7 +86,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-2 col-md-offset-5">
-      <a href="{{ url('/home') }}" class="btn btn-primary">Retour à l'accueil</a>
+      <a href="{{ url('/home') }}" class="btn btn-primary">{{__('general.home')}}</a>
       </a>
     </div>
   </div>

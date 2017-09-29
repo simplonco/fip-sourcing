@@ -42,57 +42,6 @@ Route::post('/candidate/coding/store', 'Candidate\CandidateController@storeCodin
 Route::get('/candidate/projection/choose', 'Candidate\CandidateController@chooseProjection')->name('chooseProjection');
 Route::post('/candidate/projection/store', 'Candidate\CandidateController@storeProjection')->name('storeProjection');
 
-
-
-Route::get('/candidate/hero/choose', 'Candidate\CandidateController@chooseHero')->name('chooseHero');
-Route::post('/candidate/hero/store', 'Candidate\CandidateController@storeHero')->name('storeHero');
-Route::get('/candidate/hack/choose', 'Candidate\CandidateController@chooseHack')->name('chooseHack');
-Route::post('/candidate/hack/store', 'Candidate\CandidateController@storeHack')->name('storeHack');
-Route::get('/candidate/course/choose', 'Candidate\CandidateController@chooseCourse')->name('chooseCourse');
-Route::post('/candidate/course/store', 'Candidate\CandidateController@storeCourse')->name('storeCourse');
-Route::get('/candidate/superpower/choose', 'Candidate\CandidateController@chooseSuperpower')->name('chooseSuperpower');
-Route::post('/candidate/superpower/store', 'Candidate\CandidateController@storeSuperpower')->name('storeSuperpower');
-Route::get('/candidate/motivation/choose', 'Candidate\CandidateController@chooseMotivation')->name('chooseMotivation');
-Route::post('/candidate/motivation/store', 'Candidate\CandidateController@storeMotivation')->name('storeMotivation');
-
-Route::get('/candidate/leisure/choose', 'Candidate\CandidateController@chooseLeisure')->name('chooseLeisure');
-Route::post('/candidate/leisure/store', 'Candidate\CandidateController@storeLeisure')->name('storeLeisure');
-
-Route::get('/candidate/badges/refresh', 'Candidate\CandidateController@refreshBadges')->name('refreshBadges');
-
-Route::get('/candidate/followup/choose', 'Candidate\CandidateController@chooseFollowup')->name('chooseFollowup');
-Route::post('/candidate/followup/store', 'Candidate\CandidateController@storeFollowup')->name('storeFollowup');
-
-Route::get('/candidate/prescriber/choose', 'Candidate\CandidateController@choosePrescriber')->name('choosePrescriber');
-Route::post('/candidate/prescriber/store', 'Candidate\CandidateController@storePrescriber')->name('storePrescriber');
-
-Route::get('/candidate/activity_before/choose', 'Candidate\CandidateController@chooseActivityBefore')->name('chooseActivityBefore');
-Route::post('/candidate/activity_before/store', 'Candidate\CandidateController@storeActivityBefore')->name('storeActivityBefore');
-
-Route::get('/candidate/pro_experience/list', 'Candidate\ProExperienceController@list')->name('proExperienceList');
-Route::get('/candidate/pro_experience/create', 'Candidate\ProExperienceController@create')->name('proExperienceCreate');
-Route::post('/candidate/pro_experience/add', 'Candidate\ProExperienceController@add')->name('proExperienceAdd');
-Route::get('/candidate/pro_experience/show/{id}', 'Candidate\ProExperienceController@show')->name('proExperienceShow');
-Route::get('/candidate/pro_experience/edit/{id}', 'Candidate\ProExperienceController@edit')->name('proExperienceEdit');
-Route::get('/candidate/pro_experience/delete/{id}', 'Candidate\ProExperienceController@destroy')->name('proExperienceDelete');
-Route::post('/candidate/pro_experience/store', 'Candidate\ProExperienceController@store')->name('proExperienceStore');
-Route::post('/candidate/pro_experience/update/{id}', 'Candidate\ProExperienceController@update')->name('proExperienceUpdate');
-
-Route::get('/candidate/paid_formation/list', 'Candidate\PaidFormationController@list')->name('paidFormationList');
-Route::get('/candidate/paid_formation/create', 'Candidate\PaidFormationController@create')->name('paidFormationCreate');
-Route::post('/candidate/paid_formation/add', 'Candidate\PaidFormationController@add')->name('paidFormationAdd');
-Route::get('/candidate/paid_formation/show/{id}', 'Candidate\PaidFormationController@show')->name('paidFormationShow');
-Route::get('/candidate/paid_formation/edit/{id}', 'Candidate\PaidFormationController@edit')->name('paidFormationEdit');
-Route::get('/candidate/paid_formation/delete/{id}', 'Candidate\PaidFormationController@destroy')->name('paidFormationDelete');
-Route::post('/candidate/paid_formation/store', 'Candidate\PaidFormationController@store')->name('paidFormationStore');
-Route::post('/candidate/paid_formation/update/{id}', 'Candidate\PaidFormationController@update')->name('paidFormationUpdate');
-
-Route::get('/candidate/pro_project/choose', 'Candidate\CandidateController@chooseProProject')->name('chooseProProject');
-Route::post('/candidate/pro_project/store', 'Candidate\CandidateController@storeProProject')->name('storeProProject');
-
-Route::get('/candidate/situation/choose', 'Candidate\CandidateController@chooseSituation')->name('chooseSituation');
-Route::post('/candidate/situation/store', 'Candidate\CandidateController@storeSituation')->name('storeSituation');
-
 Route::get('/candidate/application/confirm', 'Candidate\CandidateController@confirmSendApplication')->name('confirmSendApplication');
 Route::post('/candidate/application/send', 'Candidate\CandidateController@sendApplication')->name('sendApplication');
 
