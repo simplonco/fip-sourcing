@@ -32,7 +32,7 @@
 
         <div class="form-group">
           {!! Form::label('gender', __('administrative.gender'), ['class' => 'control-label']) !!}
-          {!! Form::select('gender', Config::get('civil_constants.civility')); !!}
+          {!! Form::select('gender', __('administrative.gender_select')); !!}
         </div>
 
         <div class="form-group">

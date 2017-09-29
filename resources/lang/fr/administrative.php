@@ -27,4 +27,11 @@ return [
     'obtained_diploma' => 'Quel est votre dernier diplôme obtenu ?',
     'cdd' => 'Si vous avez eu un CDD dans le passé, à quelle date s\'est-il arrêté ?',
 
+  'gender_select'  => [
+    'female' => 'Homme',
+    'male' => 'Femme',
+    'other' => 'Autre',
+    'unicorn' => 'Licorne',
+    'no_comment' => 'Ne souhaite pas se prononcer',
+  ]
 ];

@@ -27,4 +27,11 @@ return [
     'obtained_diploma' => 'What is your last diploma?',
     'cdd' => 'If you had a fixed-term contract in the past, what date did it stop?',
 
+    'gender_select'  => [
+    'female' => 'Female',
+    'male' => 'Male',
+    'other' => 'Other',
+    'unicorn' => 'Unicorn',
+    'no_comment' => 'Does not wish to comment',
+  ]
 ];
