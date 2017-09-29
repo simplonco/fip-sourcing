@@ -51,6 +51,10 @@ class UsersTableSeeder extends Seeder
         'course' => $faker->text($maxNbChars = 100),
         'today' => $faker->text($maxNbChars = 100),
 
+        'coding' => $faker->url,
+        'profiles' => $faker->url,
+
+
 
         'civility' => 'M',
         'maiden_name' => $faker->lastName,

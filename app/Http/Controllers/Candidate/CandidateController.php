@@ -203,6 +203,44 @@ class CandidateController extends Controller
   }
 
 
+  /**
+  * Show the form for editing the profile.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function chooseCoding()
+  {
+    $candidate = Auth::user();
+
+    return view('candidate.coding', ['candidate'=>$candidate]);
+  }
+
+  /**
+  * Update the specified resource in storage.
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function storeCoding(Request $request)
+  {
+    $candidate = Auth::user();
+
+    $this->validate($request, [
+      'coding' => 'string|max:255',
+      'profiles' => 'string|max:255',
+    ]);
+
+    // Insert/update profiles in BDD
+    $candidate->coding = $request->coding;
+    $candidate->profiles = $request->profiles;
+
+    // Finally : save
+    $candidate->save();
+
+    return redirect()->route('home');
+  }
+
+
 
 
   /**

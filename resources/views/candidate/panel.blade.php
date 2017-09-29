@@ -28,6 +28,12 @@
               <a href="{{ route('chooseExperience') }}" class="btn">{{__('panel.experience')}}</a>
             </div>
             <div class="row">
+              <a href="{{ route('chooseCoding') }}" class="btn">{{__('panel.coding')}}</a>
+            </div>
+
+
+
+            <div class="row">
               <a href="{{ route('chooseHero') }}" class="btn">Super-héros</a>
               <a href="{{ route('chooseExperience') }}" class="btn">Expérience</a>
               <a href="{{ route('chooseHack') }}" class="btn">Hack</a>
@@ -52,9 +58,6 @@
             </div>
             <div class="row">
               <a href="{{ route('chooseProProject') }}" class="btn">Projet(s) Professionnel(s)</a>
-            </div>
-            <div class="row">
-              <a href="{{ route('chooseProfile') }}" class="btn">Profils</a>
             </div>
             <div class="row">
               <a href="{{ route('confirmSendApplication') }}" class="btn">Envoyer votre candidature</a>

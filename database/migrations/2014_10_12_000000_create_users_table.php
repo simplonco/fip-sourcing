@@ -45,6 +45,9 @@ class CreateUsersTable extends Migration
       $table->string('english')->nullable();
       $table->longText('today')->nullable();
 
+      $table->string('coding')->nullable();
+      $table->string('profiles')->nullable();
+
 
       $table->string('civility')->nullable();
       $table->string('maiden_name')->nullable();

@@ -36,6 +36,11 @@ Route::post('/candidate/administrative/store', 'Candidate\CandidateController@st
 Route::get('/candidate/experience/choose', 'Candidate\CandidateController@chooseExperience')->name('chooseExperience');
 Route::post('/candidate/experience/store', 'Candidate\CandidateController@storeExperience')->name('storeExperience');
 
+Route::get('/candidate/coding/choose', 'Candidate\CandidateController@chooseCoding')->name('chooseCoding');
+Route::post('/candidate/coding/store', 'Candidate\CandidateController@storeCoding')->name('storeCoding');
+
+
+
 Route::get('/candidate/hero/choose', 'Candidate\CandidateController@chooseHero')->name('chooseHero');
 Route::post('/candidate/hero/store', 'Candidate\CandidateController@storeHero')->name('storeHero');
 Route::get('/candidate/hack/choose', 'Candidate\CandidateController@chooseHack')->name('chooseHack');
@@ -50,8 +55,6 @@ Route::post('/candidate/motivation/store', 'Candidate\CandidateController@storeM
 Route::get('/candidate/leisure/choose', 'Candidate\CandidateController@chooseLeisure')->name('chooseLeisure');
 Route::post('/candidate/leisure/store', 'Candidate\CandidateController@storeLeisure')->name('storeLeisure');
 
-Route::get('/candidate/profile/choose', 'Candidate\CandidateController@chooseProfile')->name('chooseProfile');
-Route::post('/candidate/profile/store', 'Candidate\CandidateController@storeProfile')->name('storeProfile');
 Route::get('/candidate/badges/refresh', 'Candidate\CandidateController@refreshBadges')->name('refreshBadges');
 
 Route::get('/candidate/followup/choose', 'Candidate\CandidateController@chooseFollowup')->name('chooseFollowup');
