@@ -54,6 +54,12 @@ class UsersTableSeeder extends Seeder
         'coding' => $faker->url,
         'profiles' => $faker->url,
 
+        'hero' => $faker->text($maxNbChars = 100),
+        'dev_qualities' => $faker->text($maxNbChars = 100),
+        'personal_goal' => $faker->text($maxNbChars = 100),
+        'dev_point' => $faker->text($maxNbChars = 100),
+        'superpower' => $faker->text($maxNbChars = 100),
+
 
 
         'civility' => 'M',
@@ -71,7 +77,6 @@ class UsersTableSeeder extends Seeder
         'emergency_contact' => $faker->name,
         'emergency_phone' => $faker->phoneNumber,
 
-        'hero' => $faker->name,
         'hack_story' => $faker->text($maxNbChars = 100),
         'super_power' => $faker->text($maxNbChars = 100),
         'motivation' => $faker->text($maxNbChars = 100),

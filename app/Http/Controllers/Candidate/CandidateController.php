@@ -240,19 +240,16 @@ class CandidateController extends Controller
     return redirect()->route('home');
   }
 
-
-
-
   /**
   * Show the form for editing the hero.
   *
   * @return \Illuminate\Http\Response
   */
-  public function chooseHero()
+  public function chooseProjection()
   {
     $candidate = Auth::user();
 
-    return view('candidate.hero', ['candidate'=>$candidate]);
+    return view('candidate.projection', ['candidate'=>$candidate]);
   }
 
   /**
@@ -261,19 +258,30 @@ class CandidateController extends Controller
   * @param  \Illuminate\Http\Request  $request
   * @return \Illuminate\Http\Response
   */
-  public function storeHero(Request $request)
+  public function storeProjection(Request $request)
   {
     $candidate = Auth::user();
 
     $this->validate($request, [
       'hero' => 'required|string|max:255',
+      'dev_qualities' => 'required|string|max:255',
+      'personal_goal' => 'required|string|max:255',
+      'dev_point' => 'required|string|max:255',
+      'superpower' => 'required|string|max:255',
     ]);
 
     $candidate->hero = $request->hero;
+    $candidate->dev_qualities = $requestdev_qualities;
+    $candidate->personal_goal = $request->personal_goal;
+    $candidate->dev_point = $request->dev_point;
+    $candidate->superpower = $request->superpower;
     $candidate->save();
 
     return redirect()->route('home');
   }
+
+
+
 
 
   /**

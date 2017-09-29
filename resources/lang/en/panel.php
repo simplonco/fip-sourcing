@@ -18,5 +18,6 @@ return [
     'administrative' => 'Administrative information',
     'experience' => 'Professional experiences and english',
     'coding' => 'Coding & you',
+    'projection' => 'Projection / Human',
 
 ];

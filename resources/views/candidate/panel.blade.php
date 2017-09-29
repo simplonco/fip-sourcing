@@ -30,6 +30,9 @@
             <div class="row">
               <a href="{{ route('chooseCoding') }}" class="btn">{{__('panel.coding')}}</a>
             </div>
+            <div class="row">
+              <a href="{{ route('chooseProjection') }}" class="btn">{{__('panel.projection')}}</a>
+            </div>
 
 
 

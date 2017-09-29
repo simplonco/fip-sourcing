@@ -39,6 +39,9 @@ Route::post('/candidate/experience/store', 'Candidate\CandidateController@storeE
 Route::get('/candidate/coding/choose', 'Candidate\CandidateController@chooseCoding')->name('chooseCoding');
 Route::post('/candidate/coding/store', 'Candidate\CandidateController@storeCoding')->name('storeCoding');
 
+Route::get('/candidate/projection/choose', 'Candidate\CandidateController@chooseProjection')->name('chooseProjection');
+Route::post('/candidate/projection/store', 'Candidate\CandidateController@storeProjection')->name('storeProjection');
+
 
 
 Route::get('/candidate/hero/choose', 'Candidate\CandidateController@chooseHero')->name('chooseHero');

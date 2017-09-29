@@ -48,6 +48,14 @@ class CreateUsersTable extends Migration
       $table->string('coding')->nullable();
       $table->string('profiles')->nullable();
 
+      $table->longText('hero')->nullable();
+      $table->longText('dev_qualities')->nullable();
+      $table->longText('personal_goal')->nullable();
+      $table->longText('dev_point')->nullable();
+      $table->longText('superpower')->nullable();
+
+
+
 
       $table->string('civility')->nullable();
       $table->string('maiden_name')->nullable();
@@ -65,8 +73,6 @@ class CreateUsersTable extends Migration
       $table->string('emergency_phone')->nullable();
 
 
-      $table->longText('experience_programming')->nullable();
-      $table->longText('hero')->nullable();
       $table->longText('hack_story')->nullable();
       $table->longText('motivation')->nullable();
       $table->longText('super_power')->nullable();
@@ -94,7 +100,6 @@ class CreateUsersTable extends Migration
       $table->string('diploma')->nullable();
       $table->string('exam')->nullable();
       $table->string('passed_exam')->nullable();
-      $table->string('english')->nullable();
 
       $table->longText('pro_project')->nullable();
 
