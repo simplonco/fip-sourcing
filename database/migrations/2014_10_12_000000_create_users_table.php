@@ -40,7 +40,11 @@ class CreateUsersTable extends Migration
       $table->string('cdd')->nullable();
 
 
-      
+      $table->longText('experience_programming')->nullable();
+      $table->longText('course')->nullable();
+      $table->string('english')->nullable();
+      $table->longText('today')->nullable();
+
 
       $table->string('civility')->nullable();
       $table->string('maiden_name')->nullable();
@@ -61,7 +65,6 @@ class CreateUsersTable extends Migration
       $table->longText('experience_programming')->nullable();
       $table->longText('hero')->nullable();
       $table->longText('hack_story')->nullable();
-      $table->longText('course')->nullable();
       $table->longText('motivation')->nullable();
       $table->longText('super_power')->nullable();
 

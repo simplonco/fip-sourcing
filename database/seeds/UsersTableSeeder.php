@@ -47,6 +47,11 @@ class UsersTableSeeder extends Seeder
         'cdd'=>$faker->date,
 
 
+        'experience_programming' => $faker->text($maxNbChars = 100),
+        'course' => $faker->text($maxNbChars = 100),
+        'today' => $faker->text($maxNbChars = 100),
+
+
         'civility' => 'M',
         'maiden_name' => $faker->lastName,
         'native_city' => $faker->city,
@@ -63,9 +68,7 @@ class UsersTableSeeder extends Seeder
         'emergency_phone' => $faker->phoneNumber,
 
         'hero' => $faker->name,
-        'experience_programming' => $faker->text($maxNbChars = 100),
         'hack_story' => $faker->text($maxNbChars = 100),
-        'course' => $faker->word,
         'super_power' => $faker->text($maxNbChars = 100),
         'motivation' => $faker->text($maxNbChars = 100),
 

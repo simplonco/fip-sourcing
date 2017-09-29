@@ -33,10 +33,11 @@ Route::post('/candidate/operationnal/store', 'Candidate\CandidateController@stor
 Route::get('/candidate/administrative/choose', 'Candidate\CandidateController@chooseAdministrative')->name('chooseAdministrative');
 Route::post('/candidate/administrative/store', 'Candidate\CandidateController@storeAdministrative')->name('storeAdministrative');
 
-Route::get('/candidate/hero/choose', 'Candidate\CandidateController@chooseHero')->name('chooseHero');
-Route::post('/candidate/hero/store', 'Candidate\CandidateController@storeHero')->name('storeHero');
 Route::get('/candidate/experience/choose', 'Candidate\CandidateController@chooseExperience')->name('chooseExperience');
 Route::post('/candidate/experience/store', 'Candidate\CandidateController@storeExperience')->name('storeExperience');
+
+Route::get('/candidate/hero/choose', 'Candidate\CandidateController@chooseHero')->name('chooseHero');
+Route::post('/candidate/hero/store', 'Candidate\CandidateController@storeHero')->name('storeHero');
 Route::get('/candidate/hack/choose', 'Candidate\CandidateController@chooseHack')->name('chooseHack');
 Route::post('/candidate/hack/store', 'Candidate\CandidateController@storeHack')->name('storeHack');
 Route::get('/candidate/course/choose', 'Candidate\CandidateController@chooseCourse')->name('chooseCourse');

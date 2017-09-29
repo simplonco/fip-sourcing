@@ -25,6 +25,9 @@
               <a href="{{ route('chooseAdministrative') }}" class="btn">{{__('panel.administrative')}}</a>
             </div>
             <div class="row">
+              <a href="{{ route('chooseExperience') }}" class="btn">{{__('panel.experience')}}</a>
+            </div>
+            <div class="row">
               <a href="{{ route('chooseHero') }}" class="btn">Super-héros</a>
               <a href="{{ route('chooseExperience') }}" class="btn">Expérience</a>
               <a href="{{ route('chooseHack') }}" class="btn">Hack</a>

@@ -76,92 +76,134 @@ class CandidateController extends Controller
     return redirect()->route('home');
   }
 
-    /**
-    * Show the form for editing the availability.
-    *
-    * @return \Illuminate\Http\Response
-    */
-    public function chooseOperationnal()
-    {
-      $candidate = Auth::user();
+  /**
+  * Show the form for editing the availability.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function chooseOperationnal()
+  {
+    $candidate = Auth::user();
 
-      return view('candidate.operationnal', ['candidate'=>$candidate]);
-    }
+    return view('candidate.operationnal', ['candidate'=>$candidate]);
+  }
 
-    /**
-    * Update the specified resource in storage.
-    *
-    * @param  \Illuminate\Http\Request  $request
-    * @return \Illuminate\Http\Response
-    */
-    public function storeOperationnal(Request $request)
-    {
-      $candidate = Auth::user();
+  /**
+  * Update the specified resource in storage.
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function storeOperationnal(Request $request)
+  {
+    $candidate = Auth::user();
 
-      $this->validate($request, [
-        'availability' => 'required|string|max:255',
-        'efforts' => 'required|string|max:255',
-        'computers' => 'required|string|max:255',
-        'heard_of' => 'required|string|max:255',
-      ]);
+    $this->validate($request, [
+      'availability' => 'required|string|max:255',
+      'efforts' => 'required|string|max:255',
+      'computers' => 'required|string|max:255',
+      'heard_of' => 'required|string|max:255',
+    ]);
 
-      $candidate->availability = $request->availability;
-      $candidate->efforts = $request->efforts;
-      $candidate->computers = $request->computers;
-      $candidate->heard_of = $request->heard_of;
-      $candidate->save();
+    $candidate->availability = $request->availability;
+    $candidate->efforts = $request->efforts;
+    $candidate->computers = $request->computers;
+    $candidate->heard_of = $request->heard_of;
+    $candidate->save();
 
-      return redirect()->route('home');
-    }
+    return redirect()->route('home');
+  }
 
 
-      /**
-      * Show the form for editing the personal infos.
-      *
-      * @return \Illuminate\Http\Response
-      */
-      public function chooseAdministrative()
-      {
-        $candidate = Auth::user();
+  /**
+  * Show the form for editing the personal infos.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function chooseAdministrative()
+  {
+    $candidate = Auth::user();
 
-        return view('candidate.administrative', ['candidate'=>$candidate]);
-      }
+    return view('candidate.administrative', ['candidate'=>$candidate]);
+  }
 
-      /**
-      * Update the specified resource in storage.
-      *
-      * @param  \Illuminate\Http\Request  $request
-      * @return \Illuminate\Http\Response
-      */
-      public function storeAdministrative(Request $request)
-      {
-        $candidate = Auth::user();
+  /**
+  * Update the specified resource in storage.
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function storeAdministrative(Request $request)
+  {
+    $candidate = Auth::user();
 
-        //TODO : implement validation
-        // $this->validate($request, [
-        //   'codecademy_profile' => 'required|string|max:255',
-        //   'openclassroom_profile' => 'string|max:255',
-        //   'other_profile' => 'string|max:255',
-        // ]);
+    //TODO : implement validation
+    // $this->validate($request, [
+    //   'codecademy_profile' => 'required|string|max:255',
+    //   'openclassroom_profile' => 'string|max:255',
+    //   'other_profile' => 'string|max:255',
+    // ]);
 
-        $candidate->nationality = $request->nationality;
-        $candidate->birth_date = $request->birth_date;
-        $candidate->gender = $request->gender;
-        $candidate->phone = $request->phone;
-        $candidate->postal_code = $request->postal_code;
-        $candidate->city = $request->city;
-        $candidate->address = $request->address;
-        $candidate->status = $request->status;
-        $candidate->number_pole_emploi = $request->number_pole_emploi;
-        $candidate->pole_emploi = $request->pole_emploi;
-        $candidate->number_social_security = $request->number_social_security;
-        $candidate->obtained_diploma = $request->obtained_diploma;
-        $candidate->cdd = $request->cdd;
+    $candidate->nationality = $request->nationality;
+    $candidate->birth_date = $request->birth_date;
+    $candidate->gender = $request->gender;
+    $candidate->phone = $request->phone;
+    $candidate->postal_code = $request->postal_code;
+    $candidate->city = $request->city;
+    $candidate->address = $request->address;
+    $candidate->status = $request->status;
+    $candidate->number_pole_emploi = $request->number_pole_emploi;
+    $candidate->pole_emploi = $request->pole_emploi;
+    $candidate->number_social_security = $request->number_social_security;
+    $candidate->obtained_diploma = $request->obtained_diploma;
+    $candidate->cdd = $request->cdd;
 
-        $candidate->save();
+    $candidate->save();
 
-        return redirect()->route('home');
-      }
+    return redirect()->route('home');
+  }
+
+
+  /**
+  * Show the form for editing the programming experience.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function chooseExperience()
+  {
+    $candidate = Auth::user();
+
+    return view('candidate.experience', ['candidate'=>$candidate]);
+  }
+
+  /**
+  * Update the specified resource in storage.
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function storeExperience(Request $request)
+  {
+    $candidate = Auth::user();
+
+    $this->validate($request, [
+      'experience_programming' => 'required|string|max:255',
+      'course' => 'required|string|max:255',
+      'english' => 'required|string',
+      'today' => 'required|string|max:300',
+    ]);
+
+    $candidate->experience_programming = $request->experience_programming;
+    $candidate->course = $request->course;
+    $candidate->english = $request->english;
+    $candidate->today = $request->today;
+    $candidate->save();
+
+    return redirect()->route('home');
+  }
+
+
+
 
   /**
   * Show the form for editing the hero.
@@ -273,39 +315,6 @@ class CandidateController extends Controller
 
     return redirect()->route('home');
   }
-
-  /**
-  * Show the form for editing the programming experience.
-  *
-  * @return \Illuminate\Http\Response
-  */
-  public function chooseExperience()
-  {
-    $candidate = Auth::user();
-
-    return view('candidate.experience', ['candidate'=>$candidate]);
-  }
-
-  /**
-  * Update the specified resource in storage.
-  *
-  * @param  \Illuminate\Http\Request  $request
-  * @return \Illuminate\Http\Response
-  */
-  public function storeExperience(Request $request)
-  {
-    $candidate = Auth::user();
-
-    $this->validate($request, [
-      'experience_programming' => 'required|string|max:255',
-    ]);
-
-    $candidate->experience_programming = $request->experience_programming;
-    $candidate->save();
-
-    return redirect()->route('home');
-  }
-
 
   /**
   * Show the form for editing the followup.
@@ -465,37 +474,37 @@ class CandidateController extends Controller
     return redirect()->route('home');
   }
 
-    /**
-    * Show the form for editing the leisure.
-    *
-    * @return \Illuminate\Http\Response
-    */
-    public function chooseLeisure()
-    {
-      $candidate = Auth::user();
+  /**
+  * Show the form for editing the leisure.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function chooseLeisure()
+  {
+    $candidate = Auth::user();
 
-      return view('candidate.leisure', ['candidate'=>$candidate]);
-    }
+    return view('candidate.leisure', ['candidate'=>$candidate]);
+  }
 
-    /**
-    * Update the specified resource in storage.
-    *
-    * @param  \Illuminate\Http\Request  $request
-    * @return \Illuminate\Http\Response
-    */
-    public function storeLeisure(Request $request)
-    {
-      $candidate = Auth::user();
+  /**
+  * Update the specified resource in storage.
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function storeLeisure(Request $request)
+  {
+    $candidate = Auth::user();
 
-      $this->validate($request, [
-        'leisure' => 'required|string|max:255',
-      ]);
+    $this->validate($request, [
+      'leisure' => 'required|string|max:255',
+    ]);
 
-      $candidate->leisure = $request->leisure;
-      $candidate->save();
+    $candidate->leisure = $request->leisure;
+    $candidate->save();
 
-      return redirect()->route('home');
-    }
+    return redirect()->route('home');
+  }
 
   /**
   * Show the form for editing the professional project.

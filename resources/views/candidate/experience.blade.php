@@ -12,8 +12,8 @@
 
 <div class="col-sm-offset-3 col-sm-6">
   <div class="panel panel-info">
-    <div class="panel-heading"> Avez vous déjà eu une expérience avec la programmation et/ou l'informatique avant de remplir ce formulaire ?
-</div>
+    <div class="panel-heading">{{__('panel.experience')}}
+    </div>
     <div class="panel-body">
       {!! Form::model($candidate, [
         'method' => 'POST',
@@ -21,7 +21,20 @@
         ]) !!}
 
         <div class="form-group">
+          {!! Form::label('experience_programming', __('experience.experience_programming'), ['class' => 'control-label']) !!}
           {!! Form::textarea('experience_programming', null, ['class' => 'form-control']) !!}
+        </div>
+        <div class="form-group">
+          {!! Form::label('course', __('experience.course'), ['class' => 'control-label']) !!}
+          {!! Form::textarea('course', null, ['class' => 'form-control']) !!}
+        </div>
+        <div class="form-group">
+          {!! Form::label('english', __('experience.english'), ['class' => 'control-label']) !!}
+          {!! Form::select('english', __('experience.english_select')); !!}
+        </div>
+        <div class="form-group">
+          {!! Form::label('today', __('experience.today'), ['class' => 'control-label']) !!}
+          {!! Form::textarea('today', null, ['class' => 'form-control']) !!}
         </div>
 
         {!! Form::submit('Valider', ['class' => 'btn btn-primary']) !!}

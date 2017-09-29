@@ -16,5 +16,6 @@ return [
     'formation' => 'Choose a formation',
     'operationnal' => 'Operationnal',
     'administrative' => 'Administrative information',
+    'experience' => 'Professional experiences and english',
 
 ];

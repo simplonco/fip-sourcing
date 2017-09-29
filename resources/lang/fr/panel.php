@@ -16,5 +16,6 @@ return [
     'formation' => 'Choisir une formation',
     'operationnal' => 'Opérationnel',
     'administrative' => 'Renseignements administratifs',
+    'experience' => 'Passé professionnel et anglais',
 
 ];
