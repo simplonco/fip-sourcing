@@ -27,6 +27,9 @@ Route::get('/language', 'HomeController@language')->name('language');
 Route::get('/candidate/formation', 'Candidate\CandidateController@chooseFormation')->name('chooseFormation');
 Route::get('/candidate/formation/store/{id}', 'Candidate\CandidateController@storeFormation')->name('storeFormation');
 
+Route::get('/candidate/operationnal/choose', 'Candidate\CandidateController@chooseOperationnal')->name('chooseOperationnal');
+Route::post('/candidate/operationnal/store', 'Candidate\CandidateController@storeOperationnal')->name('storeOperationnal');
+
 Route::get('/candidate/administrative/choose', 'Candidate\CandidateController@chooseAdministrative')->name('chooseAdministrative');
 Route::post('/candidate/administrative/store', 'Candidate\CandidateController@storeAdministrative')->name('storeAdministrative');
 
@@ -49,9 +52,6 @@ Route::post('/candidate/leisure/store', 'Candidate\CandidateController@storeLeis
 Route::get('/candidate/profile/choose', 'Candidate\CandidateController@chooseProfile')->name('chooseProfile');
 Route::post('/candidate/profile/store', 'Candidate\CandidateController@storeProfile')->name('storeProfile');
 Route::get('/candidate/badges/refresh', 'Candidate\CandidateController@refreshBadges')->name('refreshBadges');
-
-Route::get('/candidate/availability/choose', 'Candidate\CandidateController@chooseAvailability')->name('chooseAvailability');
-Route::post('/candidate/availability/store', 'Candidate\CandidateController@storeAvailability')->name('storeAvailability');
 
 Route::get('/candidate/followup/choose', 'Candidate\CandidateController@chooseFollowup')->name('chooseFollowup');
 Route::post('/candidate/followup/store', 'Candidate\CandidateController@storeFollowup')->name('storeFollowup');

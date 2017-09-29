@@ -81,11 +81,11 @@ class CandidateController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-    public function chooseAvailability()
+    public function chooseOperationnal()
     {
       $candidate = Auth::user();
 
-      return view('candidate.availability', ['candidate'=>$candidate]);
+      return view('candidate.operationnal', ['candidate'=>$candidate]);
     }
 
     /**
@@ -94,7 +94,7 @@ class CandidateController extends Controller
     * @param  \Illuminate\Http\Request  $request
     * @return \Illuminate\Http\Response
     */
-    public function storeAvailability(Request $request)
+    public function storeOperationnal(Request $request)
     {
       $candidate = Auth::user();
 

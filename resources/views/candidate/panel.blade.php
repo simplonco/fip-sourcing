@@ -19,7 +19,7 @@
               <a href="{{ route('chooseFormation') }}" class="btn">{{__('panel.formation')}}</a>
             </div>
             <div class="row">
-              <a href="{{ route('chooseAvailability') }}" class="btn">{{__('panel.operationnal')}}</a>
+              <a href="{{ route('chooseOperationnal') }}" class="btn">{{__('panel.operationnal')}}</a>
             </div>
             <div class="row">
               <a href="{{ route('chooseAdministrative') }}" class="btn">{{__('panel.administrative')}}</a>

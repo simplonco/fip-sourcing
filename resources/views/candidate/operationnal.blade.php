@@ -12,12 +12,12 @@
 
 <div class="col-sm-offset-3 col-sm-6">
   <div class="panel panel-info">
-    <div class="panel-heading"> Disponibilité
+    <div class="panel-heading"> {{__('panel.operationnal')}}
     </div>
     <div class="panel-body">
       {!! Form::model($candidate, [
         'method' => 'POST',
-        'route' => ['storeAvailability']
+        'route' => ['storeOperationnal']
         ]) !!}
 
         <div class="form-group">
