@@ -8,6 +8,7 @@ use App\Formation;
 use App\Pro_experience;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class CandidateController extends Controller
 {
@@ -52,7 +53,10 @@ class CandidateController extends Controller
   */
   public function chooseFormation()
   {
-    $formations = Formation::All();
+    $today = Carbon::today()->toDateString();
+    // dd(Formation::All());
+    $formations = Formation::whereDate('begin_session', '<=', $today)
+      ->whereDate('end_session', '>=', $today)->get();
 
     return view('candidate.formation', ['formations'=>$formations]);
   }
