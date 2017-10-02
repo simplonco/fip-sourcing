@@ -18,5 +18,6 @@ return [
     'submit' => 'Valider',
     'title' => 'Candidature Simplon',
     'logout' => 'Se déconnecter',
+    '404' => 'Page non trouvée',
 
 ];

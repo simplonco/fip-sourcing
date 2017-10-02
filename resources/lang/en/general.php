@@ -18,5 +18,6 @@ return [
     'submit' => 'Submit',
     'title' => 'Simplon Sourcing',
     'logout' => 'Logout',
+    '404' => 'Page not found',
 
 ];
