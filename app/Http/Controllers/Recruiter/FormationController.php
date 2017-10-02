@@ -77,7 +77,7 @@ class FormationController extends Controller
 
     $formation->fill($input)->save();
 
-    Session::flash('flash_message', 'La formation a été modifiée avec succès!');
+    Session::flash('flash_message', __('recruiter_panel.formation_updated'));
 
     return Redirect()->route('recruiterIndex');
   }

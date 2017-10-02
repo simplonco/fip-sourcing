@@ -77,7 +77,7 @@ class CandidateController extends Controller
 
     $candidate->fill($input)->save();
 
-    Session::flash('flash_message', 'Le candidat a été modifié avec succès!');
+    Session::flash('flash_message', __('recruiter_panel.formation_updated'));
 
     return Redirect()->route('recruiterIndex');
   }
@@ -95,7 +95,7 @@ class CandidateController extends Controller
 
       $candidate->delete();
 
-      Session::flash('flash_message', 'Le candidat a été supprimé avec succès!');
+      Session::flash('flash_message', __('recruiter_panel.formation_removed'));
 
       return redirect()->route('recruiterIndex');
     }
