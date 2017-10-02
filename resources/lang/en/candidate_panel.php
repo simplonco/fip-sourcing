@@ -23,6 +23,8 @@ return [
     'projection' => 'Projection / Human',
     'send' => 'Send your application',
     'sent' => 'Application sent!',
+    'too_early' => 'You cannot send your application yet!',
+    'too_late' => 'You cannot send your application any more!',
     'choose_formation' => [
       'name' => 'Name',
       'description' => 'Description',

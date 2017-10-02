@@ -12,17 +12,17 @@
 
 <div class="col-sm-offset-3 col-sm-6">
   <div class="panel panel-info">
-    <div class="panel-heading">{{__('panel.formation')}}</div>
+    <div class="panel-heading">{{__('candidate_panel.formation')}}</div>
 
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>{{__('panel.choose_formation.name')}}</th>
-          <th>{{__('panel.choose_formation.description')}}</th>
-          <th>{{__('panel.choose_formation.city')}}</th>
-          <th>{{__('panel.choose_formation.year')}}</th>
-          <th>{{__('panel.choose_formation.begin_session')}}</th>
-          <th>{{__('panel.choose_formation.end_session')}}</th>
+          <th>{{__('candidate_panel.choose_formation.name')}}</th>
+          <th>{{__('candidate_panel.choose_formation.description')}}</th>
+          <th>{{__('candidate_panel.choose_formation.city')}}</th>
+          <th>{{__('candidate_panel.choose_formation.year')}}</th>
+          <th>{{__('candidate_panel.choose_formation.begin_session')}}</th>
+          <th>{{__('candidate_panel.choose_formation.end_session')}}</th>
         </tr>
       </thead>
       <tbody>

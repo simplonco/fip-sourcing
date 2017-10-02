@@ -23,6 +23,8 @@ return [
     'projection' => 'Projection / Humain',
     'send' => 'Envoyer votre candidature',
     'sent' => 'Candidature envoyée avec succès!',
+    'too_early' => 'Il est trop tôt pour envoyer votre candidature!',
+    'too_late' => 'Il est trop tard pour envoyer votre candidature!',
     'choose_formation' => [
       'name' => 'Nom',
       'description' => 'Description',

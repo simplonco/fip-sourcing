@@ -292,6 +292,14 @@ class CandidateController extends Controller
   public function confirmSendApplication()
   {
     $candidate = Auth::user();
+    $today = Carbon::today()->toDateString();
+    if($candidate->formations()->first()->begin_session > $today){
+      Session::flash('flash_message', __('candidate_panel.too_early'));
+      return redirect()->route('home');
+    } else if($candidate->formations()->first()->end_session < $today){
+      Session::flash('flash_message', __('candidate_panel.too_late'));
+      return redirect()->route('home');
+    }
 
     return view('candidate.confirm_send_application', ['candidate'=>$candidate]);
   }
