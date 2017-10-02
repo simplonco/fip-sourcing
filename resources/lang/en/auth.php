@@ -20,6 +20,6 @@ return [
     'connection' => 'Connection',
     'remember_me' => 'Remember me',
     'login' => 'Login',
-    'register' => 'Registration',
+    'register' => 'Register',
 
 ];
