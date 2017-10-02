@@ -22,7 +22,9 @@ return [
     'coding' => 'Coding & you',
     'projection' => 'Projection / Human',
     'send' => 'Send your application',
-    'sent' => 'Application sent!',
+    'sent' => 'You have already sent your application.',
+    'sent_success' => 'Application sent!',
+    'success' => 'Your data has been successfully saved!',
     'too_early' => 'You cannot send your application yet!',
     'too_late' => 'You cannot send your application any more!',
     'choose_formation' => [

@@ -56,7 +56,7 @@ class CandidateController extends Controller
     $today = Carbon::today()->toDateString();
     // dd(Formation::All());
     $formations = Formation::whereDate('begin_session', '<=', $today)
-      ->whereDate('end_session', '>=', $today)->get();
+    ->whereDate('end_session', '>=', $today)->get();
 
     return view('candidate.formation', ['formations'=>$formations]);
   }
@@ -76,6 +76,7 @@ class CandidateController extends Controller
 
     $candidate->formations()->sync($formation);
     $candidate->save();
+    Session::flash('flash_message', __('candidate_panel.success'));
 
     return redirect()->route('home');
   }
@@ -114,6 +115,7 @@ class CandidateController extends Controller
     $candidate->computers = $request->computers;
     $candidate->heard_of = $request->heard_of;
     $candidate->save();
+    Session::flash('flash_message', __('candidate_panel.success'));
 
     return redirect()->route('home');
   }
@@ -163,6 +165,7 @@ class CandidateController extends Controller
     $candidate->cdd = $request->cdd;
 
     $candidate->save();
+    Session::flash('flash_message', __('candidate_panel.success'));
 
     return redirect()->route('home');
   }
@@ -202,6 +205,7 @@ class CandidateController extends Controller
     $candidate->english = $request->english;
     $candidate->today = $request->today;
     $candidate->save();
+    Session::flash('flash_message', __('candidate_panel.success'));
 
     return redirect()->route('home');
   }
@@ -240,6 +244,7 @@ class CandidateController extends Controller
 
     // Finally : save
     $candidate->save();
+    Session::flash('flash_message', __('candidate_panel.success'));
 
     return redirect()->route('home');
   }
@@ -281,6 +286,9 @@ class CandidateController extends Controller
     $candidate->superpower = $request->superpower;
     $candidate->save();
 
+
+    Session::flash('flash_message', __('candidate_panel.success'));
+
     return redirect()->route('home');
   }
 
@@ -303,7 +311,7 @@ class CandidateController extends Controller
 
     return view('candidate.confirm_send_application', ['candidate'=>$candidate]);
   }
-
+  
   /**
   * Sending the application
   *
@@ -316,6 +324,7 @@ class CandidateController extends Controller
 
     $candidate->application_sent = true;
     $candidate->save();
+    Session::flash('flash_message', __('candidate_panel.sent_success'));
 
     return redirect()->route('home');
   }

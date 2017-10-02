@@ -22,7 +22,9 @@ return [
     'coding' => 'Le code & vous',
     'projection' => 'Projection / Humain',
     'send' => 'Envoyer votre candidature',
-    'sent' => 'Candidature envoyée avec succès!',
+    'sent' => 'Vous avez déjà envoyé votre candidature',
+    'sent_success' => 'Votre candidature vient d\être envoyée',
+    'success' => 'Vos données ont bien été enregistrées!',
     'too_early' => 'Il est trop tôt pour envoyer votre candidature!',
     'too_late' => 'Il est trop tard pour envoyer votre candidature!',
     'choose_formation' => [
