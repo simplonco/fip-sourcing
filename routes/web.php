@@ -51,21 +51,19 @@ Route::group(['middleware'=>'admin'], function () {
   // Formateur
   Route::get('/admin/former/list', 'Admin\FormerController@list')->name('formerList');
   Route::get('/admin/former/create', 'Admin\FormerController@create')->name('formerCreate');
-  Route::post('/admin/former/add', 'Admin\FormerController@add')->name('formerAdd');
+  Route::post('/admin/former/store', 'Admin\FormerController@store')->name('formerStore');
   Route::get('/admin/former/show/{id}', 'Admin\FormerController@show')->name('formerShow');
   Route::get('/admin/former/edit/{id}', 'Admin\FormerController@edit')->name('formerEdit');
-  Route::get('/admin/former/delete/{id}', 'Admin\FormerController@destroy')->name('formerDelete');
-  Route::post('/admin/former/store', 'Admin\FormerController@store')->name('formerStore');
   Route::post('/admin/former/update/{id}', 'Admin\FormerController@update')->name('formerUpdate');
+  Route::get('/admin/former/delete/{id}', 'Admin\FormerController@destroy')->name('formerDelete');
 // Formation
   Route::get('/admin/formation/list', 'Admin\FormationController@list')->name('formationList');
   Route::get('/admin/formation/create', 'Admin\FormationController@formerCreate')->name('formationCreate');
-  Route::post('/admin/formation/add', 'Admin\FormationController@add')->name('formationAdd');
+  Route::post('/admin/formation/store', 'Admin\FormationController@store')->name('formationStore');
   Route::get('/admin/formation/show/{id}', 'Admin\FormationController@show')->name('formationShow');
   Route::get('/admin/formation/edit/{id}', 'Admin\FormationController@edit')->name('formationEdit');
-  Route::get('/admin/formation/delete/{id}', 'Admin\FormationController@destroy')->name('formationDelete');
-  Route::post('/admin/formation/store', 'Admin\FormationController@store')->name('formationStore');
   Route::post('/admin/formation/update/{id}', 'Admin\FormationController@update')->name('formationUpdate');
+  Route::get('/admin/formation/delete/{id}', 'Admin\FormationController@destroy')->name('formationDelete');
 }
 );
 

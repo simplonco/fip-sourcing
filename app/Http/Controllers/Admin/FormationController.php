@@ -26,20 +26,6 @@ class FormationController extends Controller
     return view('admin.formation.list', ['formations'=>$formations]);
   }
 
-  function add(Request $request)
-  {
-
-    $formation = new Formation;
-    $formation->name = $request->input('name');
-    $formation->description = $request->input('description');
-    $formation->city = $request->input('city');
-    $formation->year = $request->input('year');
-    $formation->begin_session = $request->input('begin_session');
-    $formation->end_session = $request->input('end_session');
-    // $user->roles()->sync(Role::where('id', 3))->first();
-    return redirect()->route('formationList');
-  }
-
   /**
   * Display a listing of the resource.
   *
@@ -59,18 +45,6 @@ class FormationController extends Controller
   {
     return view('admin.formation.create');
   }
-
-  /**
-  * Show the form for creating a new resource.
-  *
-  * @return \Illuminate\Http\Response
-  */
-  public function create()
-  {
-    //
-  }
-
-
 
   /**
   * Store a newly created resource in storage.
@@ -99,7 +73,7 @@ class FormationController extends Controller
     ];
     Formation::create($formation);
 
-    Session::flash('flash_message', 'La formation a été ajoutée avec succès!');
+    Session::flash('flash_message', __('admin_panel.formation_created'));
 
     return redirect()->route('formationList');
   }
@@ -160,7 +134,7 @@ class FormationController extends Controller
 
     $formation->fill($input)->save();
 
-    Session::flash('flash_message', 'La formation a été modifiée avec succès!');
+    Session::flash('flash_message', __('admin_panel.formation_updated'));
 
     return redirect()->route('formationList');
   }
@@ -179,7 +153,7 @@ class FormationController extends Controller
 
     $formation->delete();
 
-    Session::flash('flash_message', 'La formation a été supprimée avec succès!');
+    Session::flash('flash_message', __('admin_panel.formation_removed'));
 
     return redirect()->route('formationList');
   }

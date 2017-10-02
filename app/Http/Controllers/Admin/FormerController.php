@@ -31,18 +31,6 @@ class FormerController extends Controller
     return view('admin.former.list', ['formateurs'=>$formateurs]);
   }
 
-  function add(Request $request)
-  {
-
-    $user = new User;
-    $user->last_name = $request->input('last_name');
-    $user->first_name = $request->input('first_name');
-    $user->email = $request->input('email');
-    $user->password = bcrypt($request->input('password'));
-    $user->roles()->sync(Role::where('id', 3))->first();
-    return redirect()->route('formerList');
-  }
-
   /**
   * Display a listing of the resource.
   *
@@ -102,7 +90,7 @@ class FormerController extends Controller
 
     $created_user->save();
 
-    Session::flash('flash_message', 'Le formateur a été ajouté avec succès!');
+    Session::flash('flash_message', __('admin_panel.former_created'));
 
     return redirect()->route('formerList');
   }
@@ -170,7 +158,7 @@ class FormerController extends Controller
     $former->email = $input['email'];
     $former->save();
 
-    Session::flash('flash_message', 'Le formateur a été modifié avec succès!');
+    Session::flash('flash_message', __('admin_panel.former_updated'));
 
     return redirect()->route('formerList');
   }
@@ -189,7 +177,7 @@ class FormerController extends Controller
 
     $former->delete();
 
-    Session::flash('flash_message', 'Le formateur a été supprimé avec succès!');
+    Session::flash('flash_message', __('admin_panel.former_removed'));
 
     return redirect()->route('formerList');
   }
