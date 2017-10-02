@@ -21,4 +21,8 @@ return [
   'former_updated' => 'Former data has been successfully saved!',
   'former_created' => 'Former has been successfully created!',
   'former_removed' => 'Former has been successfully removed!',
+
+  'title' => 'Administration panel',
+  'formers' => 'Handle formers',
+  'formations' => 'Handle formations',
 ];

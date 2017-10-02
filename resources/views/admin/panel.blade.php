@@ -12,10 +12,10 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
-        <div class="panel-heading">Tableau d'administration</div>
+        <div class="panel-heading">{{__('admin_panel.title')}}</div>
         <div class="panel-body">
-          <a href="{{ route('formerList') }}" class="btn">Gérer les formateurs</a>
-          <a href="{{ route('formationList') }}" class="btn">Gérer les formations</a>
+          <a href="{{ route('formerList') }}" class="btn">{{__('admin_panel.formers')}}</a>
+          <a href="{{ route('formationList') }}" class="btn">{{__('admin_panel.formations')}}</a>
         </div>
       </div>
     </div>

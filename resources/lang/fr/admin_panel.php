@@ -17,4 +17,12 @@ return [
     'formation_success' => 'Les informations de la formation ont bien été enregistrées!',
     'formation_created' => 'La formation a bien été ajoutée!',
     'formation_removed' => 'La formation a bien été supprimée!',
+
+    'former_updated' => 'Les informations du formateur ont bien été enregistrées!',
+    'former_created' => 'Le formateur a bien été ajouté!',
+    'former_removed' => 'Le formateur a bien été supprimé!',
+
+    'title' => 'Tableau d\'administration',
+    'formers' => 'Gérer les formateurs',
+    'formations' => 'Gérer les formations',
 ];
