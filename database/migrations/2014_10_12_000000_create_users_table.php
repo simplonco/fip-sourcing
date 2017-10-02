@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
       $table->longText('heard_of')->nullable();
 
       $table->string('nationality')->nullable();
-      $table->string('birth_date')->nullable();
+      $table->date('birth_date')->nullable();
       $table->string('gender')->nullable();
       $table->string('phone')->nullable();
       $table->string('postal_code')->nullable();
@@ -37,7 +37,7 @@ class CreateUsersTable extends Migration
       $table->string('pole_emploi')->nullable();
       $table->string('number_social_security')->nullable();
       $table->string('obtained_diploma')->nullable();
-      $table->string('cdd')->nullable();
+      $table->date('cdd')->nullable();
 
 
       $table->longText('experience_programming')->nullable();
