@@ -45,7 +45,7 @@
           {!! Form::textarea('superpower', null, ['class' => 'form-control']) !!}
         </div>
 
-        {!! Form::submit('Valider', ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit(__('general.submit'), ['class' => 'btn btn-primary']) !!}
 
         {!! Form::close() !!}
       </div>

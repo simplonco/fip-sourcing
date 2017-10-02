@@ -12,7 +12,7 @@
 
 <div class="col-sm-offset-3 col-sm-6">
   <div class="panel panel-info">
-    <div class="panel-heading"> Loisirs
+    <div class="panel-heading">
     </div>
     <div class="panel-body">
       {!! Form::model($candidate, [
@@ -21,13 +21,10 @@
         ]) !!}
 
         <div class="form-group">
-          <p>
-            Votre candidature doit être envoyée avant le {{Auth::user()->formations()->first()->begin_session}} à minuit
-          </p>
-          Attention, l'envoi de votre candidature est définitif.
+          {{__('candidate_panel.send_application', ['end_session' => Auth::user()->formations()->first()->end_session])}}
         </div>
 
-        {!! Form::submit('Envoyer votre candidature', ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit(__('general.submit'), ['class' => 'btn btn-primary']) !!}
 
         {!! Form::close() !!}
       </div>

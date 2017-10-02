@@ -27,4 +27,7 @@ return [
     'success' => 'Vos données ont bien été enregistrées!',
     'too_early' => 'Il est trop tôt pour envoyer votre candidature!',
     'too_late' => 'Il est trop tard pour envoyer votre candidature!',
+    'send_application' => 'Votre candidature doit être envoyée avant le :end_session à minuit.
+    Attention, l\'envoi de votre candidature est définitif.',
+    'select' => 'Sélectionner',
 ];

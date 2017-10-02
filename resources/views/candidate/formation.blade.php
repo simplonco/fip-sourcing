@@ -35,7 +35,7 @@
             <td>{{$formation->begin_session}}</td>
             <td>{{$formation->end_session}}</td>
             <td style="text-align:center;">
-              <a href="{{ route('storeFormation', $formation->id) }}" class="btn">Sélectionner</a>
+              <a href="{{ route('storeFormation', $formation->id) }}" class="btn">{{__('candidate_panel.select')}}</a>
             </td>
           </tr>
           @endforeach
