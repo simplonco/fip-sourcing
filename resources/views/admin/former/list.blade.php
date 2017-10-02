@@ -15,12 +15,12 @@
 
           <table class="table table-striped">
             <thead>
-              <h4>Liste de tous les formateurs</h4>
+              <h4>{{__('former.former_all')}}</h4>
               <tr>
                 <th style="text-align:center;">Actions</th>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Email</th>
+                <th>{{__('user.choose_user.last_name')}}</th>
+                <th>{{__('user.choose_user.first_name')}}</th>
+                <th>{{__('user.choose_user.email')}}</th>
               </tr>
             </thead>
             <tbody>
@@ -37,7 +37,7 @@
                 @endforeach
               </tbody>
             </table>
-            <a href="{{ route('formerCreate') }}" class="btn">Ajouter un formateur</a>
+            <a href="{{ route('formerCreate') }}" class="btn">{{__('former.former_add')}}</a>
           </div>
         </div>
       </div>

@@ -6,12 +6,12 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
-        <div class="panel-heading">Informations du formateur</div>
+        <div class="panel-heading">{{__('former.former_show')}}</div>
         <div class="panel-body">
 
           <div class="row">
             <div class="col-md-3">
-              <b>Prénom :</b>
+              <b>{{__('user.choose_user.first_name')}} :</b>
             </div>
             <div class="col-md-3">
               {{$former->first_name}}
@@ -20,21 +20,21 @@
 
           <div class="row">
             <div class="col-md-3">
-              <b>Nom :</b>
+              <b>{{__('user.choose_user.last_name')}} :</b>
             </div>
             <div class="col-md-3">
               {{$former->last_name}}
             </div>
           </div>
-          
+
           <table class="table table-striped">
             <thead>
-              <h4>Formations</h4>
+              <h4>{{__('user.choose_user.formations')}}</h4>
               <tr>
-                <th>Nom</th>
-                <th>Description</th>
-                <th>Ville</th>
-                <th>Année</th>
+                <th>{{__('formation.choose_formation.name')}}</th>
+                <th>{{__('formation.choose_formation.description')}}</th>
+                <th>{{__('formation.choose_formation.city')}}</th>
+                <th>{{__('formation.choose_formation.year')}}</th>
               </tr>
             </thead>
             @foreach ($former->formations as $formation)
