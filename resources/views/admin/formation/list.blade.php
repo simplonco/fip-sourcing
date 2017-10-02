@@ -16,13 +16,15 @@
 
           <table class="table table-striped">
             <thead>
-              <h4>Liste de tous les formations</h4>
+              <h4>{{__('formation.formation_all')}}</h4>
               <tr>
                 <th style="text-align:center;">Actions</th>
-                <th>Nom</th>
-                <th>Description</th>
-                <th>Ville</th>
-                <th>Année</th>
+                <th>{{__('formation.choose_formation.name')}}</th>
+                <th>{{__('formation.choose_formation.description')}}</th>
+                <th>{{__('formation.choose_formation.city')}}</th>
+                <th>{{__('formation.choose_formation.year')}}</th>
+                <th>{{__('formation.choose_formation.begin_session')}}</th>
+                <th>{{__('formation.choose_formation.end_session')}}</th>
               </tr>
             </thead>
             <tbody>
@@ -36,11 +38,13 @@
                   <td>{{$formation->description}}</td>
                   <td>{{$formation->city}}</td>
                   <td>{{$formation->year}}</td>
+                  <td>{{$formation->begin_session}}</td>
+                  <td>{{$formation->end_session}}</td>
                 </tr>
                 @endforeach
               </tbody>
             </table>
-            <a href="{{ route('formationCreate') }}" class="btn">Ajouter une formation</a>
+            <a href="{{ route('formationCreate') }}" class="btn">{{__('formation.formation_add')}}</a>
           </div>
         </div>
       </div>

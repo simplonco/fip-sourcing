@@ -17,6 +17,7 @@ return [
     'formation_success' => 'Les informations de la formation ont bien été enregistrées!',
     'formation_created' => 'La formation a bien été ajoutée!',
     'formation_removed' => 'La formation a bien été supprimée!',
+    'formation_create' => 'Création de formation',
 
     'former_updated' => 'Les informations du formateur ont bien été enregistrées!',
     'former_created' => 'Le formateur a bien été ajouté!',

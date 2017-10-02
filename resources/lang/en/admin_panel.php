@@ -17,6 +17,7 @@ return [
   'formation_updated' => 'Formation data has been successfully saved!',
   'formation_created' => 'Formation has been successfully created!',
   'formation_removed' => 'Formation has been successfully removed!',
+  'formation_create' => 'Formation creation',
 
   'former_updated' => 'Former data has been successfully saved!',
   'former_created' => 'Former has been successfully created!',

@@ -27,13 +27,5 @@ return [
     'success' => 'Your data has been successfully saved!',
     'too_early' => 'You cannot send your application yet!',
     'too_late' => 'You cannot send your application any more!',
-    'choose_formation' => [
-      'name' => 'Name',
-      'description' => 'Description',
-      'city' => 'City',
-      'year' => 'Year',
-      'begin_session' => 'Begin session',
-      'end_session' => 'End session'
-    ]
 
 ];

@@ -17,12 +17,12 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>{{__('candidate_panel.choose_formation.name')}}</th>
-          <th>{{__('candidate_panel.choose_formation.description')}}</th>
-          <th>{{__('candidate_panel.choose_formation.city')}}</th>
-          <th>{{__('candidate_panel.choose_formation.year')}}</th>
-          <th>{{__('candidate_panel.choose_formation.begin_session')}}</th>
-          <th>{{__('candidate_panel.choose_formation.end_session')}}</th>
+          <th>{{__('formation.choose_formation.name')}}</th>
+          <th>{{__('formation.choose_formation.description')}}</th>
+          <th>{{__('formation.choose_formation.city')}}</th>
+          <th>{{__('formation.choose_formation.year')}}</th>
+          <th>{{__('formation.choose_formation.begin_session')}}</th>
+          <th>{{__('formation.choose_formation.end_session')}}</th>
         </tr>
       </thead>
       <tbody>

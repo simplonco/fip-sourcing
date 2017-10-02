@@ -27,13 +27,4 @@ return [
     'success' => 'Vos données ont bien été enregistrées!',
     'too_early' => 'Il est trop tôt pour envoyer votre candidature!',
     'too_late' => 'Il est trop tard pour envoyer votre candidature!',
-    'choose_formation' => [
-      'name' => 'Nom',
-      'description' => 'Description',
-      'city' => 'Ville',
-      'year' => 'Année',
-      'begin_session' => 'Début de session',
-      'end_session' => 'Fin de session'
-    ]
-
 ];
