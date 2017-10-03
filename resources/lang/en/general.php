@@ -19,5 +19,7 @@ return [
     'title' => 'Simplon Sourcing',
     'logout' => 'Logout',
     '404' => 'Page not found',
+    'dashboard' => 'Home',
+    'logged_in' => 'You are logged in!'
 
 ];

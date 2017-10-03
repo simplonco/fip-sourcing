@@ -21,5 +21,7 @@ return [
     'remember_me' => 'Remember me',
     'login' => 'Login',
     'register' => 'Register',
+    'unauthorized' => 'You are not authorized to see this page',
+    'denied' => 'Access denied',
 
 ];

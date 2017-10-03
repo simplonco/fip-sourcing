@@ -19,5 +19,7 @@ return [
     'title' => 'Candidature Simplon',
     'logout' => 'Se déconnecter',
     '404' => 'Page non trouvée',
+    'dashboard' => 'Accueil',
+    'logged_in' => 'Vous êtes connecté!'
 
 ];

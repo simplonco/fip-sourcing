@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Accès refusé</div>
+                <div class="panel-heading">{{__(auth.denied)}}</div>
 
                 <div class="panel-body">
-                    Vous n'êtes pas autorisé à accéder à cette page.
+                    {{__(auth.unauthorized)}}
                 </div>
             </div>
         </div>
