@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
-        <div class="panel-heading">{{__('formation.formation_show')}}</div>
+        <div class="panel-heading">{{__('formation.show')}}</div>
         <div class="panel-body">
 
           <div class="row">

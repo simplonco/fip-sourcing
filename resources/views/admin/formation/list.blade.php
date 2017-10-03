@@ -16,7 +16,7 @@
 
           <table class="table table-striped">
             <thead>
-              <h4>{{__('formation.formation_all')}}</h4>
+              <h4>{{__('formation.list')}}</h4>
               <tr>
                 <th style="text-align:center;">Actions</th>
                 <th>{{__('formation.choose_formation.name')}}</th>
@@ -44,7 +44,7 @@
                 @endforeach
               </tbody>
             </table>
-            <a href="{{ route('formationCreate') }}" class="btn">{{__('formation.formation_add')}}</a>
+            <a href="{{ route('formationCreate') }}" class="btn">{{__('formation.add')}}</a>
           </div>
         </div>
       </div>

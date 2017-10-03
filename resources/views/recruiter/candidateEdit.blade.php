@@ -12,7 +12,7 @@
 
 <div class="col-sm-offset-3 col-sm-6">
   <div class="panel panel-info">
-    <div class="panel-heading">Modification du candidat {!! $candidate->last_name !!}</div>
+    <div class="panel-heading">{{__(recruiter_panel.edit)}} {!! $candidate->last_name !!}</div>
     <div class="panel-body">
       {!! Form::model($candidate, [
         'method' => 'POST',
@@ -20,21 +20,21 @@
         ]) !!}
 
         <div class="form-group">
-          {!! Form::label('first_name', 'Prénom', ['class' => 'control-label']) !!}
+          {!! Form::label('first_name', __('user.choose_user.first_name'), ['class' => 'control-label']) !!}
           {!! Form::text('first_name', null, ['class' => 'form-control']) !!}
         </div>
 
         <div class="form-group">
-          {!! Form::label('last_name', 'Nom', ['class' => 'control-label']) !!}
+          {!! Form::label('last_name', __('user.choose_user.last_name'), ['class' => 'control-label']) !!}
           {!! Form::text('last_name', null, ['class' => 'form-control']) !!}
         </div>
 
         <div class="form-group">
-          {!! Form::label('email', 'Adresse mail', ['class' => 'control-label']) !!}
+          {!! Form::label('email', __('user.choose_user.email'), ['class' => 'control-label']) !!}
           {!! Form::text('email', null, ['class' => 'form-control']) !!}
         </div>
 
-        {!! Form::submit('Modifier', ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit(__('general.submit'), ['class' => 'btn btn-primary']) !!}
 
         {!! Form::close() !!}
       </div>

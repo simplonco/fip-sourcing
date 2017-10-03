@@ -18,4 +18,9 @@ return [
 
   'candidate_deleted' => 'Le candidat a bien été supprimé!',
 
+  'edit' => 'Modification du candidat ',
+  'list' => 'Liste des candidats de la formation ',
+  'show' => 'Informations du candidat ',
+
+
 ];

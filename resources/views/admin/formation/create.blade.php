@@ -18,7 +18,7 @@
 
 <div class="col-sm-offset-3 col-sm-6">
   <div class="panel panel-info">
-    <div class="panel-heading">{{__('formation.formation_add')}}</div>
+    <div class="panel-heading">{{__('formation.add')}}</div>
     <div class="panel-body">
       {!! Form::open([
         'route' => ['formationStore']

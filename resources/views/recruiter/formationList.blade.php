@@ -6,18 +6,18 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
-        <div class="panel-heading">Liste de vos formations</div>
+        <div class="panel-heading">__('formation.list')</div>
         <div class="panel-body">
 
           <table class="table table-striped">
             <thead>
               <tr>
                 <th style="text-align:center;">Actions</th>
-                <th>Nom</th>
-                <th>Description</th>
-                <th>Ville</th>
-                <th>Année</th>
-                <th>Candidats</th>
+                <th>__('formation.choose_formation.name')</th>
+                <th>__('formation.choose_formation.description')</th>
+                <th>__('formation.choose_formation.city')</th>
+                <th>__('formation.choose_formation.year')</th>
+                <th>__('formation.candidates')</th>
               </tr>
             </thead>
             @foreach ($former->formations as $formation)
@@ -30,7 +30,7 @@
                 <td>{{$formation->city}}</td>
                 <td>{{$formation->year}}</td>
                 <td style="text-align:center;">
-                  <a href="{{ route('recruiterFormationCandidatesShow', $formation->id) }}">Liste des candidats</a>
+                  <a href="{{ route('recruiterFormationCandidatesShow', $formation->id) }}">__('formation.candidates_list')</a>
                 </td>
               </tr>
               @endforeach

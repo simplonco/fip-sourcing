@@ -6,12 +6,12 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
-        <div class="panel-heading">Informations de la formation</div>
+        <div class="panel-heading">{{__formation.show}}</div>
         <div class="panel-body">
 
           <div class="row">
             <div class="col-md-3">
-              <b>Nom :</b>
+              <b>__('formation.choose_formation.name') :</b>
             </div>
             <div class="col-md-5">
               {{$formation->name}}
@@ -19,7 +19,7 @@
           </div>
           <div class="row">
             <div class="col-md-3">
-              <b>Description :</b>
+              <b__('formation.choose_formation.description') :</b>
             </div>
             <div class="col-md-5">
               {{$formation->description}}
@@ -27,7 +27,7 @@
           </div>
           <div class="row">
             <div class="col-md-3">
-              <b>Ville :</b>
+              <b>__('formation.choose_formation.city') :</b>
             </div>
             <div class="col-md-5">
               {{$formation->city}}
@@ -35,7 +35,7 @@
           </div>
           <div class="row">
             <div class="col-md-3">
-              <b>Année :</b>
+              <b>__('formation.choose_formation.year') :</b>
             </div>
             <div class="col-md-5">
               {{$formation->year}}
@@ -43,7 +43,7 @@
           </div>
           <div class="row">
             <div class="col-md-3">
-              <b>Début de la session d'inscription :</b>
+              <b>__('formation.choose_formation.begin_session') :</b>
             </div>
             <div class="col-md-5">
               {{$formation->begin_session}}
@@ -51,7 +51,7 @@
           </div>
           <div class="row">
             <div class="col-md-3">
-              <b>Fin de la session d'inscription :</b>
+              <b>__('formation.choose_formation.end_session')n :</b>
             </div>
             <div class="col-md-5">
               {{$formation->end_session}}

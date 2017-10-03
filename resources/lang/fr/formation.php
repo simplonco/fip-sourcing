@@ -13,10 +13,12 @@ return [
     |
     */
 
-    'formation_modification' => 'Modification de la formation : ',
-    'formation_add' => 'Ajouter une formation',
-    'formation_all' => 'Liste de toutes les formations',
-    'formation_show' => 'Informations de la formation',
+    'edit' => 'Modification de la formation : ',
+    'add' => 'Ajouter une formation',
+    'list' => 'Liste de toutes les formations',
+    'show' => 'Informations de la formation',
+    'candidates' => 'Candidats',
+    'candidates_list' => 'Liste des candidats',
     'choose_formation' => [
       'name' => 'Nom',
       'description' => 'Description',

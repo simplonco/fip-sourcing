@@ -18,7 +18,7 @@
 
 <div class="col-sm-offset-3 col-sm-6">
   <div class="panel panel-info">
-    <div class="panel-heading">Modification de la formation {!! $formation->name !!}</div>
+    <div class="panel-heading">{{__formation.edit}} {!! $formation->name !!}</div>
     <div class="panel-body">
       {!! Form::model($formation, [
         'method' => 'POST',
@@ -26,38 +26,38 @@
         ]) !!}
 
         <div class="form-group">
-          {!! Form::label('name', 'Nom', ['class' => 'control-label']) !!}
+          {!! Form::label('name', __('formation.choose_formation.name'), ['class' => 'control-label']) !!}
           {!! Form::text('name', null, ['class' => 'form-control']) !!}
         </div>
 
         <div class="form-group">
-          {!! Form::label('description', 'Description', ['class' => 'control-label']) !!}
+          {!! Form::label('description', __('formation.choose_formation.description'), ['class' => 'control-label']) !!}
           {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
         </div>
 
         <div class="form-group">
-          {!! Form::label('city', 'Ville', ['class' => 'control-label']) !!}
+          {!! Form::label('city', __('formation.choose_formation.city'), ['class' => 'control-label']) !!}
           {!! Form::text('city', null, ['class' => 'form-control']) !!}
         </div>
 
         <div class="form-group">
-          {!! Form::label('year', 'Année', ['class' => 'control-label']) !!}
+          {!! Form::label('year', __('formation.choose_formation.year'), ['class' => 'control-label']) !!}
           {!! Form::text('year', null, ['class' => 'form-control']) !!}
         </div>
 
 
         <div class="form-group">
-          {!! Form::label('begin_session', 'Début de la session d\'inscription', ['class' => 'control-label']) !!}
+          {!! Form::label('begin_session', __('formation.choose_formation.begin_session'), ['class' => 'control-label']) !!}
           {!! Form::date('begin_session', null, ['class' => 'form-control']) !!}
         </div>
 
 
         <div class="form-group">
-          {!! Form::label('end_session', 'Fin de la session d\'inscription', ['class' => 'control-label']) !!}
+          {!! Form::label('end_session', __('formation.choose_formation.end_session'), ['class' => 'control-label']) !!}
           {!! Form::date('end_session', null, ['class' => 'form-control']) !!}
         </div>
 
-        {!! Form::submit('Modifier', ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit(__('general.submit'), ['class' => 'btn btn-primary']) !!}
 
         {!! Form::close() !!}
       </div>
