@@ -22,7 +22,7 @@
 
         <div class="form-group">
           {!! Form::label('coding', __('coding.coding'), ['class' => 'control-label']) !!}
-          {!! Form::text('coding', null, ['class' => 'form-control']) !!}
+          {!! Form::text('coding', null, ['required' => true, 'class' => 'form-control']) !!}
         </div>
 
         <div class="form-group">

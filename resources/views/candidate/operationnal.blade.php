@@ -22,22 +22,22 @@
 
         <div class="form-group">
           {!! Form::label('availability', __('operationnal.availability', ['start_date' => Auth::user()->formations()->first()->begin_session, 'end_date' => Auth::user()->formations()->first()->end_session]), ['class' => 'control-label']) !!}
-          {!! Form::text('availability', null, ['class' => 'form-control']) !!}
+          {!! Form::text('availability', null, ['required' => true, 'class' => 'form-control', 'placeholder' => 'Pas de souci!']) !!}
         </div>
 
         <div class="form-group">
           {!! Form::label('efforts', __('operationnal.efforts'), ['class' => 'control-label']) !!}
-          {!! Form::text('efforts', null, ['class' => 'form-control']) !!}
+          {!! Form::text('efforts', null, ['required' => true, 'class' => 'form-control', 'placeholder' => 'Mon site perso de A à Z!']) !!}
         </div>
 
         <div class="form-group">
           {!! Form::label('computers', __('operationnal.computers'), ['class' => 'control-label']) !!}
-          {!! Form::textarea('computers', null, ['class' => 'form-control']) !!}
+          {!! Form::textarea('computers', null, ['required' => true, 'class' => 'form-control', 'placeholder' => 'Interview', 'placeholder' => 'Je joue beaucoup à Pong.']) !!}
         </div>
 
         <div class="form-group">
           {!! Form::label('heard_of', __('operationnal.heard_of'), ['class' => 'control-label']) !!}
-          {!! Form::textarea('heard_of', null, ['class' => 'form-control']) !!}
+          {!! Form::textarea('heard_of', null, ['class' => 'form-control', 'placeholder' => 'Aux soirées de l\'ambassadeur']) !!}
         </div>
 
         {!! Form::submit(__('general.submit'), ['class' => 'btn btn-primary']) !!}

@@ -109,7 +109,6 @@ class CandidateController extends Controller
       return redirect()->back()->withInput(Input::all())->withErrors($validator->errors());
     }
     
-
     $candidate->availability = $request->availability;
     $candidate->efforts = $request->efforts;
     $candidate->computers = $request->computers;
