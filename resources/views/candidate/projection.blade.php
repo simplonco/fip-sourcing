@@ -22,27 +22,27 @@
 
         <div class="form-group">
           {!! Form::label('hero', __('projection.hero'), ['class' => 'control-label']) !!}
-          {!! Form::textarea('hero', null, ['required' => true, 'class' => 'form-control']) !!}
+          {!! Form::textarea('hero', null, ['required' => true, 'class' => 'form-control', 'placeholder' => __('projection.hero_placeholder')]) !!}
         </div>
 
         <div class="form-group">
           {!! Form::label('dev_qualities', __('projection.dev_qualities'), ['class' => 'control-label']) !!}
-          {!! Form::textarea('dev_qualities', null, ['required' => true, 'class' => 'form-control']) !!}
+          {!! Form::textarea('dev_qualities', null, ['required' => true, 'class' => 'form-control', 'placeholder' => __('projection.dev_qualities_placeholder')]) !!}
         </div>
 
         <div class="form-group">
           {!! Form::label('personal_goal', __('projection.personal_goal'), ['class' => 'control-label']) !!}
-          {!! Form::textarea('personal_goal', null, ['required' => true, 'class' => 'form-control']) !!}
+          {!! Form::textarea('personal_goal', null, ['required' => true, 'class' => 'form-control', 'placeholder' => __('projection.personal_goal_placeholder')]) !!}
         </div>
 
         <div class="form-group">
           {!! Form::label('dev_point', __('projection.dev_point'), ['class' => 'control-label']) !!}
-          {!! Form::textarea('dev_point', null, ['required' => true, 'class' => 'form-control']) !!}
+          {!! Form::textarea('dev_point', null, ['required' => true, 'class' => 'form-control', 'placeholder' => __('projection.dev_qualities_placeholder')]) !!}
         </div>
 
         <div class="form-group">
           {!! Form::label('superpower', __('projection.superpower'), ['class' => 'control-label']) !!}
-          {!! Form::textarea('superpower', null, ['required' => true, 'class' => 'form-control']) !!}
+          {!! Form::textarea('superpower', null, ['required' => true, 'class' => 'form-control', 'placeholder' => __('projection.superpower_placeholder')]) !!}
         </div>
 
         {!! Form::submit(__('general.submit'), ['class' => 'btn btn-primary']) !!}

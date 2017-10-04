@@ -25,5 +25,6 @@ Only to get to the pulp and if possible to be proud of what you have achieved.
 Copy here the link to your realization.',
     'profiles' => 'Here you can enter your profiles on various code-learning platforms (one link per line).
 Make sure each link is accessible to anyone.',
+'coding_placeholder' => 'https://simplon.co/',
 
 ];

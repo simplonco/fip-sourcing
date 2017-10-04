@@ -17,5 +17,9 @@ return [
     'efforts' => 'What have you done today in connection with your application?',
     'computers' => 'Do you confirm that you are comfortable with computer tools and that a mouse is not an animal?',
     'heard_of' => 'How did you hear about Simplon.co?',
+    'availability_placeholder' => 'No prob!',
+    'efforts_placeholder' => 'My own portfolio!',
+    'computers_placeholder' => 'Sure, I play Pong a lot.',
+    'heard_of_placeholder' => 'During a brunch with the Queen of England.',
 
 ];

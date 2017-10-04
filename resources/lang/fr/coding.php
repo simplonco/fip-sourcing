@@ -25,5 +25,6 @@ Seulement de mettre la main à la pâte et si possible d\'être fier de ce que v
 Copiez ici le lien vers votre réalisation.',
     'profiles' => 'Vous pouvez indiquer ici vos profils sur diverses plateformes d\'apprentissage du code (un lien par ligne).
 Assurez-vous que chaque lien soit bien accessible pour n\'importe qui.',
+'coding_placeholder' => 'https://simplon.co/',
 
 ];

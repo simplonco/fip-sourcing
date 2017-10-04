@@ -18,5 +18,10 @@ return [
     'personal_goal' => 'What are you looking for when integrating Simplon.co training?',
     'dev_point' => 'In your opinion, aside from making websites, what is the point ofbeing a web developer?',
     'superpower' => 'In a year, with your new super powers of computer coding, what would you like to do?',
+    'hero_placeholder' => 'SpiderHam because he writes dirty code',
+    'dev_qualities_placeholder' => 'He doesn\'t sleep.',
+    'personal_goal_placeholder' => 'Easy money.',
+    'dev_point_placeholder' => 'Fix computers',
+    'superpower_placeholder' => 'Save the world.',
 
 ];
