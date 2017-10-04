@@ -145,3 +145,14 @@ i {
 .panel-heading {
   font-size: 24px;
 }
+
+.fa {
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 0.2em;
+}
+
+.panel-btn {
+  padding: 0.2em;
+}
