@@ -22,11 +22,11 @@
 
         <div class="form-group">
           {!! Form::label('experience_programming', __('experience.experience_programming'), ['class' => 'control-label']) !!}
-          {!! Form::textarea('experience_programming', null, ['required' => true, 'class' => 'form-control']) !!}
+          {!! Form::textarea('experience_programming', null, ['required' => true, 'class' => 'form-control', 'placeholder' => __('experience.experience_programming_placeholder')]) !!}
         </div>
         <div class="form-group">
           {!! Form::label('course', __('experience.course'), ['class' => 'control-label']) !!}
-          {!! Form::textarea('course', null, ['required' => true, 'class' => 'form-control']) !!}
+          {!! Form::textarea('course', null, ['required' => true, 'class' => 'form-control', 'placeholder' => __('experience.course_placeholder')]) !!}
         </div>
         <div class="form-group">
           {!! Form::label('english', __('experience.english'), ['class' => 'control-label']) !!}
@@ -34,7 +34,7 @@
         </div>
         <div class="form-group">
           {!! Form::label('today', __('experience.today'), ['class' => 'control-label']) !!}
-          {!! Form::textarea('today', null, ['required' => true, 'class' => 'form-control']) !!}
+          {!! Form::textarea('today', null, ['required' => true, 'class' => 'form-control', 'placeholder' => __('experience.today_placeholder')]) !!}
         </div>
 
         {!! Form::submit(__('general.submit'), ['class' => 'btn btn-primary']) !!}

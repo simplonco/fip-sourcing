@@ -26,6 +26,16 @@ return [
     'number_social_security' => 'Numéro de Sécurité Sociale (sait-on jamais...)',
     'obtained_diploma' => 'Quel est votre dernier diplôme obtenu ?',
     'cdd' => 'Si vous avez eu un CDD dans le passé, à quelle date s\'est-il arrêté ?',
+    'nationality_placeholder' => 'Français d\'outre-espace',
+    'phone_placeholder' => '0118 999 881 999 119 7253',
+    'postal_code_placeholder' => '31800',
+    'city_placeholder' => 'Saint-Gaudens',
+    'address_placeholder' => '2 place du Maréchal Juin',
+    'status_placeholder' => 'Student',
+    'number_pole_emploi_placeholder' => '123456A',
+    'pole_emploi_placeholder' => 'Saint-Gaudens',
+    'number_social_security_placeholder' => '111111111111111',
+    'obtained_diploma_placeholder' => 'License to code',
 
   'gender_select'  => [
     'female' => 'Homme',
