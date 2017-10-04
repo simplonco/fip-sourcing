@@ -1,12 +1,15 @@
 <?php
 use App\User;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Request;
 
 // My common functions
 function fetchBadges($codecademy_url)
 {
   // TODO : ctrl codecademy_profile -> form validation on input?
   $html = file_get_contents($codecademy_url); //get the html returned from the following url
-  
+
   $codecademy_doc = new DOMDocument();
   //
   libxml_use_internal_errors(TRUE); //disable libxml errors
@@ -26,4 +29,5 @@ function fetchBadges($codecademy_url)
     return $codecademy_row[2]->nodeValue;
   }
 }
+
 ?>

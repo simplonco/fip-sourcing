@@ -9,6 +9,8 @@ use App\Pro_experience;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
 
 class CandidateController extends Controller
 {
@@ -93,12 +95,20 @@ class CandidateController extends Controller
   {
     $candidate = Auth::user();
 
-    $this->validate($request, [
-      'availability' => 'required|string|max:255',
+    $validation_rules = [
+      'availability' => 'required|max:255',
       'efforts' => 'required|string|max:255',
       'computers' => 'required|string|max:255',
       'heard_of' => 'string|max:255',
-    ]);
+    ];
+
+    $validator = Validator::make($request->all(), $validation_rules);
+
+    if ($validator->fails())
+    {
+      return redirect()->back()->withInput(Input::all())->withErrors($validator->errors());
+    }
+    
 
     $candidate->availability = $request->availability;
     $candidate->efforts = $request->efforts;
@@ -109,7 +119,6 @@ class CandidateController extends Controller
 
     return redirect()->route('home');
   }
-
 
   /**
   * Show the form for editing the personal infos.
@@ -133,7 +142,7 @@ class CandidateController extends Controller
   {
     $candidate = Auth::user();
 
-    $this->validate($request, [
+    $validation_rules = [
       'nationality' => 'required|string|max:255',
       'birth_date' => 'required|date',
       'gender' => 'required|string|max:255',
@@ -147,7 +156,14 @@ class CandidateController extends Controller
       'number_social_security' => 'required|string|max:20',
       'obtained_diploma' => 'string|max:255',
       'cdd' => 'date',
-    ]);
+    ];
+
+    $validator = Validator::make($request->all(), $validation_rules);
+
+    if ($validator->fails())
+    {
+      return redirect()->back()->withInput(Input::all())->withErrors($validator->errors());
+    }
 
     $candidate->nationality = $request->nationality;
     $candidate->birth_date = $request->birth_date;
@@ -192,12 +208,19 @@ class CandidateController extends Controller
   {
     $candidate = Auth::user();
 
-    $this->validate($request, [
+    $validation_rules = [
       'experience_programming' => 'required|string|max:255',
       'course' => 'required|string|max:255',
       'english' => 'required|string',
       'today' => 'required|string|max:300',
-    ]);
+    ];
+
+    $validator = Validator::make($request->all(), $validation_rules);
+
+    if ($validator->fails())
+    {
+      return redirect()->back()->withInput(Input::all())->withErrors($validator->errors());
+    }
 
     $candidate->experience_programming = $request->experience_programming;
     $candidate->course = $request->course;
@@ -232,10 +255,17 @@ class CandidateController extends Controller
   {
     $candidate = Auth::user();
 
-    $this->validate($request, [
+    $validation_rules = [
       'coding' => 'required|string|max:255',
       'profiles' => 'string|max:255',
-    ]);
+    ];
+
+    $validator = Validator::make($request->all(), $validation_rules);
+
+    if ($validator->fails())
+    {
+      return redirect()->back()->withInput(Input::all())->withErrors($validator->errors());
+    }
 
     // Insert/update profiles in BDD
     $candidate->coding = $request->coding;
@@ -270,13 +300,20 @@ class CandidateController extends Controller
   {
     $candidate = Auth::user();
 
-    $this->validate($request, [
+    $validation_rules = [
       'hero' => 'required|string|max:255',
       'dev_qualities' => 'required|string|max:255',
       'personal_goal' => 'required|string|max:255',
       'dev_point' => 'required|string|max:255',
       'superpower' => 'required|string|max:255',
-    ]);
+    ];
+
+    $validator = Validator::make($request->all(), $validation_rules);
+
+    if ($validator->fails())
+    {
+      return redirect()->back()->withInput(Input::all())->withErrors($validator->errors());
+    }
 
     $candidate->hero = $request->hero;
     $candidate->dev_qualities = $request->dev_qualities;
