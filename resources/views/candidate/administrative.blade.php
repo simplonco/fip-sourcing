@@ -12,7 +12,7 @@
 
 <div class="col-sm-offset-3 col-sm-6">
   <div class="panel panel-info">
-    <div class="panel-heading"> {{__('panel.administrative')}}
+    <div class="panel-heading"> {{__('candidate_panel.administrative')}}
     </div>
     <div class="panel-body">
       {!! Form::model($candidate, [
@@ -82,7 +82,7 @@
 
         <div class="form-group">
           {!! Form::label('cdd', __('administrative.cdd'), ['class' => 'control-label']) !!}
-          {!! Form::text('cdd', null, ['class' => 'form-control']) !!}
+          {!! Form::date('cdd', null, ['class' => 'form-control']) !!}
         </div>
 
         {!! Form::submit(__('general.submit'), ['class' => 'btn btn-primary']) !!}

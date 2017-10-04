@@ -12,7 +12,7 @@
 
 <div class="col-sm-offset-3 col-sm-6">
   <div class="panel panel-info">
-    <div class="panel-heading"> {{__('panel.operationnal')}}
+    <div class="panel-heading"> {{__('candidate_panel.operationnal')}}
     </div>
     <div class="panel-body">
       {!! Form::model($candidate, [

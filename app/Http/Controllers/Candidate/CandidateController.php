@@ -37,16 +37,6 @@ class CandidateController extends Controller
   }
 
   /**
-  *Show the form for creating a new resource.
-  *
-  * @return \Illuminate\Http\Response
-  */
-  public function create()
-  {
-    //
-  }
-
-  /**
   *Choose a formation
   *
   * @return \Illuminate\Http\Response
@@ -107,7 +97,7 @@ class CandidateController extends Controller
       'availability' => 'required|string|max:255',
       'efforts' => 'required|string|max:255',
       'computers' => 'required|string|max:255',
-      'heard_of' => 'required|string|max:255',
+      'heard_of' => 'string|max:255',
     ]);
 
     $candidate->availability = $request->availability;
@@ -143,12 +133,21 @@ class CandidateController extends Controller
   {
     $candidate = Auth::user();
 
-    //TODO : implement validation
-    // $this->validate($request, [
-    //   'codecademy_profile' => 'required|string|max:255',
-    //   'openclassroom_profile' => 'string|max:255',
-    //   'other_profile' => 'string|max:255',
-    // ]);
+    $this->validate($request, [
+      'nationality' => 'required|string|max:255',
+      'birth_date' => 'required|date',
+      'gender' => 'required|string|max:255',
+      'phone' => 'required|string|max:50',
+      'postal_code' => 'required|string|max:255',
+      'city' => 'required|string|max:255',
+      'address' => 'required|string|max:255',
+      'status' => 'required|string|max:255',
+      'number_pole_emploi' => 'string|max:20',
+      'pole_emploi' => 'string|max:255',
+      'number_social_security' => 'required|string|max:20',
+      'obtained_diploma' => 'string|max:255',
+      'cdd' => 'date',
+    ]);
 
     $candidate->nationality = $request->nationality;
     $candidate->birth_date = $request->birth_date;
@@ -234,7 +233,7 @@ class CandidateController extends Controller
     $candidate = Auth::user();
 
     $this->validate($request, [
-      'coding' => 'string|max:255',
+      'coding' => 'required|string|max:255',
       'profiles' => 'string|max:255',
     ]);
 
@@ -311,7 +310,7 @@ class CandidateController extends Controller
 
     return view('candidate.confirm_send_application', ['candidate'=>$candidate]);
   }
-  
+
   /**
   * Sending the application
   *

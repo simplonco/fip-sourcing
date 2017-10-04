@@ -19,7 +19,7 @@
           <div class="panel-body">
             @if (!Auth::user()->application_sent)
             <div class="progress">
-              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">33%</div>
+              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 33%;" >33%</div>
             </div>
             <div class="row panel-btn">
               <a href="{{ route('chooseFormation') }}" class="btn">
@@ -27,6 +27,7 @@
                 {{__('candidate_panel.formation')}}
               </a>
             </div>
+            @if (Auth::user()->formations()->first())
             <div class="row panel-btn">
               <a href="{{ route('chooseOperationnal') }}" class="btn">
                 <i class="fa fa-calendar fa-2x" aria-hidden="true"></i>
@@ -64,6 +65,7 @@
                 {{__('candidate_panel.send')}}
               </a>
             </div>
+            @endif
             @else
             <p>
               {{__('candidate_panel.sent')}}
