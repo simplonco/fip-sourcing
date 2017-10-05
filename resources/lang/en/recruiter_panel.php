@@ -21,5 +21,6 @@ return [
   'edit' => 'Candidate modification ',
   'list' => 'Candidates list for ',
   'show' => 'Candidate informations',
+  'note' => 'Note/comment',
 
 ];

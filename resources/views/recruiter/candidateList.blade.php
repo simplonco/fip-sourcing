@@ -17,7 +17,7 @@
             <thead>
               <h4>{{__('recruiter_panel.list')}}{{$formation->name}}</h4>
               <tr>
-                <th style="text-align:center;">Actions</th>
+                <th style="text-align:center;">{{__('recruiter_panel.note')}}</th>
                 <th>{{__('user.choose_user.last_name')}}</th>
                 <th>{{__('user.choose_user.first_name')}}</th>
                 <th>{{__('user.choose_user.email')}}</th>
@@ -27,9 +27,7 @@
               @foreach ($candidates as $candidate)
               <tr>
                 <td style="text-align:center;">
-                  <a href="{{ route('candidateFormationShow', $candidate->id) }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-                  <a href="{{ route('candidateFormationEdit', $candidate->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                  <a href="{{ route('candidateFormationDelete', $candidate->id) }}"><i class="fa fa fa-ban" aria-hidden="true"></i></a></td>
+                  <a href="{{ route('candidateFormationShow', $candidate->id) }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
                   <td>{{$candidate->last_name}}</td>
                   <td>{{$candidate->first_name}}</td>
                   <td>{{$candidate->email}}</td>

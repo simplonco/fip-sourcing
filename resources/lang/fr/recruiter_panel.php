@@ -21,6 +21,7 @@ return [
   'edit' => 'Modification du candidat ',
   'list' => 'Liste des candidats de la formation ',
   'show' => 'Informations du candidat ',
+  'note' => 'Noter/commenter',
 
 
 ];
