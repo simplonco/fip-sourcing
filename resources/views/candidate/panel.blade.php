@@ -23,45 +23,45 @@
             </div>
             <div class="row panel-btn">
               <a href="{{ route('chooseFormation') }}" class="btn">
-                <i class="fa fa-list fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-panel fa-list fa-2x" aria-hidden="true"></i>
                 {{__('candidate_panel.formation')}}
               </a>
             </div>
             @if (Auth::user()->formations()->first())
             <div class="row panel-btn">
               <a href="{{ route('chooseOperationnal') }}" class="btn">
-                <i class="fa fa-calendar fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-panel fa-calendar fa-2x" aria-hidden="true"></i>
                 {{__('candidate_panel.operationnal')}}
               </a>
             </div>
             <div class="row panel-btn">
               <a href="{{ route('chooseAdministrative') }}" class="btn">
-                <i class="fa fa-id-card-o fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-panel fa-id-card-o fa-2x" aria-hidden="true"></i>
                 {{__('candidate_panel.administrative')}}
               </a>
             </div>
             <div class="row panel-btn">
               <a href="{{ route('chooseExperience') }}" class="btn">
-                <i class="fa fa-briefcase fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-panel fa-briefcase fa-2x" aria-hidden="true"></i>
                 {{__('candidate_panel.experience')}}
               </a>
             </div>
             <div class="row panel-btn">
               <a href="{{ route('chooseCoding') }}" class="btn">
-                <i class="fa fa-code fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-panel fa-code fa-2x" aria-hidden="true"></i>
                 {{__('candidate_panel.coding')}}
               </a>
             </div>
             <div class="row panel-btn">
               <a href="{{ route('chooseProjection') }}" class="btn">
-                <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-panel fa-user fa-2x" aria-hidden="true"></i>
                 {{__('candidate_panel.projection')}}
               </a>
             </div>
 
             <div class="row">
               <a href="{{ route('confirmSendApplication') }}" class="btn">
-                <i class="fa fa-paper-plane-o fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-panel fa-paper-plane-o fa-2x" aria-hidden="true"></i>
                 {{__('candidate_panel.send')}}
               </a>
             </div>

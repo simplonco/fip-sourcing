@@ -11,7 +11,7 @@
 
           <div class="row">
             <div class="col-md-3">
-              <b>__('formation.choose_formation.name') :</b>
+              <b>{{__('formation.choose_formation.name')}} :</b>
             </div>
             <div class="col-md-5">
               {{$formation->name}}
@@ -19,7 +19,7 @@
           </div>
           <div class="row">
             <div class="col-md-3">
-              <b__('formation.choose_formation.description') :</b>
+              <b>{{__('formation.choose_formation.description')}} :</b>
             </div>
             <div class="col-md-5">
               {{$formation->description}}
@@ -27,7 +27,7 @@
           </div>
           <div class="row">
             <div class="col-md-3">
-              <b>__('formation.choose_formation.city') :</b>
+              <b>{{__('formation.choose_formation.city')}} :</b>
             </div>
             <div class="col-md-5">
               {{$formation->city}}
@@ -35,7 +35,7 @@
           </div>
           <div class="row">
             <div class="col-md-3">
-              <b>__('formation.choose_formation.year') :</b>
+              <b>{{__('formation.choose_formation.year')}} :</b>
             </div>
             <div class="col-md-5">
               {{$formation->year}}
@@ -43,7 +43,7 @@
           </div>
           <div class="row">
             <div class="col-md-3">
-              <b>__('formation.choose_formation.begin_session') :</b>
+              <b>{{__('formation.choose_formation.begin_session')}} :</b>
             </div>
             <div class="col-md-5">
               {{$formation->begin_session}}
@@ -51,7 +51,7 @@
           </div>
           <div class="row">
             <div class="col-md-3">
-              <b>__('formation.choose_formation.end_session')n :</b>
+              <b>{{__('formation.choose_formation.end_session')}} :</b>
             </div>
             <div class="col-md-5">
               {{$formation->end_session}}

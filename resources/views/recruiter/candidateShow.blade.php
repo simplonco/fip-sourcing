@@ -11,7 +11,7 @@
 
           <div class="row">
             <div class="col-md-3">
-              <b>__('user.choose_user.first_name' :</b>
+              <b>{{__('user.choose_user.first_name')}} :</b>
             </div>
             <div class="col-md-3">
               {{$candidate->first_name}}
@@ -20,7 +20,7 @@
 
           <div class="row">
             <div class="col-md-3">
-              <b>__('user.choose_user.last_name' :</b>
+              <b>{{__('user.choose_user.last_name'}} :</b>
             </div>
             <div class="col-md-3">
               {{$candidate->last_name}}
