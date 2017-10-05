@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class FormationsTableSeeder extends Seeder
 {
@@ -18,8 +19,8 @@ class FormationsTableSeeder extends Seeder
       'description' => 'Cette formation commence le 1er décembre et apprendra à une quinzaine d\'apprenants HTML/CSS/JS/Souffrance.',
       'city' => $faker->city,
       'year' => '2017',
-      'begin_session' => $faker->date,
-      'end_session' => $faker->date,
+      'begin_session' => Carbon::yesterday(),
+      'end_session' => Carbon::tomorrow(),
     ]);
 
     DB::table('formations')->insert([

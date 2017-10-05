@@ -6,7 +6,7 @@ use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use App\User;
 
-class ExampleTest extends DuskTestCase
+class UserRoutesTest extends DuskTestCase
 {
   /**
   * A basic browser test example.
@@ -31,4 +31,5 @@ class ExampleTest extends DuskTestCase
       ->assertPathIs('/home');
     });
   }
+
 }
