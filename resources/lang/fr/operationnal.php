@@ -21,5 +21,6 @@ return [
     'efforts_placeholder' => 'Mon site perso de A à Z!',
     'computers_placeholder' => 'Oui, je joue beaucoup à Pong.',
     'heard_of_placeholder' => 'Aux soirées de l\'ambassadeur.',
+    'availability_short' => 'Confirmez-vous être disponible sur cette période ?',
 
 ];
