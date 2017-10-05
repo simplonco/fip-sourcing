@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
-        <div class="panel-heading">{{__(recruiter_panel.show)}}</div>
+        <div class="panel-heading">{{__('recruiter_panel.show')}}</div>
         <div class="panel-body">
 
           <div class="row">
@@ -20,7 +20,7 @@
 
           <div class="row">
             <div class="col-md-3">
-              <b>{{__('user.choose_user.last_name'}} :</b>
+              <b>{{__('user.choose_user.last_name')}} :</b>
             </div>
             <div class="col-md-3">
               {{$candidate->last_name}}

@@ -17,17 +17,17 @@ class ExampleTest extends DuskTestCase
   {
     $this->browse(function (Browser $browser) {
       $browser->visit('/login')
-      ->assertSee('Simplon Sourcing');
+      ->assertSee(__('general.title'));
     });
   }
 
-  public function testConnection() {
+  public function testCandidateConnection() {
     $user = User::find(2);
     $this->browse(function ($browser) use ($user) {
       $browser->visit('/login')
       ->type('email', $user->email)
       ->type('password', 'azerty')
-      ->press('Login')
+      ->press(__('auth.login'))
       ->assertPathIs('/home');
     });
   }
