@@ -30,7 +30,7 @@
               @foreach ($candidates as $candidate)
               <tr>
                 <td style="text-align:center;">
-                  <a href="{{ route('candidateFormationShow', $candidate->id) }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+                  <a href="{{ route('candidateFormationShow', $candidate->id) }}"><i class="fa fa-commenting-o" aria-hidden="true"></i></a></td>
                   <td>{{$candidate->last_name}}</td>
                   <td>{{$candidate->first_name}}</td>
                   <td>{{$candidate->email}}</td>
