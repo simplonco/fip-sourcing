@@ -17,7 +17,7 @@ class CandidateController extends Controller
     $this->middleware('auth');
   }
 
-  public function recruiterFormationCandidatesShow($formation_id)
+  public function recruiterFormationCandidatesList($formation_id, $order=null, $ascending='asc')
   {
     $formation = Formation::findOrFail($formation_id);
 
@@ -26,9 +26,14 @@ class CandidateController extends Controller
       $q->where('role_id', $roleId);
     })->whereHas('formations', function ($q) use ($formation_id) {
       $q->where('formation_id', $formation_id);
-    })->paginate(10);
+    });
+    if($order != null){
+      $candidates = $ascending === 'asc'? $candidates->orderBy($order, 'asc') : $candidates->orderBy($order, 'desc');
+    }
+    $candidates_pagination = $candidates->paginate(10);
+    // ->orderBy('last_name');
 
-    return view('recruiter.candidateList', ['candidates'=>$candidates, 'formation'=>$formation]);
+    return view('recruiter.candidateList', ['candidates'=>$candidates_pagination, 'formation'=>$formation]);
   }
 
   /**
@@ -67,21 +72,21 @@ class CandidateController extends Controller
   }
 
 
-    /**
-    * Remove the specified resource from storage.
-    *
-    * @param  int  $id
-    * @return \Illuminate\Http\Response
-    */
-    public function candidateFormationDelete($id)
-    {
-      $candidate = User::findOrFail($id);
+  /**
+  * Remove the specified resource from storage.
+  *
+  * @param  int  $id
+  * @return \Illuminate\Http\Response
+  */
+  public function candidateFormationDelete($id)
+  {
+    $candidate = User::findOrFail($id);
 
-      $candidate->delete();
+    $candidate->delete();
 
-      Session::flash('flash_message', __('recruiter_panel.formation_removed'));
+    Session::flash('flash_message', __('recruiter_panel.formation_removed'));
 
-      return redirect()->route('recruiterIndex');
-    }
+    return redirect()->route('recruiterIndex');
+  }
 
 }

@@ -30,7 +30,7 @@
                 <td>{{$formation->city}}</td>
                 <td>{{$formation->year}}</td>
                 <td style="text-align:center;">
-                  <a href="{{ route('recruiterFormationCandidatesShow', $formation->id) }}">{{__('formation.candidates_list')}}</a>
+                  <a href="{{ route('recruiterFormationCandidatesList', $formation->id) }}">{{__('formation.candidates_list')}}</a>
                 </td>
               </tr>
               @endforeach

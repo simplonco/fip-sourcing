@@ -18,7 +18,10 @@
               <h4>{{__('recruiter_panel.list')}}{{$formation->name}}</h4>
               <tr>
                 <th style="text-align:center;">{{__('recruiter_panel.note')}}</th>
-                <th>{{__('user.choose_user.last_name')}}</th>
+                <th>{{__('user.choose_user.last_name')}}
+                  <a href="{{ route('recruiterFormationCandidatesList', [$formation->id, 'last_name', 'asc']) }}"><i class="fa fa-sort-asc" aria-hidden="true"></i></a>
+                  <a href="{{ route('recruiterFormationCandidatesList', [$formation->id, 'last_name', 'desc']) }}"><i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                </th>
                 <th>{{__('user.choose_user.first_name')}}</th>
                 <th>{{__('user.choose_user.email')}}</th>
               </tr>
