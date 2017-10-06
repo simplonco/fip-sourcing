@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">{{__(auth.denied)}}</div>
+                <div class="panel-heading">{{__('auth.denied')}}</div>
 
                 <div class="panel-body">
-                    {{__(auth.unauthorized)}}
+                    {{__('auth.unauthorized')}}
                 </div>
             </div>
         </div>
