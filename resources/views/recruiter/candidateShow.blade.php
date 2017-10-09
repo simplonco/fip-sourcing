@@ -350,6 +350,13 @@
                 <div class="col-md-3">
                   {{$candidate->hero}}
                 </div>
+                <div class="col-md-6">
+                  @foreach($candidate->candidate_notes as $note)
+                  <p>
+                    {{$note->recruiter->last_name}} : {{$note->hero_note}}
+                  </p>
+                  @endforeach
+                </div>
               </div>
               <br />
               <div class="row">
@@ -358,6 +365,13 @@
                 </div>
                 <div class="col-md-3">
                   {{$candidate->dev_qualities}}
+                </div>
+                <div class="col-md-6">
+                  @foreach($candidate->candidate_notes as $note)
+                  <p>
+                    {{$note->recruiter->last_name}} : {{$note->dev_qualities_note}}
+                  </p>
+                  @endforeach
                 </div>
               </div>
               <br />
@@ -369,6 +383,13 @@
                 <div class="col-md-3">
                   {{$candidate->personal_goal}}
                 </div>
+                <div class="col-md-6">
+                  @foreach($candidate->candidate_notes as $note)
+                  <p>
+                    {{$note->recruiter->last_name}} : {{$note->personal_goal_note}}
+                  </p>
+                  @endforeach
+                </div>
               </div>
               <br />
               <div class="row">
@@ -377,6 +398,13 @@
                 </div>
                 <div class="col-md-3">
                   {{$candidate->dev_point}}
+                </div>
+                <div class="col-md-6">
+                  @foreach($candidate->candidate_notes as $note)
+                  <p>
+                    {{$note->recruiter->last_name}} : {{$note->dev_point_note}}
+                  </p>
+                  @endforeach
                 </div>
               </div>
               <br />
@@ -388,12 +416,38 @@
                 <div class="col-md-3">
                   {{$candidate->superpower}}
                 </div>
+                <div class="col-md-6">
+                  @foreach($candidate->candidate_notes as $note)
+                  <p>
+                    {{$note->recruiter->last_name}} : {{$note->superpower_note}}
+                  </p>
+                  @endforeach
+                </div>
               </div>
               <br />
 
             </div>
           </div>
 
+
+          <div class="panel panel-default">
+            <div class="panel-heading">{{__('note.comment')}}</div>
+            <div class="panel-body">
+
+              @foreach($candidate->candidate_notes as $note)
+              <div class="row">
+                <div class="col-md-3">
+                  <b>{{$note->recruiter->last_name}}  </b>
+                </div>
+                <div class="col-md-6">
+                  {{$note->comment}}
+                </div>
+              </div>
+              @endforeach
+              <br />
+
+            </div>
+          </div>
 
         </div>
       </div>

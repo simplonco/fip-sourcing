@@ -13,16 +13,8 @@ return [
   |
   */
 
-
-  'formation_updated' => 'Formation has been successfully updated!',
-
-  'candidate_deleted' => 'Candidate has been successfully removed!',
-
-  'edit' => 'Candidate modification ',
-  'list' => 'Candidates list for ',
-  'show' => 'Candidate informations',
-  'note' => 'Note/comment',
-  'actions' => 'Actions',
-  'candidate_evaluated' => 'Candidate evaluation was successfully saved',
+  'comments' => 'Comments',
+  'note' => 'Notes and comments',
+  'comment' => 'Comment',
 
 ];

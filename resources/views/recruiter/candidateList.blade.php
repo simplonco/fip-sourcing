@@ -17,7 +17,7 @@
             <thead>
               <h4>{{__('recruiter_panel.list')}}{{$formation->name}}</h4>
               <tr>
-                <th style="text-align:center;">{{__('recruiter_panel.note')}}</th>
+                <th style="text-align:center;">{{__('recruiter_panel.actions')}}</th>
                 <th>{{__('user.choose_user.last_name')}}
                   <a href="{{ route('recruiterFormationCandidatesList', [$formation->id, 'last_name', 'asc']) }}"><i class="fa fa-sort-asc" aria-hidden="true"></i></a>
                   <a href="{{ route('recruiterFormationCandidatesList', [$formation->id, 'last_name', 'desc']) }}"><i class="fa fa-sort-desc" aria-hidden="true"></i></a>
@@ -30,7 +30,9 @@
               @foreach ($candidates as $candidate)
               <tr>
                 <td style="text-align:center;">
-                  <a href="{{ route('candidateFormationShow', $candidate->id) }}"><i class="fa fa-commenting-o" aria-hidden="true"></i></a></td>
+                  <a href="{{ route('candidateFormationShow', $candidate->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                  <a href="{{ route('candidateFormationEvaluate', $candidate->id) }}"><i class="fa fa-commenting-o" aria-hidden="true"></i></a>
+                </td>
                   <td>{{$candidate->last_name}}</td>
                   <td>{{$candidate->first_name}}</td>
                   <td>{{$candidate->email}}</td>

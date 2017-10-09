@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Role;
 use App\Formation;
+use App\Note;
 use Illuminate\Support\Facades\Session;
 
 class CandidateController extends Controller
@@ -49,6 +50,35 @@ class CandidateController extends Controller
     return view('recruiter.candidateShow', compact('candidate'));
   }
 
+  /**
+  * Evaluate
+  *
+  * @param  int  $id
+  * @return \Illuminate\Http\Response
+  */
+  public function candidateFormationEvaluate($candidate_id)
+  {
+    $candidate = User::findOrFail($candidate_id);
+    $recruiter = Auth::user();
+    $recruiter_id = $recruiter->id;
+
+    $note = Note::whereHas('candidates', function ($q) use ($candidate_id) {
+      $q->where('candidate_id', $candidate_id);
+    })->whereHas('recruiter', function ($q) use ($recruiter_id) {
+      $q->where('recruiter_id', $recruiter_id);
+    });
+
+    if(!$note->first()){
+      $note = Note::create();
+      $note->recruiter()->associate($recruiter);
+      $note->candidates()->associate($candidate);
+      $note->save();
+    }
+
+
+    return view('recruiter.candidateEvaluate', ['candidate' => $candidate, 'note' => $note->first()]);
+  }
+
 
   /**
   * Update the specified resource in storage.
@@ -57,36 +87,28 @@ class CandidateController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function candidateFormationUpdate($id, Request $request)
+  public function candidateFormationSendEvaluation($id, Request $request)
   {
-    //TODO: add validation as soon as fields to display are chosen
-    $candidate = User::findOrFail($id);
+    $note = Note::findOrFail($id);
+
+    $this->validate($request, [
+      'hero_note' => 'required',
+      'dev_qualities_note' => 'required',
+      'personal_goal_note' => 'required',
+      'dev_point_note' => 'required',
+      'superpower_note' => 'required',
+      'comment' => 'required|string|max:255'
+    ]);
 
     $input = $request->all();
 
-    $candidate->fill($input)->save();
 
-    Session::flash('flash_message', __('recruiter_panel.formation_updated'));
+    $note->fill($input)->save();
 
-    return Redirect()->route('recruiterIndex');
+    Session::flash('flash_message', __('recruiter_panel.candidate_evaluated'));
+
+    return redirect()->route('recruiterFormationCandidatesList');
   }
 
-
-  /**
-  * Remove the specified resource from storage.
-  *
-  * @param  int  $id
-  * @return \Illuminate\Http\Response
-  */
-  public function candidateFormationDelete($id)
-  {
-    $candidate = User::findOrFail($id);
-
-    $candidate->delete();
-
-    Session::flash('flash_message', __('recruiter_panel.formation_removed'));
-
-    return redirect()->route('recruiterIndex');
-  }
 
 }

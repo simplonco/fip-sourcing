@@ -32,6 +32,16 @@ class FormationUserTableSeeder extends Seeder
         'user_id' => '51',
         'formation_id' => '3',
       ]);
+
+      DB::table('formation_user')->insert([
+        'user_id' => '52',
+        'formation_id' => '2',
+      ]);
+
+      DB::table('formation_user')->insert([
+        'user_id' => '53',
+        'formation_id' => '2',
+      ]);
     }
 
   }

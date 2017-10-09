@@ -38,14 +38,15 @@ class User extends Authenticatable
     return $this->belongsToMany('App\Formation', 'formation_user');
   }
 
-  public function pro_experiences()
+  public function candidate_notes()
   {
-    return $this->hasMany('App\ProExperience');
+    return $this->hasMany('App\Note', 'candidate_id');
   }
 
-  public function paid_formations()
+  public function recruiter_notes()
   {
-    return $this->hasMany('App\PaidFormation');
+    return $this->hasMany('App\Note', 'recruiter_id');
   }
+
 
 }

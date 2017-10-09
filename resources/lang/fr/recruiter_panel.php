@@ -22,6 +22,8 @@ return [
   'list' => 'Liste des candidats de la formation ',
   'show' => 'Informations du candidat ',
   'note' => 'Noter/commenter',
+  'actions' => 'Actions',
+  'candidate_evaluated' => 'L\'évaluation du candidat a bien été enregistrée.',
 
 
 ];
