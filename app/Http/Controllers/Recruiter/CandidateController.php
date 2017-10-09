@@ -109,7 +109,7 @@ class CandidateController extends Controller
 
     Session::flash('flash_message', __('recruiter_panel.candidate_evaluated'));
 
-    return redirect()->route('recruiterFormationCandidatesList', $note->formation()->id);
+    return redirect()->route('recruiterFormationCandidatesList', $note->formation()->first()->id);
   }
 
 
