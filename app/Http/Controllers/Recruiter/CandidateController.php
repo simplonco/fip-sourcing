@@ -43,11 +43,12 @@ class CandidateController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function candidateFormationShow($id)
+  public function candidateFormationShow($candidate_id, $formation_id)
   {
-    $candidate = User::findOrFail($id);
+    $candidate = User::findOrFail($candidate_id);
+    $formation = Formation::findOrFail($formation_id);
 
-    return view('recruiter.candidateShow', compact('candidate'));
+    return view('recruiter.candidateShow', ['candidate' => $candidate, 'formation' => $formation]);
   }
 
   /**

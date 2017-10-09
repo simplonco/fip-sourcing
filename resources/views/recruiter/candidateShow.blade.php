@@ -448,7 +448,7 @@
 
             </div>
           </div>
-
+          <a href="{{ route('candidateFormationEvaluate', [$candidate->id, $formation->id]) }}" class="btn btn-primary">{{__('note.note')}}</a>
         </div>
       </div>
 
