@@ -56,11 +56,12 @@ class CandidateController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function candidateFormationEvaluate($candidate_id)
+  public function candidateFormationEvaluate($candidate_id, $formation_id)
   {
     $candidate = User::findOrFail($candidate_id);
     $recruiter = Auth::user();
     $recruiter_id = $recruiter->id;
+    $formation = Formation::findOrFail($formation_id);
 
     $note = Note::whereHas('candidates', function ($q) use ($candidate_id) {
       $q->where('candidate_id', $candidate_id);
@@ -72,6 +73,7 @@ class CandidateController extends Controller
       $note = Note::create();
       $note->recruiter()->associate($recruiter);
       $note->candidates()->associate($candidate);
+      $note->formation()->associate($formation);
       $note->save();
     }
 
@@ -107,7 +109,7 @@ class CandidateController extends Controller
 
     Session::flash('flash_message', __('recruiter_panel.candidate_evaluated'));
 
-    return redirect()->route('recruiterFormationCandidatesList');
+    return redirect()->route('recruiterFormationCandidatesList', $note->formation()->id);
   }
 
 

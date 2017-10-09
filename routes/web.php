@@ -74,6 +74,6 @@ Route::group(['middleware' => 'recruiter'], function () {
   Route::post('/recruiter/formation/update/{id}', 'Recruiter\FormationController@recruiterFormationUpdate')->name('recruiterFormationUpdate');
   Route::get('/recruiter/formation/candidate/list/{id}/{order?}/{ascending?}', 'Recruiter\CandidateController@recruiterFormationCandidatesList')->name('recruiterFormationCandidatesList');
   Route::get('/recruiter/formation/candidate/show/{id}', 'Recruiter\CandidateController@candidateFormationShow')->name('candidateFormationShow');
-  Route::get('/recruiter/formation/candidate/evaluate/{id}', 'Recruiter\CandidateController@candidateFormationEvaluate')->name('candidateFormationEvaluate');
+  Route::get('/recruiter/formation/candidate/evaluate/{candidate_id}/{formation_id}', 'Recruiter\CandidateController@candidateFormationEvaluate')->name('candidateFormationEvaluate');
   Route::post('/recruiter/formation/candidate/sendEvaluation/{id}', 'Recruiter\CandidateController@candidateFormationSendEvaluation')->name('candidateFormationSendEvaluation');
 });
