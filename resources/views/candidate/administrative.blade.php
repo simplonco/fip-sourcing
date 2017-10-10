@@ -22,12 +22,12 @@
 
         <div class="form-group">
           {!! Form::label('nationality', __('administrative.nationality'), ['class' => 'control-label']) !!}
-          {!! Form::text('nationality', null, ['required' => true, 'class' => 'form-control', 'placeholder' => __('administrative.nationality_placeholder')]) !!}
+          {!! Form::text('nationality', null, ['class' => 'form-control', 'placeholder' => __('administrative.nationality_placeholder')]) !!}
         </div>
 
         <div class="form-group">
           {!! Form::label('birth_date', __('administrative.birth_date'), ['class' => 'control-label']) !!}
-          {!! Form::date('birth_date', null, ['required' => true, 'class' => 'form-control']) !!}
+          {!! Form::date('birth_date', null, ['class' => 'form-control']) !!}
         </div>
 
         <div class="form-group">
@@ -37,27 +37,27 @@
 
         <div class="form-group">
           {!! Form::label('phone', __('administrative.phone'), ['class' => 'control-label']) !!}
-          {!! Form::text('phone', null, ['required' => true, 'class' => 'form-control', 'placeholder' => __('administrative.phone_placeholder')]) !!}
+          {!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => __('administrative.phone_placeholder')]) !!}
         </div>
 
         <div class="form-group">
           {!! Form::label('postal_code', __('administrative.postal_code'), ['class' => 'control-label']) !!}
-          {!! Form::text('postal_code', null, ['required' => true, 'class' => 'form-control', 'placeholder' => __('administrative.postal_code_placeholder')]) !!}
+          {!! Form::text('postal_code', null, ['class' => 'form-control', 'placeholder' => __('administrative.postal_code_placeholder')]) !!}
         </div>
 
         <div class="form-group">
           {!! Form::label('city', __('administrative.city'), ['class' => 'control-label']) !!}
-          {!! Form::text('city', null, ['required' => true, 'class' => 'form-control', 'placeholder' => __('administrative.city_placeholder')]) !!}
+          {!! Form::text('city', null, ['class' => 'form-control', 'placeholder' => __('administrative.city_placeholder')]) !!}
         </div>
 
         <div class="form-group">
           {!! Form::label('address', __('administrative.address'), ['class' => 'control-label']) !!}
-          {!! Form::textarea('address', null, ['required' => true, 'class' => 'form-control', 'placeholder' => __('administrative.address_placeholder')]) !!}
+          {!! Form::textarea('address', null, ['class' => 'form-control', 'placeholder' => __('administrative.address_placeholder')]) !!}
         </div>
 
         <div class="form-group">
           {!! Form::label('status', __('administrative.status'), ['class' => 'control-label']) !!}
-          {!! Form::text('status', null, ['required' => true, 'class' => 'form-control', 'placeholder' => __('administrative.status_placeholder')]) !!}
+          {!! Form::text('status', null, ['class' => 'form-control', 'placeholder' => __('administrative.status_placeholder')]) !!}
         </div>
 
         <div class="form-group">
@@ -72,7 +72,7 @@
 
         <div class="form-group">
           {!! Form::label('number_social_security', __('administrative.number_social_security'), ['class' => 'control-label']) !!}
-          {!! Form::text('number_social_security', null, ['required' => true, 'class' => 'form-control', 'placeholder' => __('administrative.number_social_security_placeholder')]) !!}
+          {!! Form::text('number_social_security', null, ['class' => 'form-control', 'placeholder' => __('administrative.number_social_security_placeholder')]) !!}
         </div>
 
         <div class="form-group">

@@ -65,12 +65,17 @@ class User extends Authenticatable
 
   public function is_coding_ok()
   {
-    return $this->coding;
+    return $this->coding && true;
   }
 
   public function is_projection_ok()
   {
     return $this->hero && $this->dev_qualities && $this->personal_goal && $this->dev_point && $this->superpower;
+  }
+
+  public function get_score()
+  {
+    return $this->is_operationnal_ok() + $this->is_administrative_ok() + $this->is_experience_ok() + $this->is_coding_ok() + $this->is_projection_ok();
   }
 
 }

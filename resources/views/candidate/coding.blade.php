@@ -22,7 +22,7 @@
 
         <div class="form-group">
           {!! Form::label('coding', __('coding.coding'), ['class' => 'control-label']) !!}
-          {!! Form::text('coding', null, ['required' => true, 'class' => 'form-control', 'placeholder' => __('coding.coding_placeholder')]) !!}
+          {!! Form::text('coding', null, ['class' => 'form-control', 'placeholder' => __('coding.coding_placeholder')]) !!}
         </div>
 
         <div class="form-group">

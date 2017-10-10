@@ -96,10 +96,10 @@ class CandidateController extends Controller
     $candidate = Auth::user();
 
     $validation_rules = [
-      'availability' => 'max:255',
-      'efforts' => 'string|max:255',
-      'computers' => 'string|max:255',
-      'heard_of' => 'string|max:255',
+      'availability' => 'nullable|max:255',
+      'efforts' => 'nullable|string|max:255',
+      'computers' => 'nullable|string|max:255',
+      'heard_of' => 'nullable|string|max:255',
     ];
 
     $validator = Validator::make($request->all(), $validation_rules);
@@ -145,19 +145,19 @@ class CandidateController extends Controller
     $candidate = Auth::user();
 
     $validation_rules = [
-      'nationality' => 'string|max:255',
-      'birth_date' => 'date',
-      'gender' => 'string|max:255',
-      'phone' => 'string|max:50',
-      'postal_code' => 'string|max:255',
-      'city' => 'string|max:255',
-      'address' => 'string|max:255',
-      'status' => 'string|max:255',
-      'number_pole_emploi' => 'string|max:20',
-      'pole_emploi' => 'string|max:255',
-      'number_social_security' => 'string|max:20',
-      'obtained_diploma' => 'string|max:255',
-      'cdd' => 'date',
+      'nationality' => 'nullable|string|max:255',
+      'birth_date' => 'nullable|date',
+      'gender' => 'nullable|string|max:255',
+      'phone' => 'nullable|string|max:50',
+      'postal_code' => 'nullable|string|max:255',
+      'city' => 'nullable|string|max:255',
+      'address' => 'nullable|string|max:255',
+      'status' => 'nullable|string|max:255',
+      'number_pole_emploi' => 'nullable|string|max:20',
+      'pole_emploi' => 'nullable|string|max:255',
+      'number_social_security' => 'nullable|string|max:20',
+      'obtained_diploma' => 'nullable|string|max:255',
+      'cdd' => 'nullable|date',
     ];
 
     $validator = Validator::make($request->all(), $validation_rules);
@@ -211,10 +211,10 @@ class CandidateController extends Controller
     $candidate = Auth::user();
 
     $validation_rules = [
-      'experience_programming' => 'string|max:255',
-      'course' => 'string|max:255',
-      'english' => 'string',
-      'today' => 'string|max:300',
+      'experience_programming' => 'nullable|string|max:255',
+      'course' => 'nullable|string|max:255',
+      'english' => 'nullable|string',
+      'today' => 'nullable|string|max:300',
     ];
 
     $validator = Validator::make($request->all(), $validation_rules);
@@ -258,8 +258,8 @@ class CandidateController extends Controller
     $candidate = Auth::user();
 
     $validation_rules = [
-      'coding' => 'string|max:255',
-      'profiles' => 'string|max:255',
+      'coding' => 'nullable|string|max:255',
+      'profiles' => 'nullable|string|max:255',
     ];
 
     $validator = Validator::make($request->all(), $validation_rules);
@@ -303,11 +303,11 @@ class CandidateController extends Controller
     $candidate = Auth::user();
 
     $validation_rules = [
-      'hero' => 'string|max:255',
-      'dev_qualities' => 'string|max:255',
-      'personal_goal' => 'string|max:255',
-      'dev_point' => 'string|max:255',
-      'superpower' => 'string|max:255',
+      'hero' => 'nullable|string|max:255',
+      'dev_qualities' => 'nullable|string|max:255',
+      'personal_goal' => 'nullable|string|max:255',
+      'dev_point' => 'nullable|string|max:255',
+      'superpower' => 'nullable|string|max:255',
     ];
 
     $validator = Validator::make($request->all(), $validation_rules);

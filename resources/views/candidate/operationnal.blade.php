@@ -22,17 +22,17 @@
 
         <div class="form-group">
           {!! Form::label('availability', __('operationnal.availability', ['start_date' => Auth::user()->formations()->first()->begin_session, 'end_date' => Auth::user()->formations()->first()->end_session]), ['class' => 'control-label']) !!}
-          {!! Form::text('availability', null, ['required' => true, 'class' => 'form-control', 'placeholder' => __('operationnal.availability_placeholder')]) !!}
+          {!! Form::text('availability', null, ['class' => 'form-control', 'placeholder' => __('operationnal.availability_placeholder')]) !!}
         </div>
 
         <div class="form-group">
           {!! Form::label('efforts', __('operationnal.efforts'), ['class' => 'control-label']) !!}
-          {!! Form::text('efforts', null, ['required' => true, 'class' => 'form-control', 'placeholder' => __('operationnal.efforts_placeholder')]) !!}
+          {!! Form::text('efforts', null, ['class' => 'form-control', 'placeholder' => __('operationnal.efforts_placeholder')]) !!}
         </div>
 
         <div class="form-group">
           {!! Form::label('computers', __('operationnal.computers'), ['class' => 'control-label']) !!}
-          {!! Form::textarea('computers', null, ['required' => true, 'class' => 'form-control', 'placeholder' => 'Interview', 'placeholder' => __('operationnal.computers_placeholder')]) !!}
+          {!! Form::textarea('computers', null, ['class' => 'form-control', 'placeholder' => 'Interview', 'placeholder' => __('operationnal.computers_placeholder')]) !!}
         </div>
 
         <div class="form-group">

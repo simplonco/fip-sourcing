@@ -19,7 +19,7 @@
           <div class="panel-body">
             @if (!Auth::user()->application_sent)
             <div class="progress">
-              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 33%;" >33%</div>
+              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{ Auth::user()->get_score()/5*100}}%;" >{{ Auth::user()->get_score()/5*100}}%</div>
             </div>
             <div class="row panel-btn">
               @if (!Auth::user()->formations()->first())
