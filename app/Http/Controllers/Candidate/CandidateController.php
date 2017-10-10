@@ -96,9 +96,9 @@ class CandidateController extends Controller
     $candidate = Auth::user();
 
     $validation_rules = [
-      'availability' => 'required|max:255',
-      'efforts' => 'required|string|max:255',
-      'computers' => 'required|string|max:255',
+      'availability' => 'max:255',
+      'efforts' => 'string|max:255',
+      'computers' => 'string|max:255',
       'heard_of' => 'string|max:255',
     ];
 
@@ -108,11 +108,14 @@ class CandidateController extends Controller
     {
       return redirect()->back()->withInput(Input::all())->withErrors($validator->errors());
     }
-    
+
     $candidate->availability = $request->availability;
     $candidate->efforts = $request->efforts;
     $candidate->computers = $request->computers;
     $candidate->heard_of = $request->heard_of;
+
+    $candidate->operationnal_ok = $candidate->is_operationnal_ok();
+
     $candidate->save();
     Session::flash('flash_message', __('candidate_panel.success'));
 
@@ -142,17 +145,17 @@ class CandidateController extends Controller
     $candidate = Auth::user();
 
     $validation_rules = [
-      'nationality' => 'required|string|max:255',
-      'birth_date' => 'required|date',
-      'gender' => 'required|string|max:255',
-      'phone' => 'required|string|max:50',
-      'postal_code' => 'required|string|max:255',
-      'city' => 'required|string|max:255',
-      'address' => 'required|string|max:255',
-      'status' => 'required|string|max:255',
+      'nationality' => 'string|max:255',
+      'birth_date' => 'date',
+      'gender' => 'string|max:255',
+      'phone' => 'string|max:50',
+      'postal_code' => 'string|max:255',
+      'city' => 'string|max:255',
+      'address' => 'string|max:255',
+      'status' => 'string|max:255',
       'number_pole_emploi' => 'string|max:20',
       'pole_emploi' => 'string|max:255',
-      'number_social_security' => 'required|string|max:20',
+      'number_social_security' => 'string|max:20',
       'obtained_diploma' => 'string|max:255',
       'cdd' => 'date',
     ];
@@ -208,10 +211,10 @@ class CandidateController extends Controller
     $candidate = Auth::user();
 
     $validation_rules = [
-      'experience_programming' => 'required|string|max:255',
-      'course' => 'required|string|max:255',
-      'english' => 'required|string',
-      'today' => 'required|string|max:300',
+      'experience_programming' => 'string|max:255',
+      'course' => 'string|max:255',
+      'english' => 'string',
+      'today' => 'string|max:300',
     ];
 
     $validator = Validator::make($request->all(), $validation_rules);
@@ -255,7 +258,7 @@ class CandidateController extends Controller
     $candidate = Auth::user();
 
     $validation_rules = [
-      'coding' => 'required|string|max:255',
+      'coding' => 'string|max:255',
       'profiles' => 'string|max:255',
     ];
 
@@ -300,11 +303,11 @@ class CandidateController extends Controller
     $candidate = Auth::user();
 
     $validation_rules = [
-      'hero' => 'required|string|max:255',
-      'dev_qualities' => 'required|string|max:255',
-      'personal_goal' => 'required|string|max:255',
-      'dev_point' => 'required|string|max:255',
-      'superpower' => 'required|string|max:255',
+      'hero' => 'string|max:255',
+      'dev_qualities' => 'string|max:255',
+      'personal_goal' => 'string|max:255',
+      'dev_point' => 'string|max:255',
+      'superpower' => 'string|max:255',
     ];
 
     $validator = Validator::make($request->all(), $validation_rules);

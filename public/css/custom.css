@@ -134,6 +134,10 @@ i {
   font-weight: bold;
 }
 
+.btn-ok {
+  background-color: green;
+}
+
 .btn:active {
   background-color: rgba(226, 20, 27, 0.9);
 }
