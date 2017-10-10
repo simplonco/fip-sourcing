@@ -82,13 +82,14 @@
                             {{__('candidate_panel.projection')}}
                           </a>
                         </div>
-
+                        @if(Auth::user()->is_administrative_ok() && Auth::user()->is_projection_ok() && Auth::user()->is_administrative_ok() && Auth::user()->is_experience_ok() && Auth::user()->is_operationnal_ok())
                         <div class="row">
                           <a href="{{ route('confirmSendApplication') }}" class="btn">
                             <i class="fa fa-panel fa-paper-plane-o fa-2x" aria-hidden="true"></i>
                             {{__('candidate_panel.send')}}
                           </a>
                         </div>
+                        @endif
                         @endif
                         @else
                         <p>
