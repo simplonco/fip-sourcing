@@ -19,7 +19,7 @@
           <div class="panel-body">
             @if (!Auth::user()->application_sent)
             <div class="progress">
-              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{ Auth::user()->get_score()/5*100}}%;" >{{ Auth::user()->get_score()/5*100}}%</div>
+              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{ Auth::user()->get_progress()/5*100}}%;" >{{ Auth::user()->get_progress()/5*100}}%</div>
             </div>
             <div class="row panel-btn">
               @if (!Auth::user()->formations()->first())
@@ -99,7 +99,14 @@
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                  <div class="col-md-2">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">{{__('game.score')}}
+                      </div>
+                      <div class="panel-body score">
+                        {{Auth::user()->score}}
+                      </div>
+                    </div>
+                  </div>
 
-              @endsection
+                  @endsection

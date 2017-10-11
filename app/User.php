@@ -73,9 +73,20 @@ class User extends Authenticatable
     return $this->hero && $this->dev_qualities && $this->personal_goal && $this->dev_point && $this->superpower;
   }
 
-  public function get_score()
+  public function is_formation_ok()
+  {
+    $formation_score = $this->formations()->first() != null? 20 : 0;
+    return $formation_score;
+  }
+
+  public function get_progress()
   {
     return $this->is_operationnal_ok() + $this->is_administrative_ok() + $this->is_experience_ok() + $this->is_coding_ok() + $this->is_projection_ok();
+  }
+
+  public function get_score()
+  {
+    return $this->is_formation_ok() + $this->get_progress()*10 + $this->application_sent*30;
   }
 
 }

@@ -54,6 +54,8 @@ class CreateUsersTable extends Migration
       $table->longText('dev_point')->nullable();
       $table->longText('superpower')->nullable();
 
+      $table->integer('score')->default(0);
+
       $table->boolean('application_sent')->default(false);
 
       $table->rememberToken();

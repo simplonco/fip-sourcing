@@ -160,3 +160,10 @@ i {
 .panel-btn {
   padding: 0.2em;
 }
+
+.score {
+  font-weight: bold;
+  font-size: 24px;
+  padding: 0.2em;
+  text-align: center;
+}

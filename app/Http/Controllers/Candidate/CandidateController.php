@@ -67,6 +67,9 @@ class CandidateController extends Controller
     $formation = Formation::where('id', $id)->first();
 
     $candidate->formations()->sync($formation);
+
+    $candidate->score = $candidate->get_score();
+
     $candidate->save();
     Session::flash('flash_message', __('candidate_panel.success'));
 
@@ -114,7 +117,7 @@ class CandidateController extends Controller
     $candidate->computers = $request->computers;
     $candidate->heard_of = $request->heard_of;
 
-    $candidate->operationnal_ok = $candidate->is_operationnal_ok();
+    $candidate->score = $candidate->get_score();
 
     $candidate->save();
     Session::flash('flash_message', __('candidate_panel.success'));
@@ -181,6 +184,8 @@ class CandidateController extends Controller
     $candidate->obtained_diploma = $request->obtained_diploma;
     $candidate->cdd = $request->cdd;
 
+    $candidate->score = $candidate->get_score();
+
     $candidate->save();
     Session::flash('flash_message', __('candidate_panel.success'));
 
@@ -228,6 +233,9 @@ class CandidateController extends Controller
     $candidate->course = $request->course;
     $candidate->english = $request->english;
     $candidate->today = $request->today;
+
+    $candidate->score = $candidate->get_score();
+
     $candidate->save();
     Session::flash('flash_message', __('candidate_panel.success'));
 
@@ -272,6 +280,8 @@ class CandidateController extends Controller
     // Insert/update profiles in BDD
     $candidate->coding = $request->coding;
     $candidate->profiles = $request->profiles;
+
+    $candidate->score = $candidate->get_score();
 
     // Finally : save
     $candidate->save();
@@ -322,6 +332,9 @@ class CandidateController extends Controller
     $candidate->personal_goal = $request->personal_goal;
     $candidate->dev_point = $request->dev_point;
     $candidate->superpower = $request->superpower;
+
+    $candidate->score = $candidate->get_score();
+
     $candidate->save();
 
 
@@ -361,6 +374,9 @@ class CandidateController extends Controller
     $candidate = Auth::user();
 
     $candidate->application_sent = true;
+    
+    $candidate->score = $candidate->get_score();
+
     $candidate->save();
     Session::flash('flash_message', __('candidate_panel.sent_success'));
 
