@@ -110,31 +110,52 @@
       <div class="panel panel-info">
         <div class="panel-heading">{{__('game.badges')}}</div>
         <div class="panel-body">
-          <div class="row">
-            @if ($candidate->html_score >= 35)
-            <div class="col-md-4">
-              <img src="{{ asset('images/html.png') }}" alt="HTML Badge">
+          <div class="row col-md-8 col-md-offset-2">
+            @if ($candidate->html_score < 35)
+            <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.html_success')}}">
+              @else
+              <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.html_success')}}">
+                @endif
+                {{__('game.html_score')}}
+              </div>
+
+              @if ($candidate->css_score < 35)
+              <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.css_success')}}">
+                @else
+                <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.css_success')}}">
+                  @endif
+                  {{__('game.css_score')}}
+                </div>
+
+              @if ($candidate->js_score < 35)
+              <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.js_success')}}">
+                @else
+                <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.js_success')}}">
+                  @endif
+                  {{__('game.js_score')}}
+                </div>
+
+              @if ($candidate->php_score < 35)
+              <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.php_success')}}">
+                @else
+                <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.php_success')}}">
+                  @endif
+                  {{__('game.php_score')}}
+                </div>
+
+              @if($candidate->get_progress() < 5)
+              <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.form_success')}}">
+                @else
+                <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.form_success')}}">
+                  @endif
+                  {{__('game.form_score')}}
+                </div>
+
             </div>
-            @endif
-              @if ($candidate->css_score >= 35)
-            <div class="col-md-4">
-              <img src="{{ asset('images/css.png') }}" alt="CSS Badge">
-            </div>
-            @endif
-              @if ($candidate->js_score >= 35)
-            <div class="col-md-4">
-              <img src="{{ asset('images/js.png') }}" alt="JS Badge">
-            </div>
-            @endif
-              @if ($candidate->php_score >= 35)
-            <div class="col-md-4">
-              <img src="{{ asset('images/php.png') }}" alt="PHP Badge">
-            </div>
-            @endif
+
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  @endsection
+    @endsection
