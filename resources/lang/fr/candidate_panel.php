@@ -21,8 +21,6 @@ return [
     'experience' => 'Passé professionnel et anglais',
     'coding' => 'Le code & vous',
     'projection' => 'Projection / Humain',
-    'refresh_sololearn' => 'Rafraîchir votre profil Sololearn',
-    'sololearn_refreshed' => 'Votre profil SoloLearn a été mis à jour',
     'send' => 'Envoyer votre candidature',
     'sent' => 'Vous avez déjà envoyé votre candidature',
     'sent_success' => 'Votre candidature vient d\'être envoyée',

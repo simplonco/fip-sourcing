@@ -280,6 +280,20 @@ class CandidateController extends Controller
     // Insert/update profiles in BDD
     $candidate->coding = $request->coding;
     $candidate->profiles = $request->profiles;
+    
+    $sololearn_scores = fetchSololearnScores($candidate->coding);
+    if (array_key_exists('HTML', $sololearn_scores)){
+      $candidate->html_score = $sololearn_scores['HTML'];
+    }
+    if (array_key_exists('CSS', $sololearn_scores)){
+      $candidate->css_score = $sololearn_scores['CSS'];
+    }
+    if (array_key_exists('JS', $sololearn_scores)){
+      $candidate->js_score = $sololearn_scores['JS'];
+    }
+    if (array_key_exists('PHP', $sololearn_scores)){
+      $candidate->php_score = $sololearn_scores['PHP'];
+    }
 
     $candidate->score = calculateScore($candidate);
 
@@ -404,9 +418,16 @@ class CandidateController extends Controller
     $candidate->score = calculateScore($candidate);
 
     $candidate->save();
-    Session::flash('flash_message', __('candidate_panel.sololearn_refreshed'));
+    Session::flash('flash_message', __('game.sololearn_refreshed'));
 
     return redirect()->route('home');
+  }
+
+  public function scoreDetails(Request $request)
+  {
+    $candidate = Auth::user();
+
+    return view('candidate.scoreDetails', ['candidate' => $candidate]);
   }
 
 }

@@ -44,6 +44,8 @@ Route::group(['middleware'=>'candidate'], function () {
 
   Route::get('/candidate/application/confirm', 'Candidate\CandidateController@confirmSendApplication')->name('confirmSendApplication');
   Route::post('/candidate/application/send', 'Candidate\CandidateController@sendApplication')->name('sendApplication');
+  
+  Route::get('/candidate/scoreDetails', 'Candidate\CandidateController@scoreDetails')->name('scoreDetails');
 
   Route::get('/candidate/refreshSololearn', 'Candidate\CandidateController@refreshSololearn')->name('refreshSololearn');
 });
