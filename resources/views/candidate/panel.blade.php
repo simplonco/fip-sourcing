@@ -110,7 +110,8 @@
                       </div>
                       <div class="row">
                         <div class= "panel-body">
-                          <a href="{{ route('refreshSololearn') }}" class="btn">Refresh</div>
+                          <a href="{{ route('refreshSololearn') }}" class="btn">{{__('candidate_panel.refresh_sololearn')}}</a>
+                          </div>
                           </div>
 
                         </div>

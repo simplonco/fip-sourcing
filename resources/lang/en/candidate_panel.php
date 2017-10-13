@@ -21,6 +21,8 @@ return [
   'experience' => 'Professional experiences and english',
   'coding' => 'Coding & you',
   'projection' => 'Projection / Human',
+  'refresh_sololearn' => 'Refresh SoloLearn profile',
+  'sololearn_refreshed' => 'Your SoloLearn profile has been refreshed',
   'send' => 'Send your application',
   'sent' => 'You have already sent your application.',
   'sent_success' => 'Application sent!',
