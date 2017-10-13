@@ -12,4 +12,5 @@ return [
   'total' => 'Total',
   'refresh_sololearn' => 'Refresh SoloLearn profile',
   'sololearn_refreshed' => 'Your SoloLearn profile has been refreshed',
+  'badges' => 'Badges',
 ];

@@ -12,4 +12,5 @@ return [
   'total' => 'Total',
   'refresh_sololearn' => 'Rafraîchir votre profil Sololearn',
   'sololearn_refreshed' => 'Votre profil SoloLearn a été mis à jour',
+  'badges' => 'Badges',
 ];

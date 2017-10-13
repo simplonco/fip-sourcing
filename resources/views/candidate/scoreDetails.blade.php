@@ -28,84 +28,113 @@
             </div>
           </div>
 
-      </div>
+        </div>
 
-      <div class="panel panel-info">
-        <div class="panel-heading">{{__('game.sololearn')}}</div>
-        <div class="panel-body">
+        <div class="panel panel-info">
+          <div class="panel-heading">{{__('game.sololearn')}}</div>
+          <div class="panel-body">
 
 
-          <div class="row">
-            <div class="col-md-3">
-              <b>{{__('game.html_score')}}  </b>
-            </div>
-            <div class="col-md-3">
-              {{$candidate->html_score}}
-            </div>
-            <div class="col-md-1">
-              {{ round($candidate->html_score/35*100) }}%
-            </div>
-            <div class="col-md-5">
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{ round($candidate->html_score/35*100) }}%;" ></div>
+            <div class="row">
+              <div class="col-md-3">
+                <b>{{__('game.html_score')}}  </b>
               </div>
-            </div>
-
-            <div class="col-md-3">
-              <b>{{__('game.css_score')}}  </b>
-            </div>
-            <div class="col-md-3">
-              {{$candidate->css_score}}
-            </div>
-            <div class="col-md-1">
-              {{ round($candidate->css_score/35*100) }}%
-            </div>
-            <div class="col-md-5">
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{ round($candidate->css_score/35*100) }}%;" ></div>
+              <div class="col-md-3">
+                {{$candidate->html_score}}
               </div>
-            </div>
-
-            <div class="col-md-3">
-              <b>{{__('game.js_score')}}  </b>
-            </div>
-            <div class="col-md-3">
-              {{$candidate->js_score}}
-            </div>
-            <div class="col-md-1">
-              {{ round($candidate->js_score/35*100) }}%
-            </div>
-            <div class="col-md-5">
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{ round($candidate->js_score/35*100) }}%;" ></div>
+              <div class="col-md-1">
+                {{ round($candidate->html_score/35*100) }}%
               </div>
-            </div>
-
-            <div class="col-md-3">
-              <b>{{__('game.php_score')}}  </b>
-            </div>
-            <div class="col-md-3">
-              {{ $candidate->php_score }}
-            </div>
-            <div class="col-md-1">
-              {{ round($candidate->php_score/35*100) }}%
-            </div>
-            <div class="col-md-5">
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{ round($candidate->php_score/35*100) }}%;" ></div>
+              <div class="col-md-5">
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{ round($candidate->html_score/35*100) }}%;" ></div>
+                </div>
               </div>
+
+              <div class="col-md-3">
+                <b>{{__('game.css_score')}}  </b>
+              </div>
+              <div class="col-md-3">
+                {{$candidate->css_score}}
+              </div>
+              <div class="col-md-1">
+                {{ round($candidate->css_score/35*100) }}%
+              </div>
+              <div class="col-md-5">
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{ round($candidate->css_score/35*100) }}%;" ></div>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <b>{{__('game.js_score')}}  </b>
+              </div>
+              <div class="col-md-3">
+                {{$candidate->js_score}}
+              </div>
+              <div class="col-md-1">
+                {{ round($candidate->js_score/35*100) }}%
+              </div>
+              <div class="col-md-5">
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{ round($candidate->js_score/35*100) }}%;" ></div>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <b>{{__('game.php_score')}}  </b>
+              </div>
+              <div class="col-md-3">
+                {{ $candidate->php_score }}
+              </div>
+              <div class="col-md-1">
+                {{ round($candidate->php_score/35*100) }}%
+              </div>
+              <div class="col-md-5">
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{ round($candidate->php_score/35*100) }}%;" ></div>
+                </div>
+              </div>
+
             </div>
+            <a href="{{ route('refreshSololearn') }}" class="btn">{{__('game.refresh_sololearn')}}</a>
 
           </div>
-          <a href="{{ route('refreshSololearn') }}" class="btn">{{__('game.refresh_sololearn')}}</a>
-
         </div>
-      </div>
 
         <div class="panel-heading">{{__('game.total')}} : {{ $candidate->score }}</div>
 
+      </div>
+
+
+      <div class="panel panel-info">
+        <div class="panel-heading">{{__('game.badges')}}</div>
+        <div class="panel-body">
+          <div class="row">
+            @if ($candidate->html_score >= 35)
+            <div class="col-md-4">
+              <img src="{{ asset('images/html.png') }}" alt="HTML Badge">
+            </div>
+            @endif
+              @if ($candidate->css_score >= 35)
+            <div class="col-md-4">
+              <img src="{{ asset('images/css.png') }}" alt="CSS Badge">
+            </div>
+            @endif
+              @if ($candidate->js_score >= 35)
+            <div class="col-md-4">
+              <img src="{{ asset('images/js.png') }}" alt="JS Badge">
+            </div>
+            @endif
+              @if ($candidate->php_score >= 35)
+            <div class="col-md-4">
+              <img src="{{ asset('images/php.png') }}" alt="PHP Badge">
+            </div>
+            @endif
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-@endsection
+  @endsection
