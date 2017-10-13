@@ -63,7 +63,7 @@ protected $routeMiddleware = [
 'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
 'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
 'admin' => \App\Http\Middleware\IsAdmin::class,
-'candidat' => \App\Http\Middleware\IsCandidate::class,
+'candidate' => \App\Http\Middleware\IsCandidate::class,
 'recruiter' => \App\Http\Middleware\IsRecruiter::class,
 ];
 }

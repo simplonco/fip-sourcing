@@ -374,8 +374,27 @@ class CandidateController extends Controller
     $candidate = Auth::user();
 
     $candidate->application_sent = true;
-    
+
     $candidate->score = $candidate->get_score();
+
+    $candidate->save();
+    Session::flash('flash_message', __('candidate_panel.sent_success'));
+
+    return redirect()->route('home');
+  }
+
+  public function refreshSololearn(Request $request)
+  {
+    $candidate = Auth::user();
+
+    $sololearn_scores = fetchSololearnScores($candidate->coding);
+    // dd($sololearn_scores);
+    $candidate->html_score = $sololearn_scores['HTML'];
+    $candidate->css_score = $sololearn_scores['CSS'];
+    $candidate->js_score = $sololearn_scores['JS'];
+    $candidate->php_score = $sololearn_scores['PHP'];
+
+    $candidate->score = $candidate->get_score() + $candidate->html_score + $candidate->css_score + $candidate->js_score + $candidate->php_score;
 
     $candidate->save();
     Session::flash('flash_message', __('candidate_panel.sent_success'));

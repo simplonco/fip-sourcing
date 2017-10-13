@@ -103,10 +103,18 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">{{__('game.score')}}
                       </div>
-                      <div class="panel-body score">
-                        {{Auth::user()->score}}
+                      <div class="row">
+                        <div class="panel-body score">
+                          {{Auth::user()->score}}
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class= "panel-body">
+                          <a href="{{ route('refreshSololearn') }}" class="btn">Refresh</div>
+                          </div>
+
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  @endsection
+                    @endsection

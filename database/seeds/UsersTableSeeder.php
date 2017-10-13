@@ -51,7 +51,7 @@ class UsersTableSeeder extends Seeder
         'course' => $faker->text($maxNbChars = 100),
         'today' => $faker->text($maxNbChars = 100),
 
-        'coding' => $faker->url,
+        'coding' => 'https://www.sololearn.com/Profile/'.$faker->randomNumber($nbDigits = 6, $strict = false),
         'profiles' => $faker->url,
 
         'hero' => $faker->text($maxNbChars = 100),

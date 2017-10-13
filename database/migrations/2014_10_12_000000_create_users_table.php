@@ -54,6 +54,10 @@ class CreateUsersTable extends Migration
       $table->longText('dev_point')->nullable();
       $table->longText('superpower')->nullable();
 
+      $table->integer('html_score')->default(0);
+      $table->integer('css_score')->default(0);
+      $table->integer('js_score')->default(0);
+      $table->integer('php_score')->default(0);
       $table->integer('score')->default(0);
 
       $table->boolean('application_sent')->default(false);

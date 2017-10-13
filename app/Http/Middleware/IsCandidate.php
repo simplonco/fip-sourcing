@@ -17,12 +17,7 @@ class IsCandidate{
 		public function handle($request, Closure $next)
 		{
 		if ( Auth::user()->roles->implode('name') !== 'learner') {
-			if ( Auth::user()->roles->implode('name') == 'admin'){
-				return redirect('admin');
-			}
-			else {
-				return redirect('former');
-			}
+				return redirect('unauthorized');
 		}
 		return $next($request);
 	}
