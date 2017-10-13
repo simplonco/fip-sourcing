@@ -26,9 +26,8 @@
                 <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{ round(Auth::user()->get_progress()/5*100) }}%;" ></div>
               </div>
             </div>
+          </div>
 
-
-        </div>
       </div>
 
       <div class="panel panel-info">
@@ -86,7 +85,7 @@
               <b>{{__('game.php_score')}}  </b>
             </div>
             <div class="col-md-3">
-              {{$candidate->php_score}}
+              {{ $candidate->php_score }}
             </div>
             <div class="col-md-1">
               {{ round($candidate->php_score/35*100) }}%
@@ -102,6 +101,8 @@
 
         </div>
       </div>
+
+        <div class="panel-heading">{{__('game.total')}} : {{ $candidate->score }}</div>
 
     </div>
   </div>
