@@ -127,35 +127,44 @@
                   {{__('game.css_score')}}
                 </div>
 
-              @if ($candidate->js_score < 35)
-              <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.js_success')}}">
-                @else
-                <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.js_success')}}">
-                  @endif
-                  {{__('game.js_score')}}
+                @if ($candidate->js_score < 35)
+                <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.js_success')}}">
+                  @else
+                  <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.js_success')}}">
+                    @endif
+                    {{__('game.js_score')}}
+                  </div>
+
+                  @if ($candidate->php_score < 35)
+                  <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.php_success')}}">
+                    @else
+                    <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.php_success')}}">
+                      @endif
+                      {{__('game.php_score')}}
+                    </div>
+
+                    @if($candidate->get_progress() < 5)
+                    <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.form_success')}}">
+                      @else
+                      <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.form_success')}}">
+                        @endif
+                        {{__('game.form_score')}}
+                      </div>
+
+                      @if ($candidate->score < 200)
+                      <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.score_success')}}">
+                        {{__('game.score_selected')}}
+                        @else
+                        <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.score_success')}}">
+                          <a href="{{ url('https://ldevernay.github.io/howto_webdev/') }}" target="_blank" >{{__('game.score_selected')}}</a>
+                          @endif
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </div>
                 </div>
+              </div>
 
-              @if ($candidate->php_score < 35)
-              <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.php_success')}}">
-                @else
-                <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.php_success')}}">
-                  @endif
-                  {{__('game.php_score')}}
-                </div>
-
-              @if($candidate->get_progress() < 5)
-              <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.form_success')}}">
-                @else
-                <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.form_success')}}">
-                  @endif
-                  {{__('game.form_score')}}
-                </div>
-
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    @endsection
+              @endsection

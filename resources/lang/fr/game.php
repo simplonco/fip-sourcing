@@ -3,6 +3,8 @@
 return [
   'score' => 'Score',
   'score_details' => 'Score détaillé',
+  'score_selected' => 'High-score',
+  'score_success' => 'On a rarement vu un score aussi élevé',
   'form_score' => 'Formulaires',
   'form_success' => 'A rempli tous les champs obligatoires dans les formulaires',
   'html_score' => 'HTML',
