@@ -25,7 +25,7 @@ class FormerController extends Controller
 
     $roleId = 3;
     $formateurs = User::whereHas('roles', function ($q) use ($roleId) {
-      $q->where('role_id', $roleId);
+      $q->where('user_role_id', $roleId);
     })->get();
 
     return view('admin.former.list', ['formateurs'=>$formateurs]);
