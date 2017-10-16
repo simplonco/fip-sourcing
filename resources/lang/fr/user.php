@@ -19,7 +19,12 @@ return [
       'email' => 'Courriel',
       'password' => 'Mot de passe',
       'password_confirm' => 'Confirmation du mot de passe',
-      'formations' => 'Formations'
+      'formations' => 'Formations',
+      'score' => 'Score',
+      'html_score' => 'Score HTML',
+      'css_score' => 'Score CSS',
+      'js_score' => 'Score JS',
+      'php_score' => 'Score PHP',
     ]
 
 ];

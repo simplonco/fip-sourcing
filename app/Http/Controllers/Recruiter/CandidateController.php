@@ -31,8 +31,8 @@ class CandidateController extends Controller
     if($order != null){
       $candidates = $ascending === 'asc'? $candidates->orderBy($order, 'asc') : $candidates->orderBy($order, 'desc');
     }
-    $candidates_pagination = $candidates->paginate(10);
-    // ->orderBy('last_name');
+
+    $candidates_pagination = $candidates->orderBy('score', 'desc')->paginate(10);
 
     return view('recruiter.candidateList', ['candidates'=>$candidates_pagination, 'formation'=>$formation]);
   }

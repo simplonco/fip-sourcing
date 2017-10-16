@@ -24,6 +24,11 @@
                 </th>
                 <th>{{__('user.choose_user.first_name')}}</th>
                 <th>{{__('user.choose_user.email')}}</th>
+                <th>{{__('user.choose_user.score')}}</th>
+                <th>{{__('user.choose_user.html_score')}}</th>
+                <th>{{__('user.choose_user.css_score')}}</th>
+                <th>{{__('user.choose_user.js_score')}}</th>
+                <th>{{__('user.choose_user.php_score')}}</th>
               </tr>
             </thead>
             <tbody>
@@ -36,6 +41,11 @@
                   <td>{{$candidate->last_name}}</td>
                   <td>{{$candidate->first_name}}</td>
                   <td>{{$candidate->email}}</td>
+                  <td>{{$candidate->score}}</td>
+                  <td>{{$candidate->html_score}}</td>
+                  <td>{{$candidate->css_score}}</td>
+                  <td>{{$candidate->js_score}}</td>
+                  <td>{{$candidate->php_score}}</td>
                 </tr>
                 @endforeach
                 {{ $candidates->links() }}
