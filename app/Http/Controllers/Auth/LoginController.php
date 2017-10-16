@@ -29,18 +29,10 @@ class LoginController extends Controller
     $idUser = Auth::User()->id;
     if ($roleUser == 'admin') {
       return Redirect()->route('admin');
-    } elseif ($roleUser == 'Can') {
-      if (Form::all()->where('user_id', '=', $idUser)->first()) {
-        if (Form::all()->where('user_id', '=', $idUser)->first()->statut_form == '0') {
-          return Redirect('formcandidature');
-        } else {
-          return Redirect('/confirm');
-        }
-      } else {
-        return Redirect('/formCivil');
-      }
-    } elseif ($roleUser == 'forma') {
-      return Redirect()->route('formateur');
+    } elseif ($roleUser == 'learner') {
+      return Redirect('/confirm');
+    } elseif ($roleUser == 'former') {
+      return Redirect()->route('home');
     }
   }
 
