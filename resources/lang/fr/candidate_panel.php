@@ -30,4 +30,6 @@ return [
     'send_application' => 'Votre candidature doit être envoyée avant le :end_session à minuit.
     Attention, l\'envoi de votre candidature est définitif.',
     'select' => 'Sélectionner',
+    'sendable_application' => 'Vous pouvez désormais envoyer votre candidature. Vos futurs progrès sur Sololearn seront tout de même pris en compte.',
+    'non_sendable_application' => 'Vous devez trouver et remplir tous les champs obligatoires avant d\'envoyer votre candidature!',
 ];

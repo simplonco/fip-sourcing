@@ -21,6 +21,13 @@
             <div class="progress">
               <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{ Auth::user()->get_progress()/5*100}}%;" >{{ Auth::user()->get_progress()/5*100}}%</div>
             </div>
+            <div>
+              @if(Auth::user()->get_progress() === 5)
+              {{__('candidate_panel.sendable_application')}}
+              @else
+              {{__('candidate_panel.non_sendable_application')}}
+              @endif
+            </div>
             <div class="row panel-btn">
               @if (!Auth::user()->formations()->first())
               <a href="{{ route('chooseFormation') }}" class="btn">

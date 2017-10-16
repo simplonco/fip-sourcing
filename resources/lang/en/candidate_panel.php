@@ -30,5 +30,7 @@ return [
   'send_application' => 'Your application must be sent before :end_session at midnight.
   Beware, sending your application is definitive.',
   'select' => 'Select',
+  'sendable_application' => 'You can now send your application. Your Sololearn progress will be updated by us even after application was sent.',
+  'non_sendable_application' => 'You must find and fill all required fields before sending your application!',
 
 ];
