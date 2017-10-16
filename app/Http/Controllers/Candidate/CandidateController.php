@@ -70,6 +70,10 @@ class CandidateController extends Controller
 
     $candidate->score = calculateScore($candidate);
 
+    if(!$candidate->welcome_success){
+      $candidate->welcome_success = true;
+    }
+
     $candidate->save();
     Session::flash('flash_message', __('candidate_panel.success'));
 

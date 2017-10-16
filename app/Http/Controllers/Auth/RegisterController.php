@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Role;
+use App\Success;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -71,6 +72,9 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
         $user->roles()->sync(Role::where('name', 'learner')->first());
+        $success = Success::create();
+        $success->candidate_id = $user->id;
+        $success->save();
         return $user;
     }
 }

@@ -48,6 +48,11 @@ class User extends Authenticatable
     return $this->hasMany('App\Note', 'recruiter_id');
   }
 
+  public function candidate_success()
+  {
+    return $this->hasOne('App\Success', 'candidate_id');
+  }
+
   public function is_operationnal_ok()
   {
     return $this->availability && $this->efforts && $this->computers;
@@ -77,5 +82,5 @@ class User extends Authenticatable
   {
     return $this->is_operationnal_ok() + $this->is_administrative_ok() + $this->is_experience_ok() + $this->is_coding_ok() + $this->is_projection_ok();
   }
-  
+
 }

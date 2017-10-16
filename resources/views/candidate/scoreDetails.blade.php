@@ -111,60 +111,77 @@
         <div class="panel-heading">{{__('game.badges')}}</div>
         <div class="panel-body">
           <div class="row col-md-8 col-md-offset-2">
-            @if ($candidate->html_score < 35)
-            <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.html_success')}}">
+
+            @if ($candidate->welcome_success)
+            <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.welcome_success')}}">
               @else
-              <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.html_success')}}">
+              <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.welcome_success')}}">
                 @endif
-                {{__('game.html_score')}}
+                {{__('game.welcome')}}
               </div>
 
-              @if ($candidate->css_score < 35)
-              <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.css_success')}}">
+              @if ($candidate->html_success)
+              <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.html_success')}}">
                 @else
-                <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.css_success')}}">
+                <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.html_success')}}">
                   @endif
-                  {{__('game.css_score')}}
+                  {{__('game.html_score')}}
                 </div>
 
-                @if ($candidate->js_score < 35)
-                <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.js_success')}}">
+                @if ($candidate->css_success)
+                <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.css_success')}}">
                   @else
-                  <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.js_success')}}">
+                  <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.css_success')}}">
                     @endif
-                    {{__('game.js_score')}}
+                    {{__('game.css_score')}}
                   </div>
 
-                  @if ($candidate->php_score < 35)
-                  <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.php_success')}}">
+                  @if ($candidate->js_success)
+                  <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.js_success')}}">
                     @else
-                    <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.php_success')}}">
+                    <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.js_success')}}">
                       @endif
-                      {{__('game.php_score')}}
+                      {{__('game.js_score')}}
                     </div>
 
-                    @if($candidate->get_progress() < 5)
-                    <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.form_success')}}">
+                    @if ($candidate->php_success)
+                    <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.php_success')}}">
                       @else
-                      <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.form_success')}}">
+                      <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.php_success')}}">
                         @endif
-                        {{__('game.form_score')}}
+                        {{__('game.php_score')}}
                       </div>
 
-                      @if ($candidate->score < 200)
-                      <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.score_success')}}">
-                        {{__('game.score_selected')}}
+                      @if($candidate->progress_success)
+                      <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.progress_success')}}">
                         @else
-                        <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.score_success')}}">
-                          <a href="{{ url('https://ldevernay.github.io/howto_webdev/') }}" target="_blank" >{{__('game.score_selected')}}</a>
+                        <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.progress_success')}}">
                           @endif
+                          {{__('game.progress')}}
                         </div>
 
-                      </div>
+                        @if ($candidate->score < 200)
+                        <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.score_success')}}">
+                          {{__('game.score_selected')}}
+                          @else
+                          <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.score_success')}}">
+                            <a href="{{ url('https://ldevernay.github.io/howto_webdev/') }}" target="_blank" >{{__('game.score_selected')}}</a>
+                            @endif
+                          </div>
 
+                          @if ($candidate->application_sent_success)
+                          <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.application_sent_success')}}">
+                            @else
+                            <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.application_sent_success')}}">
+                              @endif
+                              {{__('game.application_sent')}}
+                            </div>
+                            
+                          </div>
+
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
 
-              @endsection
+                  @endsection
