@@ -36,7 +36,7 @@ function updateSuccess($candidate)
   if($candidate->html_score > 35 && !$success->html_success){
     $success->html_success = true;
   }
-  if($candidate->cssscore > 35 && !$success->css_success){
+  if($candidate->css_score > 35 && !$success->css_success){
     $success->css_success = true;
   }
   if($candidate->js_score > 35 && !$success->js_success){
@@ -45,7 +45,7 @@ function updateSuccess($candidate)
   if($candidate->php_score > 35 && !$success->php_success){
     $success->php_success = true;
   }
-  
+
   return $success;
 }
 

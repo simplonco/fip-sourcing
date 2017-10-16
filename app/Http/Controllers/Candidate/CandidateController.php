@@ -458,6 +458,8 @@ class CandidateController extends Controller
     $flash_message = '';
     $success = updateSuccess($candidate);
 
+    $success->application_sent_success = true;
+
     if ($success->isDirty()){
       $success->save();
       $flash_message .= __("game.success_message");

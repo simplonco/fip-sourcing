@@ -112,7 +112,7 @@
         <div class="panel-body">
           <div class="row col-md-8 col-md-offset-2">
 
-            @if (!$candidate->candidate_success()->first()->welcome_success)
+            @if (!$candidate->candidate_success()->welcome_success)
             <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.welcome_success')}}">
               @else
               <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.welcome_success')}}">
@@ -120,7 +120,7 @@
                 {{__('game.welcome')}}
               </div>
 
-              @if (!$candidate->candidate_success()->first()->html_success)
+              @if (!$candidate->candidate_success()->html_success)
               <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.html_success')}}">
                 @else
                 <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.html_success')}}">
@@ -128,7 +128,7 @@
                   {{__('game.html_score')}}
                 </div>
 
-                @if (!$candidate->candidate_success()->first()->css_success)
+                @if (!$candidate->candidate_success()->css_success)
                 <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.css_success')}}">
                   @else
                   <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.css_success')}}">
@@ -136,7 +136,7 @@
                     {{__('game.css_score')}}
                   </div>
 
-                  @if (!$candidate->candidate_success()->first()->js_success)
+                  @if (!$candidate->candidate_success()->js_success)
                   <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.js_success')}}">
                     @else
                     <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.js_success')}}">
@@ -144,7 +144,7 @@
                       {{__('game.js_score')}}
                     </div>
 
-                    @if (!$candidate->candidate_success()->first()->php_success)
+                    @if (!$candidate->candidate_success()->php_success)
                     <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.php_success')}}">
                       @else
                       <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.php_success')}}">
@@ -152,7 +152,7 @@
                         {{__('game.php_score')}}
                       </div>
 
-                      @if(!$candidate->candidate_success()->first()->progress_success)
+                      @if(!$candidate->candidate_success()->progress_success)
                       <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.progress_success')}}">
                         @else
                         <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.progress_success')}}">
@@ -160,7 +160,7 @@
                           {{__('game.progress')}}
                         </div>
 
-                        @if (!$candidate->candidate_success()->first()->hi_score_success)
+                        @if (!$candidate->candidate_success()->hi_score_success)
                         <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.score_success')}}">
                           {{__('game.score_selected')}}
                           @else
@@ -169,7 +169,7 @@
                             @endif
                           </div>
 
-                          @if (!$candidate->candidate_success()->first()->application_sent_success)
+                          @if (!$candidate->candidate_success()->application_sent_success)
                           <div class="alert alert-danger" role="alert" data-placement="bottom" title="{{__('game.application_sent_success')}}">
                             @else
                             <div class="alert alert-success" role="alert" data-placement="bottom" title="{{__('game.application_sent_success')}}">
