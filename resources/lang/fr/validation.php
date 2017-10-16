@@ -13,6 +13,7 @@ return [
     |
     */
 
+    'sololearn'            => 'Le champ :attribute doit être une URL valide vers un profil SoloLearn.',
     'accepted'             => 'Le champ :attribute doit être accepté.',
     'active_url'           => "Le champ :attribute n'est pas une URL valide.",
     'after'                => 'Le champ :attribute doit être une date postérieure au :date.',

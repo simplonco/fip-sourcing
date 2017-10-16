@@ -266,7 +266,7 @@ class CandidateController extends Controller
     $candidate = Auth::user();
 
     $validation_rules = [
-      'coding' => 'nullable|string|max:255',
+      'coding' => 'nullable|string|sololearn|max:255',
       'profiles' => 'nullable|string|max:255',
     ];
 
@@ -276,28 +276,32 @@ class CandidateController extends Controller
     {
       return redirect()->back()->withInput(Input::all())->withErrors($validator->errors());
     }
-
-    // Insert/update profiles in BDD
-    $candidate->coding = $request->coding;
     $candidate->profiles = $request->profiles;
-    
-    $sololearn_scores = fetchSololearnScores($candidate->coding);
-    if (array_key_exists('HTML', $sololearn_scores)){
-      $candidate->html_score = $sololearn_scores['HTML'];
-    }
-    if (array_key_exists('CSS', $sololearn_scores)){
-      $candidate->css_score = $sololearn_scores['CSS'];
-    }
-    if (array_key_exists('JS', $sololearn_scores)){
-      $candidate->js_score = $sololearn_scores['JS'];
-    }
-    if (array_key_exists('PHP', $sololearn_scores)){
-      $candidate->php_score = $sololearn_scores['PHP'];
+    $candidate->coding = $request->coding;
+
+    if($request->coding != null)
+    {
+      $sololearn_scores = fetchSololearnScores($candidate->coding);
+      if (array_key_exists('HTML', $sololearn_scores)){
+        $candidate->html_score = $sololearn_scores['HTML'];
+      }
+      if (array_key_exists('CSS', $sololearn_scores)){
+        $candidate->css_score = $sololearn_scores['CSS'];
+      }
+      if (array_key_exists('JS', $sololearn_scores)){
+        $candidate->js_score = $sololearn_scores['JS'];
+      }
+      if (array_key_exists('PHP', $sololearn_scores)){
+        $candidate->php_score = $sololearn_scores['PHP'];
+      }
+    } else {
+      $candidate->html_score = 0;
+      $candidate->css_score = 0;
+      $candidate->js_score = 0;
+      $candidate->php_score = 0;
     }
 
     $candidate->score = calculateScore($candidate);
-
-    // Finally : save
     $candidate->save();
     Session::flash('flash_message', __('candidate_panel.success'));
 
