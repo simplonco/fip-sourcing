@@ -26,7 +26,8 @@
     },
     "files": [
       "app/SololearnHelper.php",
-      "app/CandidateHelper.php"
+      "app/CandidateHelper.php",
+      "app/FormationHelper.php"
     ]
   },
   "autoload-dev": {

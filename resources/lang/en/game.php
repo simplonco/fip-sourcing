@@ -20,4 +20,5 @@ return [
   'refresh_sololearn' => 'Refresh SoloLearn profile',
   'sololearn_refreshed' => 'Your SoloLearn profile has been refreshed',
   'badges' => 'Badges',
+  'refresh_sololearn_formation' => 'Refresh all Sololearn data (may take a while)',
 ];

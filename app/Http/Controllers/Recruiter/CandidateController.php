@@ -22,12 +22,8 @@ class CandidateController extends Controller
   {
     $formation = Formation::findOrFail($formation_id);
 
-    $roleId = 2;
-    $candidates = User::whereHas('roles', function ($q) use ($roleId) {
-      $q->where('role_id', $roleId);
-    })->whereHas('formations', function ($q) use ($formation_id) {
-      $q->where('formation_id', $formation_id);
-    });
+    $learnerRoleId = 2;
+    $candidates = getApplyingFormationCandidates($formation_id);
     if($order != null){
       $candidates = $ascending === 'asc'? $candidates->orderBy($order, 'asc') : $candidates->orderBy($order, 'desc');
     }
@@ -113,5 +109,17 @@ class CandidateController extends Controller
     return redirect()->route('recruiterFormationCandidatesList', $note->formation()->first()->id);
   }
 
+  public function refreshFormationSololearn($formation_id)
+  {
+    $formation = Formation::findOrFail($formation_id);
+    $candidates = getApplyingFormationCandidates($formation_id);
+    foreach ($candidates->get() as $candidate) {
+      updateSololearnScore($candidate);
+    }
+
+    $candidates_pagination = $candidates->orderBy('score', 'desc')->paginate(10);
+
+    return redirect()->route('recruiterFormationCandidatesList', $formation->id);
+  }
 
 }

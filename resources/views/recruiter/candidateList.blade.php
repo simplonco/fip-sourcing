@@ -16,6 +16,7 @@
           <table class="table table-striped">
             <thead>
               <h4>{{__('recruiter_panel.list')}}{{$formation->name}}</h4>
+              <a href="{{ route('refreshFormationSololearn', [$formation->id]) }}" class="btn">{{__('game.refresh_sololearn_formation')}}</a>
               <tr>
                 <th style="text-align:center;">{{__('recruiter_panel.actions')}}</th>
                 <th>{{__('user.choose_user.last_name')}}

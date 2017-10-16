@@ -4,6 +4,28 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 
+function updateSololearnScore($candidate)
+{
+  $sololearn_scores = fetchSololearnScores($candidate->coding);
+
+  if (array_key_exists('HTML', $sololearn_scores)){
+    $candidate->html_score = $sololearn_scores['HTML'];
+  }
+  if (array_key_exists('CSS', $sololearn_scores)){
+    $candidate->css_score = $sololearn_scores['CSS'];
+  }
+  if (array_key_exists('JS', $sololearn_scores)){
+    $candidate->js_score = $sololearn_scores['JS'];
+  }
+  if (array_key_exists('PHP', $sololearn_scores)){
+    $candidate->php_score = $sololearn_scores['PHP'];
+  }
+
+  $candidate->score = calculateScore($candidate);
+
+  $candidate->save();
+}
+
 function fetchSololearnScores($sololearn_url){
 
   $sololearn_doc = fetchSololearnProfile($sololearn_url);
