@@ -20,5 +20,6 @@ return [
   'refresh_sololearn' => 'Rafraîchir votre profil Sololearn',
   'sololearn_refreshed' => 'Votre profil SoloLearn a été mis à jour',
   'badges' => 'Badges',
-  'refresh_sololearn_formation' => 'Réfraîchir toutes les données Sololearn (peut prendre du temps)'
+  'refresh_sololearn_formation' => 'Réfraîchir toutes les données Sololearn (peut prendre du temps)',
+  'sololearn_formation_refreshed' => 'Les données Sololearn ont bien été mises à jour',
 ];

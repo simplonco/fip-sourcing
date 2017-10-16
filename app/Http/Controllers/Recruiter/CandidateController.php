@@ -119,6 +119,8 @@ class CandidateController extends Controller
 
     $candidates_pagination = $candidates->orderBy('score', 'desc')->paginate(10);
 
+    Session::flash('flash_message', __('game.sololearn_formation_refreshed'));
+
     return redirect()->route('recruiterFormationCandidatesList', $formation->id);
   }
 
