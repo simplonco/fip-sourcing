@@ -70,12 +70,23 @@ class CandidateController extends Controller
 
     $candidate->score = calculateScore($candidate);
 
-    if(!$candidate->welcome_success){
-      $candidate->welcome_success = true;
+    $success = $candidate->candidate_success();
+    $flash_message = '';
+    if(!$success->welcome_success){
+      $success->welcome_success = true;
+    }
+    if($candidate->score >250 && !success.hi_score_success){
+      $success->hi_score_success = true;
+    }
+    if ($success->isDirty()){
+      $success->save();
+      $flash_message .= __("game.success_message");
+      $flash_message .= "\r\n";
     }
 
     $candidate->save();
-    Session::flash('flash_message', __('candidate_panel.success'));
+    $flash_message .= __("candidate_panel.success");
+    Session::flash('flash_message', $flash_message);
 
     return redirect()->route('home');
   }
@@ -121,10 +132,18 @@ class CandidateController extends Controller
     $candidate->computers = $request->computers;
     $candidate->heard_of = $request->heard_of;
 
-    $candidate->score = calculateScore($candidate);
+    $flash_message = '';
+    $success = updateSuccess($candidate);
+
+    if ($success->isDirty()){
+      $success->save();
+      $flash_message .= __("game.success_message");
+      $flash_message .= "\r\n";
+    }
 
     $candidate->save();
-    Session::flash('flash_message', __('candidate_panel.success'));
+    $flash_message .= __("candidate_panel.success");
+    Session::flash('flash_message', $flash_message);
 
     return redirect()->route('home');
   }
@@ -188,10 +207,19 @@ class CandidateController extends Controller
     $candidate->obtained_diploma = $request->obtained_diploma;
     $candidate->cdd = $request->cdd;
 
-    $candidate->score = calculateScore($candidate);
+    $flash_message = '';
+    $success = updateSuccess($candidate);
+
+    if ($success->isDirty()){
+      $success->save();
+      $flash_message .= __("game.success_message");
+      $flash_message .= "\r\n";
+    }
 
     $candidate->save();
-    Session::flash('flash_message', __('candidate_panel.success'));
+    $flash_message .= __("candidate_panel.success");
+    Session::flash('flash_message', $flash_message);
+
 
     return redirect()->route('home');
   }
@@ -238,10 +266,19 @@ class CandidateController extends Controller
     $candidate->english = $request->english;
     $candidate->today = $request->today;
 
-    $candidate->score = calculateScore($candidate);
+    $flash_message = '';
+    $success = updateSuccess($candidate);
+
+    if ($success->isDirty()){
+      $success->save();
+      $flash_message .= __("game.success_message");
+      $flash_message .= "\r\n";
+    }
 
     $candidate->save();
-    Session::flash('flash_message', __('candidate_panel.success'));
+    $flash_message .= __("candidate_panel.success");
+    Session::flash('flash_message', $flash_message);
+
 
     return redirect()->route('home');
   }
@@ -280,6 +317,7 @@ class CandidateController extends Controller
     {
       return redirect()->back()->withInput(Input::all())->withErrors($validator->errors());
     }
+
     $candidate->profiles = $request->profiles;
     $candidate->coding = $request->coding;
 
@@ -305,9 +343,19 @@ class CandidateController extends Controller
       $candidate->php_score = 0;
     }
 
-    $candidate->score = calculateScore($candidate);
+    $flash_message = '';
+    $success = updateSuccess($candidate);
+
+    if ($success->isDirty()){
+      $success->save();
+      $flash_message .= __("game.success_message");
+      $flash_message .= "\r\n";
+    }
+
     $candidate->save();
-    Session::flash('flash_message', __('candidate_panel.success'));
+    $flash_message .= __("candidate_panel.success");
+    Session::flash('flash_message', $flash_message);
+
 
     return redirect()->route('home');
   }
@@ -357,10 +405,20 @@ class CandidateController extends Controller
 
     $candidate->score = calculateScore($candidate);
 
+
+    $flash_message = '';
+    $success = updateSuccess($candidate);
+
+    if ($success->isDirty()){
+      $success->save();
+      $flash_message .= __("game.success_message");
+      $flash_message .= "\r\n";
+    }
+
     $candidate->save();
+    $flash_message .= __("candidate_panel.success");
+    Session::flash('flash_message', $flash_message);
 
-
-    Session::flash('flash_message', __('candidate_panel.success'));
 
     return redirect()->route('home');
   }
@@ -374,11 +432,9 @@ class CandidateController extends Controller
   {
     $candidate = Auth::user();
     $today = Carbon::today()->toDateString();
-    if($candidate->formations()->first()->begin_session > $today){
-      Session::flash('flash_message', __('candidate_panel.too_early'));
-      return redirect()->route('home');
-    } else if($candidate->formations()->first()->end_session < $today){
-      Session::flash('flash_message', __('candidate_panel.too_late'));
+    $formation = $candidate->formations()->first();
+    if(!($formation->begin_session < $today && $formation->end_session > $today)){
+      Session::flash('flash_message', __('candidate_panel.bad_timing'));
       return redirect()->route('home');
     }
 
@@ -399,8 +455,18 @@ class CandidateController extends Controller
 
     $candidate->score = calculateScore($candidate);
 
+    $flash_message = '';
+    $success = updateSuccess($candidate);
+
+    if ($success->isDirty()){
+      $success->save();
+      $flash_message .= __("game.success_message");
+      $flash_message .= "\r\n";
+    }
+
     $candidate->save();
-    Session::flash('flash_message', __('candidate_panel.sent_success'));
+    $flash_message .= __('candidate_panel.sent_success');
+    Session::flash('flash_message', $flash_message);
 
     return redirect()->route('home');
   }
@@ -410,7 +476,17 @@ class CandidateController extends Controller
     $candidate = Auth::user();
 
     updateSololearnScore($candidate);
-    Session::flash('flash_message', __('game.sololearn_refreshed'));
+
+    $flash_message = '';
+    $success = updateSuccess($candidate);
+
+    if ($success->isDirty()){
+      $success->save();
+      $flash_message .= __("game.success_message");
+      $flash_message .= "\r\n";
+    }
+    $flash_message .= __("game.sololearn_refreshed");
+    Session::flash('flash_message', $flash_message);
 
     return redirect()->route('home');
   }

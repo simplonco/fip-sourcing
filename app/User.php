@@ -50,7 +50,7 @@ class User extends Authenticatable
 
   public function candidate_success()
   {
-    return $this->hasOne('App\Success', 'candidate_id');
+    return $this->hasOne('App\Success', 'candidate_id')->first();
   }
 
   public function is_operationnal_ok()

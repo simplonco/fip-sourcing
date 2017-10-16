@@ -30,7 +30,7 @@ return [
   'phone_placeholder' => '0118 999 881 999 119 7253',
   'postal_code_placeholder' => '31800',
   'city_placeholder' => 'Saint-Gaudens',
-  'address_placeholder' => '2 place du Maréchal Juin',
+  'address_placeholder' => '1 place du Maréchal Juin',
   'status_placeholder' => 'Student',
   'number_pole_emploi_placeholder' => '123456A',
   'pole_emploi_placeholder' => 'Saint-Gaudens',

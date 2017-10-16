@@ -37,7 +37,7 @@
 
         <div class="form-group">
           {!! Form::label('dev_point', __('projection.dev_point'), ['class' => 'control-label']) !!}
-          {!! Form::textarea('dev_point', null, ['class' => 'form-control', 'placeholder' => __('projection.dev_qualities_placeholder')]) !!}
+          {!! Form::textarea('dev_point', null, ['class' => 'form-control', 'placeholder' => __('projection.dev_point_placeholder')]) !!}
         </div>
 
         <div class="form-group">

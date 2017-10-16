@@ -25,8 +25,7 @@ return [
   'sent' => 'You have already sent your application.',
   'sent_success' => 'Application sent!',
   'success' => 'Your data has been successfully saved!',
-  'too_early' => 'You cannot send your application yet!',
-  'too_late' => 'You cannot send your application any more!',
+  'bad_timing' => 'You can\'t send your application today. Check the formation dates.',
   'send_application' => 'Your application must be sent before :end_session at midnight.
   Beware, sending your application is definitive.',
   'select' => 'Select',

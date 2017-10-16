@@ -5,6 +5,7 @@ return [
   'score_details' => 'Score details',
   'welcome' => 'Welcome on board',
   'welcome_success' => 'Selected a formation',
+  'success_message' => 'You unlocked a new badge! Check your score details.',
   'score_selected' => 'High-score',
   'score_success' => 'We rarely see such a high-score',
   'progress' => 'Forms',

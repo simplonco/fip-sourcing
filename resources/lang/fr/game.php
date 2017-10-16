@@ -5,6 +5,7 @@ return [
   'score_details' => 'Score détaillé',
   'welcome' => 'Bienvenue à bord',
   'welcome_success' => 'A sélectionné une formation',
+  'success_message' => 'Vous avez obtenu un nouveau badge! Consultez votre score détaillé.',
   'score_selected' => 'High-score',
   'score_success' => 'On a rarement vu un score aussi élevé',
   'progress' => 'Formulaires',

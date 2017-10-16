@@ -33,7 +33,7 @@ class CreateUsersTable extends Migration
       $table->string('city')->nullable();
       $table->string('address')->nullable();
       $table->string('status')->nullable();
-      $table->integer('number_pole_emploi')->nullable();
+      $table->string('number_pole_emploi')->nullable();
       $table->string('pole_emploi')->nullable();
       $table->string('number_social_security')->nullable();
       $table->string('obtained_diploma')->nullable();
