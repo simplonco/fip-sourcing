@@ -15,7 +15,7 @@ return [
 
     'former_modification' => 'Modification du formateur : ',
     'former_add' => 'Ajouter un formateur',
-    'former_all' => 'Liste de toutes les formateur',
+    'former_all' => 'Liste de tous les formateurs',
     'former_show' => 'Informations du formateur',
 
 ];
