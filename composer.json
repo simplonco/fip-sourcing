@@ -22,7 +22,11 @@
     "psr-4": {
       "App\\": "app/"
     },
-    "files": ["app/Helpers/*.php"]
+    "files": [
+      "app/Helpers/CandidateHelper.php",
+      "app/Helpers/FormationHelper.php",
+      "app/Helpers/SololearnHelper.php"
+    ]
   },
   "autoload-dev": {
     "psr-4": {
