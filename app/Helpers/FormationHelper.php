@@ -1,6 +1,4 @@
 <?php
-use User;
-
 
 function getApplyingFormationCandidates($formation_id)
 {

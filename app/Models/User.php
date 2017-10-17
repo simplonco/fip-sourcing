@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\ProExperience;
 
 class User extends Authenticatable
 {
@@ -30,27 +29,27 @@ class User extends Authenticatable
 
   public function roles()
   {
-    return $this->belongsToMany(App\Models\Role::class);
+    return $this->belongsToMany(Role::class);
   }
 
   public function formations()
   {
-    return $this->belongsToMany(App\Models\Formation::class);
+    return $this->belongsToMany(Formation::class);
   }
 
   public function candidate_notes()
   {
-    return $this->hasMany(App\Models\Note::class, 'candidate_id');
+    return $this->hasMany(Note::class, 'candidate_id');
   }
 
   public function recruiter_notes()
   {
-    return $this->hasMany(App\Models\Note::class, 'recruiter_id');
+    return $this->hasMany(Note::class, 'recruiter_id');
   }
 
   public function success () 
   {
-    return $this->hasOne(App\Models\Success::class, 'candidate_id');
+    return $this->hasOne(Success::class, 'candidate_id');
   }
 
   public function candidate_success()

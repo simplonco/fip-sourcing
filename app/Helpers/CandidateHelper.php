@@ -1,5 +1,4 @@
 <?php
-use User;
 
 function calculateScore($candidate){
   return get_score($candidate) + get_sololearn_score($candidate);

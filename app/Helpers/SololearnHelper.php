@@ -1,5 +1,4 @@
 <?php
-use User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
