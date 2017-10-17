@@ -12,7 +12,7 @@ class Success extends Model
 
   public function candidate()
   {
-    return $this->belongsTo('App\User', 'candidate_id');
+    return $this->belongsTo(\User::class);
   }
 
 }

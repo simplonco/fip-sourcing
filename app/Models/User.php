@@ -30,27 +30,32 @@ class User extends Authenticatable
 
   public function roles()
   {
-    return $this->belongsToMany('App\Role');
+    return $this->belongsToMany(App\Models\Role::class);
   }
 
   public function formations()
   {
-    return $this->belongsToMany('App\Formation', 'formation_user');
+    return $this->belongsToMany(App\Models\Formation::class);
   }
 
   public function candidate_notes()
   {
-    return $this->hasMany('App\Note', 'candidate_id');
+    return $this->hasMany(App\Models\Note::class, 'candidate_id');
   }
 
   public function recruiter_notes()
   {
-    return $this->hasMany('App\Note', 'recruiter_id');
+    return $this->hasMany(App\Models\Note::class, 'recruiter_id');
+  }
+
+  public function success () 
+  {
+    return $this->hasOne(App\Models\Success::class, 'candidate_id');
   }
 
   public function candidate_success()
   {
-    return $this->hasOne('App\Success', 'candidate_id')->first();
+    return $this->success()->first();
   }
 
   public function is_operationnal_ok()

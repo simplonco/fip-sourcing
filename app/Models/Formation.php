@@ -10,11 +10,11 @@ class Formation extends Model
 
   public function recruiters()
   {
-    return $this->hasMany('App\User');
+    return $this->hasMany(\User::class);
   }
 
   public function notes()
   {
-    return $this->hasMany('App\Note');
+    return $this->hasMany(App\Models\Note::class);
   }
 }

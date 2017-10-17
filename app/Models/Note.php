@@ -12,16 +12,16 @@ class Note extends Model
 
   public function candidates()
   {
-    return $this->belongsTo('App\User', 'candidate_id');
+    return $this->belongsTo(\User::class, 'candidate_id');
   }
 
   public function recruiter()
   {
-    return $this->belongsTo('App\User', 'recruiter_id');
+    return $this->belongsTo(\User::class, 'recruiter_id');
   }
 
   public function formation()
   {
-    return $this->belongsTo('App\Formation', 'formation_id');
+    return $this->belongsTo(App\Models\Formation::class, 'formation_id');
   }
 }
