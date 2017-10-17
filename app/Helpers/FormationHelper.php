@@ -1,5 +1,5 @@
 <?php
-use App\User;
+use User;
 
 
 function getApplyingFormationCandidates($formation_id)
@@ -15,4 +15,3 @@ function getApplyingFormationCandidates($formation_id)
   return $candidates;
 }
 
-?>

@@ -1,5 +1,5 @@
 <?php
-use App\User;
+use User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
@@ -108,4 +108,3 @@ function calculateSololearnScores($sololearnXPArray)
   return $sololearnScores;
 }
 
-?>

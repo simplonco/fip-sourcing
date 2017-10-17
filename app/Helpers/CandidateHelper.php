@@ -1,5 +1,5 @@
 <?php
-use App\User;
+use User;
 
 function calculateScore($candidate){
   return get_score($candidate) + get_sololearn_score($candidate);
@@ -48,5 +48,3 @@ function updateSuccess($candidate)
 
   return $success;
 }
-
-?>
