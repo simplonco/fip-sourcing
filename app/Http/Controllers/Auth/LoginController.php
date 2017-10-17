@@ -25,15 +25,7 @@ class LoginController extends Controller
 
   protected function authenticated(Request $request, $user)
   {
-    $roleUser = Auth::User()->roles->implode('name');
-    $idUser = Auth::User()->id;
-    if ($roleUser == 'admin') {
-      return Redirect()->route('admin');
-    } elseif ($roleUser == 'learner') {
-      return Redirect('/confirm');
-    } elseif ($roleUser == 'former') {
-      return Redirect()->route('home');
-    }
+    return Redirect()->route('home');
   }
 
   use AuthenticatesUsers;
