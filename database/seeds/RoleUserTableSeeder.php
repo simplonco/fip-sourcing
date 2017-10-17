@@ -15,6 +15,7 @@ class RoleUserTableSeeder extends Seeder
       'user_id' => '1',
       'role_id' => '1',
     ]);
+
     for ($i=2; $i < 50; $i++) {
       DB::table('role_user')->insert([
         'user_id' => $i,
