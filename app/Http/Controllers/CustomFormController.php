@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 
 use App\Models\Question;
+use App\Models\Formation;
+use App\Models\Answer;
 
 class CustomFormController extends Controller
 {
@@ -38,11 +40,31 @@ class CustomFormController extends Controller
   *
   * @return \Illuminate\Http\Response
   */
-  public function saveForm()
+  public function saveForm(Request $request)
   {
-    // $candidate = Auth::user();
+    $candidate = Auth::user();
 
-    return view('home');
+    foreach($request->request as $q_id=>$q_answer){
+      if($q_id != 0){
+        // echo $q_id.' : '.$answer;
+        //TODO : check if answer exists
+
+        // If no answer yet, create it
+        $answer = [
+          'value' => $q_answer
+        ];
+        $created_answer = Answer::create($answer);
+        $created_answer->candidate()->associate($candidate);
+        $created_answer->question()->associate(Question::find($q_id));
+       
+        $created_answer->save();
+      }
+    }
+
+    $questions = Question::All();
+
+    return view('custom_form', ['questions'=>$questions]);
+    // return view('candidate.panel');
   }
 
 }
