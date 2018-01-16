@@ -19,7 +19,7 @@ Auth::routes();
 
 // Test custom form
 Route::get('/custom_form', 'CustomFormController@loadForm')->name('custom_form');
-Route::get('/custom_form_save', 'CustomFormController@saveForm')->name('save_custom_form');
+Route::post('/custom_form_save', 'CustomFormController@saveForm')->name('save_custom_form');
 // END test
 
 Route::get('/home', 'HomeController@index')->name('home');

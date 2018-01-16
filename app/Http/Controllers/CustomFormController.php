@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 
+use App\Models\Question;
+
 class CustomFormController extends Controller
 {
   /**
@@ -26,9 +28,9 @@ class CustomFormController extends Controller
   */
   public function loadForm()
   {
-    // $candidate = Auth::user();
+    $questions = Question::All();
 
-    return view('custom_form');
+    return view('custom_form', ['questions'=>$questions]);
   }
 
   /**

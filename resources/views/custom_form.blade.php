@@ -16,10 +16,16 @@
     </div>
     <div class="panel-body">
       {!! Form::open(['route' => 'save_custom_form']) !!}
-
+        @foreach($questions->all() as $question)
+          <div class="form-group">
+            {!! Form::label($question['title']) !!}
+            {!! Form::text($question['id'], $question['default_value'][0]) !!}
+          <div class="form-group">
+        @endforeach
+        
         {!! Form::submit(__('general.submit'), ['class' => 'btn btn-primary']) !!}
 
-        {!! Form::close() !!}
+      {!! Form::close() !!}
       </div>
     </div>
   </div>
