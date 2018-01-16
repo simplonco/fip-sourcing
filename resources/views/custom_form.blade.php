@@ -19,7 +19,11 @@
         @foreach($questions->all() as $question)
           <div class="form-group">
             {!! Form::label($question['title']) !!}
-            {!! Form::text($question['id'], $question['default_value'][0]) !!}
+            @if(count($question['default_value']) > 1)
+              {!! Form::select($question['id'], $question['default_value']) !!}
+            @else
+              {!! Form::text($question['id'], $question['default_value'][0]) !!}
+            @endif
           <div class="form-group">
         @endforeach
         
