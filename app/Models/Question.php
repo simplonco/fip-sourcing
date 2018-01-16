@@ -21,11 +21,11 @@ class Question extends Model
 
   public function formation()
   {
-    return $this->belongsTo(App\Models\Formation::class, 'formation_id');
+    return $this->belongsTo(Formation::class, 'formation_id');
   }
 
   public function category()
   {
-    return $this->belongsTo(App\Models\Category::class, 'category_id');
+    return $this->belongsTo(Category::class, 'category_id');
   }
 }

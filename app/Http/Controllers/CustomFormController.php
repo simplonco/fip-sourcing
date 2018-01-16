@@ -91,32 +91,33 @@ class CustomFormController extends Controller
   */
   public function saveQuestion(Request $request)
   {
-    // $candidate = Auth::user();
+    $candidate = Auth::user();
 
-    // foreach($request->request as $q_id=>$q_answer){
-    //   if($q_id != 0){
-    //     $matchThese = ['candidate_id' => $candidate->id, 'question_id' => $q_id];
-    //     $results = Answer::where($matchThese)->get();
-    //     if(count($results) > 0){
-    //       $answer = $results[0];
-    //       $answer->value = $q_answer;
-    //       $answer->save();
-    //     } else {
-    //       $answer = [
-    //         'value' => $q_answer
-    //       ];
-    //       $created_answer = Answer::create($answer);
-    //       $created_answer->candidate()->associate($candidate);
-    //       $created_answer->question()->associate(Question::find($q_id));
-        
-    //       $created_answer->save();
-    //     }
-    //   }
-    // }
+    // dump($request);
 
-    // $questions = Question::All();
+    if ($request->choice_2 == null){
+      $type = 'text';
+    } else {
+      $type = 'select';
+    }
+    
+    $question = [
+      'title' => $request->question,
+      'type' => $type,
+      'mandatory' => $request->mandatory,
+      'goal' => $request->goal,
+      'weight' => $request->ponderation
+    ];
+    $created_question = Question::create($question);
+    $created_question->category()->associate(Category::find($request->category));
+    $created_question->creator()->associate($candidate);
+    $created_question->formation()->associate(Formation::find(1));
+  
+    $created_question->save();
 
-    return view('create_question');
+
+    $categories = Category::pluck('title', 'id');
+    return view('create_question', ['categories'=>$categories]);
   }
 
 }

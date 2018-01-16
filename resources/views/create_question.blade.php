@@ -46,7 +46,7 @@
 
         <div class="form-group">
           {!! Form::label('mandatory', 'Mandatory', ['class' => 'control-label']) !!}
-          {!! Form::checkbox('mandatory', true, ['class' => 'form-control']) !!}
+          {!! Form::checkbox('mandatory', true, true, ['class' => 'form-control']) !!}
         </div>
 
         <div class="form-group">
