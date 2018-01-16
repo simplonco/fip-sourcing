@@ -10,6 +10,10 @@ class Question extends Model
 
   protected $fillable = ['creator_id', 'formation_id', 'category_id', 'title', 'default_value', 'type', 'mandatory', 'goal', 'weight'];
 
+  protected $casts = [
+    'default_value' => 'array'
+  ];
+
   public function creator()
   {
     return $this->belongsTo(\User::class, 'creator_id');

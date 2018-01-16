@@ -8,6 +8,6 @@ class Category extends Model
 {
   protected $hidden = ['id'];
 
-  protected $fillable = ['category'];
+  protected $fillable = ['title'];
 
 }

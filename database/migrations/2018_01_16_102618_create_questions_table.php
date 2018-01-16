@@ -13,7 +13,7 @@ class CreateQuestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('question', function (Blueprint $table) {
+        Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('formation_id')->nullable();
             $table->integer('creator_id')->nullable();
@@ -21,7 +21,7 @@ class CreateQuestionsTable extends Migration
             $table->string('title');
             $table->string('type');
             $table->json('default_value')->nullable();
-            $table->boolean('mandatory');
+            $table->boolean('mandatory')->default(true);
             $table->longText('goal')->nullable();
             $table->integer('weight');
             $table->timestamps();
@@ -35,6 +35,6 @@ class CreateQuestionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('question');
+        Schema::dropIfExists('questions');
     }
 }
