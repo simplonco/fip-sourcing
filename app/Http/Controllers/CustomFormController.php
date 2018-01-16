@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Question;
 use App\Models\Formation;
 use App\Models\Answer;
+use App\Models\User;
 
 class CustomFormController extends Controller
 {
@@ -46,18 +47,22 @@ class CustomFormController extends Controller
 
     foreach($request->request as $q_id=>$q_answer){
       if($q_id != 0){
-        // echo $q_id.' : '.$answer;
-        //TODO : check if answer exists
-
-        // If no answer yet, create it
-        $answer = [
-          'value' => $q_answer
-        ];
-        $created_answer = Answer::create($answer);
-        $created_answer->candidate()->associate($candidate);
-        $created_answer->question()->associate(Question::find($q_id));
-       
-        $created_answer->save();
+        $matchThese = ['candidate_id' => $candidate->id, 'question_id' => $q_id];
+        $results = Answer::where($matchThese)->get();
+        if(count($results) > 0){
+          $answer = $results[0];
+          $answer->value = $q_answer;
+          $answer->save();
+        } else {
+          $answer = [
+            'value' => $q_answer
+          ];
+          $created_answer = Answer::create($answer);
+          $created_answer->candidate()->associate($candidate);
+          $created_answer->question()->associate(Question::find($q_id));
+        
+          $created_answer->save();
+        }
       }
     }
 
