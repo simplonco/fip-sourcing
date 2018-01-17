@@ -18,6 +18,7 @@
       {!! Form::open(['route' => 'save_custom_form']) !!}
         @foreach($questions->all() as $question)
           <div class="form-group">
+            {!! $question['category']['title'] !!}
             {!! Form::label($question['title'], null, ['class' => 'control-label']) !!}
             @if(count($question['default_value']) > 1)
               {!! Form::select($question['id'], $question['default_value'], ['class' => 'form-control']) !!}
