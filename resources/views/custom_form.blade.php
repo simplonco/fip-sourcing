@@ -22,7 +22,7 @@
             @if(count($question['default_value']) > 1)
               {!! Form::select($question['id'], $question['default_value'], ['class' => 'form-control']) !!}
             @else
-              {!! Form::text($question['id'], $question['default_value'][0], ['class' => 'form-control']) !!}
+              {!! Form::text($question['id'], null, ['class' => 'form-control', 'placeholder' => $question['default_value'][0]]) !!}
             @endif
           </div>
         @endforeach
