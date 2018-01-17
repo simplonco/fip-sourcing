@@ -18,13 +18,13 @@
       {!! Form::open(['route' => 'save_custom_form']) !!}
         @foreach($questions->all() as $question)
           <div class="form-group">
-            {!! Form::label($question['title']) !!}
+            {!! Form::label($question['title'], null, ['class' => 'control-label']) !!}
             @if(count($question['default_value']) > 1)
-              {!! Form::select($question['id'], $question['default_value']) !!}
+              {!! Form::select($question['id'], $question['default_value'], ['class' => 'form-control']) !!}
             @else
-              {!! Form::text($question['id'], $question['default_value'][0]) !!}
+              {!! Form::text($question['id'], $question['default_value'][0], ['class' => 'form-control']) !!}
             @endif
-          <div class="form-group">
+          </div>
         @endforeach
         
         {!! Form::submit(__('general.submit'), ['class' => 'btn btn-primary']) !!}
