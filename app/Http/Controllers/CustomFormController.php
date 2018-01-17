@@ -93,20 +93,28 @@ class CustomFormController extends Controller
   {
     $candidate = Auth::user();
 
-    // dump($request);
-
     if ($request->choice_2 == null){
       $type = 'text';
     } else {
       $type = 'select';
     }
+
+    $default_value = [
+      $request->choice_1
+    ];
+
+    $request->choice_2 != null ? array_push($default_value, $request->choice_2):'';
+    $request->choice_3 != null ? array_push($default_value, $request->choice_3):'';
+    $request->choice_4 != null ? array_push($default_value, $request->choice_4):'';
+
     
     $question = [
       'title' => $request->question,
       'type' => $type,
       'mandatory' => $request->mandatory,
       'goal' => $request->goal,
-      'weight' => $request->ponderation
+      'weight' => $request->ponderation,
+      'default_value' => $default_value
     ];
     $created_question = Question::create($question);
     $created_question->category()->associate(Category::find($request->category));
