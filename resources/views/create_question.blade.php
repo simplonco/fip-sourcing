@@ -55,19 +55,20 @@
         </div>
 
         <div class="form-group">
-          {!! Form::label('choice_1', 'Choice 1', ['class' => 'control-label choice_1']) !!}
-          {!! Form::text('choice_1', null, ['class' => 'form-control choice_1']) !!}
+          {!! Form::label('choice_1', 'Placeholder (pour donner un exemple du format attendu)', ['class' => 'control-label choice_1']) !!}
+          {!! Form::label('choice_1', 'Choix 1', ['class' => 'control-label choice_2']) !!}
+          {!! Form::text('choice_1', null, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
-          {!! Form::label('choice_2', 'Choice 2', ['class' => 'control-label choice_2']) !!}
+          {!! Form::label('choice_2', 'Choix 2', ['class' => 'control-label choice_2']) !!}
           {!! Form::text('choice_2', null, ['class' => 'form-control choice_2']) !!}
         </div>
         <div class="form-group">
-          {!! Form::label('choice_3', 'Choice 3', ['class' => 'control-label choice_3']) !!}
+          {!! Form::label('choice_3', 'Choix 3', ['class' => 'control-label choice_3']) !!}
           {!! Form::text('choice_3', null, ['class' => 'form-control choice_3']) !!}
         </div>
         <div class="form-group">
-          {!! Form::label('choice_4', 'Choice 4', ['class' => 'control-label choice_4']) !!}
+          {!! Form::label('choice_4', 'Choix 4', ['class' => 'control-label choice_4']) !!}
           {!! Form::text('choice_4', null, ['class' => 'form-control choice_4']) !!}
         </div>
 
@@ -87,9 +88,18 @@
           $(".choice_4").hide();
           $('select').on('change', function() {
             if( this.value == 'select' ){
+              $(".choice_1").hide();
               $(".choice_2").show();
               $(".choice_3").show();
               $(".choice_4").show();
+            } else {
+              $(".choice_1").show();
+              $(".choice_2").hide();
+              $(".choice_2").val("");
+              $(".choice_3").hide();
+              $(".choice_3").val("");
+              $(".choice_4").hide();
+              $(".choice_4").val("");
             }
           });
         });
