@@ -25,6 +25,11 @@
         ]) !!}
 
         <div class="form-group">
+          {!! Form::label('type', 'Type de question', ['class' => 'control-label question_type']) !!}
+          {!! Form::select('type', ['checkbox' => 'Case à cocher', 'email' => 'Courriel', 'date' => 'Date', 'select' => 'Liste déroulante', 'number' => 'Nombre', 'text' => 'Texte court', 'textarea' => 'Texte long'], ['class' => 'form-control']) !!}
+        </div>
+
+        <div class="form-group">
           {!! Form::label('category', 'Categorie', ['class' => 'control-label']) !!}
           {!! Form::select('category', $categories, ['class' => 'form-control']) !!}
         </div>
@@ -50,26 +55,45 @@
         </div>
 
         <div class="form-group">
-          {!! Form::label('choice_1', 'Choice 1', ['class' => 'control-label']) !!}
-          {!! Form::text('choice_1', null, ['class' => 'form-control']) !!}
+          {!! Form::label('choice_1', 'Choice 1', ['class' => 'control-label choice_1']) !!}
+          {!! Form::text('choice_1', null, ['class' => 'form-control choice_1']) !!}
         </div>
         <div class="form-group">
-          {!! Form::label('choice_2', 'Choice 2', ['class' => 'control-label']) !!}
-          {!! Form::text('choice_2', null, ['class' => 'form-control']) !!}
+          {!! Form::label('choice_2', 'Choice 2', ['class' => 'control-label choice_2']) !!}
+          {!! Form::text('choice_2', null, ['class' => 'form-control choice_2']) !!}
         </div>
         <div class="form-group">
-          {!! Form::label('choice_3', 'Choice 3', ['class' => 'control-label']) !!}
-          {!! Form::text('choice_3', null, ['class' => 'form-control']) !!}
+          {!! Form::label('choice_3', 'Choice 3', ['class' => 'control-label choice_3']) !!}
+          {!! Form::text('choice_3', null, ['class' => 'form-control choice_3']) !!}
         </div>
         <div class="form-group">
-          {!! Form::label('choice_4', 'Choice 4', ['class' => 'control-label']) !!}
-          {!! Form::text('choice_4', null, ['class' => 'form-control']) !!}
+          {!! Form::label('choice_4', 'Choice 4', ['class' => 'control-label choice_4']) !!}
+          {!! Form::text('choice_4', null, ['class' => 'form-control choice_4']) !!}
         </div>
 
         {!! Form::submit(__('general.submit'), ['class' => 'btn btn-primary']) !!}
 
         {!! Form::close() !!}
       </div>
+      <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+        crossorigin="anonymous">
+      </script>
+      <script>
+        $( document ).ready(function() {
+          $(".choice_2").hide();
+          $(".choice_3").hide();
+          $(".choice_4").hide();
+          $('select').on('change', function() {
+            if( this.value == 'select' ){
+              $(".choice_2").show();
+              $(".choice_3").show();
+              $(".choice_4").show();
+            }
+          });
+        });
+      </script>
     </div>
   </div>
 </div>
