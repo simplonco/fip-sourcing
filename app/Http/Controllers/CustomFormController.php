@@ -96,12 +96,6 @@ class CustomFormController extends Controller
   {
     $candidate = Auth::user();
 
-    if ($request->choice_2 == null){
-      $type = 'text';
-    } else {
-      $type = 'select';
-    }
-
     $default_value = [
       $request->choice_1
     ];
@@ -113,7 +107,7 @@ class CustomFormController extends Controller
     
     $question = [
       'title' => $request->question,
-      'type' => $type,
+      'type' => $request->type,
       'mandatory' => $request->mandatory,
       'goal' => $request->goal,
       'weight' => $request->ponderation,

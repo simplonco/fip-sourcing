@@ -16,6 +16,7 @@
     </div>
     <div class="panel-body">
       {!! Form::open(['route' => 'save_custom_form']) !!}
+       {!! Form::token() !!}
         @foreach($questions->all() as $question)
           <div class="form-group">
             {!! Form::label($question['title'], null, ['class' => 'control-label']) !!}
@@ -25,8 +26,6 @@
             @if(count($question['default_value']) > 1)
               {!! Form::select($question['id'], $question['default_value'], ['class' => 'form-control', 'required' => $question['mandatory']]) !!}
             @else
-              {{--  {!! Form::text($question['id'], null, ['class' => 'form-control', 'placeholder' => $question['default_value'][0], 'required' => $question['mandatory']]) !!}  --}}
-              {{--  {!! call_user_func('Form::'.$question['type'], array($question['id'], null, ['class' => 'form-control', 'placeholder' => $question['default_value'][0], 'required' => $question['mandatory']])) !!}--}}
               {!! call_user_func_array('Form::'.$question['type'], array($question['id'], null, ['class' => 'form-control', 'placeholder' => $question['default_value'][0], 'required' => $question['mandatory']])) !!} 
             @endif
           </div>
