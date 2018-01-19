@@ -15,7 +15,7 @@ use App\Models\Category;
 
 class CustomFormController extends Controller
 {
-
+  
   //TODO : findQuestionsByFormationAndCategory
   
   /**
@@ -27,7 +27,7 @@ class CustomFormController extends Controller
   {
     $this->middleware('auth');
   }
-
+  
   /**
   * Show the form for loading the appropriate custom form.
   *
@@ -36,10 +36,10 @@ class CustomFormController extends Controller
   public function loadForm()
   {
     $questions = Question::All();
-
+    
     return view('custom_form', ['questions'=>$questions]);
   }
-
+  
   /**
   * Show the form for loading the appropriate custom form.
   *
@@ -48,7 +48,8 @@ class CustomFormController extends Controller
   public function saveForm(Request $request)
   {
     $candidate = Auth::user();
-
+    $formation = Formation::find(3);
+    
     foreach($request->request as $q_id=>$q_answer){
       if($q_id != 0){
         $matchThese = ['candidate_id' => $candidate->id, 'question_id' => $q_id];
@@ -63,19 +64,19 @@ class CustomFormController extends Controller
           ];
           $created_answer = Answer::create($answer);
           $created_answer->candidate()->associate($candidate);
+          $created_answer->formation()->associate($formation);
           $created_answer->question()->associate(Question::find($q_id));
-        
           $created_answer->save();
         }
       }
     }
-
+    
     $questions = Question::All();
-
+    
     return view('custom_form', ['questions'=>$questions]);
     // return view('candidate.panel');
   }
-
+  
   /**
   * Show the form for loading the appropriate custom form.
   *
@@ -86,7 +87,7 @@ class CustomFormController extends Controller
     $categories = Category::pluck('title', 'id');
     return view('create_question', ['categories'=>$categories]);
   }
-
+  
   /**
   * Show the form for loading the appropriate custom form.
   *
@@ -95,15 +96,15 @@ class CustomFormController extends Controller
   public function saveQuestion(Request $request)
   {
     $candidate = Auth::user();
-
+    
     $default_value = [
       $request->choice_1
     ];
-
+    
     $request->choice_2 != null ? array_push($default_value, $request->choice_2):'';
     $request->choice_3 != null ? array_push($default_value, $request->choice_3):'';
     $request->choice_4 != null ? array_push($default_value, $request->choice_4):'';
-
+    
     
     $question = [
       'title' => $request->question,
@@ -117,12 +118,25 @@ class CustomFormController extends Controller
     $created_question->category()->associate(Category::find($request->category));
     $created_question->creator()->associate($candidate);
     $created_question->formation()->associate(Formation::find(1));
-  
+    
     $created_question->save();
-
-
+    
+    
     $categories = Category::pluck('title', 'id');
     return view('create_question', ['categories'=>$categories]);
   }
-
+  
+  /**
+  * Show the answers to a custom form for a given candidate
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function showAnswers()
+  {
+    $formation = Formation::find(3);
+    $candidate = Auth::user();
+    $answers = findAnswersByCandidateAndFormation($candidate->id, $formation->id);
+    return view('show_results', ['answers'=>$answers]);
+  }
+  
 }

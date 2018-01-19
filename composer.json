@@ -23,6 +23,7 @@
       "App\\": "app/"
     },
     "files": [
+      "app/Helpers/AnswerHelper.php",
       "app/Helpers/CandidateHelper.php",
       "app/Helpers/FormationHelper.php",
       "app/Helpers/SololearnHelper.php"

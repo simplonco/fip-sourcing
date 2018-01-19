@@ -22,6 +22,7 @@ Route::get('/custom_form', 'CustomFormController@loadForm')->name('custom_form')
 Route::post('/save_custom_form', 'CustomFormController@saveForm')->name('save_custom_form');
 Route::get('/create_question', 'CustomFormController@createQuestion')->name('create_question');
 Route::post('/save_question', 'CustomFormController@saveQuestion')->name('save_question');
+Route::get('/show_results', 'CustomFormController@showAnswers')->name('show_results');
 // END test
 
 Route::get('/home', 'HomeController@index')->name('home');

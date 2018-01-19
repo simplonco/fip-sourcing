@@ -23,7 +23,7 @@ class CreateQuestionsTable extends Migration
             $table->json('default_value')->nullable();
             $table->boolean('mandatory')->default(true);
             $table->longText('goal')->nullable();
-            $table->integer('weight');
+            $table->integer('weight')->nullable();
             $table->timestamps();
         });
     }
