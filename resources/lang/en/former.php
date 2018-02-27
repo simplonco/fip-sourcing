@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'former_modification' => 'Former modification : ',
-    'former_add' => 'Add a former',
-    'former_all' => 'Formers list',
-    'former_show' => 'Former informations',
+    'former_modification' => 'Recruiter modification : ',
+    'former_add' => 'Add a recruiter',
+    'former_all' => 'Recruiters list',
+    'former_show' => 'Recruiter informations',
 
 ];

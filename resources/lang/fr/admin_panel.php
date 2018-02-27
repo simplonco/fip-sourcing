@@ -23,6 +23,9 @@ return [
     'former_created' => 'Le recruteur a bien été ajouté!',
     'former_removed' => 'Le recruteur a bien été supprimé!',
 
+    'candidate_updated' => 'Les informations du candidat ont bien été enregistrées!',
+    'candidate_removed' => 'Le candidat a bien été supprimé!',
+
     'title' => 'Tableau d\'administration',
     'candidates' => 'Gérer les candidats',
     'formers' => 'Gérer les recruteurs',

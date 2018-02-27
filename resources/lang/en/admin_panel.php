@@ -19,12 +19,15 @@ return [
   'formation_removed' => 'Formation has been successfully removed!',
   'formation_create' => 'Formation creation',
 
-  'former_updated' => 'Former data has been successfully saved!',
-  'former_created' => 'Former has been successfully created!',
-  'former_removed' => 'Former has been successfully removed!',
+  'former_updated' => 'Recruiter data has been successfully saved!',
+  'former_created' => 'Recruiter has been successfully created!',
+  'former_removed' => 'Recruiter has been successfully removed!',
+
+  'candidate_updated' => 'Candidate data has been successfully saved!',
+  'candidate_removed' => 'Candidate has been successfully removed!',
 
   'title' => 'Administration panel',
   'candidates' => 'Handle candidates',
-  'formers' => 'Handle formers',
+  'formers' => 'Handle recruiters',
   'formations' => 'Handle formations',
 ];
