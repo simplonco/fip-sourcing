@@ -24,6 +24,7 @@ return [
     'former_removed' => 'Le recruteur a bien été supprimé!',
 
     'title' => 'Tableau d\'administration',
+    'candidates' => 'Gérer les candidats',
     'formers' => 'Gérer les recruteurs',
     'formations' => 'Gérer les formations',
 ];

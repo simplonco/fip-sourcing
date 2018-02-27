@@ -8,12 +8,11 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use User;
 use Config;
 use App\Models\Role;
-use App\Models\Formation;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 
 
-class FormerController extends Controller
+class CandidateController extends Controller
 {
 
   public function __construct()
@@ -24,12 +23,12 @@ class FormerController extends Controller
   public function list(Request $request)
   {
 
-    $roleId = Config::get('role_constants.roles.former');
-    $formateurs = User::whereHas('roles', function ($q) use ($roleId) {
+    $roleId = Config::get('role_constants.roles.learner');
+    $candidates = User::whereHas('roles', function ($q) use ($roleId) {
       $q->where('role_id', $roleId);
     })->get();
 
-    return view('admin.former.list', ['formateurs'=>$formateurs]);
+    return view('admin.candidate.list', ['candidates'=>$candidates]);
   }
 
   /**
@@ -39,7 +38,7 @@ class FormerController extends Controller
   */
   public function index()
   {
-    return view('admin.former.list');
+    return view('admin.candidate.list');
   }
 
 
@@ -50,8 +49,7 @@ class FormerController extends Controller
   */
   public function create()
   {
-    $formations = Formation::pluck('name', 'id');
-    return view('admin.former.create', ['formations'=> $formations]);
+    return view('admin.candidate.create');
   }
 
 
@@ -79,21 +77,13 @@ class FormerController extends Controller
     ];
 
     $created_user = User::create($user);
-    $created_user->roles()->attach(Role::where('name', 'former')->first());
-
-    $input = $request->all();
-    if (array_key_exists('formations', $input)){
-      $formations_ids = $input['formations'];
-      foreach ($formations_ids as $formation_id) {
-        $created_user->formations()->attach($formation_id);
-      }
-    }
+    $created_user->roles()->attach(Role::where('name', 'candidate')->first());
 
     $created_user->save();
 
-    Session::flash('flash_message', __('admin_panel.former_created'));
+    Session::flash('flash_message', __('admin_panel.candidate_created'));
 
-    return redirect()->route('formerList');
+    return redirect()->route('candidateList');
   }
 
 
@@ -106,8 +96,8 @@ class FormerController extends Controller
   */
   public function show($id)
   {
-    $former = User::findOrFail($id);
-    return view('admin.former.show', ['former'=>$former]);
+    $candidate = User::findOrFail($id);
+    return view('admin.candidate.show', ['candidate'=>$candidate]);
   }
 
 
@@ -120,10 +110,9 @@ class FormerController extends Controller
   */
   public function edit($id)
   {
-    $former = User::findOrFail($id);
+    $candidate = User::findOrFail($id);
 
-    $formations = Formation::pluck('name', 'id');
-    return view('admin.former.edit', ['formations'=> $formations, 'former'=>$former]);
+    return view('admin.candidate.edit', ['candidate'=>$candidate]);
   }
 
 
@@ -137,7 +126,7 @@ class FormerController extends Controller
   */
   public function update($id, Request $request)
   {
-    $former = User::findOrFail($id);
+    $candidate = User::findOrFail($id);
 
     $this->validate($request, [
       'last_name' => 'required|max:255',
@@ -146,22 +135,15 @@ class FormerController extends Controller
     ]);
 
     $input = $request->all();
-    $former->formations()->detach();
-    if (array_key_exists('formations', $input)){
-      $formations_ids = $input['formations'];
-      foreach ($formations_ids as $formation_id) {
-        $former->formations()->attach($formation_id);
-      }
-    }
 
-    $former->last_name = $input['last_name'];
-    $former->first_name = $input['first_name'];
-    $former->email = $input['email'];
-    $former->save();
+    $candidate->last_name = $input['last_name'];
+    $candidate->first_name = $input['first_name'];
+    $candidate->email = $input['email'];
+    $candidate->save();
 
-    Session::flash('flash_message', __('admin_panel.former_updated'));
+    Session::flash('flash_message', __('admin_panel.candidate_updated'));
 
-    return redirect()->route('formerList');
+    return redirect()->route('candidateList');
   }
 
 
@@ -174,12 +156,12 @@ class FormerController extends Controller
   */
   public function destroy($id)
   {
-    $former = User::findOrFail($id);
+    $candidate = User::findOrFail($id);
 
-    $former->delete();
+    $candidate->delete();
 
-    Session::flash('flash_message', __('admin_panel.former_removed'));
+    Session::flash('flash_message', __('admin_panel.candidate_removed'));
 
-    return redirect()->route('formerList');
+    return redirect()->route('candidateList');
   }
 }

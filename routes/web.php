@@ -61,7 +61,7 @@ Route::group(['middleware'=>'candidate'], function () {
 Route::group(['middleware'=>'admin'], function () {
   // Admin panel
   Route::get('/admin', 'Admin\AdminController@index')->name('admin');
-  // Recruteur
+  // CRUD recruteur
   Route::get('/admin/former/list', 'Admin\FormerController@list')->name('formerList');
   Route::get('/admin/former/create', 'Admin\FormerController@create')->name('formerCreate');
   Route::post('/admin/former/store', 'Admin\FormerController@store')->name('formerStore');
@@ -69,7 +69,7 @@ Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin/former/edit/{id}', 'Admin\FormerController@edit')->name('formerEdit');
   Route::post('/admin/former/update/{id}', 'Admin\FormerController@update')->name('formerUpdate');
   Route::get('/admin/former/delete/{id}', 'Admin\FormerController@destroy')->name('formerDelete');
-  // Formation
+  // CRUD formation
   Route::get('/admin/formation/list', 'Admin\FormationController@list')->name('formationList');
   Route::get('/admin/formation/create', 'Admin\FormationController@formerCreate')->name('formationCreate');
   Route::post('/admin/formation/store', 'Admin\FormationController@store')->name('formationStore');
@@ -77,6 +77,14 @@ Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin/formation/edit/{id}', 'Admin\FormationController@edit')->name('formationEdit');
   Route::post('/admin/formation/update/{id}', 'Admin\FormationController@update')->name('formationUpdate');
   Route::get('/admin/formation/delete/{id}', 'Admin\FormationController@destroy')->name('formationDelete');
+  // CRUD candidat
+  Route::get('/admin/candidate/list', 'Admin\CandidateController@list')->name('candidateList');
+  Route::get('/admin/candidate/create', 'Admin\CandidateController@create')->name('candidateCreate');
+  Route::post('/admin/candidate/store', 'Admin\CandidateController@store')->name('candidateStore');
+  Route::get('/admin/candidate/show/{id}', 'Admin\CandidateController@show')->name('candidateShow');
+  Route::get('/admin/candidate/edit/{id}', 'Admin\CandidateController@edit')->name('candidateEdit');
+  Route::post('/admin/candidate/update/{id}', 'Admin\CandidateController@update')->name('candidateUpdate');
+  Route::get('/admin/candidate/delete/{id}', 'Admin\CandidateController@destroy')->name('candidateDelete');
 }
 );
 

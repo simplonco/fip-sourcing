@@ -24,6 +24,7 @@ return [
   'former_removed' => 'Former has been successfully removed!',
 
   'title' => 'Administration panel',
+  'candidates' => 'Handle candidates',
   'formers' => 'Handle formers',
   'formations' => 'Handle formations',
 ];

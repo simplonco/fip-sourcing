@@ -25,6 +25,10 @@ return [
       'css_score' => 'Score CSS',
       'js_score' => 'Score JS',
       'php_score' => 'Score PHP',
-    ]
+    ],
+    'candidate_modification' => 'Modification du candidat : ',
+    'candidate_add' => 'Ajouter un candidat',
+    'candidate_all' => 'Liste des candidats',
+    'candidate_show' => 'Informations du candidat'
 
 ];
