@@ -22,7 +22,7 @@ return [
     'choose_formation' => [
       'name' => 'Nom',
       'description' => 'Description',
-      'city' => 'Ville',
+      'city' => 'Lieu',
       'year' => 'Année',
       'begin_session' => 'Début de session',
       'end_session' => 'Fin de session'

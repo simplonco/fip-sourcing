@@ -125,7 +125,7 @@ return [
         'last_name'             => 'nom',
         'password'              => 'mot de passe',
         'password_confirmation' => 'confirmation du mot de passe',
-        'city'                  => 'ville',
+        'city'                  => 'lieu',
         'country'               => 'pays',
         'address'               => 'adresse',
         'phone'                 => 'téléphone',

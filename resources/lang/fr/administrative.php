@@ -18,7 +18,7 @@ return [
     'gender' => 'Quel est votre genre ?',
     'phone' => 'Téléphone',
     'postal_code' => 'Code postal',
-    'city' => 'Ville',
+    'city' => 'Lieu',
     'address' => 'Adresse postale complète',
     'status' => 'Quel est votre statut au moment de votre candidature (nous ne parlons pas de sculpture)?',
     'number_pole_emploi' => 'Si vous êtes inscrit·e comme demandeur.se d’emploi, quel est votre numéro de déclarant?',
