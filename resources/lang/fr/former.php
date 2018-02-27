@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'former_modification' => 'Modification du formateur : ',
-    'former_add' => 'Ajouter un formateur',
-    'former_all' => 'Liste de tous les formateurs',
-    'former_show' => 'Informations du formateur',
+    'former_modification' => 'Modification du recruteur : ',
+    'former_add' => 'Ajouter un recruteur',
+    'former_all' => 'Liste de tous les recruteurs',
+    'former_show' => 'Informations du recruteur',
 
 ];

@@ -61,7 +61,7 @@ Route::group(['middleware'=>'candidate'], function () {
 Route::group(['middleware'=>'admin'], function () {
   // Admin panel
   Route::get('/admin', 'Admin\AdminController@index')->name('admin');
-  // Formateur
+  // Recruteur
   Route::get('/admin/former/list', 'Admin\FormerController@list')->name('formerList');
   Route::get('/admin/former/create', 'Admin\FormerController@create')->name('formerCreate');
   Route::post('/admin/former/store', 'Admin\FormerController@store')->name('formerStore');

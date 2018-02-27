@@ -19,11 +19,11 @@ return [
     'formation_removed' => 'La formation a bien été supprimée!',
     'formation_create' => 'Création de formation',
 
-    'former_updated' => 'Les informations du formateur ont bien été enregistrées!',
-    'former_created' => 'Le formateur a bien été ajouté!',
-    'former_removed' => 'Le formateur a bien été supprimé!',
+    'former_updated' => 'Les informations du recruteur ont bien été enregistrées!',
+    'former_created' => 'Le recruteur a bien été ajouté!',
+    'former_removed' => 'Le recruteur a bien été supprimé!',
 
     'title' => 'Tableau d\'administration',
-    'formers' => 'Gérer les formateurs',
+    'formers' => 'Gérer les recruteurs',
     'formations' => 'Gérer les formations',
 ];
