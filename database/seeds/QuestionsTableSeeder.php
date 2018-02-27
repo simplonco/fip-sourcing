@@ -14,8 +14,7 @@ class QuestionsTableSeeder extends Seeder
 
     DB::table('questions')->insert([
       'id' => 1,
-      'formation_id' => 3,
-      'creator_id' => 3,
+      'questionnaire_id' => 3,
       'category_id' => 3,
       'title' => 'Quel est ton super-héros préféré?',
       'type' => 'text',
@@ -26,8 +25,7 @@ class QuestionsTableSeeder extends Seeder
 
     DB::table('questions')->insert([
       'id' => 2,
-      'formation_id' => 3,
-      'creator_id' => 3,
+      'questionnaire_id' => 3,
       'category_id' => 1,
       'title' => 'Quel est ton nom?',
       'type' => 'text',
@@ -38,8 +36,7 @@ class QuestionsTableSeeder extends Seeder
 
     DB::table('questions')->insert([
       'id' => 3,
-      'formation_id' => 3,
-      'creator_id' => 3,
+      'questionnaire_id' => 3,
       'category_id' => 2,
       'title' => 'Quelle est la couleur du cheval blanc d\'Henri IV?',
       'type' => 'text',

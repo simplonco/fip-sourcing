@@ -15,7 +15,6 @@ class AnswersTableSeeder extends Seeder
     DB::table('answers')->insert([
       'id' => 1,
       'candidate_id' => 3,
-      'formation_id' => 3,
       'question_id' => 3,
       'value' => 'Spiderman'
     ]);
