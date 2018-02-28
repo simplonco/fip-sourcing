@@ -16,7 +16,6 @@ class CreateQuestionnairesTable extends Migration
         Schema::create('questionnaires', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('formation_id')->nullable();
-            $table->integer('creator_id')->nullable();
             $table->string('title');
         });
     }

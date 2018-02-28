@@ -47,6 +47,11 @@ class User extends Authenticatable
     return $this->hasMany(Note::class, 'recruiter_id');
   }
 
+  public function recruiter_formations()
+  {
+    return $this->belongsToMany(\Formation::class, 'formation_users');
+  }
+
   public function success () 
   {
     return $this->hasOne(Success::class, 'candidate_id');
