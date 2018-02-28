@@ -56,6 +56,9 @@
           {!! Form::date('end_session', null, ['class' => 'form-control']) !!}
         </div>
 
+        <div class="form-group">                
+          {!! Form::text('search_text', null, array('placeholder' => 'Search Text','class' => 'form-control','id'=>'search_text')) !!}
+        </div>
         {!! Form::submit(__('general.submit'), ['class' => 'btn btn-primary']) !!}
 
         {!! Form::close() !!}
@@ -63,5 +66,20 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+  var url = "{{ route('typeahead.response') }}";
+  
+  $("#search_text").typeahead({
+      source:  function (query, process) {
+      console.log("test");
+      return $.get(url, { query: query }, function (data) {
+              return process(data);
+          });
+      }
+  });
+});
+</script>
 
 @endsection

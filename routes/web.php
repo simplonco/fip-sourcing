@@ -77,6 +77,9 @@ Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin/formation/edit/{id}', 'Admin\FormationController@edit')->name('formationEdit');
   Route::post('/admin/formation/update/{id}', 'Admin\FormationController@update')->name('formationUpdate');
   Route::get('/admin/formation/delete/{id}', 'Admin\FormationController@destroy')->name('formationDelete');
+  // Autocomplete questionnaire
+  Route::get('typeahead-search',array('as'=>'typeahead.search','uses'=>'Admin\FormationController@formerCreate'));
+  Route::get('typeahead-response',array('as'=>'typeahead.response','uses'=>'Admin\QuestionnaireController@typeahead'));
   // CRUD candidat
   Route::get('/admin/candidate/list', 'Admin\CandidateController@list')->name('candidateList');
   Route::get('/admin/candidate/create', 'Admin\CandidateController@create')->name('candidateCreate');

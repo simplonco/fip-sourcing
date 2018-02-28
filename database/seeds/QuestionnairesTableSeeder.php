@@ -16,5 +16,15 @@ class QuestionnairesTableSeeder extends Seeder
       'formation_id' => 3,
       'title' => 'Formulaire de référence'
     ]);
+
+    DB::table('questionnaires')->insert([
+      'formation_id' => 3,
+      'title' => 'Formulaire de référence WebDev'
+    ]);
+    
+    DB::table('questionnaires')->insert([
+      'formation_id' => 3,
+      'title' => 'Formulaire de référence JAVA'
+    ]);
   }
 }
