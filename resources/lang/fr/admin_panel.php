@@ -30,4 +30,5 @@ return [
     'candidates' => 'Gérer les candidats',
     'formers' => 'Gérer les recruteurs',
     'formations' => 'Gérer les formations',
+    'questionnaire' => 'Questionnaires',
 ];
