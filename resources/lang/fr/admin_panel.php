@@ -26,4 +26,5 @@ return [
     'title' => 'Tableau d\'administration',
     'formers' => 'Gérer les formateurs',
     'formations' => 'Gérer les formations',
+    'questionnaire' => 'Questionnaires',
 ];

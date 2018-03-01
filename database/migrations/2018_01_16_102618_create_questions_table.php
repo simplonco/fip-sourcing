@@ -20,7 +20,7 @@ class CreateQuestionsTable extends Migration
             $table->integer('category_id')->nullable();
             $table->string('title');
             $table->string('type');
-            $table->json('default_value')->nullable();
+            $table->longText('default_value')->nullable();
             $table->boolean('mandatory')->default(true);
             $table->longText('goal')->nullable();
             $table->integer('weight')->nullable();
