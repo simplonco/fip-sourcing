@@ -28,7 +28,6 @@ class HomeController extends Controller
   public function index()
   {
     $roleUser = Auth::User()->roles->implode('name');
-    $idUser = Auth::User()->id;
 
     if ($roleUser == 'admin') {
       return Redirect()->route('admin');
@@ -48,7 +47,7 @@ class HomeController extends Controller
   {
     $newLocale = Session::get('applocale') == 'fr' ? 'en' : 'fr';
     Session::put('applocale', $newLocale);
-		return Redirect::back();
+    return Redirect::back();
   }
 
   /**

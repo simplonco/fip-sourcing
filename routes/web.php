@@ -10,9 +10,12 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
   return redirect('/login');
 });
+
+
+Route::get('/', 'HomeController@index')->name('home');
 
 
 Auth::routes();
@@ -23,7 +26,7 @@ Route::post('/save_custom_form', 'CustomFormController@saveForm')->name('save_cu
 Route::get('/create_question', 'CustomFormController@createQuestion')->name('create_question');
 Route::post('/save_question', 'CustomFormController@saveQuestion')->name('save_question');
 Route::get('/show_results', 'CustomFormController@showAnswers')->name('show_results');
-// END test
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -102,3 +105,11 @@ Route::group(['middleware' => 'recruiter'], function () {
   Route::post('/recruiter/formation/candidate/sendEvaluation/{id}', 'Recruiter\CandidateController@candidateFormationSendEvaluation')->name('candidateFormationSendEvaluation');
   Route::get('/recruiter/formation/refreshFormationSololearn/{formation_id}', 'Recruiter\CandidateController@refreshFormationSololearn')->name('refreshFormationSololearn');
 });
+
+
+if (App::environment('local') && config('app.debug')) {
+    Route::get('/loginas/{user}', function(App\Models\User $user) {
+        Auth::login($user);
+        return back();
+    });
+}

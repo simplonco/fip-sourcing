@@ -10,3 +10,5 @@ Homestead.yaml
 npm-debug.log
 .env
 heroku_cleardb.md
+.flooignore
+.floo

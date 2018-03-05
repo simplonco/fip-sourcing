@@ -95,5 +95,8 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
+@if(config('app.debug') && App::environment('local'))
+  @include('debug.loginas')
+  @endif
 </body>
 </html>

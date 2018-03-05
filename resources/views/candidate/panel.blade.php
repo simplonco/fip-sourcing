@@ -7,7 +7,9 @@
   {{ Session::get('flash_message') }}
 </div>
 @endif
-
+<div class="panel panel-default">
+<div id="app-candidat"></div>
+</div>
 <div class="container">
   <div class="row">
     <div class="panel panel-default">
