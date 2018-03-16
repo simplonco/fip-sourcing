@@ -45,6 +45,30 @@ function LoggedInMenu(props) {
   return (
     <ul className={styles.navMenu}>
       { NavLinks }
+        <NavLink
+            routeName={'section.subsection.index'}
+            routeParams={{'id': 1}}>
+            Choix de la formation : "formation selectionne"
+        </NavLink>
+
+        <NavLink
+            routeName={'section.subsection.index'}
+            routeParams={{'id': 2}}>
+            Operationnel coup de poing
+        </NavLink>
+
+        <NavLink>
+            L'administratif !
+        </NavLink>
+        <NavLink>
+            Passé pro
+        </NavLink>
+        <NavLink>
+            Le code'n'you
+        </NavLink>
+        <NavLink>
+            Projection, Ippon tsunagi
+        </NavLink>
     </ul>
   );
 }
@@ -65,7 +89,7 @@ function LoggedOutMenu(props) {
 class NavMenu extends React.Component {
 
   render() {
-    const isLoggedIn = this.props.userStore.isLoggedIn;
+    const isLoggedIn = true//this.props.userStore.isLoggedIn;
     return (
       isLoggedIn ? <LoggedInMenu /> : <LoggedOutMenu/>);
   }

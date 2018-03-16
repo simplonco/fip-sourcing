@@ -36,6 +36,8 @@
   },
   "dependencies": {
     "babel-preset-env": "^1.6.1",
+    "lokka": "^1.7.0",
+    "lokka-transport-http": "^1.6.1",
     "mobx-react-devtools": "^4.2.15",
     "mobx-router5": "^3.0.0",
     "prop-types": "^15.6.1",

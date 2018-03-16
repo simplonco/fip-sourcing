@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {withRoute, Link} from "react-mobx-router5";
-
+import {incr, decr} from '../../../actions/progress';
+import {inject} from 'mobx-react'
 let styles = {}
 
 function AnotherElement(props) {
  return (
    <div className={props.className}>
-      <p> This is another component also wrapped with `withRoute`. <br/>
-        It will receive an `active` prop and an `active` className when the route is `/section/subsection/home`. <br/> <br/>
-        Try to navigate to <Link routeName={'section.subsection.home'}>{props.routerStore.router.buildPath('section.subsection.home')}</Link> and this background will change</p>
+      Put some footer here
    </div>
  );
 }
@@ -29,10 +28,20 @@ const AnotherComponentWithRoute = withRoute(AnotherElement);
 
 
 
-
+@inject('progressStore')
 class Footer extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  incr() {
+    incr()
+
+  }
+
+  decr () {
+
+    decr()
   }
 
   render() {
@@ -41,7 +50,9 @@ class Footer extends React.Component {
     };
 
     return (
-      <div className={styles.container}>This is the footer. It's been wrapped with `withRoute` HOC so it is aware of routes change and it will re-render on any route Change. <br/>
+      <div className={styles.container}>
+          <hr/>
+          This is the footer. It's been wrapped with `withRoute` HOC so it is aware of routes change and it will re-render on any route Change. <br/>
         <p>I did not pass a `routeName` prop to the resulting component so an `active` className will never be applied. <br/> <br/>
           Nonetheless it is aware of the current route: <i style={style}>{this.props.route.name}</i></p>
 
@@ -49,7 +60,8 @@ class Footer extends React.Component {
           className={styles.anotherElement}
           routeName={'section.subsection.home'}
         />
-
+        <button onClick={this.incr}>+</button>
+          <button onClick={this.decr}>-</button>
       </div>
     );
   }
