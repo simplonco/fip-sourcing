@@ -45,9 +45,7 @@ function LoggedInMenu(props) {
   return (
     <ul className={styles.navMenu}>
       { NavLinks }
-        <NavLink
-            routeName={'section.subsection.index'}
-            routeParams={{'id': 1}}>
+        <NavLink routeName={'formations'}>
             Choix de la formation : "formation selectionne"
         </NavLink>
 

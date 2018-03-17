@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {observer, inject} from 'mobx-react'
-import {Get, Select} from '../../actions/formations'
+import {Get, Select, Dummy} from '../../actions/formations'
 
 
 @inject('routerStore')
@@ -15,14 +15,20 @@ class Formations extends React.Component {
     constructor(props) {
         super(props)
         this.onClick = this.onClick.bind(this)
+        this.onDummyChange = this.onDummyChange.bind(this)
     }
 
     componentDidMount() {
         Get()
+        Dummy()
     }
 
     onClick (e) {
 
+    }
+
+    onDummyChange (e) {
+        this.props.formationsStore.setDummy(e.target.value)
     }
 
     render () {
@@ -32,7 +38,9 @@ class Formations extends React.Component {
         return (
             <div>
                 {formations}
-                Show me formations, and i want it know
+                <div>
+                    <input onChange={this.onDummyChange} value={this.props.formationsStore.dummy} />
+                </div>
             </div>
         )
     }

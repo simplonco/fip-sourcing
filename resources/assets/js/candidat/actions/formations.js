@@ -21,3 +21,9 @@ export function Get () {
 export function Select(formation) {
     store.select(formation)
 }
+
+export function Dummy () {
+    setTimeout(()=>{
+        store.setDummy('Hey !')
+    },2000)
+}

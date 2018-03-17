@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {withRoute, Link} from "react-mobx-router5";
 import {incr, decr} from '../../../actions/progress';
-import {inject} from 'mobx-react'
+import {inject, observer} from 'mobx-react'
 let styles = {}
 
 function AnotherElement(props) {
@@ -29,6 +29,8 @@ const AnotherComponentWithRoute = withRoute(AnotherElement);
 
 
 @inject('progressStore')
+@inject('formationsStore')
+@observer
 class Footer extends React.Component {
   constructor(props) {
     super(props);
@@ -62,6 +64,7 @@ class Footer extends React.Component {
         />
         <button onClick={this.incr}>+</button>
           <button onClick={this.decr}>-</button>
+          <p>{this.props.formationsStore.dummy}</p>
       </div>
     );
   }
