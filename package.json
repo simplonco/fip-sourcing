@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "babel-preset-env": "^1.6.1",
+    "formsy-react": "^1.1.4",
     "lokka": "^1.7.0",
     "lokka-transport-http": "^1.6.1",
     "mobx-react-devtools": "^4.2.15",
