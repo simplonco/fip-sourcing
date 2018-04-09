@@ -19672,28 +19672,6 @@ var CustomForm = (_dec = (0, _mobxReact.inject)('customFormStore'), _dec(_class 
     value: function submit(data) {
       alert(JSON.stringify(data, null, 4));
     }
-
-    // addField(fieldData) {
-    //   fieldData.validations = fieldData.validations.length ?
-    //     fieldData.validations.reduce((a, b) => Object.assign({}, a, b)) :
-    //     null;
-    //   fieldData.id = Date.now();
-    //   this.setState({ fields: this.state.fields.concat(fieldData) });
-    // }
-
-    // removeField(pos) {
-    //   const fields = this.state.fields;
-    //   this.setState({ fields: fields.slice(0, pos).concat(fields.slice(pos + 1)) })
-    // }
-
-    // enableButton() {
-    //   this.setState({ canSubmit: true });
-    // }
-
-    // disableButton() {
-    //   this.setState({ canSubmit: false });
-    // }
-
   }, {
     key: 'render',
     value: function render() {
@@ -19739,7 +19717,7 @@ var CustomForm = (_dec = (0, _mobxReact.inject)('customFormStore'), _dec(_class 
           _react2.default.createElement(_Fields2.default, { name: 'preview', data: this.props.customFormStore.fields, onRemove: this.removeField }),
           _react2.default.createElement(
             'button',
-            { type: 'submit', disabled: !canSubmit },
+            { type: 'submit', disabled: !this.props.customFormStore.canSubmit },
             'Submit'
           )
         )

@@ -36,27 +36,6 @@ class CustomForm extends React.Component {
     alert(JSON.stringify(data, null, 4));
   }
 
-  // addField(fieldData) {
-  //   fieldData.validations = fieldData.validations.length ?
-  //     fieldData.validations.reduce((a, b) => Object.assign({}, a, b)) :
-  //     null;
-  //   fieldData.id = Date.now();
-  //   this.setState({ fields: this.state.fields.concat(fieldData) });
-  // }
-
-  // removeField(pos) {
-  //   const fields = this.state.fields;
-  //   this.setState({ fields: fields.slice(0, pos).concat(fields.slice(pos + 1)) })
-  // }
-
-  // enableButton() {
-  //   this.setState({ canSubmit: true });
-  // }
-
-  // disableButton() {
-  //   this.setState({ canSubmit: false });
-  // }
-
   render() {
     const { fields, canSubmit } = this.state;
     return (
@@ -92,7 +71,7 @@ class CustomForm extends React.Component {
         </Formsy>
         <Formsy onSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton} className="many-fields">
           <Fields name="preview" data={this.props.customFormStore.fields} onRemove={this.removeField} />
-          <button type="submit" disabled={!canSubmit}>Submit</button>
+          <button type="submit" disabled={!this.props.customFormStore.canSubmit}>Submit</button>
         </Formsy>
       </div>
     );
