@@ -19703,7 +19703,7 @@ var CustomForm = (_dec = (0, _mobxReact.inject)('customFormStore'), _dec(_class 
             name: 'type',
             value: 'input',
             title: 'Type',
-            items: ['input', 'select']
+            items: ['input', 'select', 'radio', 'checkbox']
           }),
           _react2.default.createElement(
             'button',
@@ -19776,6 +19776,14 @@ var _Select = __webpack_require__(87);
 
 var _Select2 = _interopRequireDefault(_Select);
 
+var _RadioGroup = __webpack_require__(156);
+
+var _RadioGroup2 = _interopRequireDefault(_RadioGroup);
+
+var _MultiCheckboxSet = __webpack_require__(155);
+
+var _MultiCheckboxSet2 = _interopRequireDefault(_MultiCheckboxSet);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -19815,18 +19823,35 @@ var Fields = (_dec = (0, _mobxReact.inject)('customFormStore'), _dec(_class = (0
                     return _react2.default.createElement(
                         'div',
                         { className: 'field', key: field.id },
-                        field.type === 'input' ? _react2.default.createElement(_Input2.default, {
+                        field.type === 'input' && _react2.default.createElement(_Input2.default, {
                             value: '',
                             name: 'fields[' + i + ']',
                             title: field.validations ? JSON.stringify(field.validations) : 'No validations',
                             required: field.required,
                             validations: field.validations
-                        }) : _react2.default.createElement(_Select2.default, {
+                        }),
+                        field.type === 'select' && _react2.default.createElement(_Select2.default, {
                             name: 'fields[' + i + ']',
                             title: field.validations ? JSON.stringify(field.validations) : 'No validations',
                             required: field.required,
                             validations: field.validations,
                             options: [{ title: '123', value: '123' }, { title: 'some long text', value: 'some long text' }, { title: '`empty string`', value: '' }, { title: 'alpha42', value: 'alpha42' }, { title: 'test@mail.com', value: 'test@mail.com' }]
+                        }),
+                        field.type === 'radio' && _react2.default.createElement(_RadioGroup2.default, {
+                            name: 'fields[' + i + ']',
+                            value: 'input',
+                            title: field.validations ? JSON.stringify(field.validations) : 'No validations',
+                            required: field.required,
+                            validations: field.validations,
+                            items: ['réponse A', 'réponse B', 'réponse C', 'réponse D']
+                        }),
+                        field.type === 'checkbox' && _react2.default.createElement(_MultiCheckboxSet2.default, {
+                            name: 'fields[' + i + ']',
+                            title: field.validations ? JSON.stringify(field.validations) : 'No validations',
+                            cmp: function cmp(a, b) {
+                                return JSON.stringify(a) === JSON.stringify(b);
+                            },
+                            items: [{ answerA: "A" }, { answerB: true }, { answerC: 42 }]
                         }),
                         _react2.default.createElement(
                             'button',

@@ -65,7 +65,7 @@ class CustomForm extends React.Component {
             name="type"
             value="input"
             title="Type"
-            items={['input', 'select']}
+            items={['input', 'select', 'radio', 'checkbox']}
           />
           <button type="submit">Add</button>
         </Formsy>
