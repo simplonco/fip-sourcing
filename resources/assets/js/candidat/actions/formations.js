@@ -8,9 +8,9 @@ const client = new Lokka({
 export function Get () {
     client.query(`
         {
-                formations {
-                    id, name, city, year
-                }
+            formations {
+                id, name, city, year, selected
+            }
         }
     `).then(result => {
         console.log(result)

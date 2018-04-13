@@ -30,15 +30,25 @@ class FormationsQuery extends Query
             'year' => ['name'=>'year', 'type'=> Type::int()],
             'begin_session' => ['name'=>'begin_session', 'type'=> Type::string()],
             'end_session' => ['name'=>'end_session', 'type'=> Type::string()],
+            'selected' => ['name'=>'selected', 'type'=>Type::boolean()]
         ];
     }
 
     public function resolve($root, $args, $context, ResolveInfo $info)
     {
-        if (isset($args['id'])) {
-            return Formation::whereId($args['id'])->get();
-        } else {
+        if (empty($args)) {
             return Formation::all();
         }
+        $formation = new Formation;
+
+        foreach($args as $key=>$value) {
+            if ($key === 'begin_session') {
+                $formation = $formation->where($key, '>=', $value);
+            } else {
+                $formation = $formation->where($key, $value);
+            }
+        }
+
+        return $formation->get();
     }
 }

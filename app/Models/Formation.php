@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Formation extends Model
 {
   protected $fillable = ['name', 'description', 'city', 'year', 'begin_session', 'end_session'];
+  protected $appends = ['selected'];
 
   public function recruiters()
   {
@@ -16,5 +17,9 @@ class Formation extends Model
   public function notes()
   {
     return $this->hasMany(App\Models\Note::class);
+  }
+
+  public function getSelectedAttribute() {
+    return true;
   }
 }

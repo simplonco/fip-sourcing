@@ -57,8 +57,9 @@ return [
 
     /*
      * Any middleware for the 'graphql' route group
+     * https://github.com/Folkloreatelier/laravel-graphql/issues/66
      */
-    'middleware' => [],
+    'middleware' => ['graphql', 'auth'],
 
     /**
      * Any middleware for a specific 'graphql' schema
@@ -124,7 +125,9 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                'formations' => 'App\GraphQL\Query\FormationsQuery'
+                'formations' => 'App\GraphQL\Query\FormationsQuery',
+                'candidat' => 'App\GraphQL\Query\CandidatQuery',
+                'candidats' => 'App\GraphQL\Query\CandidatsQuery',
             ],
             'mutation' => [
 
@@ -182,6 +185,7 @@ return [
      */
     'types' => [
         'Formation' => 'App\GraphQL\Type\FormationType',
+        'Candidat' => 'App\GraphQL\Type\CandidatType',
     ],
 
     /*

@@ -44,6 +44,10 @@ class FormationType extends BaseType
                 'type' => Type::string(),
                 'description' => 'ben c end_session wesh'
             ],
+            'selected' => [
+                'type' => Type::boolean(),
+                'description' => 'formation sélectionnée par utilisateur connecté'
+            ]
         ];
     }
 }
