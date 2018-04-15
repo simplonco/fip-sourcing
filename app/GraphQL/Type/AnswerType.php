@@ -2,15 +2,14 @@
 
 namespace App\GraphQL\Type;
 
-use App\Models\Session;
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Type as BaseType;
 use GraphQL;
 
-class CandidatType extends BaseType
+class AnswerType extends BaseType
 {
     protected $attributes = [
-        'name' => 'CandidatType',
+        'name' => 'AnswerType',
         'description' => 'A type'
     ];
 
@@ -21,28 +20,32 @@ class CandidatType extends BaseType
                 'type' => Type::nonNull(Type::string()),
                 'description' => 'c l\'id wesh'
             ],
-            "last_name"=> [
+            "candidate_id"=> [
+                "type" =>Type::int(),
+                "description" => "",
+            ],
+            "question_id"=> [
+                "type" =>Type::int(),
+                "description" => "",
+            ],
+            "value"=> [
                 "type" =>Type::string(),
                 "description" => "",
             ],
-            "first_name"=> [
+            "created_at"=> [
                 "type" =>Type::string(),
                 "description" => "",
             ],
-            "email"=> [
+            "updated_at"=> [
                 "type" =>Type::string(),
                 "description" => "",
             ],
-            "session" => [
-                "type"=>GraphQL::type('Session'),
-                "description"=>"Session selectionnée",
-                "resolve"=> function ($user) {
-                    return $user->currentSession();
+            "user" => [
+                "type" => GraphQL::type('Candidat'),
+                "description"=>"belongs to user",
+                "resolve" => function($answer) {
+                    return $answer->candidate;
                 }
-            ],
-            "questionnaires" => [
-                "type" => Type::listOf(GraphQL::type('Questionnaire')),
-                "description" => "liste de questionnaires liés aux formations selectionnée"
             ]
         ];
     }

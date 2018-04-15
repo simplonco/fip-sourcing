@@ -32,10 +32,22 @@ class User extends Authenticatable
     return $this->belongsToMany(Role::class);
   }
 
-  public function formations()
-  {
-    return $this->belongsToMany(Formation::class);
-  }
+    public function formations()
+    {
+        return $this->belongsToMany(Formation::class);
+    }
+
+    public function sessions()
+    {
+        return $this->belongsToMany(Session::class);
+    }
+
+    public function currentSession() {
+        if(isset($this->sessions[0])) {
+            return $this->sessions[0];
+        }
+        return new Session;
+    }
 
   public function candidate_notes()
   {

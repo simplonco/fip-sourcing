@@ -30,7 +30,6 @@ class FormationsQuery extends Query
             'year' => ['name'=>'year', 'type'=> Type::int()],
             'begin_session' => ['name'=>'begin_session', 'type'=> Type::string()],
             'end_session' => ['name'=>'end_session', 'type'=> Type::string()],
-            'selected' => ['name'=>'selected', 'type'=>Type::boolean()]
         ];
     }
 

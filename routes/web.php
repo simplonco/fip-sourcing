@@ -11,11 +11,11 @@
 */
 
 Route::get('/home', function () {
-  return redirect('/login');
+  return redirect()->route('welcome');
 });
 
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@home')->name('welcome');
 
 
 Auth::routes();
@@ -28,13 +28,13 @@ Route::post('/save_question', 'CustomFormController@saveQuestion')->name('save_q
 Route::get('/show_results', 'CustomFormController@showAnswers')->name('show_results');
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
 Route::get('/unauthorized', 'HomeController@unauthorized')->name('unauthorized');
 
 Route::get('/language', 'HomeController@language')->name('language');
 
-Route::group(['middleware'=>'candidate'], function () {
+Route::group(['middleware'=>['auth', 'candidate']], function () {
   Route::get('/candidate/formation', 'Candidate\CandidateController@chooseFormation')->name('chooseFormation');
   Route::get('/candidate/formation/store/{id}', 'Candidate\CandidateController@storeFormation')->name('storeFormation');
 
@@ -59,6 +59,7 @@ Route::group(['middleware'=>'candidate'], function () {
   Route::get('/candidate/scoreDetails', 'Candidate\CandidateController@scoreDetails')->name('scoreDetails');
 
   Route::get('/candidate/refreshSololearn', 'Candidate\CandidateController@refreshSololearn')->name('refreshSololearn');
+  Route::put('/candidate/answer/update', 'Candidate\CandidateController@updateAnswer');
 });
 
 Route::group(['middleware'=>'admin'], function () {

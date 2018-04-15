@@ -17,7 +17,7 @@ class CreateNotesTable extends Migration
           $table->increments('id');
           $table->integer('candidate_id')->nullable();
           $table->integer('recruiter_id')->nullable();
-          $table->integer('formation_id')->nullable();
+          $table->integer('session_id')->nullable();
           $table->integer('hero_note')->nullable();
           $table->integer('dev_qualities_note')->nullable();
           $table->integer('personal_goal_note')->nullable();

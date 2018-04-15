@@ -21,9 +21,12 @@ class CreateQuestionsTable extends Migration
             $table->string('type');
             $table->longText('default_value')->nullable();
             $table->boolean('mandatory')->default(true);
+            //TODO: renommer en hint?
             $table->longText('goal')->nullable();
             $table->integer('weight')->nullable();
+            $table->integer('order')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

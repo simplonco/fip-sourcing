@@ -8,9 +8,9 @@
 </div>
 @endif
 <div class="panel panel-default">
-<div id="app-candidat"></div>
+  <div id="app-candidat"></div>
 </div>
-<div class="container">
+{{-- <div class="container">
   <div class="row">
     <div class="panel panel-default">
       <div class="panel-heading">{{__('candidate_panel.process')}}
@@ -126,5 +126,5 @@
                   </div>
                 </div>
               </div>
-
+--}}
           @endsection

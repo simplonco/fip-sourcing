@@ -2,6 +2,7 @@
 
 namespace App\GraphQL\Query;
 
+use App\Models\Session;
 use Folklore\GraphQL\Support\Query;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;

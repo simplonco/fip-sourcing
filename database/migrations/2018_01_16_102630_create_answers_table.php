@@ -17,8 +17,9 @@ class CreateAnswersTable extends Migration
             $table->increments('id');
             $table->integer('candidate_id')->nullable();
             $table->integer('question_id')->nullable();
-            $table->string('value');
+            $table->text('value');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

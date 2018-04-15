@@ -15,8 +15,17 @@ class CreateQuestionnairesTable extends Migration
     {
         Schema::create('questionnaires', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('formation_id')->nullable();
             $table->string('title');
+            $table->boolean('global')->default(false);
+            $table->timestamps();
+            $table->softDeletes();
+        });
+
+        Schema::create('formation_questionnaire', function(Blueprint $table){
+            $table->increments('id');
+            $table->integer('formation_id')->nullable();
+            $table->integer('questionnaire_id')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -27,6 +36,6 @@ class CreateQuestionnairesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questionnaires');
+        throw new \Exception('nah!');
     }
 }

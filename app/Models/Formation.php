@@ -19,7 +19,11 @@ class Formation extends Model
     return $this->hasMany(App\Models\Note::class);
   }
 
-  public function getSelectedAttribute() {
-    return true;
+  public function sessions() {
+      return $this->hasMany(Session::class);
+  }
+
+  public function questionnaires() {
+      return $this->belongsToMany(Questionnaire::class);
   }
 }

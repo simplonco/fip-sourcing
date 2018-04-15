@@ -17,11 +17,9 @@ class CreateFormationsTable extends Migration
           $table->increments('id');
           $table->string('name');
           $table->string('description');
-          $table->string('city');
-          $table->integer('year');
-          $table->date('begin_session');
-          $table->date('end_session');
+
           $table->timestamps();
+          $table->softDeletes();
       });
     }
 

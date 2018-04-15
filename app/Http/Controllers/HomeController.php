@@ -17,7 +17,14 @@ class HomeController extends Controller
   */
   public function __construct()
   {
-    $this->middleware('auth');
+    $this->middleware('auth')->except('home');
+  }
+
+  public function home(){
+      if(auth()->check()) {
+          return redirect()->route('dashboard');
+      }
+      return redirect()->route('login');
   }
 
   /**
@@ -27,21 +34,17 @@ class HomeController extends Controller
   */
   public function index()
   {
-    $roleUser = Auth::User()->roles->implode('name');
+    $roleUser = Auth::user()->roles->implode('name');
 
     if ($roleUser == 'admin') {
-      return Redirect()->route('admin');
+      return redirect()->route('admin');
     } elseif ($roleUser == 'learner') {
       return view('candidate.panel');
     } elseif ($roleUser == 'former') {
-      return Redirect()->route('recruiterIndex');
+      return redirect()->route('recruiterIndex');
     }
   }
 
-  public function unauthorized()
-  {
-    return view('unauthorized');
-  }
 
   public function language()
   {

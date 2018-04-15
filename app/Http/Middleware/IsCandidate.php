@@ -17,7 +17,7 @@ class IsCandidate{
 		public function handle($request, Closure $next)
 		{
 		if ( Auth::user()->roles->implode('name') !== 'learner') {
-				return redirect('unauthorized');
+				return abort(301);
 		}
 		return $next($request);
 	}

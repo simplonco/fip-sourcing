@@ -184,8 +184,12 @@ return [
      * ]
      */
     'types' => [
-        'Formation' => 'App\GraphQL\Type\FormationType',
         'Candidat' => 'App\GraphQL\Type\CandidatType',
+        'Formation' => 'App\GraphQL\Type\FormationType',
+        'Session' => 'App\GraphQL\Type\SessionType',
+        'Questionnaire' => 'App\GraphQL\Type\QuestionnaireType',
+        'Question' => 'App\GraphQL\Type\QuestionType',
+        'Answer' => 'App\GraphQL\Type\AnswerType',
     ],
 
     /*

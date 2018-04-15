@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Candidate;
 
+use App\Models\Answer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Formation;
@@ -498,6 +499,20 @@ class CandidateController extends Controller
     $candidate = Auth::user();
 
     return view('candidate.scoreDetails', ['candidate' => $candidate]);
+  }
+
+  public function updateAnswer(Request $request) {
+      $answer = Answer::where('candidate_id', auth()->id())->where('question_id', $request->q)->first();
+
+      if(!$answer) {
+          $answer = new Answer();
+          $answer->question_id = $request->q;
+          $answer->candidate_id = auth()->id();
+      }
+      $answer->value = $request->value;
+      $answer->save();
+      return response()->json(["msg"=>'ok']);
+
   }
 
 }

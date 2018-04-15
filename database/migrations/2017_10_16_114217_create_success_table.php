@@ -25,6 +25,7 @@ class CreateSuccessTable extends Migration
           $table->boolean('php_success')->default(false);
           $table->boolean('hi_score_success')->default(false);
           $table->timestamps();
+          $table->softDeletes();
       });
     }
 

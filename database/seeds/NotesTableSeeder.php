@@ -15,7 +15,7 @@ class NotesTableSeeder extends Seeder
       DB::table('notes')->insert([
         'candidate_id' => $i,
         'recruiter_id' => '50',
-        'formation_id' => '2',
+        'session_id' => '2',
         'hero_note' => '2',
         'dev_qualities_note' => '2',
         'personal_goal_note' => '2',
@@ -27,7 +27,7 @@ class NotesTableSeeder extends Seeder
       DB::table('notes')->insert([
         'candidate_id' => $i,
         'recruiter_id' => '52',
-        'formation_id' => '2',
+        'session_id' => '2',
         'hero_note' => '1',
         'dev_qualities_note' => '1',
         'personal_goal_note' => '1',
@@ -39,7 +39,7 @@ class NotesTableSeeder extends Seeder
       DB::table('notes')->insert([
         'candidate_id' => $i,
         'recruiter_id' => '53',
-        'formation_id' => '2',
+        'session_id' => '2',
         'hero_note' => '0',
         'dev_qualities_note' => '0',
         'personal_goal_note' => '0',

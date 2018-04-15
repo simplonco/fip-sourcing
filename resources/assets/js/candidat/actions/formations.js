@@ -9,7 +9,15 @@ export function Get () {
     client.query(`
         {
             formations {
-                id, name, city, year, selected
+                name, 
+                sessions {
+                    city, 
+                    year, 
+                    begin_session, 
+                    end_session, 
+                    application_start_date, 
+                    application_end_date
+                }
             }
         }
     `).then(result => {
@@ -20,10 +28,4 @@ export function Get () {
 
 export function Select(formation) {
     store.select(formation)
-}
-
-export function Dummy () {
-    setTimeout(()=>{
-        store.setDummy('Hey !')
-    },2000)
 }

@@ -28,25 +28,16 @@ class FormationType extends BaseType
                 'type' => Type::string(),
                 'description' => 'ben c description wesh'
             ],
-            'city' => [
-                'type' => Type::string(),
-                'description' => 'ben c city wesh'
+            'questionnaires' => [
+                'type' => Type::listOf(GraphQL::type('Questionnaire')),
+                'description' => '',
+                'resolve' => function($formation) {
+                    return $formation->questionnaires;
+                }
             ],
-            'year' => [
-                'type' => Type::string(),
-                'description' => 'ben c year wesh'
-            ],
-            'begin_session' => [
-                'type' => Type::string(),
-                'description' => 'ben c begin_session wesh'
-            ],
-            'end_session' => [
-                'type' => Type::string(),
-                'description' => 'ben c end_session wesh'
-            ],
-            'selected' => [
-                'type' => Type::boolean(),
-                'description' => 'formation sélectionnée par utilisateur connecté'
+            'sessions' => [
+                'type' => Type::listOf(GraphQL::type('Session')),
+                'description' => '',
             ]
         ];
     }

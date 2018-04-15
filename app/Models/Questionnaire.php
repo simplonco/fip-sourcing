@@ -12,7 +12,11 @@ class Questionnaire extends Model
 
   public function formation()
   {
-    return $this->belongsTo(Formation::class, 'formation_id');
+    return $this->belongsToMany(Formation::class);
+  }
+
+  public function questions() {
+      return $this->hasMany(Question::class);
   }
 
 }

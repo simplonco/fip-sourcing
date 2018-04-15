@@ -7,10 +7,15 @@ class FormsStore {
     }
 
     @observable ready;
-    @observable fields = [];
+    @observable questionnaires = [];
 
     @action setUserFields(fields) {
         this.fields = [...fields]
+        this.ready = true
+    }
+
+    @action setQuestionnaires(questionnaires) {
+        this.questionnaires = [...questionnaires]
         this.ready = true
     }
 }

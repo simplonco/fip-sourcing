@@ -3,6 +3,7 @@ import Panel from './Panel'
 import Formations from './Formations'
 import {inject, observer} from 'mobx-react'
 import {Get} from '../actions/forms'
+import Questionnaire from "./Questionnaire";
 
 @inject('formsStore')
 @observer
@@ -21,11 +22,8 @@ export default class Layout extends Component {
         let forms;
         if(store.ready) {
 
-            forms = this.props.formsStore.fields.map((input) => {
-                return (<div key={input.key} >
-                    <label>{input.key}</label>
-                    <input name={input.key} defaultValue={input.value} />
-                </div>)
+            forms = this.props.formsStore.questionnaires.map((q)=>{
+                return <Questionnaire data={q} />
             })
         }
 
