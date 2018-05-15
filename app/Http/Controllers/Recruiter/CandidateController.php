@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Role;
-use App\Formation;
+use App\Models\Formation;
 use App\Note;
 use Illuminate\Support\Facades\Session;
 
@@ -33,6 +33,10 @@ class CandidateController extends Controller
     return view('recruiter.candidateList', ['candidates'=>$candidates_pagination, 'formation'=>$formation]);
   }
 
+  public function recruiterCandidateSearch(){
+        return view('recruiter.searchCandidate');
+  }
+
   /**
   * Display the specified resource.
   *
@@ -44,7 +48,7 @@ class CandidateController extends Controller
     $candidate = User::findOrFail($candidate_id);
     $formation = Formation::findOrFail($formation_id);
 
-    return view('recruiter.candidateShow', ['candidate' => $candidate, 'formation' => $formation]);
+    return view('recruiter.candidateShow', ['candidate.blade.php' => $candidate, 'formation' => $formation]);
   }
 
   /**
@@ -75,7 +79,7 @@ class CandidateController extends Controller
     }
 
 
-    return view('recruiter.candidateEvaluate', ['candidate' => $candidate, 'note' => $note->first()]);
+    return view('recruiter.candidateEvaluate', ['candidate.blade.php' => $candidate, 'note' => $note->first()]);
   }
 
 

@@ -20,7 +20,7 @@
                 <th>{{__('formation.candidates')}}</th>
               </tr>
             </thead>
-            @foreach ($former->formations as $formation)
+            @foreach ($former->sessions as $formation)
             <tr>
               <td style="text-align:center;">
                 <a href="{{ route('recruiterFormationShow', $formation->id) }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
