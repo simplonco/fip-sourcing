@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Recruiter;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\User;
-use App\Role;
+use App\Models\User;
+use App\Models\Role;
 use App\Models\Formation;
-use App\Note;
+use App\Models\Note;
 use Illuminate\Support\Facades\Session;
 
 class CandidateController extends Controller
@@ -24,6 +24,7 @@ class CandidateController extends Controller
 
     $learnerRoleId = 2;
     $candidates = getApplyingFormationCandidates($formation_id);
+
     if($order != null){
       $candidates = $ascending === 'asc'? $candidates->orderBy($order, 'asc') : $candidates->orderBy($order, 'desc');
     }
@@ -34,7 +35,9 @@ class CandidateController extends Controller
   }
 
   public function recruiterCandidateSearch(){
-        return view('recruiter.searchCandidate');
+
+      $candidates = User::take(5)->paginate(12);
+      return view('recruiter.searchCandidate', compact('candidates'));
   }
 
   /**
@@ -48,7 +51,7 @@ class CandidateController extends Controller
     $candidate = User::findOrFail($candidate_id);
     $formation = Formation::findOrFail($formation_id);
 
-    return view('recruiter.candidateShow', ['candidate.blade.php' => $candidate, 'formation' => $formation]);
+    return view('recruiter.candidateShow', ['candidate' => $candidate, 'formation' => $formation]);
   }
 
   /**
