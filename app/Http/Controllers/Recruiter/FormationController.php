@@ -27,6 +27,10 @@ class FormationController extends Controller
       return view('recruiter.home');
   }
 
+  public function recruiterFormations(){
+      return view('recruiter.formations');
+  }
+
   /**
   * Display the specified resource.
   *
