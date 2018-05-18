@@ -8,8 +8,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Role;
 use App\Models\Formation;
+use App\Models\Session;
 use App\Models\Note;
-use Illuminate\Support\Facades\Session;
+//use Illuminate\Support\Facades\Session;
 
 class CandidateController extends Controller
 {
@@ -18,12 +19,12 @@ class CandidateController extends Controller
     $this->middleware('auth');
   }
 
-  public function recruiterFormationCandidatesList($formation_id, $order=null, $ascending='asc')
+  public function recruiterFormationCandidatesList($session_id, $order=null, $ascending='asc')
   {
-    $formation = Formation::findOrFail($formation_id);
+    $session = Session::findOrFail($session_id);
 
     $learnerRoleId = 2;
-    $candidates = getApplyingFormationCandidates($formation_id);
+    $candidates = getApplyingFormationCandidates($session_id);
 
     if($order != null){
       $candidates = $ascending === 'asc'? $candidates->orderBy($order, 'asc') : $candidates->orderBy($order, 'desc');
@@ -31,7 +32,7 @@ class CandidateController extends Controller
 
     $candidates_pagination = $candidates->orderBy('score', 'desc')->paginate(10);
 
-    return view('recruiter.candidateList', ['candidates'=>$candidates_pagination, 'formation'=>$formation]);
+    return view('recruiter.candidateListNewVersion', ['candidates'=>$candidates_pagination, 'session'=>$session]);
   }
 
   public function recruiterCandidateSearch(){
@@ -82,7 +83,7 @@ class CandidateController extends Controller
     }
 
 
-    return view('recruiter.candidateEvaluate', ['candidate.blade.php' => $candidate, 'note' => $note->first()]);
+    return view('recruiter.candidateEvaluate', ['candidate' => $candidate, 'note' => $note->first()]);
   }
 
 

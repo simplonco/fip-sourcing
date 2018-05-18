@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h2 class="text-center">RECHERCHER UN CANDIDAT</h2>
+        <h3 class="text-center">RECHERCHER UN CANDIDAT</h3>
         <div class="row">
             <div class="col-md-8">
                 <form class="navbar-form" role="search">

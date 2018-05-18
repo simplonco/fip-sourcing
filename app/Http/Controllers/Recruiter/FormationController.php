@@ -28,9 +28,16 @@ class FormationController extends Controller
   }
 
   public function recruiterFormations(){
-      return view('recruiter.formations');
+      $trainer = Auth::user();
+      return view('recruiter.formations', compact('trainer'));
   }
 
+  public function recruiterFormationCreate(){
+      return view('recruiter.formationCreate');
+  }
+  public function recruiterFormationSave(Request $request){
+
+  }
   /**
   * Display the specified resource.
   *

@@ -13,7 +13,7 @@ function get_score($candidate)
 
 function get_formation_score($candidate)
 {
-  $formation_score = $candidate->formations()->first() != null? 20 : 0;
+  $formation_score = $candidate->sessions()->first() != null? 20 : 0;
   return $formation_score;
 }
 
