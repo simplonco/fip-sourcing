@@ -1,33 +1,43 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        <div class="row">
-            <h3 class="text-center">ACCUEIL</h3>
-            <div class="col-md-4">
-                <div class="card text-center text-white bg-danger mb-3">
-                    <div class="card-body">
-                        <a href=""><i class="fa fa-question fa-5x"></i></a>
-                        <h3 class="card-title"><a href="">Questionnaires</a></h3>
-                    </div>
-                </div>
+         <div class="title-top-container">
+            <h3 class="text-center title-top">ACCUEIL</h3>
+         </div>
+          <div class="cardd-container">
+            
+            <div class="cardd">
+               <a href="#">
+                  <div class="card text-center text-white bg-danger mb-3">
+                     <div class="card-body">
+                        <i class="fa fa-question fa-5x"></i>
+                        <h3 class="card-title">Questionnaires</h3>
+                     </div>
+                  </div>
+               </a>
             </div>
-            <div class="col-md-4">
-                <div class="card text-center text-white bg-danger mb-3">
-                    <div class="card-body">
-                        <a href="{{route('recruiterIndex')}}"><i class="fa fa-file-alt fa-5x"></i></a>
-                        <h3 class="card-title"><a href="{{route('recruiterIndex')}}">Formations</a>
+
+            <div class="cardd">
+               <a href="{{route('recruiterIndex')}}">
+                  <div class="card text-center text-white bg-danger mb-3">
+                    <div class="card-body navigation-container">
+                        <i class="fa fa-file-alt fa-5x"></i>
+                        <h3 class="card-title">Formations
                         </h3>
                     </div>
-                </div>
+                  </div>
+               </a>
             </div>
-            <div class="col-md-4">
-                <div class="card text-center text-white bg-danger mb-3">
-                    <div class="card-body">
-                        <a href="{{route('candidateSearch')}}"><i class="fa fa-user fa-5x "></i></a>
-                        <h3 class="card-title"><a href="{{route('candidateSearch')}}">Candidats</a>
-                            </h3>
-                    </div>
-                </div>
+            
+            <div class="cardd">
+               <a href="{{route('candidateSearch')}}">
+                  <div class="card text-center text-white bg-danger mb-3">
+                     <div class="card-body">
+                        <i class="fa fa-user fa-5x "></i>
+                        <h3 class="card-title">Candidats</h3>
+                     </div>
+                  </div>
+               </a>
             </div>
         </div>
     </div>
