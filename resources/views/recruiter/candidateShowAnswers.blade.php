@@ -10,14 +10,28 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-md-3">
-                                <b>{{__('projection.hero')}}  </b>
-                            </div>
-                            <div class="col-md-3">
-                                {{$candidate->hero}}
+                            <div class="dropdown show">
+                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Questions
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#">{{__('projection.hero')}}</a>
+                                    <a class="dropdown-item" href="#">{{__('projection.dev_qualities')}}</a>
+                                    <a class="dropdown-item" href="#">{{__('projection.personal_goal')}}</a>
+                                    <a class="dropdown-item" href="#">{{__('projection.dev_point')}}</a>
+                                    <a class="dropdown-item" href="#">{{__('projection.superpower')}}</a>
+                                </div>
                             </div>
                         </div>
+                        <h5>Rappel des objectifs de la question : </h5>
+                    </div>
+                    <div class="row">
+
+                        @include('partials.recruiter.candidateShowAnswer')
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    @endsection
