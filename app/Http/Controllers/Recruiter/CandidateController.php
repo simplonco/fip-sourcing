@@ -32,7 +32,7 @@ class CandidateController extends Controller
 
     $candidates_pagination = $candidates->orderBy('score', 'desc')->paginate(10);
 
-    return view('recruiter.candidateListNewVersion', ['candidates'=>$candidates_pagination, 'session'=>$session]);
+    return view('recruiter.candidateList', ['candidates'=>$candidates_pagination, 'session'=>$session]);
   }
 
   public function recruiterCandidateSearch(){
@@ -52,7 +52,7 @@ class CandidateController extends Controller
     $candidate = User::findOrFail($candidate_id);
     $formation = Formation::findOrFail($formation_id);
 
-    return view('recruiter.candidateShow', ['candidate' => $candidate, 'formation' => $formation]);
+    return view('recruiter.candidateShowAnswers', ['candidate' => $candidate, 'formation' => $formation]);
   }
 
   /**
