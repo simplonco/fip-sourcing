@@ -1,3 +1,5 @@
+$pink-simplon:#e80041;
+$grey-custom:#747474;
 .cardd {
    margin-left: 10px;
    margin-right: 10px;
@@ -15,7 +17,7 @@
             color: #595959;
          }
          .card-body:hover {
-            background: #e80041;
+            background: $pink-simplon;
             color: white;
          }
       }
@@ -30,7 +32,7 @@
 }
 
 .btn {
-   background-color: #e80041;
+   background-color: $pink-simplon;
 }
 
 .justified-button {
@@ -38,7 +40,7 @@
    justify-content: center;
    margin-top: 20px;
    .btn {
-      background-color: #e80041;
+      background-color: $pink-simplon;
    }
 }
 
@@ -49,7 +51,81 @@
    .title-top {
       color: white;
       border-bottom: 2px white solid;
-      width: 150px;
+      width: auto;
       padding-bottom: 15px;
+   }
+}
+
+.input-centered {
+   display: flex;
+   justify-content: center;
+   .navbar-form {
+      input {
+         width: 50vw;
+      }
+   }
+}
+
+.applicants-list {
+   width: 85%;
+   .search-title {
+      color: white;
+   }
+   .card-cutom-container {
+      display: flex;
+      flex-direction: row;
+      background: white; // margin-bottom: 20px;
+      border-bottom: 2px solid rgb(228, 228, 228);
+      .card-custom-image {
+         min-height: 15vw;
+         max-height: auto;
+         width: 15vw;
+         background: $grey-custom;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         color: hsla(0, 0%, 57%, 1);
+         p {
+            padding-top: 25px;
+            margin-bottom: 0px;
+            text-transform: uppercase;
+            text-align: center;
+            color: white;
+         }
+      }
+      .card-custom-description {
+         padding: 20px;
+         flex-grow: 5;
+         .card-custom-description-date {
+            color: rgb(189, 187, 187);
+         }
+      }
+      .card-custom-view {
+         display: flex;
+         justify-content: flex-end;
+         align-items: flex-end;
+         flex-grow: 1;
+         a {
+            // color: $pink-simplon;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            .fa {}
+         }
+      }
+   }
+}
+
+@media screen and (min-width: 1000px) {
+   .applicants-list {
+      .card-cutom-container {
+         .card-custom-image {
+            min-height: 10vw;
+            width: 10vw;
+            p {}
+         }
+         .card-custom-description {}
+         .card-custom-view {}
+      }
    }
 }
