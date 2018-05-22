@@ -66,9 +66,9 @@ $grey-custom:#747474;
    }
 }
 
-.applicants-list {
+.cards-custom-list {
    width: 85%;
-   .search-title {
+   .page-title {
       color: white;
    }
    .card-cutom-container {
@@ -76,10 +76,20 @@ $grey-custom:#747474;
       flex-direction: row;
       background: white; // margin-bottom: 20px;
       border-bottom: 2px solid rgb(228, 228, 228);
+      a {
+         color: hsla(0, 0%, 57%, 1);
+      }
+      a:hover {
+         .card-custom-image {
+            background: hsla(0, 0%, 57%, 1);
+            color: white;
+         }
+      }
       .card-custom-image {
          min-height: 15vw;
          max-height: auto;
          width: 15vw;
+         min-width: 15vw;
          background: $grey-custom;
          display: flex;
          justify-content: center;
@@ -90,41 +100,56 @@ $grey-custom:#747474;
             padding-top: 25px;
             margin-bottom: 0px;
             text-transform: uppercase;
+            font-weight: bold;
             text-align: center;
             color: white;
          }
       }
       .card-custom-description {
          padding: 20px;
-         flex-grow: 5;
+         flex-grow: 2;
+         flex-direction: row;
+         width: 60%;
          .card-custom-description-date {
             color: rgb(189, 187, 187);
+            display: flex;
+            align-self: flex-end;
          }
       }
       .card-custom-view {
          display: flex;
          justify-content: flex-end;
          align-items: flex-end;
-         flex-grow: 1;
+         flex-grow: 2;
          a {
-            // color: $pink-simplon;
             margin-right: 10px;
             margin-bottom: 10px;
             .fa {}
+         }
+         .card-custom-action-buttons {
+            padding-right: 10px;
+            a {
+               // background: red;
+               margin: 0px;
+            }
          }
       }
    }
 }
 
 @media screen and (min-width: 1000px) {
-   .applicants-list {
+   .cards-custom-list {
       .card-cutom-container {
          .card-custom-image {
             min-height: 10vw;
+            height: auto;
             width: 10vw;
+            min-width: 10vw;
             p {}
          }
-         .card-custom-description {}
+         .card-custom-description {
+            width: 60%;
+         }
          .card-custom-view {}
       }
    }
