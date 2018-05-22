@@ -2,14 +2,15 @@
 
 @section('content')
     <div class="container">
-        <h3 class="text-center">RECHERCHER UN CANDIDAT</h3>
-        <div class="row">
-            <div class="col-md-8">
+       <div class="title-top-container">
+
+          <h3 class="text-center title-top">RECHERCHER UN CANDIDAT</h3>
+         </div>
+            <div class="form-group">
                 <form class="navbar-form" role="search">
                     <input class="form-control" placeholder="exemple Jean DUBOIS" name="" id="srch-term" type="text">
                 </form>
             </div>
-        </div>
         <div class="row">
             <h4>Résultats de la recherche ({{$candidates->count()}})</h4>
             <div class="box">
