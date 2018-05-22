@@ -26,7 +26,61 @@
                                    <li>Algorithmique</li>
                                 </ul>
                             </div>
-                            {{--TO Do : ajouter les badges--}}
+                            {{--TO Do : ajouter les badges
+                            <div class="panel panel-default">
+                      <div class="panel-heading">{{__('user.choose_user.score')}}</div>
+                      <div class="panel-body">
+
+                        <div class="row">
+                          <div class="col-md-3">
+                            <b>{{__('user.choose_user.score')}}  </b>
+                          </div>
+                          <div class="col-md-3">
+                            {{$candidate->score}}
+                          </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                          <div class="col-md-3">
+                            <b>{{__('user.choose_user.html_score')}}  </b>
+                          </div>
+                          <div class="col-md-3">
+                            {{$candidate->html_score}}
+                          </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                          <div class="col-md-3">
+                            <b>{{__('user.choose_user.css_score')}}  </b>
+                          </div>
+                          <div class="col-md-3">
+                            {{$candidate->css_score}}
+                          </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                          <div class="col-md-3">
+                            <b>{{__('user.choose_user.js_score')}}  </b>
+                          </div>
+                          <div class="col-md-3">
+                            {{$candidate->js_score}}
+                          </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                          <div class="col-md-3">
+                            <b>{{__('user.choose_user.php_score')}}  </b>
+                          </div>
+                          <div class="col-md-3">
+                            {{$candidate->php_score}}
+                          </div>
+                        </div>
+                        <br />
+
+                      </div>
+                    </div>
+                            --}}
+
                         </div>
                     </div>
                 </div>
