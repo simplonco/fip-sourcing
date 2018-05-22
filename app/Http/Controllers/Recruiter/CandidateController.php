@@ -52,7 +52,7 @@ class CandidateController extends Controller
     $candidate = User::findOrFail($candidate_id);
     $formation = Formation::findOrFail($formation_id);
 
-    return view('recruiter.candidateShowAnswers', ['candidate' => $candidate, 'formation' => $formation]);
+    return view('recruiter.candidateShow', ['candidate' => $candidate, 'formation' => $formation]);
   }
 
   /**
