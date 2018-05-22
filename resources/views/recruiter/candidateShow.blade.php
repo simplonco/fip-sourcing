@@ -4,40 +4,35 @@
 
 <div class="container">
   <div class="row">
+    <h3 class="text-center">CANDIDAT - {{$candidate->first_name}} {{$candidate->last_name}} </h3>
     <div class="col-md-8 col-md-offset-2">
+            @include('partials.recruiter.candidateSummary')
 
-
-      <div class="panel panel-info">
-        <div class="panel-heading">{{__('recruiter_panel.show')}}</div>
+      <div class="panel panel-default">
         <div class="panel-body">
-
           <div class="row">
-            <div class="col-md-3">
-              <b>{{__('user.choose_user.first_name')}}  </b>
+            <div class="col-md-4">
+              <ul class="list-unstyled">
+                <li>Nationalité: {{$candidate->nationality}}</li>
+                <li>Date de naissance :  {{$candidate->birth_date}}</li>
+                <li>Genre: {{$candidate->gender}} </li>
+                <li>Adresse: {{$candidate->address}} </li>
+                <li>Ville : {{$candidate->city}}</li>
+              </ul>
             </div>
-            <div class="col-md-3">
-              {{$candidate->first_name}}
+            <div class="col-md-4">
+              <ul class="list-unstyled">
+                <li>N° de déclarant : {{$candidate->number_pole_emploi}}</li>
+                <li>Pôle emploi : {{$candidate->pole_emploi}}</li>
+                <li>Dernier contrat de travail: {{$candidate->cdd}}</li>
+                <li>A connu Simplon par: {{$candidate->heard_of}}</li>
+              </ul>
             </div>
           </div>
+        </div>
+      </div>
+      {{--TO Do ajouter boutons précédent et suivant--}}
 
-          <div class="row">
-            <div class="col-md-3">
-              <b>{{__('user.choose_user.last_name')}}  </b>
-            </div>
-            <div class="col-md-3">
-              {{$candidate->last_name}}
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-3">
-              <b>{{__('user.choose_user.email')}}  </b>
-            </div>
-            <div class="col-md-3">
-              {{$candidate->email}}
-            </div>
-          </div>
-          <br />
 
                     <div class="panel panel-default">
                       <div class="panel-heading">{{__('user.choose_user.score')}}</div>
@@ -137,141 +132,7 @@
             </div>
           </div>
 
-          <div class="panel panel-default">
-            <div class="panel-heading">{{__('candidate_panel.administrative')}}</div>
-            <div class="panel-body">
 
-              <div class="row">
-                <div class="col-md-3">
-                  <b>{{__('administrative.nationality')}}  </b>
-                </div>
-                <div class="col-md-3">
-                  {{$candidate->nationality}}
-                </div>
-              </div>
-              <br />
-              <div class="row">
-                <div class="col-md-3">
-                  <b>{{__('administrative.birth_date')}}  </b>
-                </div>
-                <div class="col-md-3">
-                  {{$candidate->birth_date}}
-                </div>
-              </div>
-              <br />
-
-              <div class="row">
-                <div class="col-md-3">
-                  <b>{{__('administrative.gender')}}  </b>
-                </div>
-                <div class="col-md-3">
-                  {{$candidate->gender}}
-                </div>
-              </div>
-              <br />
-
-              <div class="row">
-                <div class="col-md-3">
-                  <b>{{__('administrative.phone')}}  </b>
-                </div>
-                <div class="col-md-3">
-                  {{$candidate->phone}}
-                </div>
-              </div>
-              <br />
-
-              <div class="row">
-                <div class="col-md-3">
-                  <b>{{__('administrative.postal_code')}}  </b>
-                </div>
-                <div class="col-md-3">
-                  {{$candidate->postal_code}}
-                </div>
-              </div>
-              <br />
-
-              <div class="row">
-                <div class="col-md-3">
-                  <b>{{__('administrative.city')}}  </b>
-                </div>
-                <div class="col-md-3">
-                  {{$candidate->city}}
-                </div>
-              </div>
-              <br />
-
-              <div class="row">
-                <div class="col-md-3">
-                  <b>{{__('administrative.address')}}  </b>
-                </div>
-                <div class="col-md-3">
-                  {{$candidate->address}}
-                </div>
-              </div>
-              <br />
-
-              <div class="row">
-                <div class="col-md-3">
-                  <b>{{__('administrative.status')}}  </b>
-                </div>
-                <div class="col-md-3">
-                  {{$candidate->status}}
-                </div>
-              </div>
-              <br />
-
-              <div class="row">
-                <div class="col-md-3">
-                  <b>{{__('administrative.number_pole_emploi')}}  </b>
-                </div>
-                <div class="col-md-3">
-                  {{$candidate->number_pole_emploi}}
-                </div>
-              </div>
-              <br />
-
-              <div class="row">
-                <div class="col-md-3">
-                  <b>{{__('administrative.pole_emploi')}}  </b>
-                </div>
-                <div class="col-md-3">
-                  {{$candidate->pole_emploi}}
-                </div>
-              </div>
-              <br />
-
-              <div class="row">
-                <div class="col-md-3">
-                  <b>{{__('administrative.number_social_security')}}  </b>
-                </div>
-                <div class="col-md-3">
-                  {{$candidate->number_social_security}}
-                </div>
-              </div>
-              <br />
-
-              <div class="row">
-                <div class="col-md-3">
-                  <b>{{__('administrative.obtained_diploma')}}  </b>
-                </div>
-                <div class="col-md-3">
-                  {{$candidate->obtained_diploma}}
-                </div>
-              </div>
-              <br />
-
-              <div class="row">
-                <div class="col-md-3">
-                  <b>{{__('administrative.cdd')}}  </b>
-                </div>
-                <div class="col-md-3">
-                  {{$candidate->cdd}}
-                </div>
-              </div>
-              <br />
-
-            </div>
-          </div>
 
 
           <div class="panel panel-default">
