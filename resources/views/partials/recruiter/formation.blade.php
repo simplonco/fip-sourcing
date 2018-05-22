@@ -1,4 +1,4 @@
-<div class="card-cutom-container">
+<div class="card-custom-container">
    @if($recruiterFormations == "new")
       <a href="">
    @endif   
@@ -70,19 +70,19 @@
          <div class="card-custom-action-buttons">
             {{-- TODO: hover on buttons --}}
             <a href="" class="fa-stack">
-               <i class="fa fa-circle fa-stack-2x" style="color: hsla(0, 0%, 57%, 1)"></i>
+               <i class="fa fa-circle fa-stack-2x" id="plane" style="color: hsla(0, 0%, 57%, 1)"></i>
                <i class="fa fa-paper-plane fa-stack-1x" style="color: hsla(0, 0%, 90%, 1);"aria-hidden="true"></i>
             </a>
             <a href="" class="fa-stack">
-               <i class="fa fa-circle fa-stack-2x" style="color: hsla(0, 0%, 57%, 1)"></i>
+               <i class="fa fa-circle fa-stack-2x" id="pencil" style="color: hsla(0, 0%, 57%, 1)"></i>
                <i class="fa fa-pencil-alt fa-stack-1x" style="color: hsla(0, 0%, 90%, 1);"aria-hidden="true"></i>
             </a>
             <a href="" class="fa-stack">
-               <i class="fa fa-circle fa-stack-2x" style="color: hsla(0, 0%, 57%, 1)"></i>
+               <i class="fa fa-circle fa-stack-2x" id="trash" style="color: hsla(0, 0%, 57%, 1)"></i>
                <i class="fa fa-trash-alt fa-stack-1x" style="color: hsla(0, 0%, 90%, 1);"aria-hidden="true"></i>
             </a>
             <a href="" class="fa-stack">
-               <i class="fa fa-circle fa-stack-2x" style="color: hsla(0, 0%, 57%, 1)"></i>
+               <i class="fa fa-circle fa-stack-2x" id="star" style="color: hsla(0, 0%, 57%, 1)"></i>
                <i class="fa fa-star fa-stack-1x" style="color: hsla(0, 0%, 90%, 1);"aria-hidden="true"></i>
             </a>
          </div>
