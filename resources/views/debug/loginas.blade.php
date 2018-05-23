@@ -4,7 +4,7 @@
     </button>
     <aside id="users">
         @foreach(\User::all() as $u)
-            <li><a href="/loginas/{{$u->id}}">{{$u->last_name}} {{$u->first_name}} ({{$u->email}}) {{$u->roles->implode('name', ', ')}}</a></li>
+            <li><a href="/loginas/{{$u->id}}">{{$u->id}}| {{$u->last_name}} {{$u->first_name}} ({{$u->email}}) {{$u->roles->implode('name', ', ')}}</a></li>
         @endforeach
     </aside>
 </div>

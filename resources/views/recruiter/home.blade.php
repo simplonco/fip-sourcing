@@ -18,7 +18,7 @@
             </div>
 
             <div class="cardd">
-               <a href="{{route('recruiterIndex')}}">
+               <a href="{{route('recruiterFormations')}}">
                   <div class="card text-center text-white bg-danger mb-3">
                     <div class="card-body navigation-container">
                         <i class="fa fa-file-alt fa-5x"></i>

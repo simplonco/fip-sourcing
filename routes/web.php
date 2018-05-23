@@ -60,6 +60,7 @@ Route::group(['middleware'=>['auth', 'candidate']], function () {
 
   Route::get('/candidate/refreshSololearn', 'Candidate\CandidateController@refreshSololearn')->name('refreshSololearn');
   Route::put('/candidate/answer/update', 'Candidate\CandidateController@updateAnswer');
+  Route::put('/candidate/session', 'Candidate\CandidateController@updateSession');
 });
 
 Route::group(['middleware'=>'admin'], function () {
@@ -101,8 +102,8 @@ Route::group(['middleware' => 'recruiter'], function () {
     });
     Route::get('/recruiter','Recruiter\FormationController@recruiterHome' )->name('recruiterHome');
     Route::get('/recruiter/formations', 'Recruiter\FormationController@recruiterIndex')->name('recruiterIndex');
-    //Route::get('/recruiter/formations', 'Recruiter\FormationController@recruiterFormations')->name('recruiterFormations');
-    Route::get('/recruiter/formation/create', 'Recruiter\FormationController@recruiterFormationCreate')->name('recruiterFormationCreate');
+    Route::get('/recruiter/formations/show', 'Recruiter\FormationController@recruiterFormations')->name('recruiterFormations');
+        Route::get('/recruiter/formation/create', 'Recruiter\FormationController@recruiterFormationCreate')->name('recruiterFormationCreate');
     Route::post('/recruiter/formation/save', 'Recruiter\FormationController@recruiterFormationSave')->name('recruiterFormationSave');
 
     Route::get('/recruiter/formation/show/{id}', 'Recruiter\FormationController@recruiterFormationShow')->name('recruiterFormationShow');

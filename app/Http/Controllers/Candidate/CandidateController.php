@@ -511,8 +511,14 @@ class CandidateController extends Controller
       }
       $answer->value = $request->value;
       $answer->save();
-      return response()->json(["msg"=>'ok']);
+      return response()->json(["msg"=>'wesh']);
 
+  }
+
+  public function updateSession (Request $request) {
+      $sessionID = $request->id;
+      auth()->user()->sessions()->sync([$sessionID]);
+      return response()->json(["msg"=>"wesh"]);
   }
 
 }

@@ -14,7 +14,7 @@ export default class Questionnaire extends Component {
         console.log(this.props.data)
         const q = this.props.data
         let questions = q.questions.map((question)=>{
-            return <Question q={question}/>
+            return <Question key={question.id} q={question}/>
         })
 
         return (

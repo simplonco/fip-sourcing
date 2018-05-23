@@ -24,6 +24,7 @@ export function Get () {
                         name,
                         description,
                         questionnaires {
+                            id
                             title,
                             questions {
                                 id,
@@ -35,18 +36,15 @@ export function Get () {
                                 weight,
                                 answer {
                                     value
-                                },
-                            },
-                        },
-                    },
-                },
-                
-
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     `).then(result => {
         console.log(result)
         store.setQuestionnaires(result.candidat.session.formation.questionnaires)
-        //store.setUserFields(fields)
     })
 }
