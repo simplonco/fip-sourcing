@@ -22,7 +22,6 @@
                                     <a href="{{ route('recruiterFormationCandidatesList', [$session->formation->id, 'last_name', 'desc']) }}"><i class="fa fa-sort-desc" aria-hidden="true"></i></a>
                                 </th>
                                 <th>{{__('user.choose_user.first_name')}}</th>
-                                <th>{{__('game.badges')}}</th>
                                 <th>{{__('user.choose_user.score')}}</th>
                                 <th>Note 1</th>
                                 <th>Note 2</th>
@@ -41,11 +40,21 @@
                                     <td><a href="{{ route('candidateFormationShow', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
                                     <td>{{$candidate->first_name}}</td>
                                     <td>{{get_score($candidate)}}</td>
-                                    @foreach($candidate->candidates_notes as $note)
-                                        <td>{{$note}}
-                                    @endforeach
+                                    <td>
+                                        <form action="">
+                                            <input type="number">
+                                        </form>
                                     </td>
-                                    <td><input type="text" placeholder="bla bla bla"></td>
+                                    <td>
+                                        <form action="">
+                                            <input type="number">
+                                        </form>
+                                    </td>
+                                    <td>{{-- TO Do : moyenne des notes--}}2.5</td>
+                                    <td>
+                                        <form action="">
+                                            <input type="text" placeholder="bla bla bla"></td>
+                                        </form>
                                 </tr>
                             @endforeach
                             {{ $candidates->links() }}
