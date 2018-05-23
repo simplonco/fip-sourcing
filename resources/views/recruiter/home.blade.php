@@ -1,10 +1,11 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-         <div class="title-top-container">
-            <h3 class="text-center title-top">ACCUEIL</h3>
-         </div>
-          <div class="cardd-container">
+      <div class="title-top-container">
+         <h3 class="text-center title-top">ACCUEIL</h3>
+      </div>
+      <div class="cardd-mega-container">
+         <div class="cardd-container">
             
             <div class="cardd">
                <a href="#">
@@ -39,6 +40,8 @@
                   </div>
                </a>
             </div>
-        </div>
-    </div>
+         </div>
+      </div>
+        
+   </div>
 @endsection
