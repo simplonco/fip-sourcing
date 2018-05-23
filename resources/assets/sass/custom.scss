@@ -210,6 +210,58 @@ $grey-dark-custom:#2e2d2d;
    }
 }
 
+.rotate180 {
+   transform: rotate(-180deg);
+}
+
+.previous-next-buttons-container {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   justify-content: space-between;
+   flex-flow: wrap;
+   .btn {
+      margin: 5px;
+   }
+   .previous-buttons,
+   .next-buttons {
+      display: flex;
+      margin: 5px;
+   }
+}
+
+.candidate-administrative-container {
+   div {
+      div {
+         width: 100%;
+         margin: 10px; // text-align: center;
+         display: inline-flex;
+         flex-wrap: wrap;
+         dt {
+            margin-right: 10px;
+         }
+      }
+   }
+}
+
+.rounded-button {
+   .btn {
+      background-color: #e80041;
+      color: white;
+      border-radius: 50px;
+      border: 2px solid #e80041;
+      width: 130px;
+      padding: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      justify-content: space-around;
+   }
+   .round {
+      width: 2.8em;
+   }
+}
+
 .focus-candidate-id-card {
    .col-md-4 {
       text-align: center;

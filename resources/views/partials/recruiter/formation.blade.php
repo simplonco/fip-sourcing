@@ -82,7 +82,7 @@
          @include('partials.recruiter.candidateAdministrativeInfo')
       @endif
    </div>
-   @if($recruiterFormations != "focusCandidate")
+   @if($recruiterFormations != "focusCandidate" && $recruiterFormations != "focusCandidateAdmin")
       <div class="card-custom-view">
          @if($recruiterFormations == "applicants") 
             <a href="" class="fa-stack">
