@@ -97,15 +97,23 @@ Route::group(['middleware'=>'admin'], function () {
 );
 
 Route::group(['middleware' => 'recruiter'], function () {
-  Route::get('/recruiter', 'Recruiter\FormationController@recruiterIndex')->name('recruiterIndex');
-  Route::get('/recruiter/formation/show/{id}', 'Recruiter\FormationController@recruiterFormationShow')->name('recruiterFormationShow');
-  Route::get('/recruiter/formation/edit/{id}', 'Recruiter\FormationController@recruiterFormationEdit')->name('recruiterFormationEdit');
-  Route::post('/recruiter/formation/update/{id}', 'Recruiter\FormationController@recruiterFormationUpdate')->name('recruiterFormationUpdate');
-  Route::get('/recruiter/formation/candidate/list/{id}/{order?}/{ascending?}', 'Recruiter\CandidateController@recruiterFormationCandidatesList')->name('recruiterFormationCandidatesList');
-  Route::get('/recruiter/formation/candidate/show/{candidate_id}/{formation_id}', 'Recruiter\CandidateController@candidateFormationShow')->name('candidateFormationShow');
-  Route::get('/recruiter/formation/candidate/evaluate/{candidate_id}/{formation_id}', 'Recruiter\CandidateController@candidateFormationEvaluate')->name('candidateFormationEvaluate');
-  Route::post('/recruiter/formation/candidate/sendEvaluation/{id}', 'Recruiter\CandidateController@candidateFormationSendEvaluation')->name('candidateFormationSendEvaluation');
-  Route::get('/recruiter/formation/refreshFormationSololearn/{formation_id}', 'Recruiter\CandidateController@refreshFormationSololearn')->name('refreshFormationSololearn');
+   Route::get('/recruiter','Recruiter\FormationController@recruiterHome' )->name('recruiterHome');
+   Route::get('/recruiter/formations', 'Recruiter\FormationController@recruiterIndex')->name('recruiterIndex');
+   Route::get('/recruiter/formations/show', 'Recruiter\FormationController@recruiterFormations')->name('recruiterFormations');
+   Route::get('/recruiter/formation/create', 'Recruiter\FormationController@recruiterFormationCreate')->name('recruiterFormationCreate');
+   Route::post('/recruiter/formation/save', 'Recruiter\FormationController@recruiterFormationSave')->name('recruiterFormationSave');
+
+   // Route::post('./recruiter/formations/show', 'Recruiter\FormationController@recruiterFormations')->name('recruiterFormations');
+
+   Route::get('/recruiter/formation/show/{id}', 'Recruiter\FormationController@recruiterFormationShow')->name('recruiterFormationShow');
+   Route::get('/recruiter/formation/edit/{id}', 'Recruiter\FormationController@recruiterFormationEdit')->name('recruiterFormationEdit');
+   Route::post('/recruiter/formation/update/{id}', 'Recruiter\FormationController@recruiterFormationUpdate')->name('recruiterFormationUpdate');
+   Route::get('/recruiter/formation/candidate/search', 'Recruiter\CandidateController@recruiterCandidateSearch')->name('candidateSearch');
+   Route::get('/recruiter/formation/candidate/list/{id}/{order?}/{ascending?}', 'Recruiter\CandidateController@recruiterFormationCandidatesList')->name('recruiterFormationCandidatesList');
+   Route::get('/recruiter/formation/candidate/show/{candidate_id}/{formation_id}', 'Recruiter\CandidateController@candidateFormationShow')->name('candidateFormationShow');
+   Route::get('/recruiter/formation/candidate/evaluate/{candidate_id}/{formation_id}', 'Recruiter\CandidateController@candidateFormationEvaluate')->name('candidateFormationEvaluate');
+   Route::post('/recruiter/formation/candidate/sendEvaluation/{id}', 'Recruiter\CandidateController@candidateFormationSendEvaluation')->name('candidateFormationSendEvaluation');
+   Route::get('/recruiter/formation/refreshFormationSololearn/{formation_id}', 'Recruiter\CandidateController@refreshFormationSololearn')->name('refreshFormationSololearn');
 });
 
 

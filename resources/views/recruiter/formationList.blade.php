@@ -20,21 +20,21 @@
                 <th>{{__('formation.candidates')}}</th>
               </tr>
             </thead>
-            @foreach ($former->formations as $formation)
+            @foreach ($former->sessions as $session)
             <tr>
               <td style="text-align:center;">
-                <a href="{{ route('recruiterFormationShow', $formation->id) }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-                <a href="{{ route('recruiterFormationEdit', $formation->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                <td>{{$formation->name}}</td>
-                <td>{{$formation->description}}</td>
-                <td>{{$formation->city}}</td>
-                <td>{{$formation->year}}</td>
-                <td style="text-align:center;">
-                  <a href="{{ route('recruiterFormationCandidatesList', $formation->id) }}">{{__('formation.candidates_list')}}</a>
-                </td>
-              </tr>
+                <a href="{{ route('recruiterFormationShow', $session->formation->id) }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                <a href="{{ route('recruiterFormationEdit', $session->formation->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+              <td>{{$session->formation->name}}</td>
+              <td>{{$session->formation->description}}</td>
+              <td>{{$session->formation->city}}</td>
+              <td>{{$session->year}}</td>
+              <td style="text-align:center;">
+               <a href="{{ route('recruiterFormationCandidatesList', $session->formation->id) }}">{{__('formation.candidates_list')}}</a>
+              </td>
+            </tr>
               @endforeach
-            </table>
+          </table>
 
           </div>
         </div>

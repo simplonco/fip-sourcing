@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Recruiter;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\Formation;
+use App\Models\Formation;
 use Illuminate\Support\Facades\Session;
 
 class FormationController extends Controller
@@ -23,6 +23,21 @@ class FormationController extends Controller
     return view('recruiter.formationList', ['former'=>$former]);
   }
 
+  public function recruiterHome(){
+      return view('recruiter.home');
+  }
+
+  public function recruiterFormations(){
+      $trainer = Auth::user();
+      return view('recruiter.formations', compact('trainer'));
+  }
+
+  public function recruiterFormationCreate(){
+      return view('recruiter.formationCreate');
+  }
+  public function recruiterFormationSave(Request $request){
+
+  }
   /**
   * Display the specified resource.
   *

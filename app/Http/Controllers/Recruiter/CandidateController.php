@@ -5,11 +5,12 @@ namespace App\Http\Controllers\Recruiter;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\User;
-use App\Role;
-use App\Formation;
-use App\Note;
-use Illuminate\Support\Facades\Session;
+use App\Models\User;
+use App\Models\Role;
+use App\Models\Formation;
+use App\Models\Session;
+use App\Models\Note;
+//use Illuminate\Support\Facades\Session;
 
 class CandidateController extends Controller
 {
@@ -18,19 +19,26 @@ class CandidateController extends Controller
     $this->middleware('auth');
   }
 
-  public function recruiterFormationCandidatesList($formation_id, $order=null, $ascending='asc')
+  public function recruiterFormationCandidatesList($session_id, $order=null, $ascending='asc')
   {
-    $formation = Formation::findOrFail($formation_id);
+    $session = Session::findOrFail($session_id);
 
     $learnerRoleId = 2;
-    $candidates = getApplyingFormationCandidates($formation_id);
+    $candidates = getApplyingFormationCandidates($session_id);
+
     if($order != null){
       $candidates = $ascending === 'asc'? $candidates->orderBy($order, 'asc') : $candidates->orderBy($order, 'desc');
     }
 
     $candidates_pagination = $candidates->orderBy('score', 'desc')->paginate(10);
 
-    return view('recruiter.candidateList', ['candidates'=>$candidates_pagination, 'formation'=>$formation]);
+    return view('recruiter.candidateList', ['candidates'=>$candidates_pagination, 'session'=>$session]);
+  }
+
+  public function recruiterCandidateSearch(){
+
+      $candidates = User::take(5)->paginate(12);
+      return view('recruiter.searchCandidate', compact('candidates'));
   }
 
   /**

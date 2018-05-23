@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Session extends Model
 {
 
-
+    protected $dates = ['begin_session', 'end_session'];
 
     public function formation() {
         return $this->belongsTo(Formation::class);

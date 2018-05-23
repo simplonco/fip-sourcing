@@ -84,12 +84,10 @@
   @yield('content')
 </div>
 <div class="container">
-  <div class="row">
-    <div class="col-md-2 col-md-offset-5">
+    <div class="justified-button">
       <a href="{{ url('/home') }}" class="btn btn-primary">{{__('general.home')}}</a>
       </a>
     </div>
-  </div>
 </div>
 
 
