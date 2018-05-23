@@ -1,5 +1,6 @@
-$pink-simplon:#e80041;
+$pink-simplon:rgb(232, 0, 65);
 $grey-custom:#747474;
+$light-grey-custom: hsla(0, 0%, 57%, 1);
 $grey-dark-custom:#2e2d2d;
 ;
 .overlay {
@@ -17,7 +18,6 @@ $grey-dark-custom:#2e2d2d;
       flex-direction: column;
       .container {
          height: 100vh;
-         background: purple;
       }
    }
 }
@@ -89,9 +89,22 @@ $grey-dark-custom:#2e2d2d;
       color: white;
       border-radius: 50px;
       border: 2px solid $pink-simplon;
+      transform: translateY(0px);
       padding: 10px;
       padding-left: 30px;
       padding-right: 30px;
+      box-shadow: 0 5px 20px 0 rgba(148, 0, 42, 0.7);
+      transition: transform .1s ease-in;
+   }
+   .btn:hover {
+      transition: transform .1s ease-out;
+      transform: translateY(-10px);
+      box-shadow: 0 20px 20px -10px rgba(148, 0, 42, 0.4);
+   }
+   .btn:active {
+      background: white;
+      color: $pink-simplon;
+      border: 2px solid $pink-simplon;
    }
 }
 
@@ -128,11 +141,11 @@ $grey-dark-custom:#2e2d2d;
       background: white;
       border-bottom: 2px solid rgb(228, 228, 228);
       a {
-         color: hsla(0, 0%, 57%, 1);
+         color: $light-grey-custom;
       }
       a:hover {
          .card-custom-image {
-            background: hsla(0, 0%, 57%, 1);
+            background: $light-grey-custom;
             color: white;
          }
       }
@@ -146,7 +159,7 @@ $grey-dark-custom:#2e2d2d;
          justify-content: center;
          align-items: center;
          flex-direction: column;
-         color: hsla(0, 0%, 57%, 1);
+         color: $light-grey-custom;
          p {
             padding-top: 25px;
             margin-bottom: 0px;
@@ -167,6 +180,15 @@ $grey-dark-custom:#2e2d2d;
             align-self: flex-end;
          }
       }
+      .focusCandidate {
+         display: flex;
+         align-items: center;
+         .focus-candidate-id-card {
+            span {
+               color: rgb(189, 187, 187);
+            }
+         }
+      }
       .card-custom-view {
          display: flex;
          justify-content: flex-end;
@@ -177,12 +199,72 @@ $grey-dark-custom:#2e2d2d;
             margin-bottom: 10px;
          }
          .card-custom-action-buttons {
+            display: flex;
+            flex-direction: column;
             padding-right: 10px;
             a {
                margin: 0px;
             }
          }
       }
+   }
+}
+
+.rotate180 {
+   transform: rotate(-180deg);
+}
+
+.previous-next-buttons-container {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   justify-content: space-between;
+   flex-flow: wrap;
+   .btn {
+      margin: 5px;
+   }
+   .previous-buttons,
+   .next-buttons {
+      display: flex;
+      margin: 5px;
+   }
+}
+
+.candidate-administrative-container {
+   div {
+      div {
+         width: 100%;
+         margin: 10px; // text-align: center;
+         display: inline-flex;
+         flex-wrap: wrap;
+         dt {
+            margin-right: 10px;
+         }
+      }
+   }
+}
+
+.rounded-button {
+   .btn {
+      background-color: #e80041;
+      color: white;
+      border-radius: 50px;
+      border: 2px solid #e80041;
+      width: 130px;
+      padding: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      justify-content: space-around;
+   }
+   .round {
+      width: 2.8em;
+   }
+}
+
+.focus-candidate-id-card {
+   .col-md-4 {
+      text-align: center;
    }
 }
 

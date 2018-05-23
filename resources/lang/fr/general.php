@@ -20,6 +20,8 @@ return [
     'logout' => 'Se déconnecter',
     '404' => 'Page non trouvée',
     'dashboard' => 'Accueil',
-    'logged_in' => 'Vous êtes connecté!'
+    'logged_in' => 'Vous êtes connecté!',
+    'next' => 'Suivant',
+    'previous' => 'Précédent'
 
 ];

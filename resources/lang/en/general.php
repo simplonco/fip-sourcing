@@ -20,6 +20,8 @@ return [
     'logout' => 'Logout',
     '404' => 'Page not found',
     'dashboard' => 'Home',
-    'logged_in' => 'You are logged in!'
+    'logged_in' => 'You are logged in!',
+    'next' => 'Next',
+    'previous' => 'Previous'
 
 ];
