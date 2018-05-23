@@ -21,13 +21,12 @@ class HomeController extends Controller
   }
 
   public function home(){
-     if(auth()->user()->roles[0]->name == "former") {
-        return redirect()->route('recruiterHome');
-     }
-
+      // if(auth()->user()->roles[0]->name == "former") {
+      //    return redirect()->route('recruiterHome');
+      // } else
 
       if(auth()->check()) {
-          return redirect()->route('dashboard');
+         return redirect()->route('dashboard');
       }
       return redirect()->route('login');
   }
