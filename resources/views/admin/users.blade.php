@@ -18,24 +18,23 @@
                             <thead>
                             <tr>
                                 <th>{{--action--}}</th>
-                                <th>{{__('user.choose_user.last_name')}}
-                                    <a href="{{ route('recruiterFormationCandidatesList', [$session->formation->id, 'last_name', 'asc']) }}"><i class="fa fa-sort-asc" aria-hidden="true"></i></a>
-                                    <a href="{{ route('recruiterFormationCandidatesList', [$session->formation->id, 'last_name', 'desc']) }}"><i class="fa fa-sort-desc" aria-hidden="true"></i></a>
-                                </th>
+                                <th>{{--action--}}</th>
+                                <th>{{__('user.choose_user.last_name')}}</th>
                                 <th>{{__('user.choose_user.first_name')}}</th>
                                 <th>Rôle</th>
                                 <th>Activé</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach ($users as $user)
+                            @foreach (User::all() as $user)
                                 <tr>
                                     <td>
                                         <a href=""><i class="fa fa-pencil" aria-hidden="true"></i></a>
                                     </td>
                                     <td><a href=""><i class="fa fa-trash" aria-hidden="true"></i></a></td>
-                                    <td>{{$candidate->first_name}}</td>
-                                    
+                                    <td>{{$user->last_name}}</td>
+                                    <td>{{$user->first_name}}</td>
+                                    <td>{{$user->roles[0]->name}}</td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -44,10 +43,10 @@
                 </div>
                 <div class="row">
                     <div class="col-md-2 ">
-                        <a href="{{ route('recruiterIndex') }}" class="btn btn-primary">RETOUR</a>
+                        <a href="#" class="btn btn-primary">RETOUR</a>
                     </div>
                     <div class="col-md-2">
-                        <a href="#{{--lien vers page de tri --}}" class="btn btn-primary">NOUVEL UTILISATEUR</a>
+                        <a href="#" class="btn btn-primary">NOUVEL UTILISATEUR</a>
                     </div>
                 </div>
             </div>

@@ -28,6 +28,21 @@ class SessionType extends BaseType
                 "type" =>Type::int(),
                 "description" => "",
             ],
+
+            "start_date"=> [
+                "type" =>Type::string(),
+                "description" => "",
+                "resolve" => function($session) {
+                    return $session->begin_session;
+                }
+            ],
+            "end_date"=> [
+                "type" =>Type::string(),
+                "description" => "",
+                "resolve" => function($session) {
+                    return $session->end_session;
+                }
+            ],
             "begin_session"=> [
                 "type" =>Type::string(),
                 "description" => "",
@@ -55,6 +70,18 @@ class SessionType extends BaseType
             "formation" => [
                 "type"=>GraphQL::type('Formation'),
                 "description" => "Formation associée"
+            ],
+            "selected" => [
+                "type" => Type::boolean(),
+                "description" => "is currently selected session?",
+                "resolve"=> function($session, $args, $context) {
+
+                    $active = $context->currentSession();
+                    if(!empty($active->id) && $active->id === $session->id) {
+                        return true;
+                    }
+                    return false;
+                }
             ]
         ];
     }

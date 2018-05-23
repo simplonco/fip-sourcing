@@ -24,7 +24,7 @@ class CreateQuestionsTable extends Migration
             //TODO: renommer en hint?
             $table->longText('goal')->nullable();
             $table->integer('weight')->nullable();
-            $table->integer('order')->nullable();
+            //$table->integer('order')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -6,13 +6,8 @@ export default class Question extends Component {
         this.update = debounce(this.update.bind(this),1500)
     }
 
-    componentWillMount() {
-
-    }
-
     update() {
         const data = {q:this.props.q.id, value:this.input.value};
-        console.log(data)
         axios.put('/candidate/answer/update', data)
             .then((res)=>{
                 console.log(res)
@@ -29,9 +24,9 @@ export default class Question extends Component {
                 this.input = ref
             }} name={q.id} defaultValue={q.answer && q.answer.value} onChange={this.update} className={classes.input}/>
         } else if (q.type === 'select') {
-            const arr = JSON.parse(q.values);
-            const options = arr.map((opt) => {
-                return <option>{opt}</option>
+            const arr = ['Aucune',...JSON.parse(q.values)];
+            const options = arr.map((opt, pos) => {
+                return <option key={pos} value={opt}>{opt}</option>
             })
             input = <select ref={(ref) => {
                 this.input = ref
