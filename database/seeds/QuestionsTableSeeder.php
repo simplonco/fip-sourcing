@@ -11,21 +11,6 @@ class QuestionsTableSeeder extends Seeder
   */
   public function run()
   {
-//TODO: supprimer category_id? pq pas une relation question appartient a questionnaire, questionnaire appartient a categorie ?
-      /*
-       DB::table('questions')->insert([
-          'id' => 1,
-          'questionnaire_id' => 1,
-          'category_id' => 3,
-          'title' => 'Quel est ton super-héros préféré?',
-          'type' => 'text',
-          //TODO: default value c pour genre les selects?
-          'default_value' => '["JE SUIS BATMAN"]',
-          'goal' => 'Savoir quel est ton super-héros préféré',
-        //TODO: weight c pour l'ordre?
-          'weight' => 1000
-      ]);
-//*/
 
       DB::table('questions')->insert([
           ['category_id' => null, 'questionnaire_id' => 1, 'type'=>'text', 'default_value'=>null, 'title' => 'birth_date',],

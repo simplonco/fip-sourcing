@@ -3,6 +3,7 @@
 namespace App\GraphQL\Query;
 
 use App\Models\Formation;
+use Carbon\Carbon;
 use Folklore\GraphQL\Support\Query;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
@@ -28,26 +29,22 @@ class FormationsQuery extends Query
             'description' => ['name'=>'description', 'type'=> Type::string()],
             'city' => ['name'=>'city', 'type'=> Type::string()],
             'year' => ['name'=>'year', 'type'=> Type::int()],
-            'begin_session' => ['name'=>'begin_session', 'type'=> Type::string()],
-            'end_session' => ['name'=>'end_session', 'type'=> Type::string()],
+            'start_date' => ['name'=>'start_date', 'type'=> Type::string()],
         ];
     }
 
     public function resolve($root, $args, $context, ResolveInfo $info)
     {
-        if (empty($args)) {
-            return Formation::all();
-        }
-        $formation = new Formation;
-
-        foreach($args as $key=>$value) {
-            if ($key === 'begin_session') {
-                $formation = $formation->where($key, '>=', $value);
-            } else {
-                $formation = $formation->where($key, $value);
-            }
-        }
-
-        return $formation->get();
+        $formations = Formation::all();
+        $formations = $formations->map(function($formation) {
+            $formation->sessions = $formation->sessions()
+                ->where('application_start_date', '<=', Carbon::now())
+                ->where('application_end_date', '>=', Carbon::now())
+                ->get();
+            return $formation;
+        })->filter(function($formation) {
+            return $formation->sessions->count() > 0;
+        });
+        return $formations;
     }
 }

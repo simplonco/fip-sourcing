@@ -1,38 +1,27 @@
 import React, {Component} from 'react'
-import Panel from './Panel'
 import Formations from './Formations'
-import {inject, observer} from 'mobx-react'
-import {Get} from '../actions/forms'
-import Questionnaire from "./Questionnaire";
+import Questionnaires from "./Questionnaires";
+import {Get} from "../actions/formations";
+import {inject, observer} from "mobx-react/index";
 
-@inject('formsStore')
+const style = {
+    show: {},
+    hide: {display:'none'}
+};
+
+@inject('formationsStore')
 @observer
 export default class Layout extends Component {
-    constructor() {
-        super()
-
-    }
-
-    componentDidMount() {
+    componentWillMount() {
         Get()
     }
-
     render() {
-        const store = this.props.formsStore;
-        let forms;
-        if(store.ready) {
-
-            forms = this.props.formsStore.questionnaires.map((q)=>{
-                return <Questionnaire data={q} />
-            })
-        }
+        const ready = this.props.formationsStore.ready
+        const selected = this.props.formationsStore.finished
 
         return (
             <div>
-                <Panel />
-                {store.ready}
-                <Formations />
-                {forms}
+                {ready && (!selected && <Formations /> ||<Questionnaires/>) || 'Chargement...'}
             </div>
         )
     }

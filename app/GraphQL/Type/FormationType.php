@@ -38,6 +38,17 @@ class FormationType extends BaseType
             'sessions' => [
                 'type' => Type::listOf(GraphQL::type('Session')),
                 'description' => '',
+            ],
+            'selected' => [
+                'type' => Type::boolean(),
+                'description' => '',
+                'resolve' => function($formation, $args, $context) {
+                    $active = $context->currentSession()->formation;
+                    if(!empty($active->id) && $active->id === $formation->id) {
+                        return true;
+                    }
+                    return false;
+                }
             ]
         ];
     }

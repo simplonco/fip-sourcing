@@ -60,6 +60,7 @@ Route::group(['middleware'=>['auth', 'candidate']], function () {
 
   Route::get('/candidate/refreshSololearn', 'Candidate\CandidateController@refreshSololearn')->name('refreshSololearn');
   Route::put('/candidate/answer/update', 'Candidate\CandidateController@updateAnswer');
+  Route::put('/candidate/session', 'Candidate\CandidateController@updateSession');
 });
 
 Route::group(['middleware'=>'admin'], function () {
