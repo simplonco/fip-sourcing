@@ -12,7 +12,7 @@
 
 Route::get('/home', function () {
   return redirect()->route('welcome');
-});
+})->name('home');
 
 
 Route::get('/', 'HomeController@home')->name('welcome');
