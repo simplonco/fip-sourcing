@@ -16,7 +16,7 @@ return [
     'select' => 'Sélectionner',
     'home'     => 'Retour à l\'accueil',
     'submit' => 'Valider',
-    'title' => 'Candidature Simplon',
+    'title' => 'Simplon Sourcing',
     'logout' => 'Se déconnecter',
     '404' => 'Page non trouvée',
     'dashboard' => 'Accueil',

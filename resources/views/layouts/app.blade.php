@@ -17,84 +17,86 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 </head>
 <body>
-  <div id="app">
-    <nav class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-
-          <!-- Collapsed Hamburger -->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-            <span class="sr-only">Toggle Navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-
-          <!-- Branding Image -->
-          <a class="navbar-brand" href="{{ url('/') }}">
+<div class="overlay">
+   <div id="app">
+      <nav class="navbar navbar-default navbar-static-top">
+      <!-- Branding Image -->
+         <a class="navbar-brand" href="{{ url('/') }}">
             <img class="logosimplon" src="{{ asset('images/logosimplon2.png') }}" alt="">
             <span>{{__('general.title')}}</span>
-          </a>
-        </div>
+         </a>
+         <div class="container">
+            <div class="navbar-header">
 
-        <div class="collapse navbar-collapse" id="app-navbar-collapse">
-          <!-- Left Side Of Navbar -->
-          {{-- <ul class="nav navbar-nav">
-            &nbsp;
-          </ul> --}}
+               <!-- Collapsed Hamburger -->
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+               <span class="sr-only">Toggle Navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
 
-          <!-- Right Side Of Navbar -->
-          <ul class="nav navbar-nav navbar-right">
-            <!-- Authentication Links -->
-            <li>
-            <a href="{{ route('language') }}">{{session('applocale')}}</a>
-            </li>
-            @if (Auth::guest())
-            <li><a href="{{ route('login') }}">{{__('auth.login')}}</a></li>
-            <li><a href="{{ route('register') }}">{{__('auth.register')}}</a></li>
-            @else
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                {{ Auth::user()->last_name }} <span class="caret"></span>
-              </a>
+            </div>
 
-              <ul class="dropdown-menu" role="menu">
-                <li>
-                  <a href="{{ route('logout') }}"
-                  onclick="event.preventDefault();
-                  document.getElementById('logout-form').submit();">
-                  > {{__('general.logout')}}
-                </a>
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+               <!-- Left Side Of Navbar -->
+               {{-- <ul class="nav navbar-nav">
+               &nbsp;
+               </ul> --}}
 
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                  {{ csrf_field() }}
-                </form>
-              </li>
+               <!-- Right Side Of Navbar -->
+               <ul class="nav navbar-nav navbar-right">
+               <!-- Authentication Links -->
+               <li>
+               <a href="{{ route('language') }}">{{session('applocale')}}</a>
+               </li>
+               @if (Auth::guest())
+               <li><a href="{{ route('login') }}">{{__('auth.login')}}</a></li>
+               <li><a href="{{ route('register') }}">{{__('auth.register')}}</a></li>
+               @else
+               <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                     {{ Auth::user()->last_name }} <span class="caret"></span>
+                  </a>
+
+                  <ul class="dropdown-menu" role="menu">
+                     <li>
+                     <a href="{{ route('logout') }}"
+                     onclick="event.preventDefault();
+                     document.getElementById('logout-form').submit();">
+                     > {{__('general.logout')}}
+                     </a>
+
+                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                     {{ csrf_field() }}
+                     </form>
+                  </li>
+               </ul>
+               </li>
+               @endif
             </ul>
-          </li>
-          @endif
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <br>
-  <br>
-  <br>
-  <br>
+         </div>
+      </nav>
+   </div>
   @yield('content')
-</div>
-<div class="container">
-    <div class="justified-button">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="justified-button">
       <a href="{{ url('/home') }}" class="btn btn-primary">{{__('general.home')}}</a>
       </a>
-    </div>
+   </div>
 </div>
 
 
-<!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
-@if(config('app.debug') && App::environment('local'))
-  @include('debug.loginas')
-  @endif
+
+   <!-- Scripts -->
+   <script src="{{ asset('js/app.js') }}"></script>
+   @if(config('app.debug') && App::environment('local'))
+   @include('debug.loginas')
+   @endif
+</div>   
 </body>
 </html>

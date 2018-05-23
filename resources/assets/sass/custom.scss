@@ -1,5 +1,33 @@
 $pink-simplon:#e80041;
 $grey-custom:#747474;
+$grey-dark-custom:#2e2d2d;
+;
+.overlay {
+   z-index: 1;
+   height: 100%;
+   width: 100%;
+   position: fixed;
+   overflow: auto;
+   top: 0px;
+   left: 0px;
+   background: rgba(20, 20, 20, 0.75);
+   /*can be anything, of course*/
+   .app {
+      display: flex;
+      flex-direction: column;
+      .container {
+         height: 100vh;
+         background: purple;
+      }
+   }
+}
+
+.navbar-brand {
+   span {
+      font-size: 14px;
+   }
+}
+
 .cardd {
    margin-left: 10px;
    margin-right: 10px;
@@ -24,11 +52,17 @@ $grey-custom:#747474;
    }
 }
 
-.cardd-container {
+.cardd-mega-container {
    display: flex;
-   justify-content: center;
    align-items: center;
-   flex-direction: row;
+   justify-content: center;
+   height: 55vh;
+   .cardd-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+   }
 }
 
 .btn {
@@ -36,11 +70,28 @@ $grey-custom:#747474;
 }
 
 .justified-button {
+   background: #4d4d4d;
+   position: fixed;
    display: flex;
    justify-content: center;
-   margin-top: 20px;
+   padding-top: 10px;
+   margin-top: -4px;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   padding-bottom: 10px; // border-top: 3px solid $pink-simplon;
+   height: 25px;
+   border-top-left-radius: 50%;
+   border-top-right-radius: 50%;
    .btn {
+      margin-top: -40px;
       background-color: $pink-simplon;
+      color: white;
+      border-radius: 50px;
+      border: 2px solid $pink-simplon;
+      padding: 10px;
+      padding-left: 30px;
+      padding-right: 30px;
    }
 }
 
@@ -136,6 +187,9 @@ $grey-custom:#747474;
 }
 
 @media screen and (min-width: 1000px) {
+   .navbar {
+      height: 7vh;
+   }
    .cards-custom-list {
       .card-custom-container {
          .card-custom-image {
