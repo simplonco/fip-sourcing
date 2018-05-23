@@ -66,6 +66,7 @@ Route::group(['middleware'=>['auth', 'candidate']], function () {
 Route::group(['middleware'=>'admin'], function () {
   // Admin panel
   Route::get('/admin', 'Admin\AdminController@index')->name('admin');
+  Route::get('/admin/create', 'Admin\AdminController@createUser')->name('createUser');
   // CRUD recruteur
   Route::get('/admin/former/list', 'Admin\FormerController@list')->name('formerList');
   Route::get('/admin/former/create', 'Admin\FormerController@create')->name('formerCreate');
@@ -97,16 +98,16 @@ Route::group(['middleware'=>'admin'], function () {
 );
 
 Route::group(['middleware' => 'recruiter'], function () {
-    Route::get('/recruiter/admin', function(){
-       return view('admin.users');
-    });
-    Route::get('/recruiter','Recruiter\FormationController@recruiterHome' )->name('recruiterHome');
-    Route::get('/recruiter/formations', 'Recruiter\FormationController@recruiterIndex')->name('recruiterIndex');
-    Route::get('/recruiter/formations/show', 'Recruiter\FormationController@recruiterFormations')->name('recruiterFormations');
-        Route::get('/recruiter/formation/create', 'Recruiter\FormationController@recruiterFormationCreate')->name('recruiterFormationCreate');
-    Route::post('/recruiter/formation/save', 'Recruiter\FormationController@recruiterFormationSave')->name('recruiterFormationSave');
+  Route::get('/recruiter/admin', function(){
+    return view('admin.users');
+  });
+  Route::get('/recruiter','Recruiter\FormationController@recruiterHome' )->name('recruiterHome');
+  Route::get('/recruiter/formations', 'Recruiter\FormationController@recruiterIndex')->name('recruiterIndex');
+  Route::get('/recruiter/formations/show', 'Recruiter\FormationController@recruiterFormations')->name('recruiterFormations');
+  Route::get('/recruiter/formation/create', 'Recruiter\FormationController@recruiterFormationCreate')->name('recruiterFormationCreate');
+  Route::post('/recruiter/formation/save', 'Recruiter\FormationController@recruiterFormationSave')->name('recruiterFormationSave');
 
-    Route::get('/recruiter/formation/show/{id}', 'Recruiter\FormationController@recruiterFormationShow')->name('recruiterFormationShow');
+  Route::get('/recruiter/formation/show/{id}', 'Recruiter\FormationController@recruiterFormationShow')->name('recruiterFormationShow');
   Route::get('/recruiter/formation/edit/{id}', 'Recruiter\FormationController@recruiterFormationEdit')->name('recruiterFormationEdit');
   Route::post('/recruiter/formation/update/{id}', 'Recruiter\FormationController@recruiterFormationUpdate')->name('recruiterFormationUpdate');
   Route::get('/recruiter/formation/candidate/search', 'Recruiter\CandidateController@recruiterCandidateSearch')->name('candidateSearch');
