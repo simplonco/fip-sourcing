@@ -101,6 +101,9 @@ Route::group(['middleware' => 'recruiter'], function () {
   Route::get('/recruiter/admin', function(){
     return view('admin.users');
   });
+    Route::get('/recruiter/sendMail', function(){
+        return view('recruiter.sendMail');
+    });
   Route::get('/recruiter','Recruiter\FormationController@recruiterHome' )->name('recruiterHome');
   Route::get('/recruiter/formations', 'Recruiter\FormationController@recruiterIndex')->name('recruiterIndex');
   Route::get('/recruiter/formations/show', 'Recruiter\FormationController@recruiterFormations')->name('recruiterFormations');
