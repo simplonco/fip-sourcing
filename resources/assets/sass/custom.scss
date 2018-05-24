@@ -11,7 +11,7 @@ $grey-dark-custom:#2e2d2d;
    overflow: auto;
    top: 0px;
    left: 0px; // background: rgba(23, 5, 5, 0.75); 
-   background-image: linear-gradient(to left bottom, rgba(20, 20, 20, 0.9), rgba(35, 28, 37, 0.9), rgba(48, 24, 40, 0.8), rgba(49, 13, 27, 0.8), rgba(54, 5, 16, 0.8));
+   background-image: linear-gradient(to left bottom, rgba(20, 20, 20, 0.9), rgba(35, 28, 37, 0.9), rgba(39, 20, 33, 0.8), rgba(37, 10, 20, 0.8), rgba(54, 5, 16, 0.8));
    .app {
       display: flex;
       flex-direction: column;
@@ -227,11 +227,56 @@ $grey-dark-custom:#2e2d2d;
    }
    .action-button {
       display: flex;
+      align-items: center;
       margin: 5px;
+      p {
+         margin-left: 10px;
+         margin-right: 10px;
+         margin-bottom: 0px;
+      }
    }
 }
 
-.candidate-administrative-container {
+.candidate-score-container {
+   .global-score {
+      display: flex;
+      justify-content: center;
+      height: 35vh;
+      div {
+         @extend .global-score;
+         flex-direction: column;
+         dt,
+         p {
+            text-align: center;
+         }
+         p {
+            font-size: 5em;
+         }
+      }
+   }
+}
+
+.candidate-administrative-container,
+.candidate-score-container {
+   .badges {
+      display: flex;
+      flex-direction: column;
+      div {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin-bottom: 0px;
+         svg {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+         }
+         p {
+            text-align: center;
+            font-weight: bold;
+         }
+      }
+   }
    div {
       div {
          width: 100%;
@@ -261,8 +306,7 @@ $grey-dark-custom:#2e2d2d;
       color: white;
       border-radius: 50px;
       border: 2px solid #e80041;
-      width: 130px;
-      padding: 3px;
+      width: auto;
       display: flex;
       align-items: center;
       justify-content: center;

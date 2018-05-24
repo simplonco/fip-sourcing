@@ -21,7 +21,9 @@ return [
     '404' => 'Page not found',
     'dashboard' => 'Home',
     'logged_in' => 'You are logged in!',
-    'next' => 'Next',
-    'previous' => 'Previous'
+    'next' => 'Next section',
+    'previous' => 'Previous section',
+    'previousApplicant' => 'Previous applicant',
+    'nextApplicant' => 'Next applicant'
 
 ];
