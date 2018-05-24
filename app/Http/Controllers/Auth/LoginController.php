@@ -25,7 +25,7 @@ class LoginController extends Controller
 
   protected function authenticated(Request $request, $user)
   {
-    return Redirect()->route('home');
+    return redirect()->route('home');
   }
 
   use AuthenticatesUsers;

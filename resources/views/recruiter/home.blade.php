@@ -6,7 +6,6 @@
       </div>
       <div class="cardd-mega-container">
          <div class="cardd-container">
-            
             <div class="cardd">
                <a href="#">
                   <div class="card text-center text-white bg-danger mb-3">
