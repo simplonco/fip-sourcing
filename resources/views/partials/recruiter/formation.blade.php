@@ -2,7 +2,7 @@
    @if($recruiterFormations == "new")
       <a href="">
    @endif
-   @if($recruiterFormations != 'focusCandidateAdmin')   
+   @if($recruiterFormations != 'focusCandidateAdmin' && $recruiterFormations != "applicantsList")   
       <div class="card-custom-image">
          @if($recruiterFormations == "applicants")
             <i class="fa fa-file-alt fa-5x"></i>
@@ -27,7 +27,7 @@
    @if($recruiterFormations == "new")
       </a>
    @endif
-   <div class="card-custom-description{{$recruiterFormations == 'focusCandidate' ? ' focusCandidate' : ''}}">
+   <div class="card-custom-description{{$recruiterFormations == 'focusCandidate' ? ' focusCandidate' : ''}}{{$recruiterFormations == 'applicantsList' ? ' no-padding' : ''}}">
       @if($recruiterFormations == "applicants")
          <p>
             {{$candidate->first_name}} {{$candidate->last_name}} 
@@ -81,8 +81,11 @@
       @if($recruiterFormations == "focusCandidateAdmin")
          @include('partials.recruiter.candidateAdministrativeInfo')
       @endif
+      @if($recruiterFormations == "applicantsList")
+         @include('partials.applications.applicationsList')
+      @endif
    </div>
-   @if($recruiterFormations != "focusCandidate" && $recruiterFormations != "focusCandidateAdmin")
+   @if($recruiterFormations != "focusCandidate" && $recruiterFormations != "focusCandidateAdmin" && $recruiterFormations != "applicantsList")
       <div class="card-custom-view">
          @if($recruiterFormations == "applicants") 
             <a href="" class="fa-stack">

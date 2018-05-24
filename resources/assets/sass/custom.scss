@@ -189,6 +189,9 @@ $grey-dark-custom:#2e2d2d;
             }
          }
       }
+      .no-padding {
+         padding: 0px;
+      }
       .card-custom-view {
          display: flex;
          justify-content: flex-end;
@@ -214,7 +217,7 @@ $grey-dark-custom:#2e2d2d;
    transform: rotate(-180deg);
 }
 
-.previous-next-buttons-container {
+.action-buttons-container {
    display: flex;
    justify-content: center;
    flex-direction: column;
@@ -223,8 +226,7 @@ $grey-dark-custom:#2e2d2d;
    .btn {
       margin: 5px;
    }
-   .previous-buttons,
-   .next-buttons {
+   .action-button {
       display: flex;
       margin: 5px;
    }
@@ -241,6 +243,16 @@ $grey-dark-custom:#2e2d2d;
             margin-right: 10px;
          }
       }
+   }
+}
+
+.sorting-arrows {
+   display: flex; // flex-wrap: wrap;
+   align-items: center;
+   border-bottom: 0px;
+   a {
+      display: flex;
+      align-items: center;
    }
 }
 
@@ -268,11 +280,28 @@ $grey-dark-custom:#2e2d2d;
    }
 }
 
+.applications-training-mega-container {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   width: 85%;
+   .applications-training-container {
+      background: white;
+      border-radius: 0px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+   }
+}
+
 @media screen and (min-width: 1000px) {
    .navbar {
       height: 7vh;
    }
    .cards-custom-list {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
       .card-custom-container {
          .card-custom-image {
             min-height: 10vw;
@@ -288,6 +317,15 @@ $grey-dark-custom:#2e2d2d;
             width: 60%;
          }
          .card-custom-view {}
+      }
+      .card-custom-container-aligt-right {
+         display: flex;
+         justify-content: flex-end;
+         color: white;
+         height: 40px;
+         align-items: center;
+         margin-bottom: 20px;
+         font-weight: 200;
       }
    }
 }
