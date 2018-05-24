@@ -2,7 +2,7 @@
    @if($recruiterFormations == "new")
       <a href="">
    @endif
-   @if($recruiterFormations != 'focusCandidateAdmin' && $recruiterFormations != "applicantsList")   
+   @if($recruiterFormations != 'focusCandidateAdmin' && $recruiterFormations != "applicantsList" && $recruiterFormations != "applicantsResumeEval")   
       <div class="card-custom-image">
          @if($recruiterFormations == "applicants")
             <i class="fa fa-file-alt fa-5x"></i>
@@ -84,8 +84,11 @@
       @if($recruiterFormations == "applicantsList")
          @include('partials.applications.applicationsList')
       @endif
+      @if($recruiterFormations == "applicantsResumeEval")
+         @include('partials.recruiter.candidateShowScore') 
+      @endif
    </div>
-   @if($recruiterFormations != "focusCandidate" && $recruiterFormations != "focusCandidateAdmin" && $recruiterFormations != "applicantsList")
+   @if($recruiterFormations != "focusCandidate" && $recruiterFormations != "focusCandidateAdmin" && $recruiterFormations != "applicantsList" && $recruiterFormations != "applicantsResumeEval")
       <div class="card-custom-view">
          @if($recruiterFormations == "applicants") 
             <a href="" class="fa-stack">

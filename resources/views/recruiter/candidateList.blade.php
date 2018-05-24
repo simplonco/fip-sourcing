@@ -29,13 +29,13 @@
             @include('partials.recruiter.formation', ['recruiterFormations' => 'applicantsList'])
             <div class="action-buttons-container">
                   <div class="action-button rounded-button">
-                        <a href="{{ route('recruiterIndex') }}" class="btn btn-primary">RETOUR</a>
+                        <a href="{{ route('recruiterIndex') }}" class="btn btn-primary">Retour</a>
                   </div>
                   <div class="action-button rounded-button">
-                        <a href="#{{--lien vers page de tri --}}" class="btn btn-primary">TRIER</a>
+                        <a href="#{{--lien vers page de tri --}}" class="btn btn-primary">Trier</a>
                   </div>
                   <div class="action-button rounded-button">
-                        <a href="#{{-- permet de clore les candidatures pour cette session --}}" class="btn btn-primary">CLORE</a>
+                        <a href="#{{-- permet de clore les candidatures pour cette session --}}" class="btn btn-primary">Clore</a>
                   </div>
                </div>
       </div>
