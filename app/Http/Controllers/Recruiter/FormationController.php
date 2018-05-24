@@ -32,6 +32,10 @@ class FormationController extends Controller
       return view('recruiter.formations', compact('trainer'));
   }
 
+  public function sendMail(){
+      return view('recruiter.sendMail');
+  }
+
   public function recruiterFormationCreate(){
       return view('recruiter.formationCreate');
   }

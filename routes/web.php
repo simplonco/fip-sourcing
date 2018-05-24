@@ -66,6 +66,7 @@ Route::group(['middleware'=>['auth', 'candidate']], function () {
 Route::group(['middleware'=>'admin'], function () {
   // Admin panel
   Route::get('/admin', 'Admin\AdminController@index')->name('admin');
+  Route::get('/admin/users', 'Admin\AdminController@showUsers')->name('showUsers');
   Route::get('/admin/create', 'Admin\AdminController@createUser')->name('createUser');
   // CRUD recruteur
   Route::get('/admin/former/list', 'Admin\FormerController@list')->name('formerList');
@@ -98,12 +99,8 @@ Route::group(['middleware'=>'admin'], function () {
 );
 
 Route::group(['middleware' => 'recruiter'], function () {
-  Route::get('/recruiter/admin', function(){
-    return view('admin.users');
-  });
-    Route::get('/recruiter/sendMail', function(){
-        return view('recruiter.sendMail');
-    });
+
+    Route::get('/recruiter/formation/sendMail', 'Recruiter\FormationController@sendMail');
   Route::get('/recruiter','Recruiter\FormationController@recruiterHome' )->name('recruiterHome');
   Route::get('/recruiter/formations', 'Recruiter\FormationController@recruiterIndex')->name('recruiterIndex');
   Route::get('/recruiter/formations/show', 'Recruiter\FormationController@recruiterFormations')->name('recruiterFormations');
