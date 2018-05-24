@@ -6,8 +6,9 @@ body:before {
    height: 110%;
    width: 110%;
    /*background-color: grey;*/
-   background: url("https://image.freepik.com/photos-libre/main-en-utilisant-un-ordinateur-portable-dans-un-cafe_1170-2350.jpg") no-repeat center center;
-   background: url("../images/background2.jpg") no-repeat center center;
+   /* background: url("https://image.freepik.com/photos-libre/main-en-utilisant-un-ordinateur-portable-dans-un-cafe_1170-2350.jpg") no-repeat center center; */
+   background: url("../images/dust_scratches.png") no-repeat center center;
+   /* background: url("../images/background2.jpg") no-repeat center center; */
    background-size: cover;
    z-index: -1;
    /* Keep the background behind the content */

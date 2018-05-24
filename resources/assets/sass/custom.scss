@@ -10,9 +10,8 @@ $grey-dark-custom:#2e2d2d;
    position: fixed;
    overflow: auto;
    top: 0px;
-   left: 0px;
-   background: rgba(20, 20, 20, 0.75);
-   /*can be anything, of course*/
+   left: 0px; // background: rgba(23, 5, 5, 0.75); 
+   background-image: linear-gradient(to left bottom, rgba(20, 20, 20, 0.9), rgba(35, 28, 37, 0.9), rgba(48, 24, 40, 0.8), rgba(49, 13, 27, 0.8), rgba(54, 5, 16, 0.8));
    .app {
       display: flex;
       flex-direction: column;
@@ -70,7 +69,7 @@ $grey-dark-custom:#2e2d2d;
 }
 
 .justified-button {
-   background: #4d4d4d;
+   background: rgba(29, 29, 29, 0.9);
    position: fixed;
    display: flex;
    justify-content: center;
@@ -189,6 +188,9 @@ $grey-dark-custom:#2e2d2d;
             }
          }
       }
+      .no-padding {
+         padding: 0px;
+      }
       .card-custom-view {
          display: flex;
          justify-content: flex-end;
@@ -214,7 +216,7 @@ $grey-dark-custom:#2e2d2d;
    transform: rotate(-180deg);
 }
 
-.previous-next-buttons-container {
+.action-buttons-container {
    display: flex;
    justify-content: center;
    flex-direction: column;
@@ -223,8 +225,7 @@ $grey-dark-custom:#2e2d2d;
    .btn {
       margin: 5px;
    }
-   .previous-buttons,
-   .next-buttons {
+   .action-button {
       display: flex;
       margin: 5px;
    }
@@ -241,6 +242,16 @@ $grey-dark-custom:#2e2d2d;
             margin-right: 10px;
          }
       }
+   }
+}
+
+.sorting-arrows {
+   display: flex; // flex-wrap: wrap;
+   align-items: center;
+   border-bottom: 0px;
+   a {
+      display: flex;
+      align-items: center;
    }
 }
 
@@ -268,11 +279,28 @@ $grey-dark-custom:#2e2d2d;
    }
 }
 
+.applications-training-mega-container {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   width: 85%;
+   .applications-training-container {
+      background: white;
+      border-radius: 0px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+   }
+}
+
 @media screen and (min-width: 1000px) {
    .navbar {
       height: 7vh;
    }
    .cards-custom-list {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
       .card-custom-container {
          .card-custom-image {
             min-height: 10vw;
@@ -288,6 +316,15 @@ $grey-dark-custom:#2e2d2d;
             width: 60%;
          }
          .card-custom-view {}
+      }
+      .card-custom-container-aligt-right {
+         display: flex;
+         justify-content: flex-end;
+         color: white;
+         height: 40px;
+         align-items: center;
+         margin-bottom: 20px;
+         font-weight: 200;
       }
    }
 }
