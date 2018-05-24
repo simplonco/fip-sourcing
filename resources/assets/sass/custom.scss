@@ -10,9 +10,8 @@ $grey-dark-custom:#2e2d2d;
    position: fixed;
    overflow: auto;
    top: 0px;
-   left: 0px;
-   background: rgba(20, 20, 20, 0.75);
-   /*can be anything, of course*/
+   left: 0px; // background: rgba(23, 5, 5, 0.75); 
+   background-image: linear-gradient(to left bottom, rgba(20, 20, 20, 0.9), rgba(35, 28, 37, 0.9), rgba(48, 24, 40, 0.8), rgba(49, 13, 27, 0.8), rgba(54, 5, 16, 0.8));
    .app {
       display: flex;
       flex-direction: column;
@@ -70,7 +69,7 @@ $grey-dark-custom:#2e2d2d;
 }
 
 .justified-button {
-   background: #4d4d4d;
+   background: rgba(29, 29, 29, 0.9);
    position: fixed;
    display: flex;
    justify-content: center;

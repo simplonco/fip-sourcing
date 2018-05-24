@@ -8,11 +8,11 @@
               <a href="{{ route('recruiterFormationCandidatesList', [$session->formation->id, 'last_name', 'desc']) }}"><i class="fa fa-sort-down" aria-hidden="true"></i></a>
           </th>
           <th>{{__('user.choose_user.first_name')}}</th>
-          <th>Progression</th>
-          <th>{{__('game.badges')}}</th>
-          <th>{{__('user.choose_user.score')}}</th>
-          <th>Nb d'évaluation</th>
-          <th>Evalué</th>
+          <th style="text-align:center;">Progression</th>
+          <th style="text-align:center;">{{__('game.badges')}}</th>
+          <th style="text-align:center;">{{__('user.choose_user.score')}}</th>
+          <th style="text-align:center;">Nb d'évaluation</th>
+          <th style="text-align:center;">Evalué</th>
       </tr>
       </thead>
       <tbody>
@@ -25,11 +25,11 @@
               </td>
               <td><a href="{{ route('candidateFormationShow', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
               <td>{{$candidate->first_name}}</td>
-              <td>{{$candidate->get_progress()}}{{-- pas sur car résultat en pourcentage attendu,à modifier--}}</td>
-              <td>{{--badges à ajouter--}}</td>
-              <td>{{get_score($candidate)}}</td>
-              <td>{{$candidate->candidate_notes()->count()}}</td>
-              <td>{{--evalué : oui ou non--}}</td>
+              <td style="text-align:center;">{{$candidate->get_progress()}}{{-- pas sur car résultat en pourcentage attendu,à modifier--}}</td>
+              <td style="text-align:center;">{{--badges à ajouter--}}</td>
+              <td style="text-align:center;">{{get_score($candidate)}}</td>
+              <td style="text-align:center;">{{$candidate->candidate_notes()->count()}}</td>
+              <td style="text-align:center;">{{--evalué : oui ou non--}}</td>
           </tr>
       @endforeach
       {{ $candidates->links() }}
