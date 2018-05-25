@@ -16,7 +16,7 @@ return [
     'choose_user' => [
       'first_name' => 'Prénom',
       'last_name' => 'Nom',
-      'email' => 'Courriel',
+      'email' => 'Email',
       'password' => 'Mot de passe',
       'password_confirm' => 'Confirmation du mot de passe',
       'formations' => 'Formations',
