@@ -79,11 +79,7 @@
       </nav>
    </div>
   @yield('content')
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+ 
   <div class="justified-button">
       <a href="{{ url('/home') }}" class="btn btn-primary">{{__('general.home')}}</a>
       </a>
@@ -94,6 +90,7 @@
 
    <!-- Scripts -->
    <script src="{{ asset('js/app.js') }}"></script>
+   <script src="{{ asset('js/custom.js') }}"></script>
       @if(config('app.debug') && App::environment('local'))
       @include('debug.loginas')
    @endif
