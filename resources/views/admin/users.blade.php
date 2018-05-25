@@ -43,10 +43,10 @@
                 </div>
                 <div class="row">
                     <div class="col-md-2 ">
-                        <a href="#" class="btn btn-primary">RETOUR</a>
+                        <a href="{{route('admin')}}" class="btn btn-primary">RETOUR</a>
                     </div>
                     <div class="col-md-2">
-                        <a href="#" class="btn btn-primary">NOUVEL UTILISATEUR</a>
+                        <a href="{{route('createUser')}}" class="btn btn-primary">NOUVEL UTILISATEUR</a>
                     </div>
                 </div>
             </div>
