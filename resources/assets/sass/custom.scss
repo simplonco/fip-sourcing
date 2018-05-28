@@ -4,8 +4,31 @@ $light-grey-custom: hsla(0, 0%, 57%, 1);
 $grey-dark-custom:#2e2d2d;
 $white: darken(#fff, 5%);
 $black: darken(#000, 5%);
+$background-general: rgba(243, 243, 243, 0.85);
+$lighten-grey: lighten($light-grey-custom, 35%);
+$border-grey: #d4d4d4;
+$shadow2: 2px 25px 90px rgba(82, 82, 82, .2),
+0px 4px 10px rgba(82, 82, 82, .2);
+$shadow1: 2px 25px 90px rgba(82, 82, 82, 0.1),
+0px 4px 10px rgba(82, 82, 82, .1);
 .navbar {
    margin-bottom: 0px;
+}
+
+body:before {
+   top: -5%;
+   left: -5%;
+   content: "";
+   position: fixed;
+   height: 110%;
+   width: 110%; // background: url("../images/dust_scratches.png") no-repeat center center;
+   background: $light-grey-custom;
+   background-size: cover;
+   z-index: -1;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
 }
 
 .overlay {
@@ -16,16 +39,15 @@ $black: darken(#000, 5%);
    overflow: auto;
    top: 0px;
    left: 0px;
-   background: rgba(145, 130, 130, 0.75);
+   background: $background-general;
    .app {
       display: flex;
       flex-direction: column;
-      .container {
-         height: 100vh;
-      }
+      margin-bottom: 5em;
    }
    .mega-container {
-      padding-bottom: 100px;
+      // margin-bottom: 5em;
+      // padding-bottom: 100px;
    }
 }
 
@@ -50,6 +72,7 @@ $black: darken(#000, 5%);
             align-items: center;
             flex-direction: column;
             color: #595959;
+            box-shadow: $shadow1;
          }
          .card-body:hover {
             background: $pink-simplon;
@@ -96,7 +119,7 @@ $black: darken(#000, 5%);
       background-color: $pink-simplon;
       color: $white;
       border-radius: 50px;
-      border: 2px solid $pink-simplon;
+      border: 2px solid darken($pink-simplon, 5%);
       transform: translateY(0px);
       padding: 10px;
       padding-left: 30px;
@@ -119,11 +142,10 @@ $black: darken(#000, 5%);
 .title-top-container {
    display: flex;
    justify-content: center;
-   margin-bottom: 1em;
-   margin-top: 2em;
+   margin-bottom: 1em; // margin-top: 1.5em;
    .title-top {
-      color: $white;
-      border-bottom: 2px white solid;
+      color: $grey-dark-custom;
+      border-bottom: 2px $grey-dark-custom solid;
       width: auto;
       padding-bottom: 15px;
    }
@@ -142,126 +164,182 @@ $black: darken(#000, 5%);
 .cards-custom-list-mega-container {
    display: flex;
    justify-content: center;
+   padding-bottom: 5em;
    .card-custom-list-container {
-      box-shadow: 2px 25px 90px rgba(82, 82, 82, 0.8), 0px 4px 10px rgba(82, 82, 82, .8);
       width: 85%;
       display: flex;
-      flex-direction: column;
-      .cards-custom-list {
-         width: 100%;
-         padding: 0px;
-         .page-title {
-            color: $white;
-         }
-         .card-custom-container {
-            display: flex;
-            flex-direction: row;
-            background: $white;
+      flex-direction: column; //plop
+      .action-buttons-in-footer {
+         display: flex;
+         background: $lighten-grey;
+         .rounded-button {
+            padding: .5em 0 .5em .5em;
             a {
-               color: $light-grey-custom;
+               // background: lighten($light-grey-custom, 20%);
+               border: none; // color: $grey-dark-custom;
+               display: flex;
+               justify-content: space-around;
+               border: 1px solid darken($border-grey, 10%);
+               box-shadow: $shadow2;
+               font-weight: 100;
+               color: $white;
             }
-            a:hover {
-               .card-custom-image {
-                  background: $light-grey-custom;
-                  color: $white;
-               }
-            }
+         }
+      }
+   }
+   .cards-custom-list {
+      width: 100%;
+      padding: 0px;
+      box-shadow: $shadow1;
+      .action-buttons-container.header-action-buttons {
+         background: $lighten-grey;
+         display: flex;
+         justify-content: flex-end;
+         padding: 1em;
+         border-bottom: 2px solid $border-grey;
+         label {
+            margin: 0;
+         }
+      }
+      .page-title {
+         color: $white;
+      }
+      .card-custom-container {
+         display: flex;
+         flex-direction: row;
+         background: $white;
+         a {
+            color: $light-grey-custom;
+         }
+         a:hover {
             .card-custom-image {
-               min-height: 10vw;
-               max-height: auto;
-               width: 10vw;
-               min-width: 10vw;
-               background: $grey-custom;
-               display: flex;
-               justify-content: center;
-               align-items: center;
-               flex-direction: column;
-               color: $light-grey-custom;
-               border-bottom: 2px solid rgb(155, 155, 155);
-               p {
-                  // padding-top: 25px;
-                  margin-bottom: 0px;
-                  text-transform: uppercase;
-                  font-weight: bold;
-                  text-align: center;
-                  color: $white;
-               }
+               background: $light-grey-custom;
+               color: $white;
             }
-            .new-training {
-               display: flex;
-               align-items: center;
-               height: 100%;
+         }
+         .card-custom-image {
+            min-height: 10vw;
+            max-height: auto;
+            width: 10vw;
+            min-width: 10vw;
+            background: $grey-custom;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: $light-grey-custom;
+            border-bottom: 2px solid rgb(155, 155, 155);
+            p {
+               // padding-top: 25px;
+               margin-bottom: 0px;
+               text-transform: uppercase;
+               font-weight: bold;
+               text-align: center;
+               color: $white;
             }
-            .description-view-mega-container {
-               display: flex;
-               flex-direction: column;
-               width: 100%;
-               .card-custom-description {
-                  padding: 20px;
-                  flex-direction: row;
-                  width: 100%;
-                  align-items: center;
-                  .card-custom-description-date {
-                     color: rgb(189, 187, 187);
-                     display: flex;
-                     align-self: flex-end;
-                  }
-                  .new-training-container {
-                     display: flex;
-                     align-content: center;
-                     p {
-                        margin: 0px;
-                     }
-                  }
-               }
-            }
-            .focusCandidate {
-               display: flex;
-               align-items: center;
-               .focus-candidate-id-card {
-                  span {
-                     color: rgb(189, 187, 187);
-                  }
-               }
-            }
+         }
+         .new-training {
+            display: flex;
+            align-items: center;
+            height: 100%;
+         }
+         .description-view-mega-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            flex: 1;
+            align-items: center;
             .no-padding {
-               padding: 0px;
-            }
-            .card-custom-view {
-               background: lighten($light-grey-custom, 35%);
-               display: flex;
-               justify-content: flex-end;
-               align-items: center;
-               flex-grow: 2;
-               border-bottom: 2px solid rgb(212, 212, 212);
-               a {
-                  margin-right: 10px;
-                  margin-bottom: 10px;
-               }
-               .card-custom-action-buttons {
-                  display: flex;
-                  flex-direction: column;
-                  padding-right: 10px;
-                  div {
-                     display: flex;
-                     align-items: center;
-                     padding: .5em 0;
-                  }
-                  a {
-                     margin: 0px;
-                     margin: .2em;
-                     i .fa-inverse {
-                        color: $white;
+               padding: 0 !important;
+               .table {
+                  margin: 0;
+                  thead {
+                     th {
+                        border-bottom: 1px solid $border-grey;
                      }
                   }
-                  a:hover {
-                     color: lighten($light-grey-custom, 15%);
+                  tbody {
+                     border-bottom: 2px solid $border-grey;
+                     tr {
+                        td {
+                           border: 0;
+                        }
+                     }
                   }
+               }
+            }
+            .card-custom-description {
+               padding: 20px;
+               flex-direction: row;
+               width: 100%;
+               align-items: center; // border-bottom: 2px solid $border-grey;
+               .card-custom-description-date {
+                  color: rgb(189, 187, 187);
+                  display: flex;
+                  align-self: flex-end;
+               }
+               .new-training-container {
+                  display: flex;
+                  align-content: center;
+                  p {
+                     margin: 0px;
+                  }
+               }
+            }
+         }
+         .focusCandidate {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            border-bottom: 2px solid $border-grey;
+            .focus-candidate-id-card {
+               flex: 1;
+               span {
+                  color: rgb(155, 155, 155);
+               }
+            }
+         }
+         .no-padding {
+            padding: 0px;
+         }
+         .card-custom-view {
+            background: $lighten-grey;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-grow: 2;
+            border-bottom: 2px solid rgb(212, 212, 212);
+            a {
+               margin-right: 10px;
+               margin-bottom: 10px;
+            }
+            .card-custom-action-buttons {
+               display: flex;
+               flex-direction: column;
+               padding-right: 10px;
+               div {
+                  display: flex;
+                  align-items: center;
+                  padding: .5em 0;
+               }
+               a {
+                  margin: 0px;
+                  margin: .2em;
+                  i .fa-inverse {
+                     color: $white;
+                  }
+               }
+               a:hover {
+                  color: lighten($light-grey-custom, 15%);
                }
             }
          }
       }
    }
+}
+
+.no-padding {
+   padding: 0px;
 }
 
 .rotate180 {
@@ -274,8 +352,13 @@ $black: darken(#000, 5%);
    flex-direction: column;
    justify-content: space-between;
    flex-flow: wrap;
+   background: $lighten-grey;
    .btn {
       margin: 5px;
+      border: 1px solid darken($border-grey, 10%);
+      box-shadow: $shadow2;
+      font-weight: 100;
+      color: $white;
    }
    .action-button {
       display: flex;
@@ -290,10 +373,11 @@ $black: darken(#000, 5%);
 }
 
 .candidate-score-container {
+   display: flex;
+   align-items: center;
    .global-score {
       display: flex;
       justify-content: center;
-      height: 35vh;
       div {
          @extend .global-score;
          flex-direction: column;
@@ -346,6 +430,12 @@ $black: darken(#000, 5%);
    display: flex; // flex-wrap: wrap;
    align-items: center;
    border-bottom: 0px;
+   div {
+      a {
+         height: -webkit-fill-available;
+         padding-left: .3em;
+      }
+   }
    a {
       display: flex;
       align-items: center;
@@ -372,6 +462,48 @@ $black: darken(#000, 5%);
 .focus-candidate-id-card {
    .col-md-4 {
       text-align: center;
+   }
+}
+
+.question-mega-container {
+   .question-dropdown {
+      display: flex;
+      align-items: center;
+      padding-bottom: 1em;
+      padding-left: 2em;
+      padding-right: 2em;
+      select {
+         flex: 1;
+         margin-left: 1em;
+         height: 2.4em;
+      }
+      a {
+         display: flex;
+      }
+   }
+}
+
+.title-questions {
+   padding-top: 1em;
+}
+
+.radio-button-rating {
+   width: -webkit-fill-available;
+   justify-content: center;
+   display: flex;
+   label {
+      margin: 1em;
+      input {
+         margin-left: .5em;
+      }
+   }
+}
+
+.container-question {
+   background: $lighten-grey;
+   padding: 1em;
+   p {
+      margin: 0;
    }
 }
 
@@ -411,7 +543,9 @@ $black: darken(#000, 5%);
          .card-custom-description {
             width: 60%;
          }
-         .card-custom-view {}
+         .card-custom-view {
+            width: 100%;
+         }
       }
       .card-custom-container-aligt-right {
          display: flex;
