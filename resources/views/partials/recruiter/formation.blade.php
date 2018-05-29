@@ -12,7 +12,7 @@
             @if(null !== $candidate->currentSession()->formation)
                <p>{{$candidate->currentSession()->formation->name}}</p>
             @else <p>-</p>
-            @endif
+         @endif
          @elseif($recruiterFormations == "ongoing")
             <i class="fa fa-file-alt fa-5x"></i>
             <p>{{$session->formation->name}}</p>
@@ -20,7 +20,7 @@
             <i class="fa fa-file-alt fa-5x"></i>
             <p>{{$session->formation->name}}</p>
          @elseif($recruiterFormations == "new")
-               <i class="fa fa-times fa-5x" style="transform: rotate(-45deg);"></i>
+            <i class="fa fa-times fa-5x" style="transform: rotate(-45deg);"></i>
          @elseif($recruiterFormations == "focusCandidate")
             <i class="fa fa-user fa-5x"></i>
             <p>RESUME</p>
@@ -69,24 +69,25 @@
                </p>
             @endif
          @elseif($recruiterFormations == "new")
-         <div class="new-training-container">
-            <p class="card-custom-description-date">Créer une nouvelle formation...</p>            
-         </div>
+            <div class="new-training-container">
+               <p class="card-custom-description-date">Créer une nouvelle formation...</p> 
+            </div>
          @endif    
          @if($recruiterFormations == "focusCandidate")
-         <div class="container col-md-12 focus-candidate-id-card">
-            <div class="col-md-3">
-               <p><span>Prénom : </span>{{$candidate->first_name}}</p>
-               <p><span>Nom : </span>{{$candidate->last_name}}</p></div>
-            <div class="col-md-5">
-               <p><span>Ville : </span>{{$candidate->city}}</p>
-               <p><span>Statut administratif : </span>{{$candidate->status}}</p>
+            <div class="container col-md-12 focus-candidate-id-card">
+               <div class="col-md-3">
+                  <p><span>Prénom : </span>{{$candidate->first_name}}</p>
+                  <p><span>Nom : </span>{{$candidate->last_name}}</p>
+               </div>
+               <div class="col-md-5">
+                  <p><span>Ville : </span>{{$candidate->city}}</p>
+                  <p><span>Statut administratif : </span>{{$candidate->status}}</p>
+               </div>
+               <div class="col-md-4">
+                  <p><span>Badges : </span>{{--à ajouter --}}</p>
+                  <p><span>Score : </span>{{get_score($candidate)}}</p>
+               </div>
             </div>
-            <div class="col-md-4">
-               <p><span>Badges : </span>{{--à ajouter --}}</p>
-               <p><span>Score : </span>{{get_score($candidate)}}</p>
-            </div>
-         </div>
          @endif
          @if($recruiterFormations == "focusCandidateAdmin")
             @include('partials.recruiter.candidateAdministrativeInfo')
@@ -104,18 +105,27 @@
       </div>
 
       {{------------------------ View - Action Buttons ------------------------}}
-      @if($recruiterFormations != "focusCandidate" && $recruiterFormations != "focusCandidateAdmin" && $recruiterFormations != "applicantsList" && $recruiterFormations != "applicantsResumeEval" && $recruiterFormations != "applicantsQuestionnaire" && $recruiterFormations != "new")
+      @if(
+         $recruiterFormations != "focusCandidate" && 
+         $recruiterFormations != "focusCandidateAdmin" && 
+         $recruiterFormations != "applicantsList" && 
+         $recruiterFormations != "applicantsResumeEval" && 
+         $recruiterFormations != "applicantsQuestionnaire" && 
+         $recruiterFormations != "new")
          <div class="card-custom-view">
             @if($recruiterFormations == "applicants") 
-               <a href="" class="fa-stack">
-                  <i class="fa fa-circle fa-stack-2x"</i>
+            <div class="card-custom-action-buttons">
+            <div>
+               <a href="" class="fa-stack" style="flex:1;padding:0;">
+                  <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-eye fa-stack-1x" style="color: hsla(0, 0%, 90%, 1);"aria-hidden="true"></i>
                </a>
+            </div>
+            </div>
             @endif
             @if($recruiterFormations == "ongoing")
                <div class="card-custom-action-buttons">
                   <div>
-                     {{-- TODO: hover on buttons --}}
                      <a href="" class="fa-stack" title="Publier la formation et la rendre visible pour les apprenants">
                         <i class="fa fa-circle fa-stack-2x" id="plane"></i>
                         <i class="fa fa-paper-plane fa-stack-1x fa-inverse" aria-hidden="true"></i>
@@ -140,14 +150,14 @@
                </div>
             @endif
             @if($recruiterFormations == "coming")
-            <div class="card-custom-action-buttons">
-               <div>
-                  <a href="{{ route('recruiterFormationCandidatesList', $session->formation->id) }}" class="fa-stack">
+               <div class="card-custom-action-buttons">
+                  <div>
+                     <a href="{{ route('recruiterFormationCandidatesList', $session->formation->id) }}" class="fa-stack">
                         <i class="fa fa-circle fa-stack-2x" id="star"></i>
                         <i class="fa fa-users fa-stack-1x" style="color: hsla(0, 0%, 90%, 1);"aria-hidden="true"></i>
-                  </a>
+                     </a>
+                  </div>
                </div>
-            </div>
             @endif
          </div>
       @endif

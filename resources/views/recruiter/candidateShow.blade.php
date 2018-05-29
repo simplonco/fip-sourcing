@@ -12,10 +12,8 @@
          <div class="container cards-custom-list">
                @include('partials.recruiter.formation', ['recruiterFormations' => 'focusCandidate', 'candidate' => $candidate])
                @include('partials.recruiter.formation', ['recruiterFormations' => 'focusCandidateAdmin', 'candidate' => $candidate])
-               @include('partials.recruiter.formation', ['recruiterFormations' => 'applicantsQuestionnaire', 'candidate' => $candidate])
                @include('partials.recruiter.formation', ['recruiterFormations' => 'applicantsResumeEval', 'candidate' => $candidate])
                @include('partials.recruiter.formation', ['recruiterFormations' => 'questionnaireCandidate', 'candidate' => $candidate])
-               {{-- @include('partials.recruiter.formation', ['recruiterFormations' => 'candidateSearch', 'candidate' => $candidate]) --}}
                
                @include('partials.recruiter.nextAndPreviousButtons', ['recruiterFormations' => 'focusCandidateAdmin', 'candidate' => $candidate])
          </div>

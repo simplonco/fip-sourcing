@@ -1,66 +1,70 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class="panel-heading">Je n'ai pas encore de compte</div>
-          <div class="col">
+<div class="container register-login-container">
+   <div class="flex-custom-container-row">
+
+      <div class="login-register-container">
+
+         <div class="register-container">
             <form class="form-group" role="form" method="POST" action="{{ route('login') }}">
-              {{ csrf_field() }}
-
-              <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                <label for="email" class="col-md-4 control-label">{{__('user.choose_user.email')}}</label>
-                <input id="email" type="email" class="form-control" name="email" required autofocus>
-
-                @if ($errors->has('email'))
-                  <span class="help-block">
-                  <strong>{{ $errors->first('email') }}</strong>
-                </span>
-                @endif
-              </div>
-              <button class="btn btn-primary">Envoyer un lien de confirmation</button>
+               {{ csrf_field() }}
+               <h4 centered>Je n'ai pas encore de compte</h4><br>
+               <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                  <label for="email" class="control-label">
+                     {{__('user.choose_user.email')}}
+                  </label>
+                  <input id="email" type="email" class="form-control" name="email" required autofocus>
+                  @if ($errors->has('email'))
+                     <span class="help-block">
+                        <strong>{{ $errors->first('email') }}  </strong>
+                     </span>
+                  @endif
+               </div>
+               <div class="rounded-button" style="display:flex; justify-content:center; flex-direction:column;">
+                  <button class="btn btn-primary">Envoyer un lien de confirmation</button>
+               </div>
             </form>
-            <div class="row">
-              <h4>Kezako ?</h4>
-              <p> Ceci est la plateforme pour s'inscrire à une formation Simplon...</p>
+         </div>
+
+
+         <div class="login-container">
+            <form class="form-group" role="form" method="POST" action="{{ route('login') }}">
+               {{ csrf_field() }}
+               <h4 centered>J'ai déjà un compte</h4><br>
+               <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                  <label for="email" class="control-label">{{__('user.choose_user.email')}}</label>
+                  <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                  @if ($errors->has('email'))
+                     <span class="help-block">
+                        <strong>{{ $errors->first('email') }}</strong>
+                     </span>
+                  @endif
+                  <br>
+               <div  class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                  <label for="password" class="control-label">{{__('user.choose_user.password')}}</label>
+                  <input id="password" type="password" class="form-control" name="password" required>
+                  @if ($errors->has('password'))
+                     <span class="help-block">
+                        <strong>{{ $errors->first('password') }}</strong>
+                     </span>
+                  @endif
+               </div>
+               <a href="#">J'ai oublié mon mot de passe</a>
+               <div class="connexion-button-container">
+                  <div class="rounded-button">
+                     <button type="submit" class="btn btn-primary rounded-button">
+                        Connexion
+                     </button>
+                  </div>
+               </div>
+                     {{--<a href="{{ route('register') }}" class="btn">{{__('auth.register')}}</a>--}}
+               <br>
             </div>
-          </div>
-          <div class="panel-heading">J'ai déjà un compte</div>
-          <div class="col">
-            <form class="form-group" role="form" method="POST" action="{{ route('login') }}">
-              {{ csrf_field() }}
-              <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                <label for="email" class="col-md-4 control-label">{{__('user.choose_user.email')}}</label>
-                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+         </form>
+         
+      </div>
 
-                @if ($errors->has('email'))
-                  <span class="help-block">
-                    <strong>{{ $errors->first('email') }}</strong>
-                  </span>
-                @endif
-
-              <div  class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                <label for="password" class="col-md-4 control-label">{{__('user.choose_user.password')}}</label>
-                <input id="password" type="password" class="form-control" name="password" required>
-                @if ($errors->has('password'))
-                  <span class="help-block">
-                    <strong>{{ $errors->first('password') }}</strong>
-                  </span>
-                @endif
-              </div>
-              <button type="submit" class="btn btn-primary">
-               Connexion
-              </button>
-                  {{--<a href="{{ route('register') }}" class="btn">{{__('auth.register')}}</a>--}}
-                <a href="#">J'ai oublié mon mot de passe</a>
-              </div>
-            </form>
-          </div>
-        </div>
-    </div>
-  </div>
+   </div>
 </div>
 @endsection
