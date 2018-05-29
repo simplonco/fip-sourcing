@@ -32,4 +32,6 @@ return [
     'trainers' => 'Gérer les recruteurs',
     'trainings' => 'Formations',
     'questionnaires' => 'Questionnaires',
+
+    'trainings_list' => 'Liste de toutes les formations'
 ];
