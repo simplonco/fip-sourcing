@@ -7,6 +7,11 @@
   {{ Session::get('flash_message') }}
 </div>
 @endif
+
+<div class="cards-custom-list">
+
+<div class="card-custom-container">
+
 <div class="description-view-mega-container">
 <table class="table table-striped">
       <thead>
@@ -42,6 +47,9 @@
   </table>
   <a href="{{ route('formationCreate') }}" class="btn">{{__('formation.add')}}</a>
 </div>
+</div>
+</div>
+
 
 {{--   
 <div class="container">

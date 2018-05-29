@@ -22,7 +22,7 @@
                   @endif
                </div>
                <div class="rounded-button" style="display:flex; justify-content:center; flex-direction:column;">
-                  <a class="btn btn-primary" type="submit">Envoyer un lien de confirmation</a>
+                  <button class="btn btn-primary" type="submit">Envoyer un lien de confirmation</button>
                </div>
             </form>
          </div>
@@ -52,9 +52,9 @@
                <a href="#">J'ai oublié mon mot de passe</a>
                <div class="connexion-button-container">
                   <div class="rounded-button">
-                     <a type="submit" class="btn btn-primary rounded-button connexion">
+                     <button type="submit" class="btn btn-primary connexion">
                         Connexion
-                     </a>
+                     </button>
                   </div>
                </div>
                      {{--<a href="{{ route('register') }}" class="btn">{{__('auth.register')}}</a>--}}
