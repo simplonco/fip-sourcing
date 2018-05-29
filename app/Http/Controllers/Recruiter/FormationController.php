@@ -24,7 +24,7 @@ class FormationController extends Controller
   }
 
   public function recruiterHome(){
-      return view('recruiter.home');
+      return view('home', ['role' => 'recruiter']);
   }
 
   public function recruiterFormations(){

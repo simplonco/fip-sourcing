@@ -27,8 +27,9 @@ return [
     'candidate_removed' => 'Le candidat a bien été supprimé!',
 
     'title' => 'Tableau d\'administration',
-    'candidates' => 'Gérer les candidats',
-    'formers' => 'Gérer les recruteurs',
-    'formations' => 'Gérer les formations',
-    'questionnaire' => 'Questionnaires',
+    'applicants' => 'Gérer les candidats',
+    'users' => 'Utilisateurs',
+    'trainers' => 'Gérer les recruteurs',
+    'trainings' => 'Formations',
+    'questionnaires' => 'Questionnaires',
 ];

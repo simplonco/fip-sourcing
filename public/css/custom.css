@@ -1,30 +1,3 @@
-body:before {
-   top: -5%;
-   left: -5%;
-   content: "";
-   position: fixed;
-   height: 110%;
-   width: 110%;
-   /*background-color: grey;*/
-   /* background: url("https://image.freepik.com/photos-libre/main-en-utilisant-un-ordinateur-portable-dans-un-cafe_1170-2350.jpg") no-repeat center center; */
-   background: url("../images/dust_scratches.png") no-repeat center center;
-   /* background: url("../images/background2.jpg") no-repeat center center; */
-   background-size: cover;
-   z-index: -1;
-   /* Keep the background behind the content */
-   /* -webkit-filter: blur(5px); */
-   -webkit-background-size: cover;
-   /* pour Chrome et Safari */
-   -moz-background-size: cover;
-   /* pour Firefox */
-   -o-background-size: cover;
-   /* pour Opera */
-   background-size: cover;
-   /* version standardisée */
-   /*-webkit-filter: ;  Safari*/
-   /*filter: brightness(60%);*/
-}
-
 .panel {
    background-color: rgba(255, 255, 255, 0.7);
 }
