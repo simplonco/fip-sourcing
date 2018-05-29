@@ -23,7 +23,7 @@
          <nav class="navbar navbar-default navbar-static-top">
          <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
-               <img class="logosimplon" src="{{ asset('images/logosimplon2.png') }}" alt="">
+               <img class="animated-logo logosimplon" src="{{ asset('images/logosimplon2.png') }}" alt="">
                <span>{{__('general.title')}}</span>
             </a>
             <div class="container">
@@ -95,9 +95,11 @@
             </div>
          </nav>
       @endif
+      @if(Auth::guest())
       <div class="home-logo-container">
-         <img src="./images/logosimplon2.png" alt="">
+         <img class="home-logo-simplon animated-logo" src="./images/simplon_pink@4x.png" alt="">
       </div>
+      @endif
    </div>
   @yield('content')
  

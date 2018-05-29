@@ -18,7 +18,7 @@ class AdminController extends Controller
   */
   public function index()
   {
-    return view('admin.panel');
+    return view('home', ['role' => 'admin']);
   }
 
   public function createUser(){
