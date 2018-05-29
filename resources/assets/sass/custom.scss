@@ -7,9 +7,9 @@ $black: darken(#000, 5%);
 $background-general: rgba(243, 243, 243, 0.85);
 $lighten-grey: lighten($light-grey-custom, 35%);
 $border-grey: #d4d4d4;
-$shadow2: 2px 25px 90px rgba(82, 82, 82, .2),
+$shadow2: 2px 2px 90px rgba(82, 82, 82, .2),
 0px 4px 10px rgba(82, 82, 82, .2);
-$shadow1: 2px 25px 90px rgba(82, 82, 82, 0.1),
+$shadow1: 2px 2px 90px rgba(82, 82, 82, 0.1),
 0px 4px 10px rgba(82, 82, 82, .1);
 .navbar {
    margin-bottom: 0px;
@@ -43,8 +43,7 @@ img.animated-logo:hover {
       margin-top: 2em;
       height: 15em;
       width: auto;
-      -webkit-filter: drop-shadow(2px 2px 10px #bdbdbd);
-      filter: drop-shadow(2px 2px 10px #bdbdbd);
+      filter: drop-shadow(2px 2px 10px #dbd0d0);
    }
 }
 
@@ -66,7 +65,7 @@ body:before {
    position: fixed;
    height: 110%;
    width: 110%; // background: url("../images/dust_scratches.png") no-repeat center center;
-   background: $light-grey-custom;
+   background: lighten($light-grey-custom, 40%);
    background-size: cover;
    z-index: -1;
    -webkit-background-size: cover;
@@ -340,6 +339,10 @@ body:before {
             width: 100%;
             flex: 1;
             align-items: center;
+            .table.table-striped {
+               margin: 0;
+               border-bottom: 2px solid $border-grey;
+            }
             .no-padding {
                padding: 0 !important;
                .table {
