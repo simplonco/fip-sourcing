@@ -7,7 +7,7 @@
       <div class="login-register-container">
 
          <div class="register-container">
-            <form class="form-group" role="form" method="POST" action="{{ route('login') }}">
+            <form class="form-group" role="form" method="POST" action="{{ route('send_link') }}">
                {{ csrf_field() }}
                <h4 centered>Je n'ai pas encore de compte</h4><br>
                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -22,11 +22,10 @@
                   @endif
                </div>
                <div class="rounded-button" style="display:flex; justify-content:center; flex-direction:column;">
-                  <a class="btn btn-primary">Envoyer un lien de confirmation</a>
+                  <a class="btn btn-primary" type="submit">Envoyer un lien de confirmation</a>
                </div>
             </form>
          </div>
-
 
          <div class="login-container">
             <form class="form-group" role="form" method="POST" action="{{ route('login') }}">
