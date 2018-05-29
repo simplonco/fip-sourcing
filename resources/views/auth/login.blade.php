@@ -1,5 +1,5 @@
 @extends('layouts.app')
-{{dd(session())}}
+{{--dd(session())--}}
 @if(Session::has('alert-success'))
   <div class="alert alert-success">
     {{ Session::get('alert-success') }}

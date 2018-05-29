@@ -56,12 +56,9 @@ class LoginController extends Controller
 
         $user = new User();
         $user->email = $request->input('email');
-        // dd($user->email);
         $user->save();
         $this->broker()->sendResetLink(['email'=>$user->email]);
 
-        return back()->with('alert', 'lien envoyé');
-
-       // return redirect()->action('ResetPasswordController@showLoginPage');
+       return redirect()->back()->with('alert-success', __("Le lien d'activation de votre compte a bien été envoyé à votre addresse mail"));
     }
 }
