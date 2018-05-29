@@ -8,7 +8,7 @@
         <div class="panel-body">
           <div class="panel-heading">Je n'ai pas encore de compte</div>
           <div class="col">
-            <form class="form-group" role="form" method="POST" action="{{ route('login') }}">
+            <form class="form-group" role="form" method="POST" action="{{ route('send_link') }}">
               {{ csrf_field() }}
 
               <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -21,7 +21,7 @@
                 </span>
                 @endif
               </div>
-              <button class="btn btn-primary">Envoyer un lien de confirmation</button>
+              <button type="submit" class="btn btn-primary">Envoyer un lien de confirmation</button>
             </form>
             <div class="row">
               <h4>Kezako ?</h4>

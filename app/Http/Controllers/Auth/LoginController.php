@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,7 +30,8 @@ class LoginController extends Controller
     return redirect()->route('home');
   }
 
-  use AuthenticatesUsers;
+  use AuthenticatesUsers, SendsPasswordResetEmails;
+
 
 
   /**
@@ -48,4 +51,17 @@ class LoginController extends Controller
   {
     $this->middleware('guest')->except('logout');
   }
+
+    public function sendLink(Request $request){
+
+        $user = new User();
+        $user->email = $request->input('email');
+        // dd($user->email);
+        $user->save();
+        $this->broker()->sendResetLink(['email'=>$user->email]);
+
+        return back()->with('alert', 'lien envoyé');
+
+       // return redirect()->action('ResetPasswordController@showLoginPage');
+    }
 }
