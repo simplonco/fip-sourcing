@@ -16,6 +16,7 @@ Route::get('/home', function () {
 
 
 Route::get('/', 'HomeController@home')->name('welcome');
+Route::post('/send_confirmation', 'Auth\LoginController@sendLink')->name('send_link');
 
 
 Auth::routes();
