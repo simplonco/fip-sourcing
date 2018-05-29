@@ -5,7 +5,7 @@
    @endif
 
    {{------------------ Image ------------------}}
-   @if($recruiterFormations != 'focusCandidateAdmin' && $recruiterFormations != "applicantsList" && $recruiterFormations != "applicantsResumeEval" && $recruiterFormations != "applicantsQuestionnaire")   
+   @if($recruiterFormations != 'focusCandidateAdmin' && $recruiterFormations != "applicantsList" && $recruiterFormations != "applicantsResumeEval" && $recruiterFormations != "questionnaireCandidate")   
       <div class="card-custom-image">
          @if($recruiterFormations == "applicants")
             <i class="fa fa-file-alt fa-5x"></i>
@@ -97,8 +97,9 @@
          @if($recruiterFormations == "applicantsResumeEval")
             @include('partials.recruiter.candidateShowScore') 
          @endif
-         @if($recruiterFormations == "applicantsQuestionnaire")
-
+         @if($recruiterFormations == "questionnaireCandidate")
+            @include('recruiter.candidateShowAnswers') 
+         
          @endif
       </div>
 
