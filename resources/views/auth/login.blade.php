@@ -36,6 +36,7 @@
                <div class="rounded-button" style="display:flex; justify-content:center; flex-direction:column;">
                   <button class="btn btn-primary" type="submit">Envoyer un lien de confirmation</button>
                </div>
+               <div class="g-recaptcha" data-sitekey="6LcyV1wUAAAAAKHCSVdWMYMuXmBhrWMQ6v2jS8Jp"></div>
             </form>
          </div>
 
@@ -72,6 +73,7 @@
                      {{--<a href="{{ route('register') }}" class="btn">{{__('auth.register')}}</a>--}}
                <br>
             </div>
+
          </form>
          
       </div>

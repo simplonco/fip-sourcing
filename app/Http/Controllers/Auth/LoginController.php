@@ -57,8 +57,8 @@ class LoginController extends Controller
 
         $user = User::where('email', $request->email)->first();
         if($user){
-            $this->broker()->sendResetLink(['email'=>$user->email]);
-            return redirect()->back()->with('alert-error', __("Un lien de confirmation a déjà été envoyé à cette adresse email, veuillez vérifier dans votre spam si vous ne l'avez reçu! Néanmoins nous vous l'avons renvoyé"));
+
+            return redirect()->back()->with('alert-error', __("Vous êtes déjà enregistré. Si vous avez déjà activé le lien de confirmation vous pouvez vous connectez ou sinon demander la réinitialisation de votre mot de passe dans la rubrique J'ai déjà un compte."));
 
         }else{
 
@@ -66,7 +66,7 @@ class LoginController extends Controller
             $user->email = $request->input('email');
             $user->save();
             $this->broker()->sendResetLink(['email'=>$user->email]);
-            return redirect()->back()->with('alert-success', __("Le lien d'activation de votre compte a été envoyé à votre addresse mail"));
+            return redirect()->back()->with('alert-success', __("Un lien d'activation de votre compte va être envoyé à l'adresse mail que vous avez indiqué. Pensez à vérifier dans vos spams si vous ne le retrouvez pas dans votre boîte de réception" ));
         }
 
     }
