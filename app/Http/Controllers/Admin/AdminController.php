@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -22,9 +23,11 @@ class AdminController extends Controller
   }
 
   public function createUser(){
-      return view('admin.createUser');
+      return view('admin.createEditUser');
   }
   public function showUsers(){
-      return view('admin.users');
+   $users = user::All();
+
+      return view('admin.list', ['list' => 'users',  'users'=>$users]);
   }
 }

@@ -43,7 +43,7 @@ class FormationController extends Controller
   */
   public function formerCreate()
   {
-    return view('admin.formation.create');
+    return view('admin.formation.createUpdate', ['adminTrainings' => 'create']);
   }
 
   /**
@@ -105,7 +105,7 @@ class FormationController extends Controller
   {
     $formation = Formation::findOrFail($id);
 
-    return view('admin.formation.edit')->withFormation($formation);
+    return view('admin.formation.createUpdate', ['adminTrainings' => 'edit'])->withFormation($formation);
   }
 
 

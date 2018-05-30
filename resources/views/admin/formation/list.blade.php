@@ -55,7 +55,11 @@
             </div>
             <div class="action-buttons-in-footer">
                <div class="action-button rounded-button">
-                  <a class="btn btn-primary" href="{{ route('formationCreate') }}">{{__('formation.add')}}</a>
+                  <a class="btn btn-primary" href="{{ route('formationCreate') }}">
+                     <i class="fas fa-plus"> </i> 
+                     &nbsp;
+                     {{__('formation.add')}}
+                  </a>
                </div>
             </div> 
          </div>

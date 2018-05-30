@@ -26,6 +26,8 @@ return [
     'candidate_updated' => 'Les informations du candidat ont bien été enregistrées!',
     'candidate_removed' => 'Le candidat a bien été supprimé!',
 
+    'new_user' => 'Nouvel utilisateur',
+
     'title' => 'Tableau d\'administration',
     'applicants' => 'Gérer les candidats',
     'users' => 'Utilisateurs',
@@ -33,5 +35,4 @@ return [
     'trainings' => 'Formations',
     'questionnaires' => 'Questionnaires',
 
-    'trainings_list' => 'Liste de toutes les formations'
 ];
