@@ -4,11 +4,11 @@
           <th><input type="checkbox"></th>
           <th class="sorting-arrows">
              {{__('user.choose_user.last_name')}} 
-             <div>
+            <div>
                 <a href="{{ route('recruiterFormationCandidatesList', [$session->formation->id, 'last_name', 'asc']) }}"><i class="fa fa-sort-up" aria-hidden="true"></i></a>
                 <a href="{{ route('recruiterFormationCandidatesList', [$session->formation->id, 'last_name', 'desc']) }}"><i class="fa fa-sort-down" aria-hidden="true"></i></a>
-               </th>
             </div>
+         </th>
           <th>{{__('user.choose_user.first_name')}}</th>
           <th style="text-align:center;">Progression</th>
           <th style="text-align:center;">{{__('game.badges')}}</th>

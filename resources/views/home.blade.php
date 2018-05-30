@@ -46,7 +46,7 @@
                @if($role == 'recruiter')
                   <a href="{{route('candidateSearch')}}">
                @elseif($role=='admin')
-                  <a href="#">
+                  <a href="{{route('showUsers')}}">
                @endif
                   <div class="card text-center text-white bg-danger mb-3">
                      <div class="card-body">

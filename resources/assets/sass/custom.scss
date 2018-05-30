@@ -1,8 +1,8 @@
 $pink-simplon:rgb(232, 0, 65);
 $grey-custom:#747474;
 $light-grey-custom: hsla(0, 0%, 57%, 1);
-$grey-dark-custom:#2e2d2d;
-$white: darken(#fff, 5%);
+$grey-dark-custom:hsl(0, 1%, 18%);
+$white: darken(#fff, 3%);
 $black: darken(#000, 5%);
 $background-general: rgba(243, 243, 243, 0.85);
 $lighten-grey: lighten($light-grey-custom, 35%);
@@ -221,7 +221,8 @@ body:before {
    .btn:active {
       background: $white;
       color: $pink-simplon;
-      border: 2px solid $pink-simplon;
+      border: 2px solid $pink-simplon !important;
+      outline: 0;
    }
 }
 
@@ -259,6 +260,12 @@ body:before {
    }
    a.connexion {
       width: 10em;
+   }
+   a:active {
+      background: $white;
+      color: $pink-simplon;
+      border: 2px solid $pink-simplon !important;
+      outline: 0;
    }
 }
 
@@ -551,9 +558,21 @@ body:before {
       align-items: center;
       justify-content: center;
       justify-content: space-around;
+      box-shadow: $shadow2;
    }
    .round {
       width: 2.8em;
+   }
+   .btn:active {
+      background: $white;
+      color: $pink-simplon;
+      border: 2px solid $pink-simplon !important;
+      outline: 0;
+   }
+   a:active {
+      background: $white;
+      color: $pink-simplon;
+      border: 2px solid #e80041;
    }
 }
 
