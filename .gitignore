@@ -12,3 +12,4 @@ npm-debug.log
 heroku_cleardb.md
 .flooignore
 .floo
+.DS_Store

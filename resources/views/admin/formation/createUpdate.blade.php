@@ -65,7 +65,6 @@
                   {!! Form::text('year', null, ['class' => 'form-control']) !!}
                </div>
 
-
                <div class="form-group">
                   {!! Form::label('begin_session', __('formation.choose_formation.begin_session'), ['class' => 'control-label']) !!}
                   {!! Form::date('begin_session', null, ['class' => 'form-control']) !!}

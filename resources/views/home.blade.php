@@ -26,6 +26,8 @@
                   <a href="{{route('recruiterFormations')}}">
                @elseif($role == 'admin')
                   <a href="{{ route('formationList') }}">
+               @elseif($role == 'learner')
+                  <a href="#">
                @endif
                   <div class="card text-center text-white bg-danger mb-3">
                     <div class="card-body navigation-container">

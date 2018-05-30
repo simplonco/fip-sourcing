@@ -48,7 +48,7 @@
                                  @foreach ($users as $user)
                                  <tr>
                                     <td style="text-align:center;">
-                                       <a href=""><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+                                    <a href="{{route('editUser', $user->id)}}"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
                                        <a href=""><i class="fas fa-trash" aria-hidden="true"></i></a></td>
                                     <td style="text-align:center;">{{$user->last_name}}</td>
                                     <td style="text-align:center;">{{$user->first_name}}</td>

@@ -69,6 +69,9 @@ Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin', 'Admin\AdminController@index')->name('admin');
   Route::get('/admin/users', 'Admin\AdminController@showUsers')->name('showUsers');
   Route::get('/admin/create', 'Admin\AdminController@createUser')->name('createUser');
+  Route::get('/admin/edit/{id}', 'Admin\AdminController@editUser')->name('editUser');
+  Route::post('/admin/save/{id}', 'Admin\AdminController@save')->name('saveUser');
+
   // CRUD recruteur
   Route::get('/admin/former/list', 'Admin\FormerController@list')->name('formerList');
   Route::get('/admin/former/create', 'Admin\FormerController@create')->name('formerCreate');
@@ -77,6 +80,7 @@ Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin/former/edit/{id}', 'Admin\FormerController@edit')->name('formerEdit');
   Route::post('/admin/former/update/{id}', 'Admin\FormerController@update')->name('formerUpdate');
   Route::get('/admin/former/delete/{id}', 'Admin\FormerController@destroy')->name('formerDelete');
+
   // CRUD formation
   Route::get('/admin/formation/list', 'Admin\FormationController@list')->name('formationList');
   Route::get('/admin/formation/create', 'Admin\FormationController@formerCreate')->name('formationCreate');
