@@ -9,7 +9,13 @@
     <div class="alert alert-success">
       {{ Session::get('alert-success') }}
     </div>
-  @endif
+   @endif
+      {{--dd(session())--}}
+   @if(Session::has('alert-error'))
+      <div class="alert alert-error centered">
+         {{ Session::get('alert-error') }}
+      </div>
+   @endif
       <div class="login-register-container">
 
          <div class="register-container">

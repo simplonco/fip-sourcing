@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
@@ -54,11 +55,19 @@ class LoginController extends Controller
 
     public function sendLink(Request $request){
 
-        $user = new User();
-        $user->email = $request->input('email');
-        $user->save();
-        $this->broker()->sendResetLink(['email'=>$user->email]);
+        $user = User::where('email', $request->email)->first();
+        if($user){
+            $this->broker()->sendResetLink(['email'=>$user->email]);
+            return redirect()->back()->with('alert-error', __("Un lien de confirmation a déjà été envoyé à cette adresse email, veuillez vérifier dans votre spam si vous ne l'avez reçu! Néanmoins nous vous l'avons renvoyé"));
 
-       return redirect()->back()->with('alert-success', __("Le lien d'activation de votre compte a bien été envoyé à votre addresse mail"));
+        }else{
+
+            $user = new User();
+            $user->email = $request->input('email');
+            $user->save();
+            $this->broker()->sendResetLink(['email'=>$user->email]);
+            return redirect()->back()->with('alert-success', __("Le lien d'activation de votre compte a été envoyé à votre addresse mail"));
+        }
+
     }
 }
