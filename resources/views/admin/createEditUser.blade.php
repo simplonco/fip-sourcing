@@ -6,7 +6,12 @@
 
    <div class="title-top-container">
       <h3 class='text-center title-top'>
+         @if($action === "edit")
+         {{__('admin_panel.edit_user')}}
+
+         @elseif($action === "create")
          {{__('admin_panel.new_user')}}
+         @endif
       </h3>
    </div>
 
@@ -16,7 +21,6 @@
             <div class="card-custom-container">
                <div class="description-view-mega-container">
                   <div class="card-custom-description">
-
                      <form role="form" method="POST" action="">
                            {{ csrf_field() }}
    
@@ -28,23 +32,46 @@
                            <label for="role_id" class="control-label">Rôle</label>
                            <select class="form-control" name="" id="">
                               @foreach(\App\Models\Role::all() as $role)
-                                 <option value={{$role->id}}>
-                                    {{ucfirst($role->name)}}
+                                 <option 
+                                       @if($action === "edit")
+                                          value="{{$user->roles[0]->id}}" selected
+                                       @else
+                                          value={{$role->id}}
+                                       @endif
+                                    >
+                                    @if($action === "edit")
+                                       {{ucfirst($user->roles[0]->name)}}
+                                    @else
+                                       {{ucfirst($role->name)}}
+                                    @endif
+                                    
                                  </option>
                               @endforeach
                            </select>
                         </div>
                         <div class="form-group">
                            <label for="end_session" class="control-label">{{ __('user.choose_user.last_name')}}</label>
-                           <input class="form-control" type="text" name="last_name">
+                           <input class="form-control" type="text" name="last_name"
+                              @if($action === "edit")
+                                 value="{{$user->last_name}}"
+                              @endif
+                           >
                         </div>
                         <div class="form-group">
                            <label for="city" class="control-label">{{__('user.choose_user.first_name')}}</label>
-                           <input class="form-control" type="text" name="first_name">
+                           <input class="form-control" type="text" name="first_name"
+                              @if($action === "edit")
+                                 value="{{$user->first_name}}"
+                              @endif
+                           >
                         </div>
                         <div class="form-group">
                            <label for="city" class="control-label">{{ __('user.choose_user.email')}}</label>
-                           <input class="form-control" type="mail" name="email">
+                           <input class="form-control" type="mail" name="email"
+                              @if($action === "edit")
+                                 value="{{$user->email}}"
+                              @endif
+                           >
                         </div>
 
                      </form>

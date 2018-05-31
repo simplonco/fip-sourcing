@@ -300,7 +300,6 @@ body:before {
       width: 100%;
       padding: 0px;
       box-shadow: $shadow1;
-      background: purple;
       .action-buttons-container.header-action-buttons {
          background: $lighten-grey;
          display: flex;
@@ -313,7 +312,6 @@ body:before {
       }
       .page-title {
          color: $black;
-         background: purple
       }
       .card-custom-container {
          display: flex;
@@ -476,12 +474,6 @@ body:before {
             }
          }
       }
-   }
-}
-
-.action {
-   .td.action.buttons {
-      background: purple
    }
 }
 

@@ -90,10 +90,9 @@ class FormationController extends Controller
   public function show($id)
   {
     $formation = Formation::findOrFail($id);
-    $now = Carbon::now(2);
-    $currentSession = $formation->sessions()->where(Carbon::parse('begin_session'), '<=', $now)->get();
+    $today = Carbon::now(2);
 
-    return view('admin.formation.show', compact(['formation', 'currentSession']));
+    return view('admin.formation.show', compact(['formation', 'today']));
   }
 
 
