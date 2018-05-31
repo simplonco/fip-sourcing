@@ -3,11 +3,11 @@
 @section('content')
 
 <div class="container">
-      <div class="title-top-container">
-         <h3 class='text-center title-top'>
-            {{__('formation.show')}}
-         </h3>
-      </div>
+   <div class="title-top-container">
+      <h3 class='text-center title-top'>
+         {{__('formation.show')}}
+      </h3>
+   </div>
    
    <div class="cards-custom-list-mega-container">
       <div class="card-custom-list-container">
@@ -27,7 +27,6 @@
                            <dt>{{__('formation.choose_formation.begin_session')}} :</dt><dd>{{$formation->begin_session}}</dd>
                            <dt>{{__('formation.choose_formation.end_session')}} :</dt><dd>{{$formation->end_session}}</dd>
                         </div>
-                        </div>
                      </dl>
                   </div>
                </div>
@@ -35,6 +34,7 @@
          </div>
       </div>
    </div>
+</div>
 
 {{-- 
 <div class="container">

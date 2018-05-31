@@ -20,25 +20,40 @@
             <div class="card-custom-container">
                <div class="description-view-mega-container">
                   <table class="table table-striped">
-                        <thead>
-                              <tr>
-                                 <th style="text-align:center;">Actions</th>
-                                 <th>{{__('formation.choose_formation.name')}}</th>
-                                 <th>{{__('formation.choose_formation.description')}}</th>
-                                 <th>{{__('formation.choose_formation.city')}}</th>
-                                 <th>{{__('formation.choose_formation.year')}}</th>
-                                 <th>{{__('formation.choose_formation.begin_session')}}</th>
-                                 <th>{{__('formation.choose_formation.end_session')}}</th>
-                              </tr>
-                        </thead>
-                        <tbody>
-
-                        @foreach ($formations as $formation)
+                     <thead>
                         <tr>
-                              <td style="text-align:center;">
-                              <a href="{{ route('formationShow', $formation->id) }}"><i class="fas fa-info-circle" aria-hidden="true"></i></a>
-                              <a href="{{ route('formationEdit', $formation->id) }}"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
-                              <a href="{{ route('formationDelete', $formation->id) }}"><i class="fas fa-ban" aria-hidden="true"></i></a></td>
+                           <th style="text-align:center;">Actions</th>
+                           <th>{{__('formation.choose_formation.name')}}</th>
+                           <th>{{__('formation.choose_formation.description')}}</th>
+                           <th>{{__('formation.choose_formation.city')}}</th>
+                           <th>{{__('formation.choose_formation.year')}}</th>
+                           <th>{{__('formation.choose_formation.begin_session')}}</th>
+                           <th>{{__('formation.choose_formation.end_session')}}</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        @foreach ($formations as $formation)
+                        <tr class="actions">
+                              <td class="td-action-buttons  width-actions" style="text-align:center;">
+                                 <a href="{{ route('formationShow', $formation->id) }}">
+                                    <span class="fa-stack fa-sm">
+                                       <i class="fas fa-circle fa-stack-2x"></i>
+                                       <i class="fas fa-info fa-stack-1x" aria-hidden="true"></i>
+                                    </span>
+                                 </a>
+                                 <a href="{{ route('formationEdit', $formation->id) }}">
+                                    <span class="fa-stack fa-sm">
+                                       <i class="fas fa-circle fa-stack-2x"></i>
+                                       <i class="fas fa-pencil-alt fa-stack-1x" aria-hidden="true"></i>
+                                    </span>
+                                 </a>
+                                 <a href="{{ route('formationDelete', $formation->id) }}">
+                                    <span class="fa-stack fa-sm">
+                                       <i class="fas fa-circle fa-stack-2x "></i>
+                                       <i class="fas fa-ban fa-stack-1x" aria-hidden="true"></i>
+                                    </span>
+                                 </a>
+                              </td>
                               <td>{{$formation->name}}</td>
                               <td>{{$formation->description}}</td>
                               <td>{{$formation->city}}</td>
@@ -47,9 +62,8 @@
                               <td>{{$formation->end_session}}</td>
                            </tr>
                         @endforeach
-                     
-                        {{-- {{ $candidates->links() }} --}}
-                        </tbody>
+                     {{-- {{ $candidates->links() }} --}}
+                     </tbody>
                   </table>
                </div>
             </div>
