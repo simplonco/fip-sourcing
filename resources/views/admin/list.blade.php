@@ -64,12 +64,31 @@
                               </a>
                      
                            </td>
-                           <td >{{$user->last_name}}</td>
-                           <td >{{$user->first_name}}</td>
-                           <td>{{$user->email}}</td>
                            <td>
-                              {{ucfirst($user->roles[0]->name)}}</td>
-                           <td></td>
+                              @isset($user->last_name)
+                                 {{$user->last_name}}
+                              @endisset
+                           </td>
+                           <td>
+                              @isset($user->first_name)
+                                 {{$user->first_name}}
+                              @endisset
+                           </td>
+                           <td>
+                              @isset($user->email)
+                                 {{$user->email}}
+                              @endisset
+                           </td>
+                           <td>
+                              @isset($user->roles[0]->name)
+                                 {{__('roles.'.$user->roles[0]->name)}}
+                              @endisset   
+                           </td>
+                           <td>
+                              {{-- @isset($user->isActivated) --}}
+                                 {{-- {{$user->isActivated}} --}}
+                              {{-- @endisset    --}}
+                           </td>
                         </tr>
                      @endforeach
                   

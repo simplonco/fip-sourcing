@@ -16,62 +16,102 @@
                <div class="description-view-mega-container">
                   <div class="card-custom-description">
                      <dl>
-                        <div class="col-md-9">
+                        <div class="">
                            <dt>{{__('formation.choose_formation.name')}} :</dt><dd>{{$formation->name}}</dd>
                            <br>
                            <dt>{{__('formation.choose_formation.description')}}</dt><dd> {{$formation->description}}</dd>
-                           <a href="#" class="btn btn-primary">Créer une session</a>
                         </div>
-                        <div class="col-md-3">
-                           <dt>{{__('formation.choose_formation.city')}} :</dt><dd> {{$formation->city}}</dd>
-                           <dt>{{__('formation.choose_formation.year')}} :</dt><dd>{{$formation->year}}</dd>
-                           <dt>{{__('formation.choose_formation.begin_session')}} :</dt><dd>{{$formation->begin_session}}</dd>
-                           <dt>{{__('formation.choose_formation.end_session')}} :</dt><dd>{{$formation->end_session}}</dd>
-                        </div>
+                        
                      </dl>
                   </div>
                </div>
             </div>
-         </div>
-         <h3>{{__('Session en cours')}}</h3>
-      @foreach($formation->sessions as $session)
-
-         @if($session->begin_session->lte($today))
-               <div class="container cards-custom-list">
-                  <div class="card-custom-container">
-                     <div class="description-view-mega-container">
-
-                     <div class="card-custom-description">
-                        <dl>
-                              <dt>{{__('formation.choose_formation.city')}} :</dt><dd> {{$session->city}}</dd>
-                              <dt>{{__('formation.choose_formation.year')}} :</dt><dd>{{$session->year}}</dd>
-                              <dt>{{__('formation.choose_formation.begin_session')}} :</dt><dd>{{$session->begin_session}}</dd>
-                              <dt>{{__('formation.choose_formation.end_session')}} :</dt><dd>{{$session->end_session}}</dd>
-                        </dl>
-                     </div>
-                  </div>
+            <div class="action-buttons-in-footer">
+               <div class="action-button rounded-button">
+                  <a href="#" class="btn btn-primary">
+                     {{__('formation.create_session')}}
+                  </a>
                </div>
             </div>
-         @endif
-         <h3>Session à venir</h3>
-            @if($session->begin_session->gt($today))
-               <div class="container cards-custom-list">
-                  <div class="card-custom-container">
-                     <div class="description-view-mega-container">
+         </div>
+      </div>
+   </div>
 
-                        <div class="card-custom-description">
-                           <dl>
-                              <dt>{{__('formation.choose_formation.city')}} :</dt><dd> {{$session->city}}</dd>
-                              <dt>{{__('formation.choose_formation.year')}} :</dt><dd>{{$session->year}}</dd>
-                              <dt>{{__('formation.choose_formation.begin_session')}} :</dt><dd>{{$session->begin_session}}</dd>
-                              <dt>{{__('formation.choose_formation.end_session')}} :</dt><dd>{{$session->end_session}}</dd>
-                           </dl>
-                        </div>
-                     </div>
-                  </div>
+   <div class="title-top-container">
+      <h3 class='text-center title-top'>
+         {{__('Sessions')}}
+      </h3>
+   </div>
+
+   <div class="cards-custom-list-mega-container">
+      <div class="card-custom-list-container">
+         <div class="container cards-custom-list">
+            <div class="card-custom-container">
+               <div class="description-view-mega-container">
+                  <table class="table table-striped">
+                     <thead>
+                        <tr>
+                           <th>
+                              plop
+                           </th>
+                           <th>
+                                 {{__('formation.choose_formation.city')}}
+                           </th>
+                           <th>
+                                 {{__('formation.choose_formation.year')}}
+                           </th>
+                           <th>
+                                 {{__('formation.choose_formation.begin_session')}}
+                           </th>
+                           <th>
+                                 {{__('formation.choose_formation.end_session')}}
+                           </th>
+                           <th>
+                              {{__('formation.choose_formation.status')}}
+                           </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        @foreach($formation->sessions as $session)
+                        <tr class="actions">
+                           <td style="text-align:center" class="td-action-buttons">
+                              <a href="#">
+                              <span class="fa-stack fa-sm" style="    vertical-align: middle;">
+                                 <i class="fas fa-circle fa-stack-2x"></i>
+                                 <i class="fas fa-pencil-alt fa-stack-1x" aria-hidden="true"></i>
+                              </span>
+                              </a>
+                              <a href="#">
+                                 <span class="fa-stack fa-sm" style="    vertical-align: middle;">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fas fa-trash fa-stack-1x" aria-hidden="true"></i>
+                                 </span>
+                              </a>
+                           </td>
+                           <td>{{$session->city}}</td>
+                           <td>{{$session->year}}</td>
+                           <td>{{$session->begin_session->format("d-m-Y")}}</td>
+                           <td>{{$session->end_session->format("d-m-Y")}}</td>
+                           <td>
+                              @if($session->begin_session->lte($today))
+                                 <i class="fas fa-dot-circle" color="lightgreen"></i>   
+                                 {{__('En cours')}}
+                              @elseif($session->begin_session->gt($today))
+                                 <i class="fas fa-dot-circle" color="lightblue"></i>   
+                                 {{__('À venir')}}
+                              @else
+                                 <i class="fas fa-dot-circle" color="red"></i>   
+                                 {{__('Cloturée')}}
+                              @endif
+                           </td>
+                        </tr>
+                        @endforeach
+                     </tbody>
+
+                  </table>
                </div>
-            @endif
-         @endforeach
+            </div>
+         </div>
       </div>
    </div>
 </div>

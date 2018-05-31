@@ -19,13 +19,15 @@ return [
     'show' => 'Formation informations',
     'candidates' => 'Candidates',
     'candidates_list' => 'Candidates list',
+    'create_session' => 'Create a sessions',
     'choose_formation' => [
       'name' => 'Name',
       'description' => 'Description',
       'city' => 'City',
       'year' => 'Year',
       'begin_session' => 'Begin session',
-      'end_session' => 'End session'
+      'end_session' => 'End session',
+      'status' => 'status'
     ]
 
 ];
