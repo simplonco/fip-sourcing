@@ -31,13 +31,18 @@
                                     <a href="#"><i class="fa fa-sort-down" aria-hidden="true"></i></a>
                                  </div> --}}
                               </th>
-                              
                               <th >
                                  {{__('user.choose_user.first_name')}}
-
                               </th>
-                              <th >Rôle</th>
-                              <th >Activé</th>
+                              <th>
+                                 {{__('user.choose_user.email')}}
+                              </th>
+                              <th >
+                                 {{__('user.choose_user.role')}}
+                              </th>
+                              <th >
+                                 {{__('user.choose_user.activated')}}
+                              </th>
                            </tr>
                      </thead>
                      <tbody>
@@ -61,8 +66,10 @@
                            </td>
                            <td >{{$user->last_name}}</td>
                            <td >{{$user->first_name}}</td>
-                           <td >{{ucfirst($user->roles[0]->name)}}</td>
-                           <td ></td>
+                           <td>{{$user->email}}</td>
+                           <td>
+                              {{ucfirst($user->roles[0]->name)}}</td>
+                           <td></td>
                         </tr>
                      @endforeach
                   

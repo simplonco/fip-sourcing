@@ -25,6 +25,8 @@ return [
       'css_score' => 'CSS score',
       'js_score' => 'JS score',
       'php_score' => 'PHP score',
+      'role' => 'Role',
+      'activated' => 'Activated'
     ],
     'candidate_modification' => 'Candidate modification : ',
     'candidate_add' => 'Add a candidate',
