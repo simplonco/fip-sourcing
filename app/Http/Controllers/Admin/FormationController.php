@@ -9,6 +9,7 @@ use User;
 use App\Models\Formation;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class FormationController extends Controller
 {
@@ -89,8 +90,10 @@ class FormationController extends Controller
   public function show($id)
   {
     $formation = Formation::findOrFail($id);
+    $now = Carbon::now(2);
+    $currentSession = $formation->sessions()->where(Carbon::parse('begin_session'), '<=', $now)->get();
 
-    return view('admin.formation.show', compact('formation'));
+    return view('admin.formation.show', compact(['formation', 'currentSession']));
   }
 
 

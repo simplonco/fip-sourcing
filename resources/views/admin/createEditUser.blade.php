@@ -9,7 +9,7 @@
          {{__('admin_panel.new_user')}}
       </h3>
    </div>
-   {{-- {{dd($user)}} --}}
+
    <div class="cards-custom-list-mega-container">
       <div class="card-custom-list-container">
          <div class="container cards-custom-list">
@@ -17,7 +17,7 @@
                <div class="description-view-mega-container">
                   <div class="card-custom-description">
 
-                     <form role="form" method="POST" action="{{route('saveUser', $user->id)}}">
+                     <form role="form" method="POST" action="">
                            {{ csrf_field() }}
    
                         <div class="form-group">
@@ -34,54 +34,38 @@
                               @endforeach
                            </select>
                         </div>
-                        @if($action === "edit")
-                           <input value="{{$user->id}}" name="id" type="text" hidden>
-                        @endif
                         <div class="form-group">
                            <label for="end_session" class="control-label">{{ __('user.choose_user.last_name')}}</label>
-                           <input class="form-control" type="text" name="last_name" 
-                           @if($action === "edit")
-                              value="{{$user->last_name}}"
-                           @endif
-                           >
+                           <input class="form-control" type="text" name="last_name">
                         </div>
                         <div class="form-group">
                            <label for="city" class="control-label">{{__('user.choose_user.first_name')}}</label>
-                           <input class="form-control" type="text" name="first_name"
-                           @if($action === "edit")
-                              value="{{$user->first_name}}"
-                           @endif
-                           >
+                           <input class="form-control" type="text" name="first_name">
                         </div>
                         <div class="form-group">
                            <label for="city" class="control-label">{{ __('user.choose_user.email')}}</label>
-                           <input class="form-control" type="mail" name="email"
-                           @if($action === "edit")
-                              value="{{$user->email}}"
-                           @endif
-                           >
+                           <input class="form-control" type="mail" name="email">
                         </div>
 
+                     </form>
                   </div>
 
                </div>
             </div>
                   <div class="action-buttons-in-footer">
                      <div class="action-button rounded-button">
-                        <button href="{{route('showUsers')}}" class=" btn btn-primary">
+                        <a href="{{route('showUsers')}}" class=" btn btn-primary">
                            <i class="fas fa-chevron-left"></i> &nbsp;
                            {{__("actions.back")}}
-                        </button>
+                        </a>
                      </div>
                      <div class="action-button rounded-button">
-                        <button class="btn btn-primary" type="submit">
+                        <a class="btn btn-primary" type="submit">
                            <i class="fas fa-plus"></i> &nbsp;
                            {{__("actions.save")}}
-                        </button>
+                        </a>
                      </div>
                   </div> 
-               </form>
-                  
          </div>
       </div>
    </div>
