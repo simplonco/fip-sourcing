@@ -25,6 +25,8 @@ return [
       'css_score' => 'Score CSS',
       'js_score' => 'Score JS',
       'php_score' => 'Score PHP',
+      'role' => 'Rôle',
+      'activated' => 'Activé'
     ],
     'candidate_modification' => 'Modification du candidat : ',
     'candidate_add' => 'Ajouter un candidat',

@@ -83,10 +83,15 @@ body:before {
    top: 0px;
    left: 0px;
    background: $background-general;
-   .app {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 5em;
+   #app {
+      .alert-messages {
+         position: fixed;
+         top: 0;
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         z-index: 10;
+      }
    }
    .mega-container {
       margin-bottom: 5em;
@@ -96,6 +101,15 @@ body:before {
 .navbar-brand {
    span {
       font-size: 14px;
+   }
+}
+
+.captcha-container {
+   display: flex;
+   justify-content: center;
+   height: 7em;
+   .g-recaptcha {
+      padding: .4em 0 1em;
    }
 }
 
@@ -249,7 +263,7 @@ body:before {
 }
 
 .rounded-button {
-   padding: .5em 0 .5em .5em;
+   padding: .5em .5em .5em .5em;
    a {
       display: flex;
       justify-content: space-around;
@@ -349,6 +363,32 @@ body:before {
             .table.table-striped {
                margin: 0;
                border-bottom: 2px solid $border-grey;
+               tbody {
+                  .actions {
+                     .td-action-buttons {
+                        a {
+                           text-decoration: none;
+                           .fa-stack {
+                              .fa-stack-2x {
+                                 opacity: 0.0;
+                              }
+                           }
+                           .fa-stack:hover {
+                              .fa-stack-1x {
+                                 color: $lighten-grey;
+                              }
+                              .fa-stack-2x {
+                                 opacity: 1.0;
+                              }
+                           }
+                        }
+                     }
+                     .td-action-buttons.width-actions {
+                        width: 10em;
+                        vertical-align: center;
+                     }
+                  }
+               }
             }
             .no-padding {
                padding: 0 !important;
@@ -436,6 +476,12 @@ body:before {
             }
          }
       }
+   }
+}
+
+.action {
+   .td.action.buttons {
+      background: purple
    }
 }
 
@@ -527,6 +573,18 @@ body:before {
          dt {
             margin-right: 10px;
          }
+      }
+   }
+}
+
+td.td-action-buttons {
+   a {
+      .fa-stack {
+         .fa.fa-circle {
+            opacity: 0.0;
+         }
+         padding-left: 1.1em;
+         padding-right: 1.1em;
       }
    }
 }
