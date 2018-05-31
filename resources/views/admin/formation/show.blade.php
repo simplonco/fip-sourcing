@@ -33,11 +33,14 @@
                </div>
             </div>
          </div>
+         <h3>{{__('Session en cours')}}</h3>
       @foreach($formation->sessions as $session)
-            <div class="container cards-custom-list">
-               <div class="card-custom-container">
-                  <div class="description-view-mega-container">
-                     <h3>{{__('Session en cours')}}</h3>
+
+         @if($session->begin_session->lte($today))
+               <div class="container cards-custom-list">
+                  <div class="card-custom-container">
+                     <div class="description-view-mega-container">
+
                      <div class="card-custom-description">
                         <dl>
                               <dt>{{__('formation.choose_formation.city')}} :</dt><dd> {{$session->city}}</dd>
@@ -49,73 +52,28 @@
                   </div>
                </div>
             </div>
+         @endif
+         <h3>Session à venir</h3>
+            @if($session->begin_session->gt($today))
+               <div class="container cards-custom-list">
+                  <div class="card-custom-container">
+                     <div class="description-view-mega-container">
+
+                        <div class="card-custom-description">
+                           <dl>
+                              <dt>{{__('formation.choose_formation.city')}} :</dt><dd> {{$session->city}}</dd>
+                              <dt>{{__('formation.choose_formation.year')}} :</dt><dd>{{$session->year}}</dd>
+                              <dt>{{__('formation.choose_formation.begin_session')}} :</dt><dd>{{$session->begin_session}}</dd>
+                              <dt>{{__('formation.choose_formation.end_session')}} :</dt><dd>{{$session->end_session}}</dd>
+                           </dl>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            @endif
          @endforeach
       </div>
    </div>
 </div>
-
-{{-- 
-<div class="container">
-
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="panel panel-default">
-        <div class="panel-heading">{{__('formation.show')}}</div>
-        <div class="panel-body">
-
-          <div class="row">
-            <div class="col-md-3">
-              <b>{{__('formation.choose_formation.name')}} :</b>
-            </div>
-            <div class="col-md-5">
-              {{$formation->name}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-3">
-              <b>{{__('formation.choose_formation.description')}} :</b>
-            </div>
-            <div class="col-md-5">
-              {{$formation->description}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-3">
-              <b>{{__('formation.choose_formation.city')}} :</b>
-            </div>
-            <div class="col-md-5">
-              {{$formation->city}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-3">
-              <b>{{__('formation.choose_formation.year')}} :</b>
-            </div>
-            <div class="col-md-5">
-              {{$formation->year}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-3">
-              <b>{{__('formation.choose_formation.begin_session')}} :</b>
-            </div>
-            <div class="col-md-5">
-              {{$formation->begin_session}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-3">
-              <b>{{__('formation.choose_formation.end_session')}} :</b>
-            </div>
-            <div class="col-md-5">
-              {{$formation->end_session}}
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div> --}}
 
 @endsection
