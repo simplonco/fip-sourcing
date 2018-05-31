@@ -31,7 +31,6 @@ class AdminController extends Controller
   }
   public function editUser($id){
       $user = User::findOrFail($id);
-      // dd($user);
       return view('admin.createEditUser', ['action' => 'edit', 'id' => $id, 'user' => $user]);
   }
 
