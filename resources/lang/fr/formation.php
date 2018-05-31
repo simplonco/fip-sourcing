@@ -24,8 +24,8 @@ return [
       'description' => 'Description',
       'city' => 'Lieu',
       'year' => 'Année',
-      'begin_session' => 'Début de session',
-      'end_session' => 'Fin de session'
+      'begin_session' => 'Début',
+      'end_session' => 'Fin'
     ]
 
 ];

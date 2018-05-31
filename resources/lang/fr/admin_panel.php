@@ -26,9 +26,13 @@ return [
     'candidate_updated' => 'Les informations du candidat ont bien été enregistrées!',
     'candidate_removed' => 'Le candidat a bien été supprimé!',
 
+    'new_user' => 'Nouvel utilisateur',
+
     'title' => 'Tableau d\'administration',
-    'candidates' => 'Gérer les candidats',
-    'formers' => 'Gérer les recruteurs',
-    'formations' => 'Gérer les formations',
-    'questionnaire' => 'Questionnaires',
+    'applicants' => 'Gérer les candidats',
+    'users' => 'Utilisateurs',
+    'trainers' => 'Gérer les recruteurs',
+    'trainings' => 'Formations',
+    'questionnaires' => 'Questionnaires',
+
 ];

@@ -1,31 +1,41 @@
-@extends('layouts.app')
+<dl class="candidate-score-container container col-md-12">
+   <div class="col-md-3 badges">
+      <div>
+         <i class="fa fa-trophy fa-2x" color="{{'#00e861'}}"></i>  
+         <p>HTML</p>
+      </div>
+      <div>
+         <i class="fa fa-trophy fa-2x" color="{{'#949393'}}"></i><p>CSS</p>
+      </div>
+      <div>
+         <i class="fa fa-trophy fa-2x" color="{{'#00b2e8'}}"></i><p>JS</p>
+      </div>
+      <div>
+         <i class="fa fa-trophy fa-2x" color="{{'#00e861'}}"></i><p>ALGORITHMIQUE</p>
+      </div>
+   </div>
+   <div class="col-md-3">
+      <div><dt>Créativité : </dt><dd>plop</dd></div>
+      <div><dt>Motivation : </dt><dd> plip</dd></div>
+      <div><dt>Culture générale : </dt><dd>plup</dd></div>
+      <div><dt>Logique : </dt><dd>plep</dd></div>
+      <div><dt>Spécifique formation : </dt><dd>plap</dd></div>
+      <div><dt>Badges gagnés : </dt><dd>plyp</dd></div>
+   </div>
+   <div class="col-md-6 global-score">
+      <div>
+         <dt>Score global :</dt>
+         <p>100</p>
+      </div>
+   </div>
+</dl>
 
-@section('content')
-    <div class="container">
-        <div class="row">
-            <h3 class="text-center">CANDIDAT - {{$candidate->first_name}} {{$candidate->last_name}} </h3>
-            <div class="col-md-8 col-md-offset-2">
-                @include('partials.recruiter.candidateSummary')
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div class="row">
-                            <ul class="list-unstyled">
-                                <li>Créativité : </li>
-                                <li>Motivation</li>
-                                <li>Culture générale:</li>
-                                <li>Logique:</li>
-                                <li>Spécifique formation:</li>
-                                <li>Badges gagnés:</li>
-                                <li>Score globale:</li>
-                            </ul>
-                            <div class="row">
-                                <ul class="list-unstyled">
-                                    <li>HTML</li>
-                                     <li>CSS</li>
-                                    <li>JS</li>
-                                   <li>Algorithmique</li>
-                                </ul>
-                            </div>
+
+
+
+
+
+
                             {{--TO Do : ajouter les badges
                             <div class="panel panel-default">
                       <div class="panel-heading">{{__('user.choose_user.score')}}</div>
@@ -81,10 +91,3 @@
                     </div>
                             --}}
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    @endsection

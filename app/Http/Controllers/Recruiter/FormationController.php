@@ -24,12 +24,16 @@ class FormationController extends Controller
   }
 
   public function recruiterHome(){
-      return view('recruiter.home');
+      return view('home', ['role' => 'recruiter']);
   }
 
   public function recruiterFormations(){
       $trainer = Auth::user();
       return view('recruiter.formations', compact('trainer'));
+  }
+
+  public function sendMail(){
+      return view('recruiter.sendMail');
   }
 
   public function recruiterFormationCreate(){

@@ -45,7 +45,7 @@ class HomeController extends Controller
     } elseif ($roleUser == 'learner') {
       return view('candidate.panel');
     } elseif ($roleUser == 'former') {
-      return redirect()->route('recruiterIndex');
+      return redirect()->route('recruiterHome');
     }
   }
 
