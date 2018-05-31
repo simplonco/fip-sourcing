@@ -21,6 +21,21 @@
 <body>
 <div class="overlay">
    <div id="app">
+      
+      <div class="alert-messages">
+            @if(Session::has('alert-success'))
+               <div class="alert alert-success">
+                  {{ Session::get('alert-success') }}
+               </div>
+            @endif
+              {{--dd(session())--}}
+            @if(Session::has('alert-error'))
+              <div class="alert alert-error centered alert alert-warning">
+                 <i class="fas fa-exclamation-triangle"></i>{{ Session::get('alert-error') }}
+              </div>
+            @endif
+      </div>
+
       @if (!Auth::guest())
          <nav class="navbar navbar-default navbar-static-top">
          <!-- Branding Image -->
@@ -99,7 +114,7 @@
       @endif
       @if(Auth::guest())
       <div class="home-logo-container">
-         <img class="home-logo-simplon animated-logo" src="./images/simplon_pink@4x.png" alt="">
+         <img class="home-logo-simplon animated-logo" src="./images/simplon_pink.svg" alt="">
       </div>
       @endif
    </div>

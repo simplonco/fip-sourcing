@@ -3,19 +3,10 @@
 
 
 @section('content')
+
 <div class="container register-login-container">
    <div class="flex-custom-container-row">
-   @if(Session::has('alert-success'))
-    <div class="alert alert-success">
-      {{ Session::get('alert-success') }}
-    </div>
-   @endif
-      {{--dd(session())--}}
-   @if(Session::has('alert-error'))
-      <div class="alert alert-error centered">
-         {{ Session::get('alert-error') }}
-      </div>
-   @endif
+
       <div class="login-register-container">
 
          <div class="register-container">
@@ -33,11 +24,13 @@
                      </span>
                   @endif
                </div>
+               <div class="captcha-container">
+                     <div class="g-recaptcha" data-sitekey="6LcyV1wUAAAAAKHCSVdWMYMuXmBhrWMQ6v2jS8Jp"></div>
+                  </div>
                <div class="rounded-button" style="display:flex; justify-content:center; flex-direction:column;">
                   <button class="btn btn-primary" type="submit">Envoyer un lien de confirmation</button>
                </div>
-               <div class="g-recaptcha" data-sitekey="6LcyV1wUAAAAAKHCSVdWMYMuXmBhrWMQ6v2jS8Jp"></div>
-            </form>
+               </form>
          </div>
 
          <div class="login-container">

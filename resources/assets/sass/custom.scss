@@ -83,10 +83,15 @@ body:before {
    top: 0px;
    left: 0px;
    background: $background-general;
-   .app {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 5em;
+   #app {
+      .alert-messages {
+         position: fixed;
+         top: 0;
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         z-index: 10;
+      }
    }
    .mega-container {
       margin-bottom: 5em;
@@ -96,6 +101,15 @@ body:before {
 .navbar-brand {
    span {
       font-size: 14px;
+   }
+}
+
+.captcha-container {
+   display: flex;
+   justify-content: center;
+   height: 7em;
+   .g-recaptcha {
+      padding: .4em 0 1em;
    }
 }
 
@@ -249,7 +263,7 @@ body:before {
 }
 
 .rounded-button {
-   padding: .5em 0 .5em .5em;
+   padding: .5em .5em .5em .5em;
    a {
       display: flex;
       justify-content: space-around;
