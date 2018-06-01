@@ -51,8 +51,8 @@
                   <table class="table table-striped">
                      <thead>
                         <tr>
-                           <th>
-                              plop
+                           <th style="text-align:center;">
+                              Actions
                            </th>
                            <th>
                                  {{__('formation.choose_formation.city')}}
