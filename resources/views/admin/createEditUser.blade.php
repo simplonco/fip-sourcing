@@ -8,7 +8,6 @@
       <h3 class='text-center title-top'>
          @if($action === "edit")
          {{__('admin_panel.edit_user')}}
-
          @elseif($action === "create")
          {{__('admin_panel.new_user')}}
          @endif
@@ -21,7 +20,15 @@
             <div class="card-custom-container">
                <div class="description-view-mega-container">
                   <div class="card-custom-description">
-                     <form role="form" method="POST" action="">
+                     
+                     <form role="form" method="POST" 
+                        @if($action === 'edit')
+                           action = "{{route('saveUser', $user->id)}}"
+                        @elseif($action === "create")
+                           action = "{{route('saveUser')}}"
+                        @endif
+                        >
+                     
                            {{ csrf_field() }}
    
                         <div class="form-group">
@@ -32,18 +39,23 @@
                            <label for="role_id" class="control-label">Rôle</label>
                            <select class="form-control" name="" id="">
                               @foreach(\App\Models\Role::all() as $role)
-                                 <option 
-                                       @if($action === "edit")
-                                          value="{{$user->roles[0]->id}}" selected
-                                       @else
-                                          value={{$role->id}}
-                                       @endif
-                                    >
-                                    @if($action === "edit")
-                                       {{ucfirst($user->roles[0]->name)}}
-                                    @else
-                                       {{ucfirst($role->name)}}
-                                    @endif
+                              
+                                 @if($action === "edit")
+                                    <option value="{{$role->id}}" 
+                                       @if($role->id === $user->roles[0]->id)
+                                          selected
+                                       @endif 
+                                       > 
+                                       {{__('roles.'.($role->name))}}
+                                       </option>
+                                 @endif
+
+                                 @if($action === "create")
+                                    <option value="{{$role->id}}" 
+                                       >
+                                       {{__('roles.'.($role->name))}} 
+                                    </option>
+                                 @endif
                                     
                                  </option>
                               @endforeach
@@ -74,25 +86,25 @@
                            >
                         </div>
 
-                     </form>
-                  </div>
+                     </div>  
+                  </div>  
+               </div>  
 
-               </div>
-            </div>
-                  <div class="action-buttons-in-footer">
-                     <div class="action-button rounded-button">
-                        <a href="{{route('showUsers')}}" class=" btn btn-primary">
-                           <i class="fas fa-chevron-left"></i> &nbsp;
-                           {{__("actions.back")}}
-                        </a>
-                     </div>
-                     <div class="action-button rounded-button">
-                        <a class="btn btn-primary" type="submit">
-                           <i class="fas fa-plus"></i> &nbsp;
-                           {{__("actions.save")}}
-                        </a>
-                     </div>
-                  </div> 
+               <div class="action-buttons-in-footer">
+                  <div class="action-button rounded-button">
+                     <button href="{{route('showUsers')}}" class=" btn btn-primary">
+                        <i class="fas fa-chevron-left"></i> &nbsp;
+                        {{__("actions.back")}}
+                     </button>
+                  </div>
+                  <div class="action-button rounded-button">
+                     <button class="btn btn-primary" type="submit">
+                        <i class="fas fa-plus"></i> &nbsp;
+                        {{__("actions.save")}}
+                     </button>
+                  </div>
+               </div> 
+            </form>
          </div>
       </div>
    </div>

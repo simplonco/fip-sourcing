@@ -70,7 +70,7 @@ Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin/users', 'Admin\AdminController@showUsers')->name('showUsers');
   Route::get('/admin/create', 'Admin\AdminController@createUser')->name('createUser');
   Route::get('/admin/edit/{id}', 'Admin\AdminController@editUser')->name('editUser');
-  Route::post('/admin/save/{id}', 'Admin\AdminController@save')->name('saveUser');
+  Route::post('/admin/save/{id?}', 'Admin\AdminController@save')->name('saveUser');
 
   // CRUD recruteur
   Route::get('/admin/former/list', 'Admin\FormerController@list')->name('formerList');

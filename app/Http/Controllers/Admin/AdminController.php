@@ -34,7 +34,7 @@ class AdminController extends Controller
       return view('admin.createEditUser', ['action' => 'edit', 'id' => $id, 'user' => $user]);
   }
 
-  public function save($id, Request $request)
+  public function save(Request $request)
   {
    if($request->id) {
       $user = User::findOrFail($request->id);
