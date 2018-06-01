@@ -42,12 +42,17 @@
                               
                                  @if($action === "edit")
                                     <option value="{{$role->id}}" 
-                                       @if($role->id === $user->roles[0]->id)
+                                       @isset($user->roles[0]->id)
+                                          @if($role->id === $user->roles[0]->id)
+                                             selected
+                                          @endif 
+                                       @endisset
+                                       @if($role->id === 2)
                                           selected
-                                       @endif 
+                                       @endif
                                        > 
                                        {{__('roles.'.($role->name))}}
-                                       </option>
+                                    </option>
                                  @endif
 
                                  @if($action === "create")
