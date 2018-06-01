@@ -55,31 +55,29 @@
                   {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
                </div>
 
-               <div class="form-group">
-                  {!! Form::label('city', __('formation.choose_formation.city'), ['class' => 'control-label']) !!}
-                  {!! Form::text('city', null, ['class' => 'form-control']) !!}
-               </div>
+               {{-- @if($adminSessions != "edit" || $adminSessions !== "create")
+               
+                  <div class="form-group">
+                     {!! Form::label('city', __('formation.choose_formation.city'), ['class' => 'control-label']) !!}
+                     {!! Form::text('city', null, ['class' => 'form-control']) !!}
+                  </div>
 
-               <div class="form-group">
-                  {!! Form::label('year', __('formation.choose_formation.year'), ['class' => 'control-label']) !!}
-                  {!! Form::text('year', null, ['class' => 'form-control']) !!}
-               </div>
+                  <div class="form-group">
+                     {!! Form::label('year', __('formation.choose_formation.year'), ['class' => 'control-label']) !!}
+                     {!! Form::text('year', null, ['class' => 'form-control']) !!}
+                  </div>
 
-               <div class="form-group">
-                  {!! Form::label('begin_session', __('formation.choose_formation.begin_session'), ['class' => 'control-label']) !!}
-                  {!! Form::date('begin_session', null, ['class' => 'form-control']) !!}
-               </div>
+                  <div class="form-group">
+                     {!! Form::label('begin_session', __('formation.choose_formation.begin_session'), ['class' => 'control-label']) !!}
+                     {!! Form::date('begin_session', null, ['class' => 'form-control']) !!}
+                  </div>
 
-               <div class="form-group">
-                  {!! Form::label('end_session', __('formation.choose_formation.end_session'), ['class' => 'control-label']) !!}
-                  {!! Form::date('end_session', null, ['class' => 'form-control']) !!}
-               </div>
+                  <div class="form-group">
+                     {!! Form::label('end_session', __('formation.choose_formation.end_session'), ['class' => 'control-label']) !!}
+                     {!! Form::date('end_session', null, ['class' => 'form-control']) !!}
+                  </div>
+               @endif --}}
 
-               @if($adminTrainings == "create")
-               <div class="form-group">                
-                  {!! Form::text('search_text', null, array('placeholder' => 'Search Text','class' => 'form-control','id'=>'search_text')) !!}
-               </div>
-               @endif
                <div class="rounded-button">
                   <button class="btn btn-primary"><i class="fas fa-check"></i>&nbsp;{{__('general.submit')}} </button>
                   {{-- {!! Form::submit(__('general.submit'), ['class' => 'btn btn-primary']) !!} --}}

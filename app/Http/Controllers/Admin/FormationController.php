@@ -58,19 +58,19 @@ class FormationController extends Controller
     $this->validate($request, [
       'name' => 'required|max:255',
       'description' => 'required|max:255',
-      'city' => 'required',
-      'year' => 'required',
-      'begin_session' => 'required',
-      'end_session' => 'required',
+      // 'city' => 'required',
+      // 'year' => 'required',
+      // 'begin_session' => 'required',
+      // 'end_session' => 'required',
     ]);
 
     $formation = [
       'name' => $request->input('name'),
       'description' => $request->input('description'),
-      'city' => $request->input('city'),
-      'year' => $request->input('year'),
-      'begin_session' => $request->input('begin_session'),
-      'end_session' => $request->input('end_session'),
+      // 'city' => $request->input('city'),
+      // 'year' => $request->input('year'),
+      // 'begin_session' => $request->input('begin_session'),
+      // 'end_session' => $request->input('end_session'),
     ];
     Formation::create($formation);
 
@@ -125,10 +125,10 @@ class FormationController extends Controller
     $this->validate($request, [
       'name' => 'required|max:255',
       'description' => 'required|max:255',
-      'city' => 'required',
-      'year' => 'required',
-      'begin_session' => 'required',
-      'end_session' => 'required',
+      // 'city' => 'required',
+      // 'year' => 'required',
+      // 'begin_session' => 'required',
+      // 'end_session' => 'required',
     ]);
 
     $input = $request->all();
