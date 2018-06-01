@@ -39,7 +39,7 @@ class AdminController extends Controller
    if($request->id) {
       $user = User::findOrFail($request->id);
    } else {
-      $user = new User;
+      $user = new User();
    }
 
     $this->validate($request, [
