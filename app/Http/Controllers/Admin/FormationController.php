@@ -18,8 +18,14 @@ class FormationController extends Controller
   {
     $this->middleware('auth');
   }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
 
-  public function list(Request $request)
+
+    public function list(Request $request)
   {
 
     $formations = Formation::All();
@@ -27,15 +33,6 @@ class FormationController extends Controller
     return view('admin.formation.list', ['formations'=>$formations]);
   }
 
-  /**
-  * Display a listing of the resource.
-  *
-  * @return \Illuminate\Http\Response
-  */
-  public function index()
-  {
-    return view('admin.formation.list');
-  }
 
   /**
   * Display a listing of the resource.
@@ -78,8 +75,6 @@ class FormationController extends Controller
 
     return redirect()->route('formationList');
   }
-
-
 
   /**
   * Display the specified resource.
@@ -158,4 +153,7 @@ class FormationController extends Controller
 
     return redirect()->route('formationList');
   }
+
+
+
 }

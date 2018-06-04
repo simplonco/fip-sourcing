@@ -28,7 +28,7 @@
             </div>
             <div class="action-buttons-in-footer">
                <div class="action-button rounded-button">
-                  <a href="#" class="btn btn-primary">
+                  <a href="{{url('/admin/formation/show/'.$formation->id.'/session/create')}}" class="btn btn-primary">
                      {{__('formation.create_session')}}
                   </a>
                </div>

@@ -93,14 +93,14 @@
 
                      </div>  
                   </div>  
-               </div>  
+               </div>
 
                <div class="action-buttons-in-footer">
                   <div class="action-button rounded-button">
-                     <button href="{{route('showUsers')}}" class=" btn btn-primary">
+                     <a href="{{route('showUsers')}}" class=" btn btn-primary">
                         <i class="fas fa-chevron-left"></i> &nbsp;
                         {{__("actions.back")}}
-                     </button>
+                     </a>
                   </div>
                   <div class="action-button rounded-button">
                      <button class="btn btn-primary" type="submit">
@@ -108,7 +108,7 @@
                         {{__("actions.save")}}
                      </button>
                   </div>
-               </div> 
+               </div>
             </form>
          </div>
       </div>
