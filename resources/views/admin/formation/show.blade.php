@@ -94,13 +94,13 @@
                            <td>{{$session->end_session->format("d-m-Y")}}</td>
                            <td>
                               @if($session->begin_session->lte($today))
-                                 <i class="fas fa-dot-circle" color="lightgreen"></i>   
+                                 <i class="fas fa-circle" color="lightgreen"></i>   
                                  {{__('En cours')}}
                               @elseif($session->begin_session->gt($today))
-                                 <i class="fas fa-dot-circle" color="lightblue"></i>   
+                                 <i class="fas fa-circle" color="lightblue"></i>   
                                  {{__('À venir')}}
                               @else
-                                 <i class="fas fa-dot-circle" color="red"></i>   
+                                 <i class="fas fa-circle" color="red"></i>   
                                  {{__('Cloturée')}}
                               @endif
                            </td>
