@@ -25,6 +25,7 @@
             <h3 class='text-center title-top'>
                 @if($adminSessions == 'create')
                     {{__(' Créer une nouvelle session')}}
+                   <small>{!! $training->name !!}</small>
                 @elseif($adminSessions == "edit")
                     {{__('Editer la session')}} {!! $formation->name !!}
                 @endif
@@ -58,7 +59,7 @@
 
                                 <div class="form-group">
                                     {!! Form::label('year', __('Année'), ['class' => 'control-label']) !!}
-                                    {!! Form::text('city', null, ['class' => 'form-control']) !!}
+                                    {!! Form::text('year', null, ['class' => 'form-control']) !!}
                                 </div>
 
                                 <div class="form-group">
@@ -66,10 +67,10 @@
                                     {!! Form::date('begin_session', null, ['class' => 'form-control']) !!}
                                 </div>
 
-                                <div class="form-group">
-                                    {!! Form::label('end_session', __('Date de fin'), ['class' => 'control-label']) !!}
-                                    {!! Form::date('city', null, ['class' => 'form-control']) !!}
-                                </div>
+                                    <div class="form-group">
+                                        {!! Form::label('end_session', __('Date de fin'), ['class' => 'control-label']) !!}
+                                        {!! Form::date('end_session', null, ['class' => 'form-control']) !!}
+                                    </div>
 
                                 <div class="form-group">
                                     {!! Form::label('application_start_date', __("Date d'ouverture des candidatures" ), ['class' => 'control-label']) !!}

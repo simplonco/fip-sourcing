@@ -91,7 +91,7 @@ Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin/formation/delete/{id}', 'Admin\FormationController@destroy')->name('formationDelete');
 
   //CRUD session
-  Route::get('/admin/formation/show/{id}/session/create', 'Admin\SessionController@create');
+  Route::get('/admin/formation/show/{id}/session/create', 'Admin\SessionController@create')->name('create_session');
   Route::post('/admin/formation/show/{id}/session/save', 'Admin\SessionController@save');
   // Autocomplete questionnaire
   Route::get('typeahead-search',array('as'=>'typeahead.search','uses'=>'Admin\FormationController@formerCreate'));

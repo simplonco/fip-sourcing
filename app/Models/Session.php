@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Session extends Model
 {
-    protected $fillable = ['city', 'year', 'begin_session', 'end_session', 'application_start_date', 'application_end_date'];
+    protected $fillable = ['city', 'year', 'begin_session', 'end_session', 'application_start_date', 'application_end_date', 'formation_id'];
     protected $dates = ['begin_session', 'end_session'];
 
     public function formation() {
@@ -14,7 +14,7 @@ class Session extends Model
     }
 
     public function questionnaires() {
-        return $this->hasManyThrough(Querstionnaire::class, Formation::class);
+        return $this->hasManyThrough(Questionnaire::class, Formation::class);
     }
 
     public function candidats () {

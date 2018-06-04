@@ -28,7 +28,7 @@
             </div>
             <div class="action-buttons-in-footer">
                <div class="action-button rounded-button">
-                  <a href="{{url('/admin/formation/show/'.$formation->id.'/session/create')}}" class="btn btn-primary">
+                  <a href="{{route('create_session', $formation->id)}}" class="btn btn-primary">
                      {{__('formation.create_session')}}
                   </a>
                </div>
@@ -93,13 +93,17 @@
                            <td>{{$session->begin_session->format("d-m-Y")}}</td>
                            <td>{{$session->end_session->format("d-m-Y")}}</td>
                            <td>
-                              @if($session->begin_session->lte($today))
+                              @if($session->begin_session->lt($today) && $session->end_session->gt($today))
                                  <i class="fas fa-dot-circle" color="lightgreen"></i>   
                                  {{__('En cours')}}
-                              @elseif($session->begin_session->gt($today))
+                              @endif
+
+                           @if($session->begin_session->gt($today))
                                  <i class="fas fa-dot-circle" color="lightblue"></i>   
                                  {{__('À venir')}}
-                              @else
+                                 @endif
+
+                              @if($session->end_session->lt($today))
                                  <i class="fas fa-dot-circle" color="red"></i>   
                                  {{__('Cloturée')}}
                               @endif
