@@ -23,11 +23,11 @@
     <div class="container">
         <div class="title-top-container">
             <h3 class='text-center title-top'>
-                @if($adminSessions == 'create')
+                @if($adminSession === 'create')
                     {{__(' Créer une nouvelle session')}}
                    <small>{!! $training->name !!}</small>
-                @elseif($adminSessions == "edit")
-                    {{__('Editer la session')}} {!! $formation->name !!}
+                @elseif($adminSession === "edit")
+                    {{__('Editer la session')}} <small>{!! $training->name !!}</small>
                 @endif
             </h3>
         </div>
@@ -39,12 +39,12 @@
                         <div class="description-view-mega-container">
                             <div class="card-custom-description">
 
-                                @if($adminSessions == 'create')
+                                @if($adminSession === 'create')
                                     {!! Form::open([
                                     'url' => ['/admin/formation/show/'.$id.'/session/save']
                                     ]) !!}
-                                @elseif($adminSessions == "edit")
-                                    {!! Form::model($formation, [
+                                @elseif($adminSession === "edit")
+                                    {!! Form::model($session, [
                                     'method' => 'POST',
                                     'route' => ['sessionUpdate', $session->id]
                                     ]) !!}
@@ -63,14 +63,14 @@
                                 </div>
 
                                 <div class="form-group">
-                                    {!! Form::label('begin_session', __('Date de début'), ['class' => 'control-label']) !!}
+                                    {!! Form::label('begin_session', __("début de la session" ), ['class' => 'control-label']) !!}
                                     {!! Form::date('begin_session', null, ['class' => 'form-control']) !!}
                                 </div>
 
-                                    <div class="form-group">
-                                        {!! Form::label('end_session', __('Date de fin'), ['class' => 'control-label']) !!}
-                                        {!! Form::date('end_session', null, ['class' => 'form-control']) !!}
-                                    </div>
+                                <div class="form-group">
+                                    {!! Form::label('end_session', __('fin de la session'), ['class' => 'control-label']) !!}
+                                    {!! Form::date('end_session', null, ['class' => 'form-control']) !!}
+                                </div>
 
                                 <div class="form-group">
                                     {!! Form::label('application_start_date', __("Date d'ouverture des candidatures" ), ['class' => 'control-label']) !!}

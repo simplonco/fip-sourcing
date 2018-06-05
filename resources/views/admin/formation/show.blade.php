@@ -17,7 +17,7 @@
                   <div class="card-custom-description">
                      <dl>
                         <div class="">
-                           <dt>{{__('formation.choose_formation.name')}} :</dt><dd>{{$formation->name}}</dd>
+                           <dt>{{__('formation.choose_formation.name')}} :</dt><dd>{!! $formation->name !!}</dd>
                            <br>
                            <dt>{{__('formation.choose_formation.description')}}</dt><dd> {{$formation->description}}</dd>
                         </div>
@@ -28,7 +28,7 @@
             </div>
             <div class="action-buttons-in-footer">
                <div class="action-button rounded-button">
-                  <a href="{{route('create_session', $formation->id)}}" class="btn btn-primary">
+                  <a href="{{route('sessionCreate', $formation->id)}}" class="btn btn-primary">
                      {{__('formation.create_session')}}
                   </a>
                </div>
@@ -75,7 +75,7 @@
                         @foreach($formation->sessions as $session)
                         <tr class="actions">
                            <td style="text-align:center" class="td-action-buttons">
-                              <a href="#">
+                              <a href="{{route('sessionEdit', $session->id)}}">
                               <span class="fa-stack fa-sm" style="    vertical-align: middle;">
                                  <i class="fas fa-circle fa-stack-2x"></i>
                                  <i class="fas fa-pencil-alt fa-stack-1x" aria-hidden="true"></i>

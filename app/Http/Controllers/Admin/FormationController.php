@@ -120,10 +120,6 @@ class FormationController extends Controller
     $this->validate($request, [
       'name' => 'required|max:255',
       'description' => 'required|max:255',
-      // 'city' => 'required',
-      // 'year' => 'required',
-      // 'begin_session' => 'required',
-      // 'end_session' => 'required',
     ]);
 
     $input = $request->all();
