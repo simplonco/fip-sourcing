@@ -98,10 +98,10 @@
                                  {{__('En cours')}}
                               @endif
 
-                           @if($session->begin_session->gt($today))
+                              @if($session->begin_session->gt($today))
                                  <i class="fas fa-dot-circle" color="lightblue"></i>   
                                  {{__('À venir')}}
-                                 @endif
+                              @endif
 
                               @if($session->end_session->lt($today))
                                  <i class="fas fa-dot-circle" color="red"></i>   

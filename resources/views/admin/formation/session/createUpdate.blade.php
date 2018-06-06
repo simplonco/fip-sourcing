@@ -37,21 +37,34 @@
 
                                 @if($adminSession === 'create')
                                     {!! Form::open([
-                                    'url' => ['/admin/formation/show/'.$id.'/session/save']
+                                    'url' => ['/admin/formation/show/'.$formation_id.'/session/save']
                                     ]) !!}
+                                    
                                 @elseif($adminSession === "edit")
                                     {!! Form::model($session, [
                                     'method' => 'POST',
                                     'route' => ['sessionUpdate', $session->id]
                                     ]) !!}
-                                @endif
                                     <div class="form-group">
-                                        {!! Form::hidden('formation_id', $id, ['class' => 'form-control']) !!}
+                                       {!! Form::hidden('id', $session->id, ['class' => 'form-control']) !!}
                                     </div>
+                                    <div class="form-group">
+                                        {!! Form::hidden('formation_id', $session->formation_id, ['class' => 'form-control']) !!}
+                                     </div>
+                                @endif
+                                    
+
                                 <div class="form-group">
                                     {!! Form::label('city', __('Lieu'), ['class' => 'control-label']) !!}
                                     {!! Form::text('city', null, ['class' => 'form-control']) !!}
                                 </div>
+
+                                @if($adminSession === "create")
+                                    <div class="form-group" style="display:none;">
+                                       <input name="formation_id" type="text" value="{{$formation_id}}" hidden>
+                                    </div>
+
+                                @endif
 
                                 <div class="form-group">
                                     {!! Form::label('year', __('Année'), ['class' => 'control-label']) !!}
@@ -59,14 +72,32 @@
                                 </div>
 
                                 <div class="form-group">
-                                    {!! Form::label('begin_session', __("début de la session" ), ['class' => 'control-label']) !!}
-                                    {!! Form::date('begin_session', null, ['class' => 'form-control']) !!}
+                                    <label for="" class="control-label">{{__("Début de la session" )}}</label>
+                                    <input  
+                                       class="form-control"
+                                       type="date" 
+                                       name="begin_session" 
+                                       id="" 
+                                       @if($adminSession==="edit") {
+                                          value="{{$session->begin_session->format('Y-m-d')}}"
+                                       }
+                                       @endif
+                                       >
                                 </div>
 
                                 <div class="form-group">
-                                    {!! Form::label('end_session', __('fin de la session'), ['class' => 'control-label']) !!}
-                                    {!! Form::date('end_session', null, ['class' => 'form-control']) !!}
-                                </div>
+                                    <label for="" class="control-label">{{__("Fin de la session" )}}</label>
+                                    <input  
+                                       class="form-control"
+                                       type="date" 
+                                       name="end_session" 
+                                       id="" 
+                                       @if($adminSession==="edit") {
+                                          value="{{$session->end_session->format('Y-m-d')}}"
+                                       }
+                                       @endif
+                                    >
+                                 </div>
 
                                 <div class="form-group">
                                     {!! Form::label('application_start_date', __("Date d'ouverture des candidatures" ), ['class' => 'control-label']) !!}
@@ -91,4 +122,8 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> d4821b7431ccea696d9296dd604f8548604cb0ea
 @endsection
