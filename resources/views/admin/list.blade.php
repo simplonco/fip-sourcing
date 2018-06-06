@@ -50,7 +50,7 @@
                      @foreach ($users as $user)
                         <tr class="actions">
                            <td style="text-align:center;" class="td-action-buttons">
-                              <a href="{{route('editUser', $user->id)}}">
+                              <a href="{{route('admin.users.edit', $user->id)}}">
                                  <span class="fa-stack fa-sm" style="    vertical-align: middle;">
                                     <i class="fas fa-circle fa-stack-2x"></i>
                                     <i class="fas fa-pencil-alt fa-stack-1x" aria-hidden="true"></i>
@@ -99,7 +99,7 @@
             </div>
             <div class="action-buttons-in-footer">
                <div class="action-button rounded-button">
-                  <a class="btn btn-primary" href="{{ route('createUser') }}">
+                  <a class="btn btn-primary" href="{{ route('admin.users.create') }}">
                      <i class="fas fa-plus"> </i> 
                      &nbsp;
                      {{__('admin_panel.new_user')}}

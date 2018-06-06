@@ -57,7 +57,7 @@ class AdminController extends Controller
 
     Session::flash('flash_message', __('admin_panel.candidate_updated'));
 
-    return redirect()->route('showUsers');
+    return redirect()->route('admin.users.index');
   }
   
   public function showUsers(){

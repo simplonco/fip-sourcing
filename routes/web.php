@@ -16,17 +16,17 @@ Route::get('/home', function () {
 
 
 Route::get('/', 'HomeController@home')->name('welcome');
-Route::post('/send_confirmation', 'Auth\LoginController@sendLink')->name('send_link');
+Route::post('/inscription', 'Auth\LoginController@sendLink')->name('auth.register');
 
 
 Auth::routes();
 
 // Test custom form
-Route::get('/custom_form', 'CustomFormController@loadForm')->name('custom_form');
-Route::post('/save_custom_form', 'CustomFormController@saveForm')->name('save_custom_form');
-Route::get('/create_question', 'CustomFormController@createQuestion')->name('create_question');
-Route::post('/save_question', 'CustomFormController@saveQuestion')->name('save_question');
-Route::get('/show_results', 'CustomFormController@showAnswers')->name('show_results');
+Route::get('/formulaire', 'CustomFormController@loadForm')->name('form.load');
+Route::post('/enregistrer/formulaire', 'CustomFormController@saveForm')->name('form.save');
+Route::get('/creer/question', 'CustomFormController@createQuestion')->name('question.create');
+Route::post('/enregistrer/question', 'CustomFormController@saveQuestion')->name('question.save');
+Route::get('/reponses', 'CustomFormController@showAnswers')->name('answers.show');
 
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
@@ -35,7 +35,7 @@ Route::get('/unauthorized', 'HomeController@unauthorized')->name('unauthorized')
 
 Route::get('/language', 'HomeController@language')->name('language');
 
-Route::group(['middleware'=>['auth', 'candidate']], function () {
+/*Route::group(['middleware'=>['auth', 'candidate']], function () {
   Route::get('/candidate/formation', 'Candidate\CandidateController@chooseFormation')->name('chooseFormation');
   Route::get('/candidate/formation/store/{id}', 'Candidate\CandidateController@storeFormation')->name('storeFormation');
 
@@ -62,15 +62,15 @@ Route::group(['middleware'=>['auth', 'candidate']], function () {
   Route::get('/candidate/refreshSololearn', 'Candidate\CandidateController@refreshSololearn')->name('refreshSololearn');
   Route::put('/candidate/answer/update', 'Candidate\CandidateController@updateAnswer');
   Route::put('/candidate/session', 'Candidate\CandidateController@updateSession');
-});
+});*/
 
 Route::group(['middleware'=>'admin'], function () {
   // Admin panel
-  Route::get('/admin', 'Admin\AdminController@index')->name('admin');
-  Route::get('/admin/users', 'Admin\AdminController@showUsers')->name('showUsers');
-  Route::get('/admin/create', 'Admin\AdminController@createUser')->name('createUser');
-  Route::get('/admin/edit/{id}', 'Admin\AdminController@editUser')->name('editUser');
-  Route::post('/admin/save/{id?}', 'Admin\AdminController@save')->name('saveUser');
+  Route::get('/admin', 'Admin\AdminController@index')->name('admin.index');
+  Route::get('/admin/utilisateurs', 'Admin\AdminController@showUsers')->name('admin.users.index');
+  Route::get('/admin/utilisateurs/creer/', 'Admin\AdminController@createUser')->name('admin.users.create');
+  Route::get('/admin/utilisateurs/editer/{id}', 'Admin\AdminController@editUser')->name('admin.users.edit');
+  Route::post('/admin/utilisateurs/enregistrer/{id?}', 'Admin\AdminController@save')->name('admin.users.save');
 
   // CRUD recruteur
   Route::get('/admin/former/list', 'Admin\FormerController@list')->name('formerList');

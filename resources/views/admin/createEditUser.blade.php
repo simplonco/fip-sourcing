@@ -23,9 +23,9 @@
                      
                      <form role="form" method="POST" 
                         @if($action === 'edit')
-                           action = "{{route('saveUser', $user->id)}}"
+                           action = "{{route('admin.users.save', $user->id)}}"
                         @elseif($action === "create")
-                           action = "{{route('saveUser')}}"
+                           action = "{{route('admin.users.save')}}"
                         @endif
                         >
                      
@@ -97,7 +97,7 @@
 
                <div class="action-buttons-in-footer">
                   <div class="action-button rounded-button">
-                     <a href="{{route('showUsers')}}" class=" btn btn-primary">
+                     <a href="{{route('admin.users.index')}}" class=" btn btn-primary">
                         <i class="fas fa-chevron-left"></i> &nbsp;
                         {{__("actions.back")}}
                      </a>
