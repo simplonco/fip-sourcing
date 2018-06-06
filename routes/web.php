@@ -95,7 +95,7 @@ Route::group(['middleware'=>'admin'], function () {
   Route::post('/admin/formation/show/{id}/session/save', 'Admin\SessionController@save');
   Route::get('/admin/session/edit/{id}', 'Admin\SessionController@edit')->name('sessionEdit');
   Route::post('/admin/session/update/{id}', 'Admin\SessionController@update')->name('sessionUpdate');
-
+  Route::get('/admin/session/show/{id}', 'Admin\SessionController@show')->name('sessionShow');
 
 
     // Autocomplete questionnaire
