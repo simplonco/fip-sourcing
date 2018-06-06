@@ -37,7 +37,7 @@
                 @endforeach
               </tbody>
             </table>
-            <a href="{{ route('formerCreate') }}" class="btn">{{__('former.former_add')}}</a>
+            <a href="{{ route('admin.trainers.create') }}" class="btn">{{__('former.former_add')}}</a>
           </div>
         </div>
       </div>
