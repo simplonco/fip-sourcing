@@ -25,10 +25,6 @@
                            <th style="text-align:center;">Actions</th>
                            <th>{{__('formation.choose_formation.name')}}</th>
                            <th>{{__('formation.choose_formation.description')}}</th>
-                           <th>{{__('formation.choose_formation.city')}}</th>
-                           <th>{{__('formation.choose_formation.year')}}</th>
-                           <th>{{__('formation.choose_formation.begin_session')}}</th>
-                           <th>{{__('formation.choose_formation.end_session')}}</th>
                         </tr>
                      </thead>
                      <tbody>
@@ -56,10 +52,6 @@
                               </td>
                               <td>{{$formation->name}}</td>
                               <td>{{$formation->description}}</td>
-                              <td>{{$formation->city}}</td>
-                              <td>{{$formation->year}}</td>
-                              <td>{{$formation->begin_session}}</td>
-                              <td>{{$formation->end_session}}</td>
                            </tr>
                         @endforeach
                      {{-- {{ $candidates->links() }} --}}

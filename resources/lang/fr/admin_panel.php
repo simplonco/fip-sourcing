@@ -27,6 +27,7 @@ return [
     'candidate_removed' => 'Le candidat a bien été supprimé!',
 
     'new_user' => 'Nouvel utilisateur',
+    'edit_user' => 'Modifier l\'utilisateur',
 
     'title' => 'Tableau d\'administration',
     'applicants' => 'Gérer les candidats',

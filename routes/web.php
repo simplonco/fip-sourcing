@@ -70,7 +70,7 @@ Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin/users', 'Admin\AdminController@showUsers')->name('showUsers');
   Route::get('/admin/create', 'Admin\AdminController@createUser')->name('createUser');
   Route::get('/admin/edit/{id}', 'Admin\AdminController@editUser')->name('editUser');
-  Route::post('/admin/save/{id}', 'Admin\AdminController@save')->name('saveUser');
+  Route::post('/admin/save/{id?}', 'Admin\AdminController@save')->name('saveUser');
 
   // CRUD recruteur
   Route::get('/admin/former/list', 'Admin\FormerController@list')->name('formerList');
@@ -89,7 +89,16 @@ Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin/formation/edit/{id}', 'Admin\FormationController@edit')->name('formationEdit');
   Route::post('/admin/formation/update/{id}', 'Admin\FormationController@update')->name('formationUpdate');
   Route::get('/admin/formation/delete/{id}', 'Admin\FormationController@destroy')->name('formationDelete');
-  // Autocomplete questionnaire
+
+  //CRUD session
+  Route::get('/admin/formation/show/{id}/session/create', 'Admin\SessionController@create')->name('sessionCreate');
+  Route::post('/admin/formation/show/{id}/session/save', 'Admin\SessionController@save');
+  Route::get('/admin/session/edit/{id}', 'Admin\SessionController@edit')->name('sessionEdit');
+  Route::post('/admin/session/update/{id}', 'Admin\SessionController@update')->name('sessionUpdate');
+  Route::get('/admin/session/show/{id}', 'Admin\SessionController@show')->name('sessionShow');
+
+
+    // Autocomplete questionnaire
   Route::get('typeahead-search',array('as'=>'typeahead.search','uses'=>'Admin\FormationController@formerCreate'));
   Route::get('typeahead-response',array('as'=>'typeahead.response','uses'=>'Admin\QuestionnaireController@typeahead'));
   // CRUD candidat

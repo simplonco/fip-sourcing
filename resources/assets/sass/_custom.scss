@@ -83,10 +83,15 @@ body:before {
    top: 0px;
    left: 0px;
    background: $background-general;
-   .app {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 5em;
+   #app {
+      .alert-messages {
+         position: fixed;
+         top: 0;
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         z-index: 10;
+      }
    }
    .mega-container {
       margin-bottom: 5em;
@@ -96,6 +101,15 @@ body:before {
 .navbar-brand {
    span {
       font-size: 14px;
+   }
+}
+
+.captcha-container {
+   display: flex;
+   justify-content: center;
+   height: 7em;
+   .g-recaptcha {
+      padding: .4em 0 1em;
    }
 }
 
@@ -249,7 +263,7 @@ body:before {
 }
 
 .rounded-button {
-   padding: .5em 0 .5em .5em;
+   padding: .5em .5em .5em .5em;
    a {
       display: flex;
       justify-content: space-around;
@@ -269,12 +283,18 @@ body:before {
    }
 }
 
+.container {
+   &--medium {
+      max-width: 900px;
+   }
+}
+
 .cards-custom-list-mega-container {
    display: flex;
    justify-content: center;
    padding-bottom: 5em;
    .card-custom-list-container {
-      width: 85%;
+      width: 100%;
       display: flex;
       flex-direction: column; //plop
       .action-buttons-in-footer {
@@ -286,7 +306,6 @@ body:before {
       width: 100%;
       padding: 0px;
       box-shadow: $shadow1;
-      background: purple;
       .action-buttons-container.header-action-buttons {
          background: $lighten-grey;
          display: flex;
@@ -299,7 +318,6 @@ body:before {
       }
       .page-title {
          color: $black;
-         background: purple
       }
       .card-custom-container {
          display: flex;
@@ -332,6 +350,10 @@ body:before {
                text-transform: uppercase;
                font-weight: bold;
                text-align: center;
+               color: $white;
+            }
+            &--delete {
+               background-color: rgb(203, 33, 33);
                color: $white;
             }
          }
@@ -400,6 +422,22 @@ body:before {
                flex-direction: row;
                width: 100%;
                align-items: center; // border-bottom: 2px solid $border-grey;
+               flex: 1;
+               &--df {
+                  display: flex;
+               }
+               &--jc-c {
+                  justify-content: center;
+               }
+               &--ai-c {
+                  justify-content: center;
+               }
+               &--bg-red {
+                  // background-color: red;
+               }
+               &--color-w {
+                  // color: white
+               }
                .card-custom-description-date {
                   color: rgb(189, 187, 187);
                   display: flex;
@@ -433,8 +471,7 @@ body:before {
             background: $lighten-grey;
             display: flex;
             justify-content: flex-end;
-            align-items: center;
-            flex-grow: 2;
+            align-items: center; // flex-grow: 2;
             border-bottom: 2px solid rgb(212, 212, 212);
             a {
                margin-right: 10px;
@@ -462,12 +499,6 @@ body:before {
             }
          }
       }
-   }
-}
-
-.action {
-   .td.action.buttons {
-      background: purple
    }
 }
 
@@ -690,6 +721,10 @@ td.td-action-buttons {
       display: flex;
       justify-content: center;
       flex-direction: column;
+      &--bg-red {
+         // background-color: rgb(225, 155, 155);
+         border: 1px solid red;
+      }
       .card-custom-container {
          .card-custom-image {
             min-height: 10vw;
