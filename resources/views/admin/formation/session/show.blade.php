@@ -66,7 +66,7 @@
                 @foreach ($applicants as $applicant)
                     <tr class="actions">
                         <td class="td-action-buttons  width-actions" style="text-align:center;">
-                            <a href="{{ route('formationShow', $formation->id) }}">
+                            {{--<a href="{{ route('formationShow', $formation->id) }}">
                                     <span class="fa-stack fa-sm">
                                        <i class="fas fa-circle fa-stack-2x"></i>
                                        <i class="fas fa-info fa-stack-1x" aria-hidden="true"></i>
@@ -83,9 +83,10 @@
                                        <i class="fas fa-circle fa-stack-2x "></i>
                                        <i class="fas fa-ban fa-stack-1x" aria-hidden="true"></i>
                                     </span>
-                            </a>
+                            </a>--}}
                         </td>
                         <td>{{$applicant->last_name}} {{$applicant->first_name}}</td>
+                        <td>{{}}</td>
                     </tr>
                 @endforeach
                 </tbody>

@@ -60,8 +60,12 @@ class SessionController extends Controller
     }
 
     public function show($id){
+
         $session = FormationSession::findOrFail($id);
-        return view('admin.formation.session.show_session', compact('session'));
+
+        $applicants = $session->candidats;
+
+        return view('admin.formation.session.show', compact('session', 'applicants'));
     }
 
 }
