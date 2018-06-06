@@ -15,7 +15,7 @@ class SessionController extends Controller
     public function create($id)
     {
         $training = Formation::findOrFail($id);
-        return view('admin.formation.session.createUpdate', ['adminSession' => 'create', 'id' =>$id, 'training' => $training ]);
+        return view('admin.formation.session.createUpdate', ['adminSession' => 'create', 'formation_id' =>$id, 'training' => $training, 'session' ]);
     }
 
     public function save(Request $request){
@@ -34,7 +34,7 @@ class SessionController extends Controller
 
         Session::flash('flash_message', __('la session a bien été creée'));
 
-        return redirect()->route('formationShow');
+        return redirect()->route('formationShow', $session->formation_id);
     }
 
     public function edit($id){
@@ -51,10 +51,11 @@ class SessionController extends Controller
         
         $input = $request->all();
 
+         $session->fill($input)->save();
+
         Session::flash('flash_message', __('session mise à jour !'));
 
-        return redirect()->route('formationShow');
-
+        return redirect()->route('formationShow', $session->formation->id);
 
     }
 
