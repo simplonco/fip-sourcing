@@ -581,7 +581,7 @@ td.td-action-buttons {
    border-bottom: 0px;
    div {
       a {
-         height: -webkit-fill-available;
+         height: stretch;
          padding-left: .3em;
       }
    }
@@ -649,7 +649,7 @@ td.td-action-buttons {
 }
 
 .radio-button-rating {
-   width: -webkit-fill-available;
+   width: stretch;
    justify-content: center;
    display: flex;
    label {

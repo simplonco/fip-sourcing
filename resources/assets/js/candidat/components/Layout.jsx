@@ -3,6 +3,7 @@ import Formations from './Formations'
 import Questionnaires from "./Questionnaires";
 import {Get} from "../actions/formations";
 import {inject, observer} from "mobx-react/index";
+import Loader from "./Loader";
 
 const style = {
     show: {},
@@ -21,6 +22,7 @@ export default class Layout extends Component {
 
         return (
             <div>
+                <Loader />
                 {ready && (!selected && <Formations /> ||<Questionnaires/>) || 'Chargement...'}
             </div>
         )
