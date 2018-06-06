@@ -17,7 +17,7 @@
                   <div class="card-custom-description">
                      <dl>
                         <div class="">
-                           <dt>{{__('formation.choose_formation.name')}} :</dt><dd>{{$formation->name}}</dd>
+                           <dt>{{__('formation.choose_formation.name')}} :</dt><dd>{!! $formation->name !!}</dd>
                            <br>
                            <dt>{{__('formation.choose_formation.description')}}</dt><dd> {{$formation->description}}</dd>
                         </div>
@@ -28,7 +28,7 @@
             </div>
             <div class="action-buttons-in-footer">
                <div class="action-button rounded-button">
-                  <a href="{{url('/admin/formation/show/'.$formation->id.'/session/create')}}" class="btn btn-primary">
+                  <a href="{{route('sessionCreate', $formation->id)}}" class="btn btn-primary">
                      {{__('formation.create_session')}}
                   </a>
                </div>
@@ -75,7 +75,7 @@
                         @foreach($formation->sessions as $session)
                         <tr class="actions">
                            <td style="text-align:center" class="td-action-buttons">
-                              <a href="#">
+                              <a href="{{route('sessionEdit', $session->id)}}">
                               <span class="fa-stack fa-sm" style="    vertical-align: middle;">
                                  <i class="fas fa-circle fa-stack-2x"></i>
                                  <i class="fas fa-pencil-alt fa-stack-1x" aria-hidden="true"></i>
@@ -93,14 +93,18 @@
                            <td>{{$session->begin_session->format("d-m-Y")}}</td>
                            <td>{{$session->end_session->format("d-m-Y")}}</td>
                            <td>
-                              @if($session->begin_session->lte($today))
-                                 <i class="fas fa-circle" color="lightgreen"></i>   
+                              @if($session->begin_session->lt($today) && $session->end_session->gt($today))
+                                 <i class="fas fa-dot-circle" color="lightgreen"></i>   
                                  {{__('En cours')}}
-                              @elseif($session->begin_session->gt($today))
-                                 <i class="fas fa-circle" color="lightblue"></i>   
+                              @endif
+
+                              <@if($session->begin_session->gt($today))
+                                 <i class="fas fa-dot-circle" color="lightblue"></i>   
                                  {{__('À venir')}}
-                              @else
-                                 <i class="fas fa-circle" color="red"></i>   
+                              @endif
+
+                              @if($session->end_session->lt($today))
+                                 <i class="fas fa-dot-circle" color="red"></i>   
                                  {{__('Cloturée')}}
                               @endif
                            </td>
