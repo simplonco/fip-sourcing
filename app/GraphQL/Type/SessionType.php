@@ -4,6 +4,7 @@ namespace App\GraphQL\Type;
 
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Type as BaseType;
+use App\GraphQL\Type\Timestamp;
 use GraphQL;
 
 class SessionType extends BaseType
@@ -12,6 +13,12 @@ class SessionType extends BaseType
         'name' => 'SessionType',
         'description' => 'A type'
     ];
+
+    public function __construct($attributes = [])
+    {
+        parent::__construct($attributes);
+        $this->timeType = new Timestamp();
+    }
 
     public function fields()
     {
@@ -30,25 +37,25 @@ class SessionType extends BaseType
             ],
 
             "start_date"=> [
-                "type" =>Type::string(),
+                "type" =>$this->timeType,
                 "description" => "",
                 "resolve" => function($session) {
                     return $session->begin_session;
                 }
             ],
             "end_date"=> [
-                "type" =>Type::string(),
+                "type" =>$this->timeType,
                 "description" => "",
                 "resolve" => function($session) {
                     return $session->end_session;
                 }
             ],
             "begin_session"=> [
-                "type" =>Type::string(),
+                "type" =>$this->timeType,
                 "description" => "",
             ],
             "end_session"=> [
-                "type" =>Type::string(),
+                "type" =>$this->timeType,
                 "description" => "",
             ],
             "formation_id"=> [

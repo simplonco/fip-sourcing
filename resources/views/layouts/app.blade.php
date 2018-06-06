@@ -13,10 +13,7 @@
 
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/confirm.css') }}" rel="stylesheet">
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-   <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
 <div class="overlay">
@@ -37,7 +34,7 @@
       </div>
 
       @if (!Auth::guest())
-         <nav class="navbar navbar-default navbar-static-top">
+         <nav class="navbar navbar-static-top">
          <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
                <img class="animated-logo logosimplon" src="{{ asset('images/logosimplon2.png') }}" alt="">
@@ -143,10 +140,9 @@
 
    <!-- Scripts -->
    <script src="{{ asset('js/app.js') }}"></script>
-   <script src="{{ asset('js/custom.js') }}"></script>
-      @if(config('app.debug') && App::environment('local'))
+   @if(config('app.debug') && !App::environment('production'))
       @include('debug.loginas')
    @endif
-</div>   
+   @yield('js')
 </body>
 </html>
