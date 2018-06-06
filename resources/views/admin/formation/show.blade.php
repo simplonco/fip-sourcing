@@ -75,22 +75,16 @@
                         @foreach($formation->sessions as $session)
                         <tr class="actions">
                            <td style="text-align:center" class="td-action-buttons">
-                              <a href="{{route('sessionEdit', $session->id)}}">
-                              <span class="fa-stack fa-sm" style="    vertical-align: middle;">
-                                 <i class="fas fa-circle fa-stack-2x"></i>
-                                 <i class="fas fa-pencil-alt fa-stack-1x" aria-hidden="true"></i>
-                              </span>
-                              </a>
-                              <a href="#">
-                                 <span class="fa-stack fa-sm" style="    vertical-align: middle;">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fas fa-trash fa-stack-1x" aria-hidden="true"></i>
-                                 </span>
-                              </a>
                               <a href="{{route('sessionShow', $session->id)}}">
                                  <span class="fa-stack fa-sm" style="    vertical-align: middle;">
                                     <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fas fa-eye fa-stack-1x" aria-hidden="true"></i>
+                                    <i class="fas fa-info fa-stack-1x" aria-hidden="true"></i>
+                                 </span>
+                              </a>
+                              <a href="{{route('sessionEdit', $session->id)}}">
+                                 <span class="fa-stack fa-sm" style="    vertical-align: middle;">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fas fa-pencil-alt fa-stack-1x" aria-hidden="true"></i>
                                  </span>
                               </a>
                            </td>

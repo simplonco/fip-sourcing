@@ -123,6 +123,8 @@
         </div>
     </div>
 
+    @if($adminSession === "edit")
+    
       <div class="container container--medium">
       <h3 class="danger"> {{__("Zone danger")}}</h3>
          <div class="cards-custom-list-mega-container">
@@ -135,18 +137,20 @@
                      <div class="description-view-mega-container cards-custom-list--df
                      cards-custom-list--ai-c
                      cards-custom-list--bg-red">
-                         <div class="card-custom-description card-custom-description--df card-custom-description--jc-c card-custom-description--ai-c
-                         card-custom-description--color-w
-                         ">
-                            {{__("Si vous supprimez cette session, l'action est irréversible")}}
-                            <button class="btn btn-danger">
-                               {{__("Supprimer")}}</button>
-                         </div>
+                        <div class="card-custom-description card-custom-description--df card-custom-description--jc-c card-custom-description--ai-c
+                        card-custom-description--color-w
+                        ">
+                           {{__("Si vous supprimez cette session, l'action est irréversible")}} 
+                           <button class="btn btn-danger">
+                              {{__("Supprimer")}}
+                           </button>
+                        </div>
                      </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
+      @endif
 
 @endsection

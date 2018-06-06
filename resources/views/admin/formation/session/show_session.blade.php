@@ -19,19 +19,16 @@
                                 <dl>
                                     <div class="">
                                        <div class="col-md-3">
-
                                           <dt>{{__('Lieu')}}</dt><dd> {{$session->city}}</dd>
                                           <br>
                                           <dt>{{__('Année')}}</dt><dd> {{$session->year}}</dd>
                                        </div>
                                        <div class="col-md-3">
-
                                           <dt>{{__('Date de début')}}</dt><dd> {{$session->begin_session->format('Y-m-d')}}</dd>
                                           <br>
                                           <dt>{{__('Date de fin')}}</dt><dd> {{$session->end_session->format('Y-m-d')}}</dd>
                                        </div>
                                        <div class="col-md-6">
-
                                           <dt>{{__("Date d'ouvreture des candidatures")}}</dt><dd> {{$session->application_start_date}}</dd>
                                           <br>
                                           <dt>{{__("Date de fermeture des candidatures")}}</dt><dd> {{$session->application_end_date}}</dd>
