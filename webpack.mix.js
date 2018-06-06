@@ -13,4 +13,4 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/candidat/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
-   .browserSync({proxy: 'http://localhost:8000', open:false});
+   .browserSync({proxy: process.env.PROXY || 'http://localhost:8000', open:false});

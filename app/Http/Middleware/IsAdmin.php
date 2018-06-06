@@ -19,7 +19,7 @@ class IsAdmin
 	public function handle($request, Closure $next)
 	{
 		if ( Auth::user()->roles->implode('name') !== 'admin') {
-			return abort(301);
+			return redirect('/');
 		}
 		return $next($request);
 	}
