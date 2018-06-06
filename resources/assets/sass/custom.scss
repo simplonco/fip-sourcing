@@ -422,6 +422,7 @@ body:before {
                flex-direction: row;
                width: 100%;
                align-items: center; // border-bottom: 2px solid $border-grey;
+               flex: 1;
                &--df {
                   display: flex;
                }
@@ -470,8 +471,7 @@ body:before {
             background: $lighten-grey;
             display: flex;
             justify-content: flex-end;
-            align-items: center;
-            flex-grow: 2;
+            align-items: center; // flex-grow: 2;
             border-bottom: 2px solid rgb(212, 212, 212);
             a {
                margin-right: 10px;
