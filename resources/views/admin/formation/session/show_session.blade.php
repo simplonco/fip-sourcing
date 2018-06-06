@@ -28,15 +28,47 @@
                             </div>
                         </div>
                     </div>
-                    <div class="action-buttons-in-footer">
-                        <div class="action-button rounded-button">
-                            <a href="#" class="btn btn-primary">
-                                {{__('Voir les candidats')}}
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
+        </div>
+        <div class="cards-custom-list-mega-container">
+            <h3>Liste des candiddats inscris à cette session</h3>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th style="text-align:center;">Actions</th>
+                    <th>{{__('formation.choose_formation.name')}}</th>
+                    <th>{{__('formation.choose_formation.description')}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach ($applicants as $applicant)
+                    <tr class="actions">
+                        <td class="td-action-buttons  width-actions" style="text-align:center;">
+                            <a href="{{ route('formationShow', $formation->id) }}">
+                                    <span class="fa-stack fa-sm">
+                                       <i class="fas fa-circle fa-stack-2x"></i>
+                                       <i class="fas fa-info fa-stack-1x" aria-hidden="true"></i>
+                                    </span>
+                            </a>
+                            <a href="{{ route('formationEdit', $formation->id) }}">
+                                    <span class="fa-stack fa-sm">
+                                       <i class="fas fa-circle fa-stack-2x"></i>
+                                       <i class="fas fa-pencil-alt fa-stack-1x" aria-hidden="true"></i>
+                                    </span>
+                            </a>
+                            <a href="{{ route('formationDelete', $formation->id) }}">
+                                    <span class="fa-stack fa-sm">
+                                       <i class="fas fa-circle fa-stack-2x "></i>
+                                       <i class="fas fa-ban fa-stack-1x" aria-hidden="true"></i>
+                                    </span>
+                            </a>
+                        </td>
+                        <td>{{$applicant->last_name}} {{$applicant->first_name}}</td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
 
