@@ -51,18 +51,9 @@ class SessionController extends Controller
         
         $input = $request->all();
 
-<<<<<<< HEAD
-        $session->fill($input)->save();
-
-        Session::flash('flash_message', __('session mise à jour !'));
-
-        return redirect()->route('formationShow', $session->formation->id
-        );
-=======
          $session->fill($input)->save();
 
         Session::flash('flash_message', __('session mise à jour !'));
->>>>>>> d4821b7431ccea696d9296dd604f8548604cb0ea
 
         return redirect()->route('formationShow', $session->formation->id);
 
