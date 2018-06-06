@@ -58,15 +58,15 @@
             @endif 
          @elseif($recruiterFormations == "ongoing")
             @if(!empty($session->begin_session && !empty($session->end_session)))
-               <p class="card-custom-description-date">
+               {{-- <p class="card-custom-description-date">
                   Du {{$session->begin_session->format('d/m/y')}} au {{$session->end_session->format('d/m/y')}}
-               </p>
+               </p> --}}
             @endif            
          @elseif($recruiterFormations == "coming")
             @if(!empty($session->begin_session && !empty($session->end_session)))
-               <p class="card-custom-description-date">
+               {{-- <p class="card-custom-description-date">
                   Du {{$session->begin_session->format('d/m/y')}} au {{$session->end_session->format('d/m/y')}}
-               </p>
+               </p> --}}
             @endif
          @elseif($recruiterFormations == "new")
             <div class="new-training-container">
@@ -142,9 +142,14 @@
                         <i class="fa fa-circle fa-stack-2x" id="star"></i>
                         <i class="fa fa-star fa-stack-1x fa-inverse" aria-hidden="true"></i>
                      </a>
-                     <a href="{{ route('recruiterFormationCandidatesList', $session->formation->id) }}" class="fa-stack" title="Voir les candidatures">
+                     (<a href="{{ route('recruiterFormationCandidatesList', $session->formation->id) }}" class="fa-stack" title="Voir les candidatures">
                         <i class="fa fa-circle fa-stack-2x" id="star"></i>
                         <i class="fa fa-users fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                     </a>)
+                     </a>
+                     <a href="#" class="fa-stack" title="Voir les toutes les sessions">
+                        <i class="fa fa-circle fa-stack-2x" id="star"></i>
+                        <i class="fa fa-list fa-stack-1x fa-inverse" aria-hidden="true"></i>
                      </a>
                   </div>
                </div>
