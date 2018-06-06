@@ -87,6 +87,12 @@
                                     <i class="fas fa-trash fa-stack-1x" aria-hidden="true"></i>
                                  </span>
                               </a>
+                              <a href="{{route('sessionShow', $session->id)}}">
+                                 <span class="fa-stack fa-sm" style="    vertical-align: middle;">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fas fa-eye fa-stack-1x" aria-hidden="true"></i>
+                                 </span>
+                              </a>
                            </td>
                            <td>{{$session->city}}</td>
                            <td>{{$session->year}}</td>

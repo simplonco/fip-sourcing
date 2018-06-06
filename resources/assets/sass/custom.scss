@@ -283,12 +283,18 @@ body:before {
    }
 }
 
+.container {
+   &--medium {
+      max-width: 900px;
+   }
+}
+
 .cards-custom-list-mega-container {
    display: flex;
    justify-content: center;
    padding-bottom: 5em;
    .card-custom-list-container {
-      width: 85%;
+      width: 100%;
       display: flex;
       flex-direction: column; //plop
       .action-buttons-in-footer {
@@ -344,6 +350,10 @@ body:before {
                text-transform: uppercase;
                font-weight: bold;
                text-align: center;
+               color: $white;
+            }
+            &--delete {
+               background-color: rgb(203, 33, 33);
                color: $white;
             }
          }
@@ -412,6 +422,21 @@ body:before {
                flex-direction: row;
                width: 100%;
                align-items: center; // border-bottom: 2px solid $border-grey;
+               &--df {
+                  display: flex;
+               }
+               &--jc-c {
+                  justify-content: center;
+               }
+               &--ai-c {
+                  justify-content: center;
+               }
+               &--bg-red {
+                  // background-color: red;
+               }
+               &--color-w {
+                  // color: white
+               }
                .card-custom-description-date {
                   color: rgb(189, 187, 187);
                   display: flex;
@@ -696,6 +721,10 @@ td.td-action-buttons {
       display: flex;
       justify-content: center;
       flex-direction: column;
+      &--bg-red {
+         // background-color: rgb(225, 155, 155);
+         border: 1px solid red;
+      }
       .card-custom-container {
          .card-custom-image {
             min-height: 10vw;

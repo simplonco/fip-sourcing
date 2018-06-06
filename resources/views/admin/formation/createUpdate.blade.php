@@ -16,7 +16,7 @@
 </div>
 @endif
 
-<div class="container">
+<div class="container container--medium">
    <div class="title-top-container">
       <h3 class='text-center title-top'>
          @if($adminTrainings == 'create')
