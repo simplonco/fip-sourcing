@@ -7,58 +7,39 @@
       <div class="cardd-mega-container">
          <div class="cardd-container">
             <div class="cardd">
-               @if($role == 'recruiter')
-                  <a href="#">
-               @elseif($role == 'admin')
-                  <a href="#">
-               @endif
+              <a href="{{$roleUser === "recruiter" ? '#' : '#' }}">
                   <div class="card text-center text-white bg-danger mb-3">
                      <div class="card-body">
                         <i class="fa fa-question fa-5x"></i>
                         <h3 class="card-title">Questionnaires</h3>
                      </div>
                   </div>
-               </a>
+              </a>
             </div>
 
             <div class="cardd">
-               @if($role == 'recruiter')
-                  <a href="{{route('recruiterFormations')}}">
-               @elseif($role == 'admin')
-                  <a href="{{ route('formationList') }}">
-               @elseif($role == 'learner')
+              <a href="{{$roleUser === "recruiter" ? route('recruiterFormations') : route('admin.courses.list') }}">
+               @if($roleUser == 'learner')
                   <a href="#">
                @endif
                   <div class="card text-center text-white bg-danger mb-3">
                     <div class="card-body navigation-container">
                         <i class="fa fa-file-alt fa-5x"></i>
                         <h3 class="card-title">
-                           @if($role == 'recruiter')   
-                              Formations
-                           @elseif ($role == 'admin')
-                              {{__('admin_panel.trainings')}}
-                           @endif
+                        {{$roleUser === "recruiter" ? "Formations" : __('admin_panel.trainings') }}
                         </h3>
                     </div>
                   </div>
-               </a>
+              </a>
             </div>
             
             <div class="cardd">
-               @if($role == 'recruiter')
-                  <a href="{{route('candidateSearch')}}">
-               @elseif($role=='admin')
-                  <a href="{{route('admin.users.index')}}">
-               @endif
+               <a href="{{$roleUser === "recruiter" ? route('candidateSearch') : route('admin.users.index') }}"> 
                   <div class="card text-center text-white bg-danger mb-3">
                      <div class="card-body">
                         <i class="fa fa-user fa-5x "></i>
                         <h3 class="card-title">
-                           @if($role == 'recruiter')
-                              Candidats
-                           @elseif($role=='admin')
-                              {{__('admin_panel.users')}}
-                           @endif
+                          {{$roleUser === "recruiter" ? " Candidats" : __('admin_panel.users') }}
                         </h3>
                      </div>
                   </div>

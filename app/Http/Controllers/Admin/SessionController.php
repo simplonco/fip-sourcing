@@ -34,7 +34,7 @@ class SessionController extends Controller
 
         Session::flash('flash_message', __('la session a bien été creée'));
 
-        return redirect()->route('formationShow', $session->formation_id);
+        return redirect()->route('admin.courses.show', $session->formation_id);
     }
 
     public function edit($id){
@@ -55,7 +55,7 @@ class SessionController extends Controller
 
         Session::flash('flash_message', __('session mise à jour !'));
 
-        return redirect()->route('formationShow', $session->formation->id);
+        return redirect()->route('admin.courses.show', $session->formation->id);
 
     }
 

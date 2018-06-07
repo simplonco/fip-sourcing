@@ -41,7 +41,7 @@ class HomeController extends Controller
     $roleUser = Auth::user()->roles->implode('name');
 
     if ($roleUser == 'admin') {
-      return redirect()->route('admin');
+      return view('home',['roleUser'=>$roleUser]);
     } elseif ($roleUser == 'learner') {
       return view('candidate.panel');
     } elseif ($roleUser == 'former') {

@@ -10,7 +10,7 @@
       <div class="login-register-container">
 
          <div class="register-container">
-            <form class="form-group" role="form" method="POST" action="{{ route('send_link') }}">
+            <form class="form-group" role="form" method="POST" action="{{ route('auth.register') }}">
                {{ csrf_field() }}
                <h4 centered>Je n'ai pas encore de compte</h4><br>
                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
