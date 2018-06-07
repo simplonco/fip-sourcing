@@ -93,7 +93,7 @@ class FormerController extends Controller
 
     Session::flash('flash_message', __('admin_panel.former_created'));
 
-    return redirect()->route('formerList');
+    return redirect()->route('admin.trainers.index');
   }
 
 
@@ -161,7 +161,7 @@ class FormerController extends Controller
 
     Session::flash('flash_message', __('admin_panel.former_updated'));
 
-    return redirect()->route('formerList');
+    return redirect()->route('admin.trainers.index');
   }
 
 
@@ -180,6 +180,6 @@ class FormerController extends Controller
 
     Session::flash('flash_message', __('admin_panel.former_removed'));
 
-    return redirect()->route('formerList');
+    return redirect()->route('admin.trainers.index');
   }
 }
