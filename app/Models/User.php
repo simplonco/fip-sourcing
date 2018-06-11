@@ -105,4 +105,13 @@ class User extends Authenticatable
     return $this->is_operationnal_ok() + $this->is_administrative_ok() + $this->is_experience_ok() + $this->is_coding_ok() + $this->is_projection_ok();
   }
 
+  public function isActivated(){
+
+      if(!empty($this->activated_at)){
+          echo "oui";
+      }else{
+          echo "non";
+      }
+  }
+
 }

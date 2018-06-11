@@ -85,6 +85,7 @@
                               @endisset   
                            </td>
                            <td>
+                              {{$user->isActivated()}}
                               {{-- @isset($user->isActivated) --}}
                                  {{-- {{$user->isActivated}} --}}
                               {{-- @endisset    --}}
