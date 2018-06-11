@@ -37,13 +37,13 @@
 
                                 @if($adminSession === 'create')
                                     {!! Form::open([
-                                    'url' => ['/admin/formation/show/'.$formation_id.'/session/save']
+                                    'url' => ['/admin/formations/'.$formation_id.'/session/save']
                                     ]) !!}
                                     
                                 @elseif($adminSession === "edit")
                                     {!! Form::model($session, [
                                     'method' => 'POST',
-                                    'route' => ['sessionUpdate', $session->id]
+                                    'route' => ['admin.session.update', $session->id]
                                     ]) !!}
                                     <div class="form-group">
                                        {!! Form::hidden('id', $session->id, ['class' => 'form-control']) !!}

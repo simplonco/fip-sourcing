@@ -22,7 +22,7 @@ class HomeController extends Controller
 
   public function home(){
       // if(auth()->user()->roles[0]->name == "former") {
-      //    return redirect()->route('recruiterHome');
+      //    return redirect()->route('trainer');
       // } else
 
       if(auth()->check()) {
@@ -45,7 +45,7 @@ class HomeController extends Controller
     } elseif ($roleUser == 'learner') {
       return view('candidate.panel');
     } elseif ($roleUser == 'former') {
-      return redirect()->route('recruiterHome');
+      return redirect()->route('trainer');
     }
   }
 

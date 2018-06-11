@@ -15,7 +15,7 @@
     <div class="panel-heading">{{__('former.former_add')}}</div>
     <div class="panel-body">
       {!! Form::open([
-        'route' => ['formerStore']
+        'route' => ['admin.trainers.store']
         ]) !!}
 
         <div class="form-group">

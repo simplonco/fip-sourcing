@@ -18,8 +18,8 @@
                             <tr>
                                 <th><input type="checkbox"></th>
                                 <th>{{__('user.choose_user.last_name')}}
-                                    <a href="{{ route('recruiterFormationCandidatesList', [$session->formation->id, 'last_name', 'asc']) }}"><i class="fa fa-sort-asc" aria-hidden="true"></i></a>
-                                    <a href="{{ route('recruiterFormationCandidatesList', [$session->formation->id, 'last_name', 'desc']) }}"><i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                                    {{-- <a href="{{ route('recruiterFormationCandidatesList', [$session->formation->id, 'last_name', 'asc']) }}"><i class="fa fa-sort-asc" aria-hidden="true"></i></a> --}}
+                                    {{-- <a href="{{ route('recruiterFormationCandidatesList', [$session->formation->id, 'last_name', 'desc']) }}"><i class="fa fa-sort-desc" aria-hidden="true"></i></a> --}}
                                 </th>
                                 <th>{{__('user.choose_user.first_name')}}</th>
                                 <th>{{__('user.choose_user.score')}}</th>
@@ -37,7 +37,7 @@
                                             <input type="checkbox">
                                         </form>
                                     </td>
-                                    <td><a href="{{ route('candidateFormationShow', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
+                                    <td><a href="{{ route('candidateadmin.trainers.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
                                     <td>{{$candidate->first_name}}</td>
                                     <td>{{get_score($candidate)}}</td>
                                     <td>

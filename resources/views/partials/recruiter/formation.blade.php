@@ -142,10 +142,10 @@
                         <i class="fa fa-circle fa-stack-2x" id="star"></i>
                         <i class="fa fa-star fa-stack-1x fa-inverse" aria-hidden="true"></i>
                      </a>
-                     (<a href="{{ route('recruiterFormationCandidatesList', $session->formation->id) }}" class="fa-stack" title="Voir les candidatures">
+                     {{-- (<a href="{{ route('recruiterFormationCandidatesList', $session->formation->id) }}" class="fa-stack" title="Voir les candidatures"> --}}
                         <i class="fa fa-circle fa-stack-2x" id="star"></i>
                         <i class="fa fa-users fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                     </a>)
+                     {{-- </a>) --}}
                      </a>
                      <a href="#" class="fa-stack" title="Voir les toutes les sessions">
                         <i class="fa fa-circle fa-stack-2x" id="star"></i>
@@ -157,10 +157,10 @@
             @if($recruiterFormations == "coming")
                <div class="card-custom-action-buttons">
                   <div>
-                     <a href="{{ route('recruiterFormationCandidatesList', $session->formation->id) }}" class="fa-stack">
+                     {{-- <a href="{{ route('recruiterFormationCandidatesList', $session->formation->id) }}" class="fa-stack"> --}}
                         <i class="fa fa-circle fa-stack-2x" id="star"></i>
                         <i class="fa fa-users fa-stack-1x" style="color: hsla(0, 0%, 90%, 1);"aria-hidden="true"></i>
-                     </a>
+                     {{-- </a> --}}
                   </div>
                </div>
             @endif

@@ -18,11 +18,11 @@
 
 <div class="col-sm-offset-3 col-sm-6">
   <div class="panel panel-info">
-    <div class="panel-heading">{{__formation.edit}} {!! $formation->name !!}</div>
+    <div class="panel-heading">{{__("formation.edit")}} {!! $formation->name !!}</div>
     <div class="panel-body">
       {!! Form::model($formation, [
         'method' => 'POST',
-        'route' => ['recruiterFormationUpdate', $formation->id]
+        'route' => ['trainer.courses.update', $formation->id]
         ]) !!}
 
         <div class="form-group">

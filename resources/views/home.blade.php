@@ -23,9 +23,9 @@
 
             <div class="cardd">
                @if($role == 'recruiter')
-                  <a href="{{route('recruiterFormations')}}">
+                  <a href="{{route('trainer.index')}}">
                @elseif($role == 'admin')
-                  <a href="{{ route('formationList') }}">
+                  <a href="{{ route('admin.courses.list') }}">
                @elseif($role == 'learner')
                   <a href="#">
                @endif
@@ -46,7 +46,7 @@
             
             <div class="cardd">
                @if($role == 'recruiter')
-                  <a href="{{route('candidateSearch')}}">
+                  <a href="{{route('trainer.courses.applicants.search')}}">
                @elseif($role=='admin')
                   <a href="{{route('showUsers')}}">
                @endif

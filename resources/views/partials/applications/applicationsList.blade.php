@@ -5,8 +5,8 @@
           <th class="sorting-arrows">
              {{__('user.choose_user.last_name')}} 
             <div>
-                <a href="{{ route('recruiterFormationCandidatesList', [$session->formation->id, 'last_name', 'asc']) }}"><i class="fa fa-sort-up" aria-hidden="true"></i></a>
-                <a href="{{ route('recruiterFormationCandidatesList', [$session->formation->id, 'last_name', 'desc']) }}"><i class="fa fa-sort-down" aria-hidden="true"></i></a>
+                {{-- <a href="{{ route('recruiterFormationCandidatesList', [$session->formation->id, 'last_name', 'asc']) }}"><i class="fa fa-sort-up" aria-hidden="true"></i></a> --}}
+                {{-- <a href="{{ route('recruiterFormationCandidatesList', [$session->formation->id, 'last_name', 'desc']) }}"><i class="fa fa-sort-down" aria-hidden="true"></i></a> --}}
             </div>
          </th>
           <th>{{__('user.choose_user.first_name')}}</th>
@@ -25,7 +25,7 @@
                       <input type="checkbox">
                   </form>
               </td>
-              <td><a href="{{ route('candidateFormationShow', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
+              <td><a href="{{ route('candidateadmin.trainers.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
               <td>{{$candidate->first_name}}</td>
               <td style="text-align:center;">{{$candidate->get_progress()}}{{-- pas sur car résultat en pourcentage attendu,à modifier--}}</td>
               <td style="text-align:center;">{{--badges à ajouter--}}</td>
@@ -41,7 +41,7 @@
                       <input type="checkbox">
                   </form>
               </td>
-              <td><a href="{{ route('candidateFormationShow', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
+              <td><a href="{{ route('candidateadmin.trainers.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
               <td>{{$candidate->first_name}}</td>
               <td style="text-align:center;">{{$candidate->get_progress()}}{{-- pas sur car résultat en pourcentage attendu,à modifier--}}</td>
               <td style="text-align:center;">{{--badges à ajouter--}}</td>
@@ -57,7 +57,7 @@
                       <input type="checkbox">
                   </form>
               </td>
-              <td><a href="{{ route('candidateFormationShow', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
+              <td><a href="{{ route('candidateadmin.trainers.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
               <td>{{$candidate->first_name}}</td>
               <td style="text-align:center;">{{$candidate->get_progress()}}{{-- pas sur car résultat en pourcentage attendu,à modifier--}}</td>
               <td style="text-align:center;">{{--badges à ajouter--}}</td>
@@ -73,7 +73,7 @@
                       <input type="checkbox">
                   </form>
               </td>
-              <td><a href="{{ route('candidateFormationShow', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
+              <td><a href="{{ route('candidateadmin.trainers.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
               <td>{{$candidate->first_name}}</td>
               <td style="text-align:center;">{{$candidate->get_progress()}}{{-- pas sur car résultat en pourcentage attendu,à modifier--}}</td>
               <td style="text-align:center;">{{--badges à ajouter--}}</td>
@@ -89,7 +89,7 @@
                       <input type="checkbox">
                   </form>
               </td>
-              <td><a href="{{ route('candidateFormationShow', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
+              <td><a href="{{ route('candidateadmin.trainers.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
               <td>{{$candidate->first_name}}</td>
               <td style="text-align:center;">{{$candidate->get_progress()}}{{-- pas sur car résultat en pourcentage attendu,à modifier--}}</td>
               <td style="text-align:center;">{{--badges à ajouter--}}</td>
@@ -105,7 +105,7 @@
                       <input type="checkbox">
                   </form>
               </td>
-              <td><a href="{{ route('candidateFormationShow', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
+              <td><a href="{{ route('candidateadmin.trainers.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
               <td>{{$candidate->first_name}}</td>
               <td style="text-align:center;">{{$candidate->get_progress()}}{{-- pas sur car résultat en pourcentage attendu,à modifier--}}</td>
               <td style="text-align:center;">{{--badges à ajouter--}}</td>

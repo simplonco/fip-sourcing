@@ -30,7 +30,7 @@
             </div>
 
             <div class="cardd">
-                <a href="{{route('candidateSearch')}}">
+                <a href="{{route('trainer.courses.applicants.search')}}">
                     <div class="card text-center text-white bg-danger mb-3">
                         <div class="card-body">
                             <i class="fa fa-user fa-5x "></i>

@@ -15,7 +15,7 @@
     <div class="panel-heading">{{__('user.candidate_add')}}</div>
     <div class="panel-body">
       {!! Form::open([
-        'route' => ['candidateStore']
+        'route' => ['admin.applicant.store']
         ]) !!}
 
         <div class="form-group">

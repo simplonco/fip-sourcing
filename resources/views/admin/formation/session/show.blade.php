@@ -63,19 +63,19 @@
                 @foreach ($applicants as $applicant)
                     <tr class="actions">
                         <td class="td-action-buttons  width-actions" style="text-align:center;">
-                            {{--<a href="{{ route('formationShow', $formation->id) }}">
+                            {{--<a href="{{ route('admin.trainers.index', $formation->id) }}">
                                     <span class="fa-stack fa-sm">
                                        <i class="fas fa-circle fa-stack-2x"></i>
                                        <i class="fas fa-info fa-stack-1x" aria-hidden="true"></i>
                                     </span>
                             </a>
-                            <a href="{{ route('formationEdit', $formation->id) }}">
+                            <a href="{{ route('admin.courses.edit', $formation->id) }}">
                                     <span class="fa-stack fa-sm">
                                        <i class="fas fa-circle fa-stack-2x"></i>
                                        <i class="fas fa-pencil-alt fa-stack-1x" aria-hidden="true"></i>
                                     </span>
                             </a>
-                            <a href="{{ route('formationDelete', $formation->id) }}">
+                            <a href="{{ route('admin.courses.destroy', $formation->id) }}">
                                     <span class="fa-stack fa-sm">
                                        <i class="fas fa-circle fa-stack-2x "></i>
                                        <i class="fas fa-ban fa-stack-1x" aria-hidden="true"></i>

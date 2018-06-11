@@ -27,9 +27,9 @@
               @foreach ($candidates as $candidate)
               <tr>
                 <td style="text-align:center;">
-                  <a href="{{ route('candidateShow', $candidate->id) }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-                  <a href="{{ route('candidateEdit', $candidate->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                  <a href="{{ route('candidateDelete', $candidate->id) }}"><i class="fa fa fa-ban" aria-hidden="true"></i></a></td>
+                  <a href="{{ route('admin.applicant.show', $candidate->id) }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                  <a href="{{ route('admin.applicant.edit', $candidate->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                  <a href="{{ route('admin.applicant.destroy', $candidate->id) }}"><i class="fa fa fa-ban" aria-hidden="true"></i></a></td>
                   <td>{{$candidate->last_name}}</td>
                   <td>{{$candidate->first_name}}</td>
                   <td>{{$candidate->email}}</td>

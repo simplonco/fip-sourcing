@@ -16,7 +16,7 @@
     <div class="panel-body">
       {!! Form::model($candidate, [
         'method' => 'POST',
-        'route' => ['candidateUpdate', $candidate->id]
+        'route' => ['admin.applicant.edit', $candidate->id]
         ]) !!}
 
         <div class="form-group">

@@ -23,14 +23,14 @@
             @foreach ($former->sessions as $session)
             <tr>
               <td style="text-align:center;">
-                <a href="{{ route('recruiterFormationShow', $session->formation->id) }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-                <a href="{{ route('recruiterFormationEdit', $session->formation->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <a href="{{ route('trainer.courses.show', $session->formation->id) }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                <a href="{{ route('trainer.courses.edit', $session->formation->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
               <td>{{$session->formation->name}}</td>
               <td>{{$session->formation->description}}</td>
               <td>{{$session->city}}</td>
               <td>{{$session->year}}</td>
               <td style="text-align:center;">
-               <a href="{{ route('recruiterFormationCandidatesList', $session->formation->id) }}">{{__('formation.candidates_list')}}</a>
+               {{-- <a href="{{ route('recruiterFormationCandidatesList', $session->formation->id) }}">{{__('formation.candidates_list')}}</a> --}}
               </td>
             </tr>
               @endforeach

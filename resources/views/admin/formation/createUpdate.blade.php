@@ -36,12 +36,12 @@
 
                @if($adminTrainings == 'create')
                   {!! Form::open([
-                  'route' => ['formationStore']
+                  'route' => ['admin.courses.store']
                   ]) !!}
                @elseif($adminTrainings == "edit")
                   {!! Form::model($formation, [
                   'method' => 'POST',
-                  'route' => ['formationUpdate', $formation->id]
+                  'route' => ['admin.courses.update', $formation->id]
                   ]) !!}
                @endif
 

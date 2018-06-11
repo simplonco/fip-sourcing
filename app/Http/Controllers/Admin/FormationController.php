@@ -73,7 +73,7 @@ class FormationController extends Controller
 
     Session::flash('flash_message', __('admin_panel.formation_created'));
 
-    return redirect()->route('formationList');
+    return redirect()->route('admin.courses.list');
   }
 
   /**
@@ -128,7 +128,7 @@ class FormationController extends Controller
 
     Session::flash('flash_message', __('admin_panel.formation_updated'));
 
-    return redirect()->route('formationList');
+    return redirect()->route('admin.courses.list');
   }
 
 
@@ -147,7 +147,7 @@ class FormationController extends Controller
 
     Session::flash('flash_message', __('admin_panel.formation_removed'));
 
-    return redirect()->route('formationList');
+    return redirect()->route('admin.courses.list');
   }
 
 
