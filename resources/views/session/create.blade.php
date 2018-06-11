@@ -19,12 +19,7 @@
     <div class="container container--medium">
         <div class="title-top-container">
             <h3 class='text-center title-top'>
-                @if($adminSession === 'create')
-                    {{__(' Créer une nouvelle session')}}
-                   <small>{!! $training->name !!}</small>
-                @elseif($adminSession === "edit")
-                    {{__('Editer la session')}} <small>{!! $training->name !!}</small>
-                @endif
+            {{$adminSession === "create" ? __(' Créer une nouvelle session') : __('Editer la session'). $training->name  }}
             </h3>
         </div>
 

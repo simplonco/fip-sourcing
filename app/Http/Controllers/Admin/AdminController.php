@@ -23,15 +23,15 @@ class AdminController extends Controller
   */
   public function index()
   {
-    return view('home', ['role' => 'admin']);
+    return view('home', ['roleUser' => 'admin']);
   }
 
   public function createUser(){
-      return view('admin.createEditUser', ['action' => 'create']);
+      return view('users.create', ['action' => 'create']);
   }
   public function editUser($id){
       $user = User::findOrFail($id);
-      return view('admin.createEditUser', ['action' => 'edit', 'id' => $id, 'user' => $user]);
+      return view('users.create', ['action' => 'edit', 'id' => $id, 'user' => $user]);
   }
 
   public function save(Request $request)
@@ -57,12 +57,12 @@ class AdminController extends Controller
 
     Session::flash('flash_message', __('admin_panel.candidate_updated'));
 
-    return redirect()->route('showUsers');
+    return redirect()->route('admin.users.index');
   }
   
   public function showUsers(){
    $users = user::All();
 
-      return view('admin.list', ['list' => 'users',  'users'=>$users]);
+      return view('users.index', ['list' => 'users',  'users'=>$users]);
   }
 }

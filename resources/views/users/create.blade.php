@@ -6,11 +6,7 @@
 
    <div class="title-top-container">
       <h3 class='text-center title-top'>
-         @if($action === "edit")
-         {{__('admin_panel.edit_user')}}
-         @elseif($action === "create")
-         {{__('admin_panel.new_user')}}
-         @endif
+        {{$action === "create" ?  __('admin_panel.new_user') : __('admin_panel.edit_user') }}
       </h3>
    </div>
 
@@ -21,16 +17,10 @@
                <div class="description-view-mega-container">
                   <div class="card-custom-description">
                      
-                     <form role="form" method="POST" 
-                        @if($action === 'edit')
-                           action = "{{route('saveUser', $user->id)}}"
-                        @elseif($action === "create")
-                           action = "{{route('saveUser')}}"
-                        @endif
-                        >
-                     
+                    <form role="form" method="POST" 
+                           action = "{{ $action === "edit" ? route('admin.users.save', $user->id): route('admin.users.save') }}"
+                    >
                            {{ csrf_field() }}
-   
                         <div class="form-group">
                            <label for="" class="control-label">Activé</label>
                            <input type="checkbox">
@@ -97,7 +87,7 @@
 
                <div class="action-buttons-in-footer">
                   <div class="action-button rounded-button">
-                     <a href="{{route('showUsers')}}" class=" btn btn-primary">
+                     <a href="{{route('admin.users.index')}}" class=" btn btn-primary">
                         <i class="fas fa-chevron-left"></i> &nbsp;
                         {{__("actions.back")}}
                      </a>

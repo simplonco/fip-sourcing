@@ -32,13 +32,13 @@ class CandidateController extends Controller
 
     $candidates_pagination = $candidates->orderBy('score', 'desc')->paginate(10);
 
-    return view('recruiter.candidateList', ['candidates'=>$candidates_pagination, 'session'=>$session]);
+    return view('applicants.candidateList', ['candidates'=>$candidates_pagination, 'session'=>$session]);
   }
 
   public function recruiterCandidateSearch(){
 
       $candidates = User::take(5)->paginate(12);
-      return view('recruiter.searchCandidate', compact('candidates'));
+      return view('applicants.searchCandidate', compact('candidates'));
   }
 
   /**

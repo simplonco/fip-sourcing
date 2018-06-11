@@ -22,23 +22,21 @@
                      </label>
                   </div>
                @include('partials.recruiter.formation', ['recruiterFormations' => 'applicantsList'])
-            <div class="action-buttons-in-footer">
-               <div class="action-button rounded-button">
-                  <a href="{{ route('recruiterIndex') }}" class="btn btn-primary"><i class="fas fa-caret-left fa-fw"></i> Retour</a>
-               </div>
-               <div class="action-button rounded-button">
-                  <a href="#{{--lien vers page de tri --}}" class="btn btn-primary"><i class="fas fa-bars fa-fw"></i> Trier</a>
-               </div>
-               <div class="action-button rounded-button">
-                  <a href="#{{-- permet de clore les candidatures pour cette session --}}" class="btn btn-primary"><i class="fas fa-times fa-fw"></i>   Clore</a>
-               </div>
+                <div class="action-buttons-in-footer">
+                   <div class="action-button rounded-button">
+                      <a href="{{ route('trainer.index') }}" class="btn btn-primary"><i class="fas fa-caret-left fa-fw"></i> Retour</a>
+                   </div>
+                   <div class="action-button rounded-button">
+                      <a href="#{{--lien vers page de tri --}}" class="btn btn-primary"><i class="fas fa-bars fa-fw"></i> Trier</a>
+                   </div>
+                   <div class="action-button rounded-button">
+                      <a href="#{{-- permet de clore les candidatures pour cette session --}}" class="btn btn-primary"><i class="fas fa-times fa-fw"></i>   Clore</a>
+                   </div>
+                </div>
             </div>
-         </div>
             
          </div>
       </div>
    </div>
-
-   
 
 @endsection

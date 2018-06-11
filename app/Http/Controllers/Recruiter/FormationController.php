@@ -7,12 +7,20 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Formation;
 use Illuminate\Support\Facades\Session;
+use Carbon\Carbon;
+
 
 class FormationController extends Controller
 {
   public function __construct()
   {
     $this->middleware('auth');
+  }
+
+  public function show($id) {
+   $formation = Formation::findOrFail($id);
+   $today = Carbon::now(2);
+   return view('trainings.show', compact(['formation', 'today']));
   }
 
   public function recruiterIndex()
@@ -24,12 +32,12 @@ class FormationController extends Controller
   }
 
   public function recruiterHome(){
-      return view('home', ['role' => 'recruiter']);
+      return view('home', ['roleUser' => 'recruiter']);
   }
 
   public function recruiterFormations(){
       $trainer = Auth::user();
-      return view('recruiter.formations', compact('trainer'));
+      return view('trainings.formations', compact('trainer'));
   }
 
   public function sendMail(){

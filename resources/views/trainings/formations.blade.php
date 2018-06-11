@@ -3,7 +3,7 @@
 @section('content')
    <div class="container mega-container">
       <div class="title-top-container">
-         <h3 class="text-center title-top">MES FORMATIONS</h3>
+         <h3 class="text-center title-top">MES SESSIONS DE FORMATION</h3>
       </div>
 
       <div class="cards-custom-list-mega-container">
@@ -21,7 +21,7 @@
          
 
       <div class="title-top-container">
-         <h3 class="text-center title-top">FORMATIONS À VENIR</h3>
+         <h3 class="text-center title-top">SESSIONS À VENIR</h3>
       </div>
 
       <div class="cards-custom-list-mega-container">

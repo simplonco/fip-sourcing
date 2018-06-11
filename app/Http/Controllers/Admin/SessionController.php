@@ -15,7 +15,7 @@ class SessionController extends Controller
     public function create($id)
     {
         $training = Formation::findOrFail($id);
-        return view('admin.formation.session.createUpdate', ['adminSession' => 'create', 'formation_id' =>$id, 'training' => $training, 'session' ]);
+        return view('session.create', ['adminSession' => 'create', 'formation_id' =>$id, 'training' => $training, 'session' ]);
     }
 
     public function save(Request $request){
@@ -42,7 +42,7 @@ class SessionController extends Controller
         $session = FormationSession::findOrFail($id);
         $training = $session->formation;
 
-        return view('admin.formation.session.createUpdate', ['adminSession' => 'edit', 'id' => $id, 'training' => $training])->withSession($session);
+        return view('session.create', ['adminSession' => 'edit', 'id' => $id, 'training' => $training])->withSession($session);
     }
 
     public function update(Request $request, $id){
@@ -65,7 +65,7 @@ class SessionController extends Controller
 
         $applicants = $session->candidats;
 
-        return view('admin.formation.session.show', compact('session', 'applicants'));
+        return view('session.show', compact('session', 'applicants'));
     }
 
 }

@@ -30,7 +30,7 @@ class FormationController extends Controller
 
     $formations = Formation::All();
 
-    return view('admin.formation.list', ['formations'=>$formations]);
+    return view('trainings.index', ['formations'=>$formations]);
   }
 
 
@@ -86,7 +86,7 @@ class FormationController extends Controller
   {
     $formation = Formation::findOrFail($id);
     $today = Carbon::now(2);
-    return view('admin.formation.show', compact(['formation', 'today']));
+    return view('trainings.show', compact(['formation', 'today']));
   }
 
 

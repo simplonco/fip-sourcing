@@ -28,7 +28,7 @@
             </div>
             <div class="action-buttons-in-footer">
                <div class="action-button rounded-button">
-                  <a href="{{route('admin.session.save', $formation->id)}}" class="btn btn-primary">
+                  <a href="{{route('admin.session.create', $formation->id)}}" class="btn btn-primary">
                      {{__('formation.create_session')}}
                   </a>
                </div>
