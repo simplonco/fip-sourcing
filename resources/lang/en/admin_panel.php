@@ -26,6 +26,8 @@ return [
   'candidate_updated' => 'Candidate data has been successfully saved!',
   'candidate_removed' => 'Candidate has been successfully removed!',
 
+  'new_user' => 'New user',
+
   'title' => 'Administration panel',
   'candidates' => 'Handle candidates',
   'formers' => 'Handle recruiters',

@@ -1,65 +1,80 @@
 @extends('layouts.app')
+{{--dd(session())--}}
+
 
 @section('content')
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class="panel-heading">{{__('auth.connection')}}</div>
-          <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
-            {{ csrf_field() }}
 
-            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-              <label for="email" class="col-md-4 control-label">{{__('user.choose_user.email')}}</label>
+<div class="container register-login-container">
+   <div class="flex-custom-container-row">
 
-              <div class="col-md-6">
-                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+      <div class="login-register-container">
 
-                @if ($errors->has('email'))
-                <span class="help-block">
-                  <strong>{{ $errors->first('email') }}</strong>
-                </span>
-                @endif
-              </div>
-            </div>
-
-            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-              <label for="password" class="col-md-4 control-label">{{__('user.choose_user.password')}}</label>
-
-              <div class="col-md-6">
-                <input id="password" type="password" class="form-control" name="password" required>
-
-                @if ($errors->has('password'))
-                <span class="help-block">
-                  <strong>{{ $errors->first('password') }}</strong>
-                </span>
-                @endif
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="col-md-6 col-md-offset-4">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{__('auth.remember_me')}}
+         <div class="register-container">
+            <form class="form-group" role="form" method="POST" action="{{ route('send_link') }}">
+               {{ csrf_field() }}
+               <h4 centered>Je n'ai pas encore de compte</h4><br>
+               <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                  <label for="email" class="control-label">
+                     {{__('user.choose_user.email')}}
                   </label>
-                </div>
-              </div>
+                  <input id="email" type="email" class="form-control" name="email" required autofocus>
+                  @if ($errors->has('email'))
+                     <span class="help-block">
+                        <strong>{{ $errors->first('email') }}  </strong>
+                     </span>
+                  @endif
+               </div>
+               <div class="captcha-container">
+                     <div class="g-recaptcha" data-sitekey="6LcyV1wUAAAAAKHCSVdWMYMuXmBhrWMQ6v2jS8Jp"></div>
+                  </div>
+               <div class="rounded-button" style="display:flex; justify-content:center; flex-direction:column;">
+                  <button class="btn btn-primary" type="submit">Envoyer un lien de confirmation</button>
+               </div>
+               </form>
+         </div>
+
+         <div class="login-container">
+            <form class="form-group" role="form" method="POST" action="{{ route('login') }}">
+               {{ csrf_field() }}
+               <h4 centered>J'ai déjà un compte</h4><br>
+               <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                  <label for="email" class="control-label">{{__('user.choose_user.email')}}</label>
+                  <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                  @if ($errors->has('email'))
+                     <span class="help-block">
+                        <strong>{{ $errors->first('email') }}</strong>
+                     </span>
+                  @endif
+                  <br>
+               <div  class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                  <label for="password" class="control-label">{{__('user.choose_user.password')}}</label>
+                  <input id="password" type="password" class="form-control" name="password" required>
+                  @if ($errors->has('password'))
+                     <span class="help-block">
+                        <strong>{{ $errors->first('password') }}</strong>
+                     </span>
+                  @endif
+               </div>
+               <a href="#">J'ai oublié mon mot de passe</a>
+               <div class="connexion-button-container">
+                  <div class="rounded-button">
+                     <button type="submit" class="btn btn-primary connexion">
+                        Connexion
+                     </button>
+                  </div>
+               </div>
+                     {{--<a href="{{ route('register') }}" class="btn">{{__('auth.register')}}</a>--}}
+               <br>
             </div>
 
-            <div class="form-group">
-              <div class="col-md-8 col-md-offset-4">
-                <button type="submit" class="btn btn-primary">
-                  {{__('auth.login')}}
-                </button>
-                <a href="{{ route('register') }}" class="btn">{{__('auth.register')}}</a>
-              </div>
-            </div>
-          </form>
-        </div>
+         </form>
+         
       </div>
-    </div>
-  </div>
+
+   </div>
 </div>
+@endsection
+
+@section('js')
+      <script src='https://www.google.com/recaptcha/api.js'></script>
 @endsection

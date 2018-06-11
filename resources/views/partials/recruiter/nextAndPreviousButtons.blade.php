@@ -1,18 +1,11 @@
-<nav aria-label="Page navigation example">
-    <ul class="pagination">
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
-            </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">Précédent</a></li>
-        <li class="page-item"><a class="page-link" href="#">Suivant</a></li>
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+   <div class="action-buttons-container">
+      <div class="action-button rounded-button">
+         <a href="" class="btn btn-primary"><i class="fa fa-angle-double-right fa-2x rotate180"></i><p>{{__('general.previousApplicant')}}</p> </a>
+         <a href="" class="btn btn-primary "><i class="fa fa-angle-right fa-2x rotate180"></i><p>{{__('general.previous')}}</p> </a>
+      </a>
+   </div>
+      <div class="action-button rounded-button">
+         <a href="" class="btn btn-primary"><p>{{__('general.next')}}</p><i class="fa fa-angle-right fa-2x"></i></a>
+         <a href="" class="btn btn-primary"><p>{{__('general.nextApplicant')}}</p><i class="fa fa-angle-double-right fa-2x"></i></a>
+      </div>
+   </div>

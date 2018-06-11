@@ -190,6 +190,7 @@ return [
         'Questionnaire' => 'App\GraphQL\Type\QuestionnaireType',
         'Question' => 'App\GraphQL\Type\QuestionType',
         'Answer' => 'App\GraphQL\Type\AnswerType',
+     //   'Timestamp' => 'App\GraphQL\Type\TimestampType',
     ],
 
     /*

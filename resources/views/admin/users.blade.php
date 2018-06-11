@@ -7,6 +7,8 @@
         </div>
     @endif
 
+    
+
     <div class="container">
         <div class="row">
             <h3 class="text-center">Liste des utilisateurs</h3>
@@ -32,9 +34,21 @@
                                         <a href=""><i class="fa fa-pencil" aria-hidden="true"></i></a>
                                     </td>
                                     <td><a href=""><i class="fa fa-trash" aria-hidden="true"></i></a></td>
-                                    <td>{{$user->last_name}}</td>
-                                    <td>{{$user->first_name}}</td>
-                                    <td>{{$user->roles[0]->name}}</td>
+                                    <td>
+                                       @isset($user->last_name)
+                                          {{$user->last_name}}
+                                       @endisset
+                                    </td>
+                                    <td>
+                                       @isset($user->first_name)
+                                          {{$user->first_name}}
+                                       @endisset
+                                    </td>
+                                    <td>
+                                       @isset($user->roles)
+                                          {{$user->roles[0]->name}}
+                                       @endisset
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -43,10 +57,10 @@
                 </div>
                 <div class="row">
                     <div class="col-md-2 ">
-                        <a href="#" class="btn btn-primary">RETOUR</a>
+                        <a href="{{route('admin')}}" class="btn btn-primary">RETOUR</a>
                     </div>
                     <div class="col-md-2">
-                        <a href="#" class="btn btn-primary">NOUVEL UTILISATEUR</a>
+                        <a href="{{route('createUser')}}" class="btn btn-primary">NOUVEL UTILISATEUR</a>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import store from '../stores/FormationsStore'
+import loading from '../stores/LoadingStore'
 import { Lokka } from 'lokka'
 import { Transport } from 'lokka-transport-http'
 import {Get as getForms} from './forms'
@@ -8,6 +9,7 @@ const client = new Lokka({
 })
 
 export function Get () {
+    loading.set(true)
     client.query(`
         {
             formations {
@@ -42,6 +44,7 @@ export function Get () {
             }))
             getForms();
         }
+        loading.set(false)
     })
 }
 
@@ -53,8 +56,10 @@ export function selectFormation (formation) {
 export function selectSession(sessionID){
     console.log("we got a session !", sessionID)
     store.setReady(false)
+    loading.set(true)
     axios.put('/candidate/session', {id: sessionID})
         .then(()=>{
+            loading.set(false)
             Get()
         })
 }

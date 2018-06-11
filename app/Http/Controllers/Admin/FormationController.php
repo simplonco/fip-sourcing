@@ -9,6 +9,7 @@ use User;
 use App\Models\Formation;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class FormationController extends Controller
 {
@@ -17,8 +18,14 @@ class FormationController extends Controller
   {
     $this->middleware('auth');
   }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
 
-  public function list(Request $request)
+
+    public function list(Request $request)
   {
 
     $formations = Formation::All();
@@ -26,15 +33,6 @@ class FormationController extends Controller
     return view('admin.formation.list', ['formations'=>$formations]);
   }
 
-  /**
-  * Display a listing of the resource.
-  *
-  * @return \Illuminate\Http\Response
-  */
-  public function index()
-  {
-    return view('admin.formation.list');
-  }
 
   /**
   * Display a listing of the resource.
@@ -43,7 +41,7 @@ class FormationController extends Controller
   */
   public function formerCreate()
   {
-    return view('admin.formation.create');
+    return view('admin.formation.createUpdate', ['adminTrainings' => 'create']);
   }
 
   /**
@@ -57,19 +55,19 @@ class FormationController extends Controller
     $this->validate($request, [
       'name' => 'required|max:255',
       'description' => 'required|max:255',
-      'city' => 'required',
-      'year' => 'required',
-      'begin_session' => 'required',
-      'end_session' => 'required',
+      // 'city' => 'required',
+      // 'year' => 'required',
+      // 'begin_session' => 'required',
+      // 'end_session' => 'required',
     ]);
 
     $formation = [
       'name' => $request->input('name'),
       'description' => $request->input('description'),
-      'city' => $request->input('city'),
-      'year' => $request->input('year'),
-      'begin_session' => $request->input('begin_session'),
-      'end_session' => $request->input('end_session'),
+      // 'city' => $request->input('city'),
+      // 'year' => $request->input('year'),
+      // 'begin_session' => $request->input('begin_session'),
+      // 'end_session' => $request->input('end_session'),
     ];
     Formation::create($formation);
 
@@ -77,8 +75,6 @@ class FormationController extends Controller
 
     return redirect()->route('formationList');
   }
-
-
 
   /**
   * Display the specified resource.
@@ -89,8 +85,8 @@ class FormationController extends Controller
   public function show($id)
   {
     $formation = Formation::findOrFail($id);
-
-    return view('admin.formation.show', compact('formation'));
+    $today = Carbon::now(2);
+    return view('admin.formation.show', compact(['formation', 'today']));
   }
 
 
@@ -105,7 +101,7 @@ class FormationController extends Controller
   {
     $formation = Formation::findOrFail($id);
 
-    return view('admin.formation.edit')->withFormation($formation);
+    return view('admin.formation.createUpdate', ['adminTrainings' => 'edit'])->withFormation($formation);
   }
 
 
@@ -124,10 +120,6 @@ class FormationController extends Controller
     $this->validate($request, [
       'name' => 'required|max:255',
       'description' => 'required|max:255',
-      'city' => 'required',
-      'year' => 'required',
-      'begin_session' => 'required',
-      'end_session' => 'required',
     ]);
 
     $input = $request->all();
@@ -157,4 +149,7 @@ class FormationController extends Controller
 
     return redirect()->route('formationList');
   }
+
+
+
 }

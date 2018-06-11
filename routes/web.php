@@ -16,6 +16,7 @@ Route::get('/home', function () {
 
 
 Route::get('/', 'HomeController@home')->name('welcome');
+Route::post('/send_confirmation', 'Auth\LoginController@sendLink')->name('send_link');
 
 
 Auth::routes();
@@ -66,7 +67,11 @@ Route::group(['middleware'=>['auth', 'candidate']], function () {
 Route::group(['middleware'=>'admin'], function () {
   // Admin panel
   Route::get('/admin', 'Admin\AdminController@index')->name('admin');
+  Route::get('/admin/users', 'Admin\AdminController@showUsers')->name('showUsers');
   Route::get('/admin/create', 'Admin\AdminController@createUser')->name('createUser');
+  Route::get('/admin/edit/{id}', 'Admin\AdminController@editUser')->name('editUser');
+  Route::post('/admin/save/{id?}', 'Admin\AdminController@save')->name('saveUser');
+
   // CRUD recruteur
   Route::get('/admin/former/list', 'Admin\FormerController@list')->name('formerList');
   Route::get('/admin/former/create', 'Admin\FormerController@create')->name('formerCreate');
@@ -75,6 +80,7 @@ Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin/former/edit/{id}', 'Admin\FormerController@edit')->name('formerEdit');
   Route::post('/admin/former/update/{id}', 'Admin\FormerController@update')->name('formerUpdate');
   Route::get('/admin/former/delete/{id}', 'Admin\FormerController@destroy')->name('formerDelete');
+
   // CRUD formation
   Route::get('/admin/formation/list', 'Admin\FormationController@list')->name('formationList');
   Route::get('/admin/formation/create', 'Admin\FormationController@formerCreate')->name('formationCreate');
@@ -83,7 +89,16 @@ Route::group(['middleware'=>'admin'], function () {
   Route::get('/admin/formation/edit/{id}', 'Admin\FormationController@edit')->name('formationEdit');
   Route::post('/admin/formation/update/{id}', 'Admin\FormationController@update')->name('formationUpdate');
   Route::get('/admin/formation/delete/{id}', 'Admin\FormationController@destroy')->name('formationDelete');
-  // Autocomplete questionnaire
+
+  //CRUD session
+  Route::get('/admin/formation/show/{id}/session/create', 'Admin\SessionController@create')->name('sessionCreate');
+  Route::post('/admin/formation/show/{id}/session/save', 'Admin\SessionController@save');
+  Route::get('/admin/session/edit/{id}', 'Admin\SessionController@edit')->name('sessionEdit');
+  Route::post('/admin/session/update/{id}', 'Admin\SessionController@update')->name('sessionUpdate');
+  Route::get('/admin/session/show/{id}', 'Admin\SessionController@show')->name('sessionShow');
+
+
+    // Autocomplete questionnaire
   Route::get('typeahead-search',array('as'=>'typeahead.search','uses'=>'Admin\FormationController@formerCreate'));
   Route::get('typeahead-response',array('as'=>'typeahead.response','uses'=>'Admin\QuestionnaireController@typeahead'));
   // CRUD candidat
@@ -98,9 +113,7 @@ Route::group(['middleware'=>'admin'], function () {
 );
 
 Route::group(['middleware' => 'recruiter'], function () {
-  Route::get('/recruiter/admin', function(){
-    return view('admin.users');
-  });
+
   Route::get('/recruiter','Recruiter\FormationController@recruiterHome' )->name('recruiterHome');
   Route::get('/recruiter/formations', 'Recruiter\FormationController@recruiterIndex')->name('recruiterIndex');
   Route::get('/recruiter/formations/show', 'Recruiter\FormationController@recruiterFormations')->name('recruiterFormations');
@@ -111,6 +124,8 @@ Route::group(['middleware' => 'recruiter'], function () {
   Route::get('/recruiter/formation/edit/{id}', 'Recruiter\FormationController@recruiterFormationEdit')->name('recruiterFormationEdit');
   Route::post('/recruiter/formation/update/{id}', 'Recruiter\FormationController@recruiterFormationUpdate')->name('recruiterFormationUpdate');
   Route::get('/recruiter/formation/candidate/search', 'Recruiter\CandidateController@recruiterCandidateSearch')->name('candidateSearch');
+  Route::get('/recruiter/formation/mail', 'Recruiter\FormationController@sendMail')->name('send_mail');
+
   Route::get('/recruiter/formation/candidate/list/{id}/{order?}/{ascending?}', 'Recruiter\CandidateController@recruiterFormationCandidatesList')->name('recruiterFormationCandidatesList');
   Route::get('/recruiter/formation/candidate/show/{candidate_id}/{formation_id}', 'Recruiter\CandidateController@candidateFormationShow')->name('candidateFormationShow');
   Route::get('/recruiter/formation/candidate/evaluate/{candidate_id}/{formation_id}', 'Recruiter\CandidateController@candidateFormationEvaluate')->name('candidateFormationEvaluate');
