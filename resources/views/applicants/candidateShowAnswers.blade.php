@@ -37,10 +37,15 @@
       </div>
       <div class="radio-button-rating">
          <form action="" method="post">
-            <label>0<input type="radio" name="hero_dev" value="0"></label>
-            <label>1<input type="radio" name="rating-questions" value="1"></label>
-            <label>2<input type="radio" name="rating-questions" value="2"></label>
-            <label>3<input type="radio" name="rating-questions" value="3"></label>
+            <div class="action-buttons-container action-buttons-container--no-bg">
+
+               <div class="action-button action-button--df rounded-button">
+                  <input type="radio" class="dp-n" name="rating-questions" id="rad0"vvalue="0"><label class="btn btn-primary btn--extended-5" for="rad0">0</label>
+                  <input type="radio" class="dp-n" name="rating-questions" id="rad1" value="1"><label class="btn btn-primary btn--extended-5" for="rad1">1</label>
+                  <input type="radio" class="dp-n" name="rating-questions" id="rad2" value="2"><label class="btn btn-primary btn--extended-5" for="rad2">2</label>
+                  <input type="radio" class="dp-n" name="rating-questions" id="rad3" value="3"><label class="btn btn-primary btn--extended-5" for="rad3">3</label>
+               </div>
+            </div>
          </form>
       </div>
       </div>

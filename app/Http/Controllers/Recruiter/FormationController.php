@@ -28,7 +28,7 @@ class FormationController extends Controller
 
     $former = Auth::user();
 
-    return view('recruiter.formationList', ['former'=>$former]);
+    return view('applicants.formationList', ['former'=>$former]);
   }
 
   public function recruiterHome(){

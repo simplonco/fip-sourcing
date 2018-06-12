@@ -9,6 +9,8 @@ $lighten-grey: lighten($light-grey-custom, 35%);
 $border-grey: #d4d4d4;
 $shadow2: 2px 2px 90px rgba(82, 82, 82, .2),
 0px 4px 10px rgba(82, 82, 82, .2);
+$shadow-inset: 2px 2px 6px 1px rgba(82, 82, 82, .2),
+2px 2px 10px rgba(82, 82, 82, .2);
 $shadow1: 2px 2px 90px rgba(82, 82, 82, 0.1),
 0px 4px 10px rgba(82, 82, 82, .1);
 .navbar {
@@ -60,6 +62,10 @@ img.animated-logo:hover {
       align-items: center;
       width: 10em;
    }
+}
+
+.dp-n {
+   display: none;
 }
 
 body:before {
@@ -535,12 +541,21 @@ body:before {
    justify-content: space-between;
    flex-flow: wrap;
    background: $lighten-grey;
+   &--no-bg {
+      background-color: transparent;
+   }
    .btn {
       margin: 5px;
       border: 1px solid darken($border-grey, 10%);
       box-shadow: $shadow2;
       font-weight: 400;
       color: $white;
+      &--extended-5 {
+         width: 5em !important;
+      }
+   }
+   label:active {
+      background: green;
    }
    .action-button {
       display: flex;
@@ -572,6 +587,10 @@ body:before {
          }
       }
    }
+}
+
+.radio-button-rating {
+   padding-top: 2em;
 }
 
 .candidate-administrative-container,
@@ -652,11 +671,13 @@ td.td-action-buttons {
    .round {
       width: 2.8em;
    }
-   .btn:active {
+   .btn:active,
+   input[type="radio"]:checked+label {
       background: $white;
       color: $pink-simplon;
       border: 2px solid $pink-simplon !important;
       outline: 0;
+      box-shadow: inset $shadow-inset;
    }
    a:active {
       background: $white;
