@@ -34,11 +34,12 @@
       </div>
 
       @if (!Auth::guest())
+      <div class="container container-medium">
          <nav class="navbar navbar-static-top">
          <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
-               <img class="animated-logo logosimplon" src="{{ asset('images/logosimplon2.png') }}" alt="">
-               <span>{{__('general.title')}}</span>
+               <img class="animated-logo logosimplon" src="{{ asset('images/simplon_pink.svg') }}" alt="">
+               {{-- <span>{{__('general.title')}}</span> --}}
             </a>
             <div class="container">
                <div class="navbar-header">
@@ -102,12 +103,13 @@
                   </ul>
                   </li>
                   @endif
-                  <li>
-                        <a href="{{ route('language') }}">{{session('applocale')}}</a>
-                        </li>
+                  {{-- <li>
+                     <a href="{{ route('language') }}">{{session('applocale')}}</a>
+                  </li> --}}
                </ul>
             </div>
          </nav>
+      </div>
       @endif
       @if(Auth::guest())
       <div class="home-logo-container">

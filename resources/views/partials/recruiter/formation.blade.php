@@ -35,7 +35,7 @@
    <div class="description-view-mega-container">
 
    {{----------------- Description  ----------------}}
-      <div class="card-custom-description{{$recruiterFormations == 'focusCandidate' ? ' focusCandidate' : ''}}{{$recruiterFormations == 'applicantsList' ? ' no-padding' : ''}}{{$recruiterFormations == 'new' ? ' new-training' : ''}}">
+      <div class="card-custom-description{{$recruiterFormations == 'focusCandidate' ? ' focusCandidate' : ''}}{{$recruiterFormations == 'applicantsList' ? ' no-padding' : ''}}{{$recruiterFormations == 'new' ? ' new-training' : ''}}{{$recruiterFormations == 'new' ? ' card-custom-description--dark' : ''}}">
          @if($recruiterFormations == "applicants")
             <p>
                {{$candidate->first_name}} {{$candidate->last_name}} 
@@ -90,16 +90,16 @@
             </div>
          @endif
          @if($recruiterFormations == "focusCandidateAdmin")
-            @include('partials.recruiter.candidateAdministrativeInfo')
+            @include('partials.applicants.candidateAdministrativeInfo')
          @endif
          @if($recruiterFormations == "applicantsList")
             @include('partials.applications.applicationsList')
          @endif
          @if($recruiterFormations == "applicantsResumeEval")
-            @include('partials.recruiter.candidateShowScore') 
+            @include('partials.applicants.candidateShowScore') 
          @endif
          @if($recruiterFormations == "questionnaireCandidate")
-            @include('recruiter.candidateShowAnswers') 
+            @include('partials.applicants.candidateShowAnswers') 
          
          @endif
       </div>
