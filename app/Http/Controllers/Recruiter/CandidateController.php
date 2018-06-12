@@ -10,6 +10,8 @@ use App\Models\Role;
 use App\Models\Formation;
 use App\Models\Session;
 use App\Models\Note;
+use Illuminate\Support\Facades\Config;
+
 //use Illuminate\Support\Facades\Session;
 
 class CandidateController extends Controller
@@ -24,8 +26,9 @@ class CandidateController extends Controller
     $session = Session::findOrFail($session_id);
 
     $learnerRoleId = 2;
-    $candidates = getApplyingFormationCandidates($session_id);
 
+    $candidates = getApplyingFormationCandidates($session_id);
+    
     if($order != null){
       $candidates = $ascending === 'asc'? $candidates->orderBy($order, 'asc') : $candidates->orderBy($order, 'desc');
     }
@@ -34,6 +37,7 @@ class CandidateController extends Controller
 
     return view('applicants.candidateList', ['candidates'=>$candidates_pagination, 'session'=>$session]);
   }
+
 
   public function recruiterCandidateSearch(){
 
@@ -131,5 +135,6 @@ class CandidateController extends Controller
 
     return redirect()->route('recruiterFormationCandidatesList', $formation->id);
   }
+
 
 }
