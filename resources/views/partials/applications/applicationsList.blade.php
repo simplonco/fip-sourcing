@@ -25,7 +25,7 @@
                       <input type="checkbox">
                   </form>
               </td>
-              <td><a href="{{ route('candidateadmin.trainers.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
+              <td><a href="{{ route('trainer.sessions.applicants.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
               <td>{{$candidate->first_name}}</td>
               <td style="text-align:center;">{{$candidate->get_progress()}}{{-- pas sur car résultat en pourcentage attendu,à modifier--}}</td>
               <td style="text-align:center;">{{--badges à ajouter--}}</td>
@@ -41,7 +41,7 @@
                       <input type="checkbox">
                   </form>
               </td>
-              <td><a href="{{ route('candidateadmin.trainers.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
+              <td><a href="{{ route('trainer.sessions.applicants.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
               <td>{{$candidate->first_name}}</td>
               <td style="text-align:center;">{{$candidate->get_progress()}}{{-- pas sur car résultat en pourcentage attendu,à modifier--}}</td>
               <td style="text-align:center;">{{--badges à ajouter--}}</td>
@@ -57,7 +57,7 @@
                       <input type="checkbox">
                   </form>
               </td>
-              <td><a href="{{ route('candidateadmin.trainers.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
+              <td><a href="{{ route('trainer.sessions.applicants.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
               <td>{{$candidate->first_name}}</td>
               <td style="text-align:center;">{{$candidate->get_progress()}}{{-- pas sur car résultat en pourcentage attendu,à modifier--}}</td>
               <td style="text-align:center;">{{--badges à ajouter--}}</td>
@@ -73,7 +73,7 @@
                       <input type="checkbox">
                   </form>
               </td>
-              <td><a href="{{ route('candidateadmin.trainers.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
+              <td><a href="{{ route('trainer.sessions.applicants.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
               <td>{{$candidate->first_name}}</td>
               <td style="text-align:center;">{{$candidate->get_progress()}}{{-- pas sur car résultat en pourcentage attendu,à modifier--}}</td>
               <td style="text-align:center;">{{--badges à ajouter--}}</td>
@@ -89,7 +89,7 @@
                       <input type="checkbox">
                   </form>
               </td>
-              <td><a href="{{ route('candidateadmin.trainers.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
+              <td><a href="{{ route('trainer.sessions.applicants.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
               <td>{{$candidate->first_name}}</td>
               <td style="text-align:center;">{{$candidate->get_progress()}}{{-- pas sur car résultat en pourcentage attendu,à modifier--}}</td>
               <td style="text-align:center;">{{--badges à ajouter--}}</td>
@@ -105,7 +105,7 @@
                       <input type="checkbox">
                   </form>
               </td>
-              <td><a href="{{ route('candidateadmin.trainers.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
+              <td><a href="{{ route('trainer.sessions.applicants.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
               <td>{{$candidate->first_name}}</td>
               <td style="text-align:center;">{{$candidate->get_progress()}}{{-- pas sur car résultat en pourcentage attendu,à modifier--}}</td>
               <td style="text-align:center;">{{--badges à ajouter--}}</td>

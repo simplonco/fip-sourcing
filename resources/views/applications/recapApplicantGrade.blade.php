@@ -37,7 +37,7 @@
                                             <input type="checkbox">
                                         </form>
                                     </td>
-                                    <td><a href="{{ route('candidateadmin.trainers.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
+                                    <td><a href="{{ route('trainer.sessions.applicants.index', [$candidate->id, $session->formation->id]) }}">{{$candidate->last_name}}</a></td>
                                     <td>{{$candidate->first_name}}</td>
                                     <td>{{get_score($candidate)}}</td>
                                     <td>

@@ -115,8 +115,8 @@ Route::group(['middleware'=>'admin'], function () {
 Route::group(['middleware' => 'recruiter'], function () {
 
   Route::get('/formateur','Recruiter\FormationController@recruiterHome' )->name('trainer');
-  Route::get('/formateur/formations', 'Recruiter\FormationController@recruiterIndex')->name('trainer.index');
-  Route::get('/formateur/formations/show', 'Recruiter\FormationController@recruiterFormations')->name('trainer.courses.index');
+  Route::get('/formateur/formations', 'Recruiter\FormationController@recruiterIndex')->name('trainer.index');//////
+  Route::get('/formateur/formations/show', 'Recruiter\FormationController@recruiterFormations')->name('trainer.courses.index');//////
   Route::get('/formateur/formation/create', 'Recruiter\FormationController@recruiterFormationCreate')->name('trainer.courses.create');
   Route::post('/formateur/formation/save', 'Recruiter\FormationController@recruiterFormationSave')->name('trainer.courses.save');
 
@@ -132,7 +132,8 @@ Route::group(['middleware' => 'recruiter'], function () {
    Route::get('/formateur/sessions/{id}', 'Recruiter\CandidateController@recruiterFormationCandidatesList')->name('trainer.session.show');
 // Route::get('/formateur/sessions/candidats/{id}')
 
-//   Route::get('/recruiter/formation/candidate/show/{candidate_id}/{formation_id}', 'Recruiter\CandidateController@candidateadmin.trainers.index')->name('candidateadmin.trainers.index');
+  Route::get('/recruiter/sessions/candidate/show/{candidate_id}/{formation_id}', 'Recruiter\CandidateController@candidateFormationShow')->name('trainer.sessions.applicants.index');
+
 //   Route::get('/recruiter/formation/candidate/evaluate/{candidate_id}/{formation_id}', 'Recruiter\CandidateController@candidateFormationEvaluate')->name('candidateFormationEvaluate');
 //   Route::post('/recruiter/formation/candidate/sendEvaluation/{id}', 'Recruiter\CandidateController@candidateFormationSendEvaluation')->name('candidateFormationSendEvaluation');
 //   Route::get('/recruiter/formation/refreshFormationSololearn/{formation_id}', 'Recruiter\CandidateController@refreshFormationSololearn')->name('refreshFormationSololearn');
