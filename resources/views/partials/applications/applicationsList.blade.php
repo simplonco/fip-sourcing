@@ -33,7 +33,7 @@
               <td style="text-align:center;">{{--badges à ajouter--}}</td>
               <td style="text-align:center;">{{get_score($candidate)}}</td>
               <td style="text-align:center;">{{$candidate->candidate_notes()->count()}}</td>
-              <td style="text-align:center;">{{--evalué : oui ou non--}}</td>
+              <td style="text-align:center;">{{rand(0,1)===0 ? "Non" : "Oui"}}</td>
           </tr>
       @endforeach
 
