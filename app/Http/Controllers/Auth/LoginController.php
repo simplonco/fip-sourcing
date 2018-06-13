@@ -54,6 +54,10 @@ class LoginController extends Controller
   }
 
     public function sendLink(Request $request){
+      $this->validate($request, [
+         'email' => 'required',
+          'g-recaptcha-response'=> 'required|captcha',
+      ]);
 
         $user = User::where('email', $request->email)->first();
         if($user){

@@ -26,7 +26,12 @@
                </div>
                <div class="captcha-container">
                      <div class="g-recaptcha" data-sitekey="6LcyV1wUAAAAAKHCSVdWMYMuXmBhrWMQ6v2jS8Jp"></div>
-                  </div>
+                  @if ($errors->has('g-recaptcha-response'))
+                     <span class="help-block">
+                        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                     </span>
+                  @endif
+               </div>
                <div class="rounded-button" style="display:flex; justify-content:center; flex-direction:column;">
                   <button class="btn btn-primary" type="submit">Envoyer un lien de confirmation</button>
                </div>
