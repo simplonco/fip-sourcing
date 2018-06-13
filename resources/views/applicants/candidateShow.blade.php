@@ -6,6 +6,9 @@
 
    <div class="title-top-container">
       <h3 class="text-center title-top">CANDIDAT - {{$candidate->first_name}} {{$candidate->last_name}}</h3>
+      <div>
+         <h5>session de formation {{$formation->name}}</h5>
+      </div>
    </div>
    <div class="cards-custom-list-mega-container">
       <div class="card-custom-list-container">
