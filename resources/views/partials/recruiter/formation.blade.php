@@ -35,7 +35,13 @@
    <div class="description-view-mega-container">
 
    {{----------------- Description  ----------------}}
-      <div class="card-custom-description{{$recruiterFormations == 'focusCandidate' ? ' focusCandidate' : ''}}{{$recruiterFormations == 'applicantsList' ? ' no-padding' : ''}}{{$recruiterFormations == 'new' ? ' new-training' : ''}}{{$recruiterFormations == 'new' ? ' card-custom-description--dark mobile-dp-n' : ''}}">
+      <div class="card-custom-description
+         {{$recruiterFormations == 'focusCandidate' ? ' focusCandidate' : ''}}
+         {{$recruiterFormations == 'applicantsList' ? ' no-padding' : ''}}
+         {{$recruiterFormations == 'new' ? ' new-training' : ''}}
+         {{$recruiterFormations == 'new' ? ' card-custom-description--dark mobile-dp-n' : ''}}
+         {{$recruiterFormations == "questionnaireCandidate" ? ' mobile-pg-n' : ''}}
+         ">
          @if($recruiterFormations == "applicants")
             <p>
                {{$candidate->first_name}} {{$candidate->last_name}} 
@@ -81,7 +87,7 @@
             </div>
          @endif    
          @if($recruiterFormations == "focusCandidate")
-            <div class="container col-md-12 focus-candidate-id-card">
+            <div class="container col-md-12 focus-candidate-id-card mobile-pg-n">
                <div class="col-md-3">
                   <p><span>Prénom : </span>{{$candidate->first_name}}</p>
                   <p><span>Nom : </span>{{$candidate->last_name}}</p>

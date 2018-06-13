@@ -1,4 +1,4 @@
-<dl class="candidate-administrative-container container col-md-12">
+<dl class="candidate-administrative-container">
    <div class="col-md-6">
       <div><dt>Nationalité : </dt><dd>{{$candidate->nationality}}</dd></div>
       <div><dt>Date de naissance : </dt><dd> {{$candidate->birth_date}}</dd></div>

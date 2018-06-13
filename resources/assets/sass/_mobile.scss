@@ -1,4 +1,7 @@
 @media (max-width: 641px) {
+   body {
+      -webkit-overflow-scrolling: touch
+   }
    .cardd-mega-container {
       .cardd-container {
          flex-direction: column;
@@ -29,6 +32,57 @@
    }
    .mobile-dp-n {
       display: none;
+   }
+   .mobile-pg-n {
+      padding: 0px !important;
+   }
+   .mobile-mg-n {
+      margin: 0px !important;
+   }
+   .action-buttons-container {
+      .btn {
+         &--extended-mon-4 {
+            width: 4em !important;
+         }
+      }
+      .action-button {
+         p {}
+      }
+   }
+   .question-mega-container {
+      .question-dropdown {
+         select {
+            width: 30vw;
+            overflow: hidden;
+         }
+      }
+   }
+   .candidate-score-container {
+      display: inherit;
+   }
+   .candidate-administrative-container,
+   .candidate-score-container {
+      div {
+         padding: 0px;
+      }
+      .badges {
+         display: flex;
+         flex-direction: row;
+         div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0px;
+            svg {
+               display: flex;
+               justify-content: center;
+               width: 100%;
+            }
+         }
+      }
+   }
+   .mobile-home-container {
+      padding-bottom: 13em;
    }
    .cards-custom-list-mega-container {
       .cards-custom-list {

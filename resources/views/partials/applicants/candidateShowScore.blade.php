@@ -1,4 +1,4 @@
-<dl class="candidate-score-container container col-md-12">
+<dl class="candidate-score-container">
    <div class="col-md-3 badges">
       <div>
          <i class="fa fa-trophy fa-2x" color="{{'#00e861'}}"></i>  
@@ -11,7 +11,7 @@
          <i class="fa fa-trophy fa-2x" color="{{'#00b2e8'}}"></i><p>JS</p>
       </div>
       <div>
-         <i class="fa fa-trophy fa-2x" color="{{'#00e861'}}"></i><p>ALGORITHMIQUE</p>
+         <i class="fa fa-trophy fa-2x" color="{{'#00e861'}}"></i><p>ALGO</p>
       </div>
    </div>
    <div class="col-md-3">
