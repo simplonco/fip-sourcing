@@ -120,7 +120,7 @@
   @yield('content')
  
    @if (!Auth::guest())
-      <div class="justified-button">
+      <div class="justified-button mobile-dp-n">
          <a href="{{ url('/home') }}" class="btn btn-primary">{{__('general.home')}}</a>
       </div>
    @else

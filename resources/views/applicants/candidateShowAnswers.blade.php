@@ -6,7 +6,6 @@
          <i class="fas fa-question fa-stack-1x fa-inverse"></i>
       </span>
       <select>
-         <option value="">plop</option>
          <option><a href="#">{{__('projection.hero')}}</a></option>
          <option><a href="#">{{__('projection.dev_qualities')}}</a></option>
          <option><a href="#">{{__('projection.personal_goal')}}</a></option>
