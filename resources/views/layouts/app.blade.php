@@ -15,7 +15,7 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 </head>
-<body>
+<body ontouchstart>
 <div class="overlay">
    <div id="app">
       
@@ -120,7 +120,7 @@
   @yield('content')
  
    @if (!Auth::guest())
-      <div class="justified-button">
+      <div class="justified-button mobile-dp-n">
          <a href="{{ url('/home') }}" class="btn btn-primary">{{__('general.home')}}</a>
       </div>
    @else

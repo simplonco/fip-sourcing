@@ -53,6 +53,14 @@ img.animated-logo:hover {
    }
 }
 
+.dp-f {
+   display: flex;
+}
+
+.jc-c {
+   justify-content: center;
+}
+
 .navbar-right {
    .register-button,
    .login-button {
@@ -455,10 +463,17 @@ body:before {
                &--dark {
                   background: lighten($grey-custom, 5%);
                }
+               .table-responsive {
+                  display: flex;
+                  flex-direction: column;
+                  .pagination {
+                     align-self: center;
+                  }
+               }
                .card-custom-description-date {
                   color: rgb(189, 187, 187);
                   display: flex;
-                  align-self: flex-end;
+                  align-self: center;
                }
                .new-training-container {
                   display: flex;

@@ -22,7 +22,7 @@
                      </label>
                   </div>
                @include('partials.recruiter.formation', ['recruiterFormations' => 'applicantsList'])
-                <div class="action-buttons-in-footer">
+                <div class="action-buttons-in-footer mobile-dp-f mobile-jc-c">
                    <div class="action-button rounded-button">
                       <a href="{{ route('trainer.courses.index') }}" class="btn btn-primary"><i class="fas fa-caret-left fa-fw"></i> Retour</a>
                    </div>
