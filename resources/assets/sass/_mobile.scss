@@ -39,6 +39,12 @@
    .mobile-mg-n {
       margin: 0px !important;
    }
+   .mobile-dp-f {
+      display: flex;
+   }
+   .mobile-jc-c {
+      justify-content: center;
+   }
    .action-buttons-container {
       .btn {
          &--extended-mon-4 {
@@ -95,6 +101,7 @@
       padding-bottom: 13em;
    }
    .cards-custom-list-mega-container {
+      padding-bottom: 2em;
       .cards-custom-list {
          .card-custom-container {
             .card-custom-image {
