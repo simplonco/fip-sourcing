@@ -522,6 +522,10 @@ body:before {
    }
 }
 
+.desktop-dp-n {
+   display: none;
+}
+
 .search-candidate {
    padding-bottom: 0;
 }
@@ -553,9 +557,6 @@ body:before {
       &--extended-5 {
          width: 5em !important;
       }
-   }
-   label:active {
-      background: green;
    }
    .action-button {
       display: flex;
@@ -683,12 +684,6 @@ td.td-action-buttons {
       background: $white;
       color: $pink-simplon;
       border: 2px solid #e80041;
-   }
-}
-
-.focus-candidate-id-card {
-   .col-md-4 {
-      text-align: center;
    }
 }
 

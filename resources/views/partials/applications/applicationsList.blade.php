@@ -1,4 +1,6 @@
-<table class="table table-striped">
+<div class="table-responsive">
+   
+<table class="table table-striped table-condensed">
       <thead>
       <tr>
           <th><input type="checkbox"></th>
@@ -38,3 +40,4 @@
       {{ $candidates->links() }}
       </tbody>
   </table>
+</div>

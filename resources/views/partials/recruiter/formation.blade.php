@@ -35,7 +35,7 @@
    <div class="description-view-mega-container">
 
    {{----------------- Description  ----------------}}
-      <div class="card-custom-description{{$recruiterFormations == 'focusCandidate' ? ' focusCandidate' : ''}}{{$recruiterFormations == 'applicantsList' ? ' no-padding' : ''}}{{$recruiterFormations == 'new' ? ' new-training' : ''}}{{$recruiterFormations == 'new' ? ' card-custom-description--dark' : ''}}">
+      <div class="card-custom-description{{$recruiterFormations == 'focusCandidate' ? ' focusCandidate' : ''}}{{$recruiterFormations == 'applicantsList' ? ' no-padding' : ''}}{{$recruiterFormations == 'new' ? ' new-training' : ''}}{{$recruiterFormations == 'new' ? ' card-custom-description--dark mobile-dp-n' : ''}}">
          @if($recruiterFormations == "applicants")
             <p>
                {{$candidate->first_name}} {{$candidate->last_name}} 
@@ -46,6 +46,10 @@
                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi perspiciatis laudantium necessitatibus unde quis ipsa beatae nihil enim voluptatibus eveniet.
             </p>
          @elseif($recruiterFormations == "ongoing") 
+         <h4 class="dp-n dp-n-inverse">
+            {{$session->formation->name}}
+            <br>
+         </h4>
             {{$session->formation->description}}
          @elseif($recruiterFormations == "coming")
             {{$session->formation->description}}
@@ -70,6 +74,9 @@
             @endif
          @elseif($recruiterFormations == "new")
             <div class="new-training-container">
+               <a href="" class="dp-n dp-n-inverse">
+                  <i class="fa fa-times fa-5x" style="transform: rotate(-45deg);"></i>
+               </a>
                <p class="card-custom-description-date">Créer une nouvelle session de formation...</p> 
             </div>
          @endif    
@@ -142,10 +149,10 @@
                         <i class="fa fa-circle fa-stack-2x" id="star"></i>
                         <i class="fa fa-star fa-stack-1x fa-inverse" aria-hidden="true"></i>
                      </a>
-                     (<a href="{{ route('trainer.session.show', $session->formation->id) }}" class="fa-stack" title="Voir les candidatures">
+                     <a href="{{ route('trainer.session.show', $session->formation->id) }}" class="fa-stack" title="Voir les candidatures">
                         <i class="fa fa-circle fa-stack-2x" id="star"></i>
                         <i class="fa fa-users fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                     </a>)
+                     </a>
                
                      {{-- <a href="{{route('trainer.courses.show', $session->formation->id)}}" class="fa-stack" title="Voir les toutes les sessions">
                         <i class="fa fa-circle fa-stack-2x" id="star"></i>
@@ -157,10 +164,10 @@
             @if($recruiterFormations == "coming")
                <div class="card-custom-action-buttons">
                   <div>
-                     {{-- <a href="{{ route('recruiterFormationCandidatesList', $session->formation->id) }}" class="fa-stack"> --}}
+                     <a href="{{ route('trainer.session.show', $session->formation->id) }}" class="fa-stack">
                         <i class="fa fa-circle fa-stack-2x" id="star"></i>
-                        <i class="fa fa-users fa-stack-1x" style="color: hsla(0, 0%, 90%, 1);"aria-hidden="true"></i>
-                     {{-- </a> --}}
+                        <i class="fa fa-users fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                     </a>
                   </div>
                </div>
             @endif
