@@ -1,4 +1,4 @@
-@media (max-width: 641px) {
+@media (max-width: 800px) {
    body {
       -webkit-overflow-scrolling: touch
    }
@@ -47,7 +47,7 @@
    }
    .action-buttons-container {
       .btn {
-         &--extended-mon-4 {
+         &--extended-mob-4 {
             width: 4em !important;
          }
       }

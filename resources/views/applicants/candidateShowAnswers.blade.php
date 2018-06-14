@@ -40,13 +40,13 @@
             <div class="action-buttons-container action-buttons-container--no-bg">
                <div class="action-button action-button--df rounded-button">
                   <input type="radio" class="dp-n" name="rating-questions" id="rad0"vvalue="0">
-                  <label class="btn btn-primary btn--extended-5 btn--extended-mon-4" for="rad0">0</label>
+                  <label class="btn btn-primary btn--extended-5 btn--extended-mob-4" for="rad0">0</label>
                   <input type="radio" class="dp-n" name="rating-questions" id="rad1" value="1">
-                  <label class="btn btn-primary btn--extended-5 btn--extended-mon-4" for="rad1">1</label>
+                  <label class="btn btn-primary btn--extended-5 btn--extended-mob-4" for="rad1">1</label>
                   <input type="radio" class="dp-n" name="rating-questions" id="rad2" value="2">
-                  <label class="btn btn-primary btn--extended-5 btn--extended-mon-4" for="rad2">2</label>
+                  <label class="btn btn-primary btn--extended-5 btn--extended-mob-4" for="rad2">2</label>
                   <input type="radio" class="dp-n" name="rating-questions" id="rad3" value="3">
-                  <label class="btn btn-primary btn--extended-5 btn--extended-mon-4" for="rad3">3</label>
+                  <label class="btn btn-primary btn--extended-5 btn--extended-mob-4" for="rad3">3</label>
                </div>
             </div>
          </form>
