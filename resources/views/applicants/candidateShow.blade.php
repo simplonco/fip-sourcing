@@ -8,7 +8,7 @@
       <div>
          <h3 class="text-center title-top">CANDIDAT - {{$candidate->first_name}} {{$candidate->last_name}}</h3>
          <div class="dp-f jc-c">
-            <h5>{{__("Session de formation")}} {{$formation->name}}</h5>
+            <h5>{{__("Session de formation")}} {!! $formation->name !!}</h5>
          </div>
       </div>
    </div>
