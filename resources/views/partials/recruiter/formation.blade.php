@@ -15,10 +15,10 @@
          @endif
          @elseif($recruiterFormations == "ongoing")
             <i class="fa fa-file-alt fa-5x"></i>
-            <p>{{$session->formation->name}}</p>
+            <p>{!! $session->formation->name !!}</p>
          @elseif($recruiterFormations == "coming")
             <i class="fa fa-file-alt fa-5x"></i>
-            <p>{{$session->formation->name}}</p>
+            <p>{!! $session->formation->name !!}</p>
          @elseif($recruiterFormations == "new")
             <i class="fa fa-times fa-5x" style="transform: rotate(-45deg);"></i>
          @elseif($recruiterFormations == "focusCandidate")
