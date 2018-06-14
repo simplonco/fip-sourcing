@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Rules\Captcha;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\Request;
@@ -56,7 +57,7 @@ class LoginController extends Controller
     public function sendLink(Request $request){
       $this->validate($request, [
          'email' => 'required',
-          'g-recaptcha-response'=> 'required|captcha',
+          'g-recaptcha-response' => ['required', new Captcha]
       ]);
 
         $user = User::where('email', $request->email)->first();
