@@ -15,12 +15,12 @@
       </div>
    </div>
    <div class="col-md-3">
-      <div><dt>Créativité : </dt><dd>plop</dd></div>
-      <div><dt>Motivation : </dt><dd> plip</dd></div>
-      <div><dt>Culture générale : </dt><dd>plup</dd></div>
-      <div><dt>Logique : </dt><dd>plep</dd></div>
-      <div><dt>Spécifique formation : </dt><dd>plap</dd></div>
-      <div><dt>Badges gagnés : </dt><dd>plyp</dd></div>
+      <div><dt>Créativité : </dt><dd>10 points</dd></div>
+      <div><dt>Motivation : </dt><dd> 8 points</dd></div>
+      <div><dt>Culture générale : </dt><dd>20 points</dd></div>
+      <div><dt>Logique : </dt><dd>30 points</dd></div>
+      <div><dt>Spécifique formation : </dt><dd>10 points</dd></div>
+      <div><dt>Badges gagnés : </dt><dd>5 points</dd></div>
    </div>
    <div class="col-md-6 global-score">
       <div>
