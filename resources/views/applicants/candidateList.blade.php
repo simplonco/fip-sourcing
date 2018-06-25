@@ -10,7 +10,7 @@
    <div class="container">
 
       <div class="title-top-container">
-         <h3 class="text-center title-top">{{$session->formation->name}} du {{$session->begin_session->format('d/m/y')}} au {{$session->end_session->format('d/m/y')}} à {{$session->city}}</h3>
+         <h3 class="text-center title-top">{!! $session->formation->name !!} du {{$session->begin_session->format('d/m/y')}} au {{$session->end_session->format('d/m/y')}} à {{$session->city}}</h3>
       </div>
       <div class="cards-custom-list-mega-container">
          <div class="card-custom-list-container">

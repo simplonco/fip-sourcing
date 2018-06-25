@@ -25,8 +25,8 @@
                   @endif
                </div>
                <div class="captcha-container">
-                     <div class="g-recaptcha" data-sitekey="6LcyV1wUAAAAAKHCSVdWMYMuXmBhrWMQ6v2jS8Jp"></div>
-                  @if ($errors->has('g-recaptcha-response'))
+                     <div class="g-recaptcha" data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}"></div>
+                  @if ($errors->has('g-recaptcha-response') ? 'has-error' : '')
                      <span class="help-block">
                         <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
                      </span>
