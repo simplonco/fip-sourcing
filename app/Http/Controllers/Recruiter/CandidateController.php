@@ -121,6 +121,11 @@ class CandidateController extends Controller
     return redirect()->route('recruiterFormationCandidatesList', $note->formation()->first()->id);
   }
 
+  public function saveApplicantValue($recruiter_id, Request $request){
+      dd($request);
+
+  }
+
   public function refreshFormationSololearn($formation_id)
   {
     $formation = Formation::findOrFail($formation_id);

@@ -134,6 +134,8 @@ Route::group(['middleware' => 'recruiter'], function () {
 
   Route::get('/recruiter/sessions/candidate/show/{candidate_id}/{formation_id}', 'Recruiter\CandidateController@candidateFormationShow')->name('trainer.sessions.applicants.index');
 
+  Route::post('/recruiter/sessions/applicant/value/save', 'Recruiter\CandidateController@saveApplicantValue')->name('trainer.value.save');
+
 //   Route::get('/recruiter/formation/candidate/evaluate/{candidate_id}/{formation_id}', 'Recruiter\CandidateController@candidateFormationEvaluate')->name('candidateFormationEvaluate');
 //   Route::post('/recruiter/formation/candidate/sendEvaluation/{id}', 'Recruiter\CandidateController@candidateFormationSendEvaluation')->name('candidateFormationSendEvaluation');
 //   Route::get('/recruiter/formation/refreshFormationSololearn/{formation_id}', 'Recruiter\CandidateController@refreshFormationSololearn')->name('refreshFormationSololearn');
