@@ -8,12 +8,12 @@
          </a>
          <a href="#" class="btn btn-primary ">
             <i class="fa fa-angle-right fa-2x rotate180"></i>
-            <p class="mobile-dp-n">{{__('general.previous')}}</p>
+            <p class="mobile-dp-n previous-section">{{__('general.previous')}}</p>
          </a>
       </div>
       <div class="action-button rounded-button mobile-mg-n  mobile-pg-n ">
          <a href="#" class="btn btn-primary">
-            <p class="mobile-dp-n">{{__('general.next')}}</p>
+            <p class="mobile-dp-n next-section">{{__('general.next')}}</p>
             <i class="fa fa-angle-right fa-2x"></i>
          </a>
          <a href="" class="btn btn-primary">

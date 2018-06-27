@@ -1,32 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'mobx-react';
+import { Provider } from 'mobx-react';
 
-import {MobxRouter} from 'mobx-router';
+import { MobxRouter } from 'mobx-router';
 
 // Local imports
 //import config from './config';
 import * as stores from './stores'; // mobx stores
 import Layout from './components/Layout'
 
-
-
-
 // Provider will add your pass the stores instances using context
 const App = (
-  <Provider store={stores } >
-    <MobxRouter/>
-  </Provider>
+   <Provider store={stores} >
+      <MobxRouter />
+   </Provider>
 );
 
-ReactDOM.render(
-    App,
-    document.getElementById('app-candidat')
-);
-
-
+if (document.getElementById('app-candidat')) {
+   ReactDOM.render(
+      App,
+      document.getElementById('app-candidat')
+   );
+}
 
 window.axios = require('axios');
+
+window.$ = window.jQuery = require('jquery');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -39,7 +38,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 let token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
-    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+   window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
-    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+   console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }

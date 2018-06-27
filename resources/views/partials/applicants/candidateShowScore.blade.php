@@ -1,17 +1,17 @@
 <dl class="candidate-score-container">
    <div class="col-md-3 badges">
       <div>
-         <i class="fa fa-trophy fa-2x" color="{{'#00e861'}}"></i>  
+         <i class="fa fa-trophy fa-2x" title="complété" color="{{'#00e861'}}"></i>  
          <p>HTML</p>
       </div>
       <div>
-         <i class="fa fa-trophy fa-2x" color="{{'#949393'}}"></i><p>CSS</p>
+         <i class="fa fa-trophy fa-2x" title="non commencé" color="{{'#949393'}}"></i><p>CSS</p>
       </div>
       <div>
-         <i class="fa fa-trophy fa-2x" color="{{'#00b2e8'}}"></i><p>JS</p>
+         <i class="fa fa-trophy fa-2x" title="en cours" color="{{'#00b2e8'}}"></i><p>JS</p>
       </div>
       <div>
-         <i class="fa fa-trophy fa-2x" color="{{'#00e861'}}"></i><p>ALGO</p>
+         <i class="fa fa-trophy fa-2x" title="complété" color="{{'#00e861'}}"></i><p>ALGO</p>
       </div>
    </div>
    <div class="col-md-3">
