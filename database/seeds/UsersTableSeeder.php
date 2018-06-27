@@ -60,6 +60,8 @@ class UsersTableSeeder extends Seeder
         'dev_point' => $faker->text($maxNbChars = 100),
         'superpower' => $faker->text($maxNbChars = 100),
 
+        'application_sent' => true,
+
       ]);
     }
 
