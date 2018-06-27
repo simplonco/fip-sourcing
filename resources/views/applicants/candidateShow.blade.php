@@ -32,8 +32,8 @@
                      <div class="tab-panel" style="display:none">
                         @include('partials.recruiter.formation', ['recruiterFormations' => 'applicantsResumeEval', 'candidate' => $candidate])
                      </div>
-                     <div class="tab-panel" style="display:none"> 
-                        @include('partials.recruiter.formation', ['recruiterFormations' => 'questionnaireCandidate', 'candidate' => $candidate, 'motivationQuestions' => $motivationQuestions])
+                     <div class="tab-panel" style="display:none">
+                        @include('partials.recruiter.formation', ['recruiterFormations' => 'questionnaireCandidate', 'candidate' => $candidate, 'motivationQuestions' => $motivationQuestions, 'motivationAnswers'=>$motivationAnswers])
                      </div>
                  </div>
 

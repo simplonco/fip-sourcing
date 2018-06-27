@@ -60,9 +60,10 @@ class CandidateController extends Controller
     $formation = Formation::findOrFail($formation_id);
     $recruiter = Auth::user();
     $recruiter_id = $recruiter->id;
-
     $motivationQuestions = Question::where('category_id', 3)->get();
-    return view('applicants.candidateShow', ['candidate' => $candidate, 'formation' => $formation,'motivationQuestions' => $motivationQuestions, 'recruiter'=>$recruiter_id]);
+    $motivationAnswers = Answer::where('candidate_id', $candidate_id)->get();
+   // dd($motivationAnswers);
+    return view('applicants.candidateShow', ['candidate' => $candidate, 'formation' => $formation,'motivationQuestions' => $motivationQuestions, 'recruiter'=>$recruiter_id, 'motivationAnswers'=>$motivationAnswers]);
 
   }
 

@@ -32,7 +32,7 @@
          @include('applicants.candidateShowQuestions')
       </div>
       <div class="col-md-12">
-         @include('partials.applicants.candidateShowAnswers')
+         @include('partials.applicants.candidateShowAnswers',$motivationAnswers)
       </div>
       <div class="radio-button-rating">
 
