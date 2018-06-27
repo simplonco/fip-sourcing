@@ -2,7 +2,7 @@
    <div class="col-md-3 badges">
       <div>
          <i class="fa fa-trophy fa-2x" title="complété" color="{{'#00e861'}}"></i>  
-         <p>HTML</p>
+         <p>HTML</p> {{$candidate->html_score}}
       </div>
       <div>
          <i class="fa fa-trophy fa-2x" title="non commencé" color="{{'#949393'}}"></i><p>CSS</p>
@@ -15,24 +15,20 @@
       </div>
    </div>
    <div class="col-md-3">
-      <div><dt>Créativité : </dt><dd>10 points</dd></div>
-      <div><dt>Motivation : </dt><dd> 8 points</dd></div>
-      <div><dt>Culture générale : </dt><dd>20 points</dd></div>
-      <div><dt>Logique : </dt><dd>30 points</dd></div>
-      <div><dt>Spécifique formation : </dt><dd>10 points</dd></div>
-      <div><dt>Badges gagnés : </dt><dd>5 points</dd></div>
+      <div><dt>Créativité : </dt><dd>-</dd></div>
+      <div><dt>Motivation : </dt><dd>-</dd></div>
+      <div><dt>Culture générale : </dt><dd>-</dd></div>
+      <div><dt>Logique : </dt><dd>-</dd></div>
+      <div><dt>Spécifique formation : </dt><dd>-</dd></div>
+      <div><dt>Badges gagnés : </dt><dd>-</dd></div>
    </div>
    <div class="col-md-6 global-score">
       <div>
          <dt>Score global :</dt>
-         <p>100</p>
+         <p>{{$candidate->score}}</p>
       </div>
    </div>
 </dl>
-
-
-
-
 
 
 
