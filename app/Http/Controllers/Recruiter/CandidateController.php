@@ -10,8 +10,8 @@ use App\Models\Role;
 use App\Models\Formation;
 use App\Models\Session;
 use App\Models\Note;
+use App\Models\Answer;
 use App\Models\Question;
-
 use Illuminate\Support\Facades\Config;
 
 //use Illuminate\Support\Facades\Session;
@@ -58,7 +58,6 @@ class CandidateController extends Controller
     $candidate = User::findOrFail($candidate_id);
     $formation = Formation::findOrFail($formation_id);
     $motivationQuestions = Question::where('category_id', 3)->get();
-    dd($motivationQuestions);
 
     return view('applicants.candidateShow', ['candidate' => $candidate, 'formation' => $formation, 'motivationQuestions' => $motivationQuestions]);
   }
@@ -125,9 +124,13 @@ class CandidateController extends Controller
     return redirect()->route('recruiterFormationCandidatesList', $note->formation()->first()->id);
   }
 
-  public function saveApplicantValue($recruiter_id, Request $request){
-      dd($request);
+  public function saveApplicantValue($id, Request $request){
+        $answer = Answer::findOrFail($id);
+        $recruiter = Auth::user();
+        $recruiter_id = $recruiter->id;
 
+
+        return redirect()->route('trainer.sessions.applicants.index');
   }
 
   public function refreshFormationSololearn($formation_id)

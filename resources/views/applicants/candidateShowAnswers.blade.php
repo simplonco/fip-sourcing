@@ -8,12 +8,9 @@
       <form class="questions-form" action="#">
          <select>
             @if(isset($motivationQuestions)) 
-
-               <option><a href="#">{{__('projection.hero')}}</a></option>
-               <option><a href="#">{{__('projection.dev_qualities')}}</a></option>
-               <option><a href="#">{{__('projection.personal_goal')}}</a></option>
-               <option><a href="#">{{__('projection.dev_point')}}</a></option>
-               <option><a href="#">{{__('projection.superpower')}}</a></option>
+               @foreach($motivationQuestions as $question)
+                  <option><a href="#">{{$question->title}}</a></option>
+               @endforeach
             @endif
          </select>
       </form>
@@ -38,16 +35,17 @@
          @include('partials.applicants.candidateShowAnswers')
       </div>
       <div class="radio-button-rating">
-         <form action="" method="post">
+         <form action="{{route('trainer.value.save')}}" method="post">
+            {{csrf_field()}}
             <div class="action-buttons-container action-buttons-container--no-bg">
                <div class="action-button action-button--df rounded-button">
-                  <input type="radio" class="dp-n" name="rating-questions" id="rad0"vvalue="0">
+                  <input type="radio" class="dp-n" name="value" id="rad0" value="0">
                   <label class="btn btn-primary btn--extended-5 btn--extended-mob-4" for="rad0">0</label>
-                  <input type="radio" class="dp-n" name="rating-questions" id="rad1" value="1">
+                  <input type="radio" class="dp-n" name="value" id="rad1" value="1">
                   <label class="btn btn-primary btn--extended-5 btn--extended-mob-4" for="rad1">1</label>
-                  <input type="radio" class="dp-n" name="rating-questions" id="rad2" value="2">
+                  <input type="radio" class="dp-n" name="value" id="rad2" value="2">
                   <label class="btn btn-primary btn--extended-5 btn--extended-mob-4" for="rad2">2</label>
-                  <input type="radio" class="dp-n" name="rating-questions" id="rad3" value="3">
+                  <input type="radio" class="dp-n" name="value" id="rad3" value="3">
                   <label class="btn btn-primary btn--extended-5 btn--extended-mob-4" for="rad3">3</label>
                </div>
             </div>

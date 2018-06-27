@@ -25,5 +25,5 @@ class Answer extends Model
     return $this->belongsTo(Question::class, 'question_id');
   }
 
-  //public function scope
+
 }
