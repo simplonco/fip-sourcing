@@ -102,18 +102,18 @@
                </div>
             </div>
          @endif
-         @if($recruiterFormations == "focusCandidateAdmin")
-            @include('partials.applicants.candidateAdministrativeInfo')
-         @endif
          @if($recruiterFormations == "applicantsList")
             @include('partials.applications.applicationsList')
+         @endif
+
+         @if($recruiterFormations == "focusCandidateAdmin")
+            @include('partials.applicants.candidateAdministrativeInfo')
          @endif
          @if($recruiterFormations == "applicantsResumeEval")
             @include('partials.applicants.candidateShowScore') 
          @endif
          @if($recruiterFormations == "questionnaireCandidate")
             @include('applicants.candidateShowAnswers')
-         
          @endif
       </div>
 

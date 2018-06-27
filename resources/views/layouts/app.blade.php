@@ -142,6 +142,7 @@
 
    <!-- Scripts -->
    <script src="{{ asset('js/app.js') }}"></script>
+   <script src="{{ asset('js/bo.js') }}"></script>
    @if(config('app.debug') && !App::environment('production'))
       @include('debug.loginas')
    @endif

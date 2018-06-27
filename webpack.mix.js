@@ -12,5 +12,9 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/candidat/app.js', 'public/js')
+   .js('resources/assets/js/backoffice/app.js', 'public/js/bo.js')
    .sass('resources/assets/sass/app.scss', 'public/css')
-   .browserSync({proxy: process.env.PROXY || 'http://localhost:8000', open:false});
+   .browserSync({
+      proxy: process.env.PROXY || 'http://localhost:8000',
+      open: false
+   });
