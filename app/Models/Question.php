@@ -23,5 +23,8 @@ class Question extends Model
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
+    public function answers(){
+        return $this->hasMany(Answer::class);
+    }
 
 }

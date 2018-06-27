@@ -9,8 +9,10 @@ class AnswersTableSeeder extends Seeder
   *
   * @return void
   */
-  public function run()
+  public function run(Faker\Generator $faker)
   {
+
+
 
     DB::table('answers')->insert([
       'id' => 1,
@@ -18,5 +20,6 @@ class AnswersTableSeeder extends Seeder
       'question_id' => 3,
       'value' => 'Spiderman'
     ]);
+
   }
 }

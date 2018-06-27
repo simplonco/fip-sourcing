@@ -55,9 +55,12 @@ class CandidateController extends Controller
   public function candidateFormationShow($candidate_id, $formation_id)
   {
     $candidate = User::findOrFail($candidate_id);
+    //dd($candidate);
     $formation = Formation::findOrFail($formation_id);
+    $recruiter = Auth::user();
+    $recruiter_id = $recruiter->id;
 
-    return view('applicants.candidateShow', ['candidate' => $candidate, 'formation' => $formation]);
+    return view('applicants.candidateShow', ['candidate' => $candidate, 'formation' => $formation, 'recruiter'=>$recruiter_id]);
   }
 
   /**
@@ -122,13 +125,14 @@ class CandidateController extends Controller
     return redirect()->route('recruiterFormationCandidatesList', $note->formation()->first()->id);
   }
 
-  public function saveApplicantValue($id, Request $request){
-        $answer = Answer::findOrFail($id);
+  public function saveApplicantValue(Request $request){
+        //$applicant = User::findOrFail($id);
         $recruiter = Auth::user();
         $recruiter_id = $recruiter->id;
+        //dd($recruiter_id);
+        //dd($request->input('recruiter_id'));
 
-
-        return redirect()->route('trainer.sessions.applicants.index');
+        return redirect()->back();
   }
 
   public function refreshFormationSololearn($formation_id)
