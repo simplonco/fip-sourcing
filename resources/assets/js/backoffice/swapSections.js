@@ -1,38 +1,30 @@
 var indexTabs = 0;
-var tabPanels = document.querySelectorAll(".tabContainer  .tabPanel");
-
-function nextSection() {
-   $('.next-section').click(function () {
+var tabPanels = document.querySelectorAll(".tab-container  .tab-panel");
+var app = {
+   init() {
+      $('.next-section').on('click', false, app.nextSection);
+      $('.previous-section').on('click', false, app.previousSection);
+      $('.tab-button').on('click', $(this).data("index"), app.showPanel);
+      app.showPanel(indexTabs);
+   },
+   nextSection() {
       if (tabPanels.length - 1 > indexTabs) {
          indexTabs += 1;
-         console.log(indexTabs);
-         showPanel(indexTabs);
+         app.showPanel(indexTabs);
       }
-   })
-}
-
-function previousSection() {
-   $('.previous-section').click(function () {
+   },
+   previousSection() {
       if (indexTabs > 0) {
          indexTabs -= 1;
-         console.log(indexTabs);
-         showPanel(indexTabs);
+         app.showPanel(indexTabs);
       }
-   })
+   },
+   showPanel(indexTabs) {
+      tabPanels.forEach(function (node) {
+         node.style.display = "none";
+      });
+      tabPanels[indexTabs].style.display = "block";
+   }
 }
 
-nextSection();
-previousSection();
-
-$(".tab-button").on('click', function () {
-   showPanel($(this).data("index"))
-})
-
-function showPanel(indexTabs) {
-   tabPanels.forEach(function (node) {
-      node.style.display = "none";
-   });
-   tabPanels[indexTabs].style.display = "block";
-
-}
-showPanel(0);
+$(document).ready(app.init)
