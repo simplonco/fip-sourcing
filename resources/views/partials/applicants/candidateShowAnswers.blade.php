@@ -4,7 +4,7 @@
    <div class="box">
       <section class="container-question">
          <p>
-               {{$candidate->hero}}
+            {{$candidate->superpower}}
          </p>
       </section>
    </div>

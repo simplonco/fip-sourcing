@@ -2,7 +2,7 @@
    <div class="col-md-3 badges">
       <div>
          <i class="fa fa-trophy fa-2x" title="complété" color="{{'#00e861'}}"></i>  
-         <p>HTML</p> {{$candidate->html_score}}
+         <p>HTML</p>
       </div>
       <div>
          <i class="fa fa-trophy fa-2x" title="non commencé" color="{{'#949393'}}"></i><p>CSS</p>

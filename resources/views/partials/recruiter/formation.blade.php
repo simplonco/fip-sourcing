@@ -113,7 +113,7 @@
             @include('partials.applicants.candidateShowScore') 
          @endif
          @if($recruiterFormations == "questionnaireCandidate")
-            @include('applicants.candidateShowAnswers')
+            @include('applicants.candidateShowAnswers', $motivationQuestions)
          @endif
       </div>
 

@@ -10,6 +10,8 @@ use App\Models\Role;
 use App\Models\Formation;
 use App\Models\Session;
 use App\Models\Note;
+use App\Models\Question;
+
 use Illuminate\Support\Facades\Config;
 
 //use Illuminate\Support\Facades\Session;
@@ -55,8 +57,10 @@ class CandidateController extends Controller
   {
     $candidate = User::findOrFail($candidate_id);
     $formation = Formation::findOrFail($formation_id);
+    $motivationQuestions = Question::where('category_id', 3)->get();
+    dd($motivationQuestions);
 
-    return view('applicants.candidateShow', ['candidate' => $candidate, 'formation' => $formation]);
+    return view('applicants.candidateShow', ['candidate' => $candidate, 'formation' => $formation, 'motivationQuestions' => $motivationQuestions]);
   }
 
   /**
