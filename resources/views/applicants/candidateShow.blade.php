@@ -20,7 +20,11 @@
          <div class="container cards-custom-list">
 
                @include('partials.recruiter.formation', ['recruiterFormations' => 'focusCandidate', 'candidate' => $candidate])
-
+               <div class="tab-button-container">
+                  <button class="tab-button" data-index="0">General</button>
+                  <button class="tab-button" data-index="1">Scores</button>
+                  <button class="tab-button" data-index="2">Motivation</button>
+               </div>
                <div class="tab-container">
                      <div class="tab-panel" style="display:none">
                         @include('partials.recruiter.formation', ['recruiterFormations' => 'focusCandidateAdmin', 'candidate' => $candidate])            
@@ -29,7 +33,7 @@
                         @include('partials.recruiter.formation', ['recruiterFormations' => 'applicantsResumeEval', 'candidate' => $candidate])
                      </div>
                      <div class="tab-panel" style="display:none"> 
-                        @include('partials.recruiter.formation', ['recruiterFormations' => 'questionnaireCandidate', 'candidate' => $candidate])
+                        @include('partials.recruiter.formation', ['recruiterFormations' => 'questionnaireCandidate', 'candidate' => $candidate, 'motivationQuestions' => $motivationQuestions])
                      </div>
                  </div>
 

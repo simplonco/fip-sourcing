@@ -5,13 +5,15 @@
          <i class="fas fa-square fa-stack-2x"></i>
          <i class="fas fa-question fa-stack-1x fa-inverse"></i>
       </span>
-      <select>
-         <option><a href="#">{{__('projection.hero')}}</a></option>
-         <option><a href="#">{{__('projection.dev_qualities')}}</a></option>
-         <option><a href="#">{{__('projection.personal_goal')}}</a></option>
-         <option><a href="#">{{__('projection.dev_point')}}</a></option>
-         <option><a href="#">{{__('projection.superpower')}}</a></option>
-      </select>
+      <form class="questions-form" action="#">
+         <select>
+            @if(isset($motivationQuestions)) 
+               @foreach($motivationQuestions as $question)
+                  <option><a href="#">{{$question->title}}</a></option>
+               @endforeach
+            @endif
+         </select>
+      </form>
       <a href="#">
          <span class="fa-stack fa-lg">
             <i class="fas fa-square fa-stack-2x"></i>
@@ -27,13 +29,10 @@
    </div>
    <div class="panel-body mobile-pg-n">
       <div class="col-md-12">
-         <h5 class="title-questions">Rappel des objectifs de la question : </h5>
-         <div class="container-question">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab cum facere fuga illo ipsa laborum maiores non optio quam quibusdam sed sit.</p>
-         </div>
+         @include('applicants.candidateShowQuestions')
       </div>
       <div class="col-md-12">
-            @include('partials.applicants.candidateShowAnswers')
+         @include('partials.applicants.candidateShowAnswers')
       </div>
       <div class="radio-button-rating">
 

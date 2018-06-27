@@ -12,7 +12,6 @@ return [
   | these language lines according to your application's requirements.
   |
   */
-
   'hero' => 'Si vous étiez un super héros/une super héroïne, qui seriez-vous et pourquoi?',
   'dev_qualities' => 'Quelles sont selon vous les qualités d’un.e développeur·se ? (Détaillez votre réponse)',
   'personal_goal' => 'Que recherchez-vous en intégrant la formation Simplon.co ?',

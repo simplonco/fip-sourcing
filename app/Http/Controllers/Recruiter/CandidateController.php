@@ -11,6 +11,7 @@ use App\Models\Formation;
 use App\Models\Session;
 use App\Models\Note;
 use App\Models\Answer;
+use App\Models\Question;
 use Illuminate\Support\Facades\Config;
 
 //use Illuminate\Support\Facades\Session;
@@ -60,7 +61,9 @@ class CandidateController extends Controller
     $recruiter = Auth::user();
     $recruiter_id = $recruiter->id;
 
-    return view('applicants.candidateShow', ['candidate' => $candidate, 'formation' => $formation, 'recruiter'=>$recruiter_id]);
+    $motivationQuestions = Question::where('category_id', 3)->get();
+    return view('applicants.candidateShow', ['candidate' => $candidate, 'formation' => $formation,'motivationQuestions' => $motivationQuestions, 'recruiter'=>$recruiter_id]);
+
   }
 
   /**
