@@ -17,7 +17,7 @@
 
    <div class="cards-custom-list-mega-container">
       <div class="card-custom-list-container">
-         <div class="container cards-custom-list">
+         <div class="container cards-custom-list tab-applicant-section">
 
                @include('partials.recruiter.formation', ['recruiterFormations' => 'focusCandidate', 'candidate' => $candidate])
                <div class="tab-button-container">
