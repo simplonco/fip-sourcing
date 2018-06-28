@@ -4,6 +4,7 @@ window.$ = window.jQuery = require('jquery');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 require('./switchSections');
+require('./loadQuestions');
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that

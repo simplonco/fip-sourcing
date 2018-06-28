@@ -3,7 +3,7 @@
    function getQuestions() {
       $.ajax({
          type: 'get',
-         url: '/applicantions/questions',
+         url: '/getMotivationQuestionsAndAnswers',
       }).done(data => {
          let target = $('select [questions-list]');
          target.find('option').remove();
