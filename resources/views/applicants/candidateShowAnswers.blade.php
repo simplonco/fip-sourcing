@@ -6,7 +6,7 @@
          <i class="fas fa-question fa-stack-1x fa-inverse"></i>
       </span>
       <form class="questions-form" action="#">
-         <select>
+         <select questions-list>
             @if(isset($motivationQuestions)) 
                @foreach($motivationQuestions as $question)
                   <option id="{{$question->id}}"><a href="#">{{$question->title}}</a></option>
@@ -40,9 +40,9 @@
                   @for($i = 0; $i<4; $i++)
                      <form action="{{route('trainer.value.save')}}" method="post">
                         {{csrf_field()}}
-                        <input type="hidden" name="answer_id" value="{{$motivationAnswers[0]->id}}">
+                        <input type="hidden" name="answer_id" value={{count($motivationAnswers) > 0 ? $motivationAnswers[0]->id : null}}>
                         <input type="hidden" name="candidate_id" value="{{$candidate->id}}">
-                        <input type="submit" class="dp-n" name="value" id="rad{{$i}}" value="{{$i}}">
+                        <input type="submit" class="dp-n " name="value" id="rad{{$i}}" value="{{$i}}">
                         <label class="btn btn-primary btn--extended-5 btn--extended-mob-4" for="rad{{$i}}">{{$i}}</label>
                      </form>
                      @endfor
