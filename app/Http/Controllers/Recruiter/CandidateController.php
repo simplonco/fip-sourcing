@@ -160,11 +160,12 @@ class CandidateController extends Controller
   }
 
 
-    public function getMotivationQuestionsAndAnswers(Request $request){
-        $candidate_id = $request->input('candidate_id');
-        dd($candidate_id);
+    public function getMotivationQuestionsAndAnswers(Request $request, $candidate_id){
      $questions = Question::where('category_id', 3)->get();
-    // $answers = Answer::where()
+    $answers = Answer::where('candidate_id',$candidate_id)->get();
+    //$evaluations = Evaluation::where()
+        return response()->json(["questions"=>$questions, "answers"=>$answers]);
+
     }
 
 }

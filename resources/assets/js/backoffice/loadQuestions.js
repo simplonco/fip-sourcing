@@ -1,9 +1,11 @@
 ///??? WIP////
 (function () {
    function getQuestions() {
+      let candidate_id = $('.candidate_id').val();
+      console.log(candidate_id);
       $.ajax({
          type: 'get',
-         url: '/getMotivationQuestionsAndAnswers',
+         url: '/getMotivationQuestionsAndAnswers/'+candidate_id,
       }).done(data => {
          let target = $('select [questions-list]');
          target.find('option').remove();

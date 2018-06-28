@@ -41,7 +41,7 @@
                      <form action="{{route('trainer.value.save')}}" method="post">
                         {{csrf_field()}}
                         <input type="hidden" name="answer_id" value={{count($motivationAnswers) > 0 ? $motivationAnswers[0]->id : null}}>
-                        <input type="hidden" name="candidate_id" value="{{$candidate->id}}">
+                        <input type="hidden" class="candidate_id" value="{{$candidate->id}}">
                         <input type="submit" class="dp-n " name="value" id="rad{{$i}}" value="{{$i}}">
                         <label class="btn btn-primary btn--extended-5 btn--extended-mob-4" for="rad{{$i}}">{{$i}}</label>
                      </form>
