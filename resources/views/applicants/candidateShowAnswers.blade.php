@@ -6,7 +6,7 @@
          <i class="fas fa-question fa-stack-1x fa-inverse"></i>
       </span>
       <form class="questions-form" action="#">
-         <select>
+         <select questions-list>
             @if(isset($motivationQuestions)) 
                @foreach($motivationQuestions as $question)
                   <option id="{{$question->id}}"><a href="#">{{$question->title}}</a></option>
