@@ -13,7 +13,7 @@ class CreateAnswersRecruiterTable extends Migration
      */
     public function up()
     {
-        Schema::create('answers_recruiter', function (Blueprint $table) {
+        Schema::create('evaluations', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('answer_id');
             $table->integer('recruiter_id');

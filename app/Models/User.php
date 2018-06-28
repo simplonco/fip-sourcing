@@ -118,4 +118,8 @@ class User extends Authenticatable
       return $this->hasMany(Answer::class, 'candidate_id');
   }
 
+  public function evaluations(){
+      return $this->hasMany(Evaluation::class, 'recruiter_id');
+  }
+
 }

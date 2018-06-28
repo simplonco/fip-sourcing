@@ -3,7 +3,6 @@
    <h5 class="title-questions">Réponse du candidat : </h5>
    <div class="box">
       <section class="container-question">
-
          <p>
             {{$motivationAnswers[0]->value}}
          </p>

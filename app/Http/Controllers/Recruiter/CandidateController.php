@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Recruiter;
 
+use App\Models\Evaluation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -13,6 +14,7 @@ use App\Models\Note;
 use App\Models\Answer;
 use App\Models\Question;
 use Illuminate\Support\Facades\Config;
+
 
 //use Illuminate\Support\Facades\Session;
 
@@ -56,13 +58,13 @@ class CandidateController extends Controller
   public function candidateFormationShow($candidate_id, $formation_id)
   {
     $candidate = User::findOrFail($candidate_id);
-    //dd($candidate);
+
     $formation = Formation::findOrFail($formation_id);
     $recruiter = Auth::user();
     $recruiter_id = $recruiter->id;
     $motivationQuestions = Question::where('category_id', 3)->get();
     $motivationAnswers = Answer::where('candidate_id', $candidate_id)->get();
-   // dd($motivationAnswers);
+
     return view('applicants.candidateShow', ['candidate' => $candidate, 'formation' => $formation,'motivationQuestions' => $motivationQuestions, 'recruiter'=>$recruiter_id, 'motivationAnswers'=>$motivationAnswers]);
 
   }
@@ -130,11 +132,14 @@ class CandidateController extends Controller
   }
 
   public function saveApplicantValue(Request $request){
-        //$applicant = User::findOrFail($id);
-        $recruiter = Auth::user();
-        $recruiter_id = $recruiter->id;
-        //dd($recruiter_id);
-        //dd($request->input('recruiter_id'));
+
+      $evaluation = new Evaluation;
+
+      $evaluation->answer_id = $request->input('answer_id');
+      $evaluation->recruiter_id = Auth::user()->id;
+      $evaluation->value = $request->input('value');
+
+      $evaluation->save();
 
         return redirect()->back();
   }
