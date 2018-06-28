@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
-    protected $hidden = ['id'];
+   //  protected $hidden = ['id'];
 
     protected $fillable = ['questionnaire_id', 'category_id', 'title', 'default_value', 'type', 'mandatory', 'goal', 'weight'];
 
