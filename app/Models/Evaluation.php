@@ -11,4 +11,7 @@ class Evaluation extends Model
     public function recruiters(){
         return $this->belongsTo(User::class, 'recruiter_id');
     }
+    public function answers(){
+        return $this->belongsTo(Answer::class, 'answer_id');
+    }
 }

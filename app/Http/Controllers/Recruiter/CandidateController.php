@@ -131,7 +131,7 @@ class CandidateController extends Controller
     return redirect()->route('recruiterFormationCandidatesList', $note->formation()->first()->id);
   }
 
-  public function saveApplicantValue(Request $request){
+  public function saveEvaluation(Request $request){
 
       $evaluation = new Evaluation;
 
@@ -142,6 +142,10 @@ class CandidateController extends Controller
       $evaluation->save();
 
         return redirect()->back();
+  }
+
+  public function updateEvaluation(){
+
   }
 
   public function refreshFormationSololearn($formation_id)
@@ -162,8 +166,11 @@ class CandidateController extends Controller
 
     public function getMotivationQuestionsAndAnswers(Request $request, $candidate_id){
      $questions = Question::where('category_id', 3)->get();
-    $answers = Answer::where('candidate_id',$candidate_id)->get();
-    //$evaluations = Evaluation::where()
+     $answers = Answer::where('candidate_id',$candidate_id)->get();
+     $evaluation = $answers->map(function($item, $key){
+        return $item->evaluations->first();
+     });
+
         return response()->json(["questions"=>$questions, "answers"=>$answers]);
 
     }
