@@ -737,7 +737,8 @@ td.td-action-buttons {
    }
 }
 
-.container-question {
+.container-question,
+.container-answer {
    background: $lighten-grey;
    padding: 1em;
    p {
