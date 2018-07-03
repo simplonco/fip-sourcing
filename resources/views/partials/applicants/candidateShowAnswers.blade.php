@@ -4,11 +4,7 @@
    <div class="box">
       <section class="container-answer" id="#container-answer">
          <span>
-            @if(count($motivationAnswers) > 0)
-            {{$motivationAnswers[0]->value}}
-            @else
-            <p>-</p>
-            @endif
+            {{--$question->answers--}}
          </span>
       </section>
    </div>

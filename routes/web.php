@@ -132,13 +132,13 @@ Route::group(['middleware' => 'recruiter'], function () {
    Route::get('/formateur/sessions/{id}', 'Recruiter\CandidateController@recruiterFormationCandidatesList')->name('trainer.session.show');
 // Route::get('/formateur/sessions/candidats/{id}')
 
-  Route::get('/recruiter/sessions/candidate/show/{candidate_id}/{formation_id}', 'Recruiter\CandidateController@candidateFormationShow')->name('trainer.sessions.applicants.index');
+  Route::get('/recruiter/sessions/candidate/show/{candidate}/{formation}', 'Recruiter\CandidateController@candidateFormationShow')->name('trainer.sessions.applicants.index');
 
   Route::post('/recruiter/sessions/applicant/value/save', 'Recruiter\CandidateController@saveEvaluation')->name('trainer.value.save');
 
   Route::get('/getMotivationQuestionsAndAnswers/{id}', 'Recruiter\CandidateController@getMotivationQuestionsAndAnswers');
 
-  Route::put('/recruiter/sessions/applicant/value/update/{id}','Recruiter\CandidateController@updateEvaluation')->name('trainer.value.update');
+  Route::put('/recruiter/sessions/applicant/value/save','Recruiter\CandidateController@saveEvaluation')->name('trainer.value.save');
 
 //   Route::get('/recruiter/formation/candidate/evaluate/{candidate_id}/{formation_id}', 'Recruiter\CandidateController@candidateFormationEvaluate')->name('candidateFormationEvaluate');
 //   Route::post('/recruiter/formation/candidate/sendEvaluation/{id}', 'Recruiter\CandidateController@candidateFormationSendEvaluation')->name('candidateFormationSendEvaluation');

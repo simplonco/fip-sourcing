@@ -13,6 +13,7 @@ use App\Models\Session;
 use App\Models\Note;
 use App\Models\Answer;
 use App\Models\Question;
+use App\Models\Questionnaire;
 use Illuminate\Support\Facades\Config;
 
 
@@ -60,9 +61,10 @@ class CandidateController extends Controller
     $questions = $candidate
       ->sessions()->where('formation_id', $formation->id)->orderBy('id','desc')->first()
       ->formation
-      ->questionnaires
-      ->questions;
-//$question->answer
+      ->questionnaires->map(function($item, $key){
+          return $item->questions;
+        });
+     //$question->answer
     return view('applicants.candidateShow', [
       'candidate' => $candidate, 
       'formation' => $formation,
@@ -146,11 +148,11 @@ class CandidateController extends Controller
         return redirect()->back();
   }
 
-  public function updateEvaluation(Request $request, $id){
+  /*public function updateEvaluation(){
 
       $evaluation = Evaluation::find($id);
 
-  }
+  }*/
 
   public function refreshFormationSololearn($formation_id)
   {

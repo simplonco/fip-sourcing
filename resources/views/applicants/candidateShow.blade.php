@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 
 <div class="container mega-container">
@@ -13,7 +12,6 @@
       </div>
    </div>
 
-  
 
    <div class="cards-custom-list-mega-container">
       <div class="card-custom-list-container">
@@ -27,13 +25,16 @@
                </div>
                <div class="tab-container">
                      <div class="tab-panel" style="display:none">
-                        @include('partials.recruiter.formation', ['recruiterFormations' => 'focusCandidateAdmin', 'candidate' => $candidate])            
+                        {{--@include('partials.recruiter.formation', ['recruiterFormations' => 'focusCandidateAdmin', 'candidate' => $candidate])--}}
+                        @include('partials.applicants.candidateAdministrativeInfo', ['candidate' => $candidate] )
                      </div>
                      <div class="tab-panel" style="display:none">
-                        @include('partials.recruiter.formation', ['recruiterFormations' => 'applicantsResumeEval', 'candidate' => $candidate])
+                       {{--@include('partials.recruiter.formation', ['recruiterFormations' => 'applicantsResumeEval', 'candidate' => $candidate])--}}
+                         @include('partials.applicants.candidateShowScore', ['candidate' => $candidate, 'questions'=>$questions])
                      </div>
                      <div class="tab-panel" style="display:none">
-                        @include('partials.recruiter.formation', ['recruiterFormations' => 'questionnaireCandidate', 'candidate' => $candidate, 'motivationQuestions' => $motivationQuestions, 'motivationAnswers'=>$motivationAnswers])
+                       {{-- @include('partials.recruiter.formation', ['recruiterFormations' => 'questionnaireCandidate', 'candidate' => $candidate, 'questions'=>$questions])--}}
+                         @include('applicants.candidateShowAnswers', ['candidate' => $candidate,'questions'=>$questions,'recruiter'=>$recruiter])
                      </div>
                  </div>
 

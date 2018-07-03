@@ -1,5 +1,6 @@
-
 <div class="question-mega-container">
+   {{--dd($recruiterFormations)--}}
+   {{--@foreach($questions->where('category_id', 3)->get() as $question)--}}
    <div class="question-dropdown col-md-12">
       <span class="fa-stack fa-lg">
          <i class="fas fa-square fa-stack-2x"></i>
@@ -7,11 +8,9 @@
       </span>
       <form class="questions-form" action="#">
          <select questions-list class="questions-list">
-            @if(isset($motivationQuestions)) 
-               @foreach($motivationQuestions as $question)
+              {{-- @foreach( as $question)
                   <option id="{{$question->id}}"><a href="#">{{$question->title}}</a></option>
-               @endforeach
-            @endif
+               @endforeach --}}
          </select>
       </form>
       <a href="#">
@@ -32,7 +31,7 @@
          @include('applicants.candidateShowQuestions')
       </div>
       <div class="col-md-12">
-         @include('partials.applicants.candidateShowAnswers',[$motivationAnswers])
+         @include('partials.applicants.candidateShowAnswers')
       </div>
       <div class="radio-button-rating">
             <div class="action-buttons-container action-buttons-container--no-bg">
@@ -42,7 +41,7 @@
                         {{csrf_field()}}
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <input type="hidden" name="answer_id" value={{count($motivationAnswers) > 0 ? $motivationAnswers[0]->id : null}}>
+                        <input type="hidden" name="answer_id" value=>
                         <input type="hidden" class="candidate_id" value="{{$candidate->id}}">
                         <input type="submit" class="dp-n " name="value" id="rad{{$i}}" value="{{$i}}">
                         <label class="btn btn-primary btn--extended-5 btn--extended-mob-4" for="rad{{$i}}">{{$i}}</label>
@@ -52,4 +51,5 @@
             </div>
       </div>
    </div>
+     {{-- @endforeach--}}
 </div>

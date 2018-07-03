@@ -1,5 +1,4 @@
 <div class="card-custom-container">
-
    @if($recruiterFormations == "new")
       <a href="">
    @endif
@@ -19,7 +18,7 @@
          @elseif($recruiterFormations == "coming")
             <i class="fa fa-file-alt fa-5x"></i>
             <p>{!! $session->formation->name !!}</p>
-         @elseif($recruiterFormations == "new")
+          @elseif($recruiterFormations == "new")
             <i class="fa fa-times fa-5x" style="transform: rotate(-45deg);"></i>
          @elseif($recruiterFormations == "focusCandidate")
             <i class="fa fa-user fa-5x"></i>
@@ -103,18 +102,21 @@
             </div>
          @endif
          @if($recruiterFormations == "applicantsList")
-            @include('partials.applications.applicationsList')
+                 @include('partials.applications.applicationsList')
          @endif
 
-         @if($recruiterFormations == "focusCandidateAdmin")
-            @include('partials.applicants.candidateAdministrativeInfo')
-         @endif
-         @if($recruiterFormations == "applicantsResumeEval")
-            @include('partials.applicants.candidateShowScore') 
-         @endif
-         @if($recruiterFormations == "questionnaireCandidate")
-            @include('applicants.candidateShowAnswers', ['motivationQuestions'=>$motivationQuestions, 'motivationAnswers'=>$motivationAnswers, 'recruiter'=>$recruiter])
-         @endif
+         {{--@if($recruiterFormations == "focusCandidateAdmin")
+                 @include('partials.applicants.candidateAdministrativeInfo')
+         @endif--}}
+
+         {{--@if($recruiterFormations == "applicantsResumeEval")
+                 @include('partials.applicants.candidateShowScore')
+         @endif--}}
+
+        {{-- @if($recruiterFormations == "questionnaireCandidate")
+                 @include('applicants.candidateShowAnswers', ['questions'=>$questions,'recruiter'=>$recruiter])
+         @endif--}}
+
       </div>
 
       {{------------------------ View - Action Buttons ------------------------}}
