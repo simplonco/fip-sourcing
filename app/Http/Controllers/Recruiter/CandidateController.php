@@ -144,7 +144,9 @@ class CandidateController extends Controller
         return redirect()->back();
   }
 
-  public function updateEvaluation(){
+  public function updateEvaluation(Request $request, $id){
+
+      $evaluation = Evaluation::find($id);
 
   }
 
@@ -174,5 +176,7 @@ class CandidateController extends Controller
         return response()->json(["questions"=>$questions, "answers"=>$answers]);
 
     }
+
+
 
 }

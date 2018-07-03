@@ -40,6 +40,8 @@
                   @for($i = 0; $i<4; $i++)
                      <form action="{{route('trainer.value.save')}}" method="post">
                         {{csrf_field()}}
+                        <input type="hidden" name="_method" value="PUT">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <input type="hidden" name="answer_id" value={{count($motivationAnswers) > 0 ? $motivationAnswers[0]->id : null}}>
                         <input type="hidden" class="candidate_id" value="{{$candidate->id}}">
                         <input type="submit" class="dp-n " name="value" id="rad{{$i}}" value="{{$i}}">
