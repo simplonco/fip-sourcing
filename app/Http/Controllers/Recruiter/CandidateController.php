@@ -55,17 +55,19 @@ class CandidateController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function candidateFormationShow($candidate_id, $formation_id)
+  public function candidateFormationShow(User $candidate, Formation $formation)
   {
-    $candidate = User::findOrFail($candidate_id);
-
-    $formation = Formation::findOrFail($formation_id);
-    $recruiter = Auth::user();
-    $recruiter_id = $recruiter->id;
-    $motivationQuestions = Question::where('category_id', 3)->get();
-    $motivationAnswers = Answer::where('candidate_id', $candidate_id)->get();
-
-    return view('applicants.candidateShow', ['candidate' => $candidate, 'formation' => $formation,'motivationQuestions' => $motivationQuestions, 'recruiter'=>$recruiter_id, 'motivationAnswers'=>$motivationAnswers]);
+    $questions = $candidate
+      ->sessions()->where('formation_id', $formation->id)->orderBy('id','desc')->first()
+      ->formation
+      ->questionnaires
+      ->questions;
+//$question->answer
+    return view('applicants.candidateShow', [
+      'candidate' => $candidate, 
+      'formation' => $formation,
+      'recruiter'=> Auth::user(), 
+      'questions'=>$questions]);
 
   }
 
