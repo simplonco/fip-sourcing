@@ -1,3 +1,4 @@
+@foreach($evaluableQuestions as $question)
 <div class="question-mega-container">
    <div class="question-dropdown col-md-12">
       <span class="fa-stack fa-lg">
@@ -6,9 +7,7 @@
       </span>
       <form class="questions-form" action="#">
          <select questions-list class="questions-list">
-              {{-- @foreach( as $question)
                   <option id="{{$question->id}}"><a href="#">{{$question->title}}</a></option>
-               @endforeach --}}
          </select>
       </form>
       <a href="#">
@@ -26,16 +25,18 @@
    </div>
    <div class="panel-body mobile-pg-n">
       <div class="col-md-12">
-         @include('applicants.candidateShowQuestions')
+         @include('applicants.candidateShowQuestions', ['evaluableQuestions'=>$evaluableQuestions])
       </div>
       <div class="col-md-12">
-         @include('partials.applicants.candidateShowAnswers')
+         @include('partials.applicants.candidateShowAnswers', ['evaluableQuestions'=>$evaluableQuestions])
       </div>
       <div class="radio-button-rating">
             <div class="action-buttons-container action-buttons-container--no-bg">
                <div class="action-button action-button--df rounded-button">
                   @for($i = 0; $i<4; $i++)
-                     <form action="{{route('trainer.value.save')}}" method="post">
+                     <form action="{{route('trainer.value.save')}}"
+
+                     method="post">
                         {{csrf_field()}}
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -50,3 +51,4 @@
       </div>
    </div>
 </div>
+   @endforeach

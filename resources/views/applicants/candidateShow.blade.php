@@ -34,7 +34,7 @@
                      </div>
                      <div class="tab-panel" style="display:none">
                        {{-- @include('partials.recruiter.formation', ['recruiterFormations' => 'questionnaireCandidate', 'candidate' => $candidate, 'questions'=>$questions])--}}
-                         @include('applicants.candidateShowAnswers', ['candidate' => $candidate,'questions'=>$questions,'recruiter'=>$recruiter])
+                         @include('applicants.candidateShowAnswers', ['candidate' => $candidate,'questions'=>$questions,'recruiter'=>$recruiter, 'evaluableQuestions'=>$evaluableQuestions])
                      </div>
                  </div>
 

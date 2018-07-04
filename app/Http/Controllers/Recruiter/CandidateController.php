@@ -64,6 +64,11 @@ class CandidateController extends Controller
       ->questionnaires->map(function($item, $key){
           return $item->questions;
         });
+    $evaluableQuestions = $questions->first()->filter(function($item, $key){
+       if($item->category_id === 3){
+           return $item;
+       }
+    });
     $answers = $questions->first()->map(function($item, $key){
         return $item->answers;
     });
@@ -76,7 +81,8 @@ class CandidateController extends Controller
       'formation' => $formation,
       'recruiter'=> Auth::user(), 
       'questions'=>$questions,
-        'answer'=> $answer
+        'answer'=> $answer,
+        'evaluableQuestions'=>$evaluableQuestions
     ]);
 
   }
