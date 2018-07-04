@@ -17,6 +17,8 @@
           <th style="text-align:center;">{{__('user.choose_user.score')}}</th>
           <th style="text-align:center;">Nb d'évaluation</th>
           <th style="text-align:center;">Evalué</th>
+          <th style="text-align:center;">Candidature complète</th>
+
       </tr>
       </thead>
       <tbody>
@@ -34,6 +36,8 @@
               <td style="text-align:center;">{{get_score($candidate)}}</td>
               <td style="text-align:center;">{{$candidate->candidate_notes()->count()}}</td>
               <td style="text-align:center;">{{rand(0,1)===0 ? "Non" : "Oui"}}</td>
+              <td style="text-align:center;">{{rand(0,1)===0 ? "Non" : "Oui"}}</td>
+
           </tr>
       @endforeach
 

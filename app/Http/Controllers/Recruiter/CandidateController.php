@@ -68,10 +68,8 @@ class CandidateController extends Controller
         return $item->answers;
     });
     $answer = $answers->first()->map(function($item, $key){
-        return $item->id;
+        return $item ;
     });
-    //dd($answer);
-
      //$question->answer
     return view('applicants.candidateShow', [
       'candidate' => $candidate, 

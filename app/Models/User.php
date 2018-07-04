@@ -122,4 +122,6 @@ class User extends Authenticatable
       return $this->hasMany(Evaluation::class, 'recruiter_id');
   }
 
+  
+
 }
