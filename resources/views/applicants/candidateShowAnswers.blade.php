@@ -1,6 +1,4 @@
 <div class="question-mega-container">
-   {{--dd($recruiterFormations)--}}
-   {{--@foreach($questions->where('category_id', 3)->get() as $question)--}}
    <div class="question-dropdown col-md-12">
       <span class="fa-stack fa-lg">
          <i class="fas fa-square fa-stack-2x"></i>
@@ -41,8 +39,8 @@
                         {{csrf_field()}}
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <input type="hidden" name="answer_id" value=>
-                        <input type="hidden" class="candidate_id" value="{{$candidate->id}}">
+                        <input type="hidden" name="answer_id" value{{--$answer->id--}}>
+                        <input type="hidden" class="candidate_id" value="">
                         <input type="submit" class="dp-n " name="value" id="rad{{$i}}" value="{{$i}}">
                         <label class="btn btn-primary btn--extended-5 btn--extended-mob-4" for="rad{{$i}}">{{$i}}</label>
                      </form>
@@ -51,5 +49,4 @@
             </div>
       </div>
    </div>
-     {{-- @endforeach--}}
 </div>
