@@ -1,4 +1,3 @@
-@foreach($evaluableQuestions as $question)
 <div class="question-mega-container">
    <div class="question-dropdown col-md-12">
       <span class="fa-stack fa-lg">
@@ -7,7 +6,9 @@
       </span>
       <form class="questions-form" action="#">
          <select questions-list class="questions-list">
-                  <option id="{{$question->id}}"><a href="#">{{$question->title}}</a></option>
+            @foreach($questions[0] as $question)
+            <option id="{{$question->id}}"><a href="#">{{$question->title}}</a></option>
+            @endforeach
          </select>
       </form>
       <a href="#">
@@ -23,12 +24,12 @@
          </span>
       </a>
    </div>
+   @foreach($questions[0] as $question)
    <div class="panel-body mobile-pg-n">
       <div class="col-md-12">
-         @include('applicants.candidateShowQuestions', ['evaluableQuestions'=>$evaluableQuestions])
-      </div>
-      <div class="col-md-12">
-         @include('partials.applicants.candidateShowAnswers', ['evaluableQuestions'=>$evaluableQuestions])
+        {{var_dump($question)}}
+        {{var_dump($question->answer($candidate->id))}}
+         <p>{{$question->goal}}</p>
       </div>
       <div class="radio-button-rating">
             <div class="action-buttons-container action-buttons-container--no-bg">
@@ -50,5 +51,5 @@
             </div>
       </div>
    </div>
+      @endforeach
 </div>
-   @endforeach

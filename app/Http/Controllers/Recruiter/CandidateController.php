@@ -64,25 +64,12 @@ class CandidateController extends Controller
       ->questionnaires->map(function($item, $key){
           return $item->questions;
         });
-    $evaluableQuestions = $questions->first()->filter(function($item, $key){
-       if($item->category_id === 3){
-           return $item;
-       }
-    });
-    $answers = $questions->first()->map(function($item, $key){
-        return $item->answers;
-    });
-    $answer = $answers->first()->map(function($item, $key){
-        return $item ;
-    });
      //$question->answer
     return view('applicants.candidateShow', [
       'candidate' => $candidate, 
       'formation' => $formation,
       'recruiter'=> Auth::user(), 
       'questions'=>$questions,
-        'answer'=> $answer,
-        'evaluableQuestions'=>$evaluableQuestions
     ]);
 
   }
