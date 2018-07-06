@@ -1,0 +1,11 @@
+.answer-panel {
+  display:none;
+
+  &--active {
+    display: block;
+  }
+}
+
+.evaluation-labels {
+  display:flex;
+}

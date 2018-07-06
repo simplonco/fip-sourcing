@@ -14,4 +14,8 @@ class Evaluation extends Model
     public function answers(){
         return $this->belongsTo(Answer::class, 'answer_id');
     }
+
+    public function scopeForRecruiter($query, $recruiterId, $answerId){
+        return $query->where('recruiter_id', $recruiterId)->where('answer_id', $answerId);
+    }
 }

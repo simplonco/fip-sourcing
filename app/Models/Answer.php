@@ -8,7 +8,7 @@ class Answer extends Model
 {
     protected $hidden = ['id'];
 
-    protected $fillable = ['candidate_id', 'question_id', 'value'];
+    protected $fillable = ['candidate_id', 'question_id', 'value', ];
 
     public function candidate()
     {

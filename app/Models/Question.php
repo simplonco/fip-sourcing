@@ -27,7 +27,7 @@ class Question extends Model
         return $this->hasMany(Answer::class);
     }
 
-    public function getAnswerAttribute($userId){
+    public function getAnswer($userId){
         return $this->answers()->user($userId)->first();
     }
 

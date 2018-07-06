@@ -15,7 +15,7 @@
 
    <div class="cards-custom-list-mega-container">
       <div class="card-custom-list-container">
-         <div class="container cards-custom-list tab-applicant-section">
+         <div class="container cards-custom-list tab-applicant-section tab-root">
 
                @include('partials.recruiter.formation', ['recruiterFormations' => 'focusCandidate', 'candidate' => $candidate])
                <div class="tab-button-container">
@@ -25,20 +25,17 @@
                </div>
                <div class="tab-container">
                      <div class="tab-panel" style="display:none">
-                        {{--@include('partials.recruiter.formation', ['recruiterFormations' => 'focusCandidateAdmin', 'candidate' => $candidate])--}}
-                        @include('partials.applicants.candidateAdministrativeInfo', ['candidate' => $candidate] )
+                        @include('partials.applicants.candidateAdministrativeInfo')
                      </div>
                      <div class="tab-panel" style="display:none">
-                       {{--@include('partials.recruiter.formation', ['recruiterFormations' => 'applicantsResumeEval', 'candidate' => $candidate])--}}
-                         @include('partials.applicants.candidateShowScore', ['candidate' => $candidate, 'questions'=>$questions])
+                         @include('partials.applicants.candidateShowScore')
                      </div>
-                     <div class="tab-panel" style="display:none">
-                       {{-- @include('partials.recruiter.formation', ['recruiterFormations' => 'questionnaireCandidate', 'candidate' => $candidate, 'questions'=>$questions])--}}
-                         @include('applicants.candidateShowAnswers', ['candidate' => $candidate,'questions'=>$questions,'recruiter'=>$recruiter])
+                     <div class="tab-panel" style="display:none">>
+                         @include('applicants.candidateShowAnswers')
                      </div>
                  </div>
 
-               @include('partials.recruiter.nextAndPreviousButtons', ['recruiterFormations' => 'focusCandidateAdmin', 'candidate' => $candidate])
+               @include('partials.recruiter.nextAndPreviousButtons', ['recruiterFormations' => 'focusCandidateAdmin'])
          </div>
       </div>
    </div>

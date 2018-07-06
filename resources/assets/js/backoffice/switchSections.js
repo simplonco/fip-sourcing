@@ -2,11 +2,12 @@
    function Tabs(node) {
       let app = {
          indexTabs: 0,
-         tabPanels: document.querySelectorAll(".tab-container .tab-panel"),
+         tabPanels: null,
          init() {
             this.node = $(node)
             if (this.node) {
-               this.start();
+                this.tabPanels = this.node.find(".tab-panel")
+                this.start();
             }
             this.showPanel();
          },
@@ -40,16 +41,14 @@
             this.showPanel();
          },
          showPanel() {
-            this.tabPanels.forEach(function (node) {
-               node.style.display = "none";
-            });
+            this.tabPanels.hide();
             this.tabPanels[this.indexTabs].style.display = "block";
          }
       };
       app.init();
    }
    $(document).ready(function () {
-      let tabContainer = document.querySelector('.tab-applicant-section');
+      let tabContainer = document.querySelector('.tab-root');
       if (tabContainer) {
          new Tabs(tabContainer)
       };

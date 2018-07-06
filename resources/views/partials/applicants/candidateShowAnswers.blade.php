@@ -4,7 +4,7 @@
    <div class="box">
       <section class="container-answer" id="container-answer">
             <span>
-
+                {{$question->getAnswer($candidate->id)}}
             </span>
       </section>
    </div>

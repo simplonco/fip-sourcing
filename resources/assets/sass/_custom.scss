@@ -801,3 +801,11 @@ td.td-action-buttons {
       }
    }
 }
+
+
+.btn.eval-btn {
+   &--current  {
+      background-color: transparent;
+      color: $c-red;
+   }
+}
